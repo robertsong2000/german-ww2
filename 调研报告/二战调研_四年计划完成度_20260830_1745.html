@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>四年计划完成度 —— 目标时刻表、到站实绩，以及对战备经济的客观评估</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;600;700&family=Newsreader:opsz,wght@16..72,500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #f3ead6;
+  --ink: #1c1914;
+  --muted: #5c5348;
+  --rule: #c23b22;
+  --rule2: #2a2a28;
+  --late: #8a3028;
+  --on: #2f5a3a;
+  --box: #fff8ea;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "IBM Plex Sans", "PingFang SC", sans-serif;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 47px, rgba(194,59,34,.07) 47px 48px),
+    linear-gradient(#efe4cc, var(--paper));
+  color: var(--ink);
+  line-height: 1.78;
+}
+.sheet {
+  max-width: 940px;
+  margin: 28px auto 56px;
+  background: var(--box);
+  border: 1px solid var(--rule2);
+  box-shadow: 0 0 0 8px var(--paper), 0 18px 0 rgba(28,25,20,.12);
+  padding: 26px 30px 40px;
+}
+.mast {
+  display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px; letter-spacing: .16em;
+  border-top: 6px solid var(--rule);
+  border-bottom: 2px solid var(--rule2);
+  padding: 10px 0 8px;
+  color: var(--muted);
+}
+.kicker {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; letter-spacing: .2em;
+  color: var(--rule); margin-top: 14px;
+}
+h1 {
+  font-family: "Newsreader", "Songti SC", serif;
+  font-size: clamp(28px, 4.8vw, 42px);
+  line-height: 1.18; margin: 10px 0 10px;
+}
+.sub { color: var(--muted); font-size: 16.5px; max-width: 48em; }
+.meta {
+  margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px 18px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--muted);
+}
+.meta b { color: var(--rule); font-weight: 600; }
+nav.toc { display: flex; flex-wrap: wrap; gap: 7px; margin: 20px 0 6px; }
+nav.toc a {
+  font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: #fff; background: var(--rule2); text-decoration: none;
+  padding: 5px 10px;
+}
+nav.toc a:hover { background: var(--rule); }
+section { margin-top: 28px; }
+h2 {
+  font-family: "Newsreader", serif;
+  font-size: 22px;
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 6px; margin-bottom: 12px;
+}
+.card {
+  background: #fffdf6;
+  border: 1px solid rgba(28,25,20,.16);
+  padding: 16px 18px 14px; margin-bottom: 12px;
+}
+.card h3 { font-size: 17.5px; margin-bottom: 8px; }
+.card h3 span {
+  font-family: "IBM Plex Mono", monospace; color: var(--rule);
+  margin-right: 8px; font-size: 13px;
+}
+.card p, .card li { margin: 8px 0; }
+.card li { margin-left: 1.15em; }
+table.tt {
+  width: 100%; border-collapse: collapse; font-size: 14.5px;
+  margin: 8px 0 4px;
+}
+table.tt th, table.tt td {
+  border-bottom: 1px solid rgba(28,25,20,.18);
+  padding: 9px 8px; text-align: left; vertical-align: top;
+}
+table.tt th {
+  font-family: "IBM Plex Mono", monospace; font-size: 11.5px;
+  letter-spacing: .08em; color: var(--muted); font-weight: 600;
+  border-bottom: 2px solid var(--rule2);
+}
+.tag {
+  display: inline-block; font-family: "IBM Plex Mono", monospace;
+  font-size: 11px; letter-spacing: .08em; padding: 2px 7px;
+}
+.tag.late { background: #f3d4cc; color: var(--late); }
+.tag.part { background: #f1e3b8; color: #5a4810; }
+.tag.on { background: #d5ead8; color: var(--on); }
+.verdict {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+}
+@media (max-width: 700px) { .verdict { grid-template-columns: 1fr; } }
+.box {
+  border: 2px solid var(--rule2); padding: 14px 16px; background: #fff;
+}
+.box h3 { margin-bottom: 6px; font-size: 16px; }
+.insight { border: 2px solid var(--rule); }
+.refs a { color: var(--rule); }
+.foot {
+  margin-top: 30px; padding-top: 12px;
+  border-top: 6px solid var(--rule);
+  font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .14em; text-align: center; color: var(--muted);
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="mast">
+    <span>FAHRPLAN · VIERJAHRESPLAN · 1936 → 1940</span>
+    <span>ISSUE 26 · 2026-08-30 17:45 CST</span>
+  </div>
+  <p class="kicker">二战德国史调研 · 系列第 26 期 · 第 4 期的子角度</p>
+  <h1>四年计划完成度</h1>
+  <p class="sub">1936 年备忘录写下两句到站时间：军队四年内能打仗，经济四年内能打仗。本篇不写施佩尔神话，只对时刻表：目标开出了没有、车到了几分、这套安排对一个工业国转入战备到底贡献了什么。评价标准是经济史，不是宣传口号。</p>
+  <div class="meta">
+    <span><b>主题</b> 四年计划的制度、完成度与战备效果</span>
+    <span><b>视觉风格</b> 帝国铁路时刻表风</span>
+    <span><b>对照</b> 第 4 期写施佩尔与军备指数；本期只写 1936–1942 的计划本身</span>
+  </div>
+  <nav class="toc">
+    <a href="#s0">本期主题</a>
+    <a href="#s1">它是什么</a>
+    <a href="#s2">完成度时刻表</a>
+    <a href="#s3">对战备的贡献</a>
+    <a href="#s4">史学怎么评</a>
+    <a href="#s5">客观结论</a>
+    <a href="#s6">启示</a>
+    <a href="#s7">来源</a>
+  </nav>
+
+  <section id="s0">
+    <h2>本期主题</h2>
+    <div class="card">
+      <p>第 4 期处理的是 1942 年以后的“军备奇迹”。读者真正卡住的，往往是更前面那一截：1936 年希特勒口述一份备忘录，10 月 18 日任命戈林为四年计划全权代表，职权横切经济部、国防与农业；沙赫特因不愿让军费继续挤占民用与外汇而失势。计划最后完成了多少？一个“正常国家”若要转入战备，这套办法有没有可测量的贡献？</p>
+      <p>答案必须拆开三层，不能混成一句“成功”或“失败”：第一，备忘录自己写了什么（以及没写什么）；第二，合成燃料、橡胶、铁矿、铝、粮食各自到站了没有；第三，它给 1939 年开战提供了何种物质与制度条件，又给不了何种条件。金·克里斯蒂安·普里梅尔（Kim Christian Priemel）2024 年为这份备忘录写的导读，是目前最清楚的制度史入口。</p>
+    </div>
+  </section>
+
+  <section id="s1">
+    <h2>它是什么，以及它不是什么</h2>
+    <div class="card">
+      <h3><span>01</span>两句到站时间，不是全面自给宣言</h3>
+      <ul>
+        <li>希特勒本人极少亲笔写经济文件。奥弗里（Richard Overy）强调：正因为他几乎不写东西，这份 1936 年 8 月备忘录才特别重要。全文收束为两句：德国军队必须在四年内具备作战能力；德国经济必须在四年内具备战争能力。</li>
+        <li>备忘录并没有承诺在 1936 年的国界内实现完全自给。它写的是：能自己产的就自己产，省下外汇去买无法替代的进口；真正的、持久的资源基础，要靠扩大“生存空间”。普里梅尔写得很干脆：中心信息不是乌托邦式的完全自给，而是民用需求无条件让位于军事需求。</li>
+        <li>具体“车次”只有几班：汽油（要求约 18 个月内不靠进口）、橡胶、铁（矿）、工业用油脂。斯波雷尔 / 施特雷布把它概括成一个“巨型化学计划”——技术班底大量来自法本，戈林办公室里军人比例很高。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><span>02</span>戈林全权是制度叠加，不是苏联式五年计划</h3>
+      <ul>
+        <li>1936 年春夏先有外汇与原料危机。沙赫特、价格委员戈尔德勒主张减军费、松外贸、甚至接受马克贬值。希特勒与戈林把这套方案读成“旧精英不懂政权目标”。4 月戈林已任原料与外汇帝国委员；10 月 18 日升为四年计划全权代表，可用法令立法。</li>
+        <li>沙赫特 1937 年辞经济部长，1939 年被免帝国银行总裁。这是人事更替，也是政策更替：此后投资方向由戈林办公室、原料局与军方经济参谋共同拧。</li>
+        <li>近年企业史（Buchheim、Scherner 等）纠正一个旧印象：政权很少靠没收私企来推进替代材料。强制是例外，补贴、担保和自愿投资是常规。赫尔曼·戈林国家工厂（萨尔茨吉特贫矿）之所以办成国企，恰恰因为鲁尔私企不愿在钢市已过剩时再砸高成本贫矿——政权不愿公开撕掉私有产权，就自己开一家公司去干。</li>
+        <li>佩齐纳（Dieter Petzina）的经典定义仍然好用：这是高度工业化国家里，第一次尝试把私人资本主义与国家指令叠在一起，动机是备战，不是编制一张覆盖所有部门的产出表。计划在纸面上 1940 年到期，办公室却一直活到战争中期，直到托特、施佩尔把军备部做成新的中心。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="s2">
+    <h2>完成度时刻表：哪一班准点，哪一班误点</h2>
+    <div class="card">
+      <p>下面这张表是史学共识的压缩版，不是帝国宣传部的成绩单。数字来源见文末。读法：把“目标”当成开出时刻，把 1939–1942 的产量当成到站时刻。</p>
+      <table class="tt">
+        <thead>
+          <tr><th>车次</th><th>1936 开出（备忘录/计划）</th><th>到站实绩</th><th>判定</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>合成燃料</td>
+            <td>尽快摆脱汽油进口；原料投资里石油相关占比最高</td>
+            <td>合成燃料约从 1933 年 10.8 万吨升至 1939 年 143 万吨；同年全德燃料消费约 436 万吨，合成约占三分之一。投资额在四年计划总开支中，矿物油一项约 41%（佩齐纳：1936–1942 合计 132.5 亿马克）。</td>
+            <td><span class="tag part">部分到达</span></td>
+          </tr>
+          <tr>
+            <td>合成橡胶 Buna</td>
+            <td>替代热带天然橡胶，防海上封锁</td>
+            <td>工厂建设晚了数年。1940 年国内可供量大约只有 1937/38 供给的一半；1942 年 Buna 产量约 10 万吨，才略高于消费。开战头一年这里是真瓶颈。</td>
+            <td><span class="tag late">严重晚点</span></td>
+          </tr>
+          <tr>
+            <td>铁矿 / 钢</td>
+            <td>开发萨尔茨吉特等地贫矿，减少对瑞典矿的依赖</td>
+            <td>国内矿石含铁量只略超过 500 万吨；1941/42 进口甚至达到自产的三倍。佩齐纳称为该领域的失败。后来没有崩盘，是因为占了洛林、卢森堡，不是因为贫矿计划达标。</td>
+            <td><span class="tag late">未达</span></td>
+          </tr>
+          <tr>
+            <td>铝 / 轻金属</td>
+            <td>扩产，服务空军</td>
+            <td>到 1939 年德国已是世界最大生产国之一。国内无铝土，靠匈牙利、巴尔干进口，占领挪威、法国后产能再补。相对准点，但仍是“进口原料 + 本国冶炼”。</td>
+            <td><span class="tag part">结构达标</span></td>
+          </tr>
+          <tr>
+            <td>粮食与油脂</td>
+            <td>农业保护，战时抗封锁</td>
+            <td>备忘录自己承认农业增产空间有限。德国始终要进口食品与饲料。这不是四年计划能在国界内解掉的方程。</td>
+            <td><span class="tag late">未达</span></td>
+          </tr>
+          <tr>
+            <td>外汇与进口结构</td>
+            <td>能替代的就替代，外汇留给非买不可的货</td>
+            <td>班肯（Ralf Banken）的概括：这是填外汇窟窿的进口替代，不是退出世界经济。1939 年前后对瑞典矿、罗马尼亚油、以及 1939–41 年对苏联交货的依赖都还在。普里梅尔：1939 年前的外贸嵌入程度并不比 1936 年前更低。</td>
+            <td><span class="tag late">自给未成</span></td>
+          </tr>
+          <tr>
+            <td>投资结构</td>
+            <td>把工业转向原料与军备底座</td>
+            <td>1936–1942 约一半工业投资流向四年计划相关领域。消费品工业被挤到边上，但 1936–39 年消费品产量仍上升约 30%——说明这不是把整个经济抽空，而是改管道。</td>
+            <td><span class="tag on">结构改造到位</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>普里梅尔的总句可以直接当判词：<b>自给从未实现——1945 年的掠夺经济里没有实现，1939 年就更没有。</b> 汽油与铁矿两项替代，达不到当初寄予的希望。</p>
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>对转入战备：贡献很大，但要说清楚“大”在哪</h2>
+    <div class="card">
+      <h3><span>03</span>和平时期资源转移的规模</h3>
+      <ul>
+        <li>亚当·图兹的汇总至今最常被引用：1933 年军事约占产出 1%，1939 年约 30%。他称之为资本主义国家在和平时期做过的最大一轮资源转移。这不是四年计划单独完成的——1934 年起就在扩军——但 1936 年是加速器：它把替代材料、贫矿、化学和空军原料从“项目”升成跨部委指令。</li>
+        <li>弗里姆德林等人用 1936 年投入产出表估算：当年军费已约占 GDP 的 11%，直接间接约 7% 以上劳动力卷入备战。四年计划是在这条已经倾斜的坡上再加力。</li>
+        <li>佩齐纳提醒不要把计划规模神话化：四年计划年投资大约 20 亿马克，约合当时国民生产总值的 2–3%。以当年世界第二大工业经济体的体量，这个数字本身不会把经济“搞破产”。真正改变的是投资结构：钱从住房、消费品转向煤化工、炸药中间体和轻金属。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><span>04</span>它买到的，是打一场短中期战争的底板，不是打一场工厂对工厂的消耗战</h3>
+      <ul>
+        <li>1939 年 9 月，合成燃料厂已经开工一批，战略油料库存也堆了一些。这降低了“一开战就因汽油进口被掐而停摆”的概率。橡胶则没有同步准备好，1940 年吃了亏。铁矿的答案后来是占领，不是萨尔茨吉特。</li>
+        <li>佩齐纳 accordingly 说：就战争头几年的原料供给而论，可以谈“相对的国防经济成功”。瓦根菲勒（Rolf Wagenführ）有一句被反复引用的观察：直到 1944 年中，德国经济没有普遍的原料困难——但普里梅尔立刻补刀：那既是四年计划的产物，更是占领区掠夺的产物；而且只适用于 1941/42 以前相对较低的军备产量。一旦 1943–44 年要把成品产量翻倍、翻三倍，“工厂之战”的天花板就露出来了。</li>
+        <li>戈林办公室在战争中的延伸职能必须写进同一张时刻表：它后来插手波兰的托管、东方的矿山公司、与国防军共建的东方经济参谋部。也就是说，计划在 1939 年没填上的窟窿，被政权改成了用占领去填。这是历史因果，不是事后道德附加。</li>
+      </ul>
+    </div>
+    <div class="verdict">
+      <div class="box">
+        <h3>它确实提供了的</h3>
+        <p>跨部委的原料与外汇指挥权；化学与轻金属产能的跃升；一部分合成燃料；把工业投资扭向基础材料和炸药链；让 1939 年的军队有油、有铝、有弹药开工的底子。对一个要从萧条走出来、又要在凡尔赛限制后重建军力的工业国，这是可测量的战备贡献。</p>
+      </div>
+      <div class="box">
+        <h3>它没有提供的</h3>
+        <p>资源独立；对瑞典矿与罗马尼亚油的摆脱；足以支撑长期两线消耗的原料弹性；高效、单一的经济司令部（戈林到 1940/42 仍是奥弗里所说的“经济独裁者”，然后权被军备部抢走）。1939 年的德国能开战，不等于 1936 年的目标已经兑现。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="s4">
+    <h2>史学争论：危机逼开战，还是选择要开战</h2>
+    <div class="card">
+      <h3><span>05</span>三条主线，不要站队，要对着档案</h3>
+      <ul>
+        <li><b>梅森（Timothy Mason）</b>：1930 年代末经济过热、劳工紧张，政权“逃进战争”。这条线把四年计划的内在矛盾写成开战原因。</li>
+        <li><b>奥弗里</b>：经济压力解释不了打波兰；那是意识形态选择。备忘录指向的是一场更晚、更大的战争，1939 年在时间表上偏早。戈林不懂经济，短期对希特勒有用，长期是灾难——这是他对人事的判断，不是对化学厂产量的判断。</li>
+        <li><b>图兹</b>：1939 年再等没有好处。美国的产能会抬高对手，德国的外汇与原料约束已经顶格。四年计划是在这个全球力量对比里抢时间，不是一张可以慢慢完成的建设蓝图。他同时指出：把军事占比从 1% 拉到约 30%，本身就是选择，不是“经济自己滑进去”。</li>
+        <li><b>佩齐纳 / 普里梅尔</b>：不要把四年计划写成“已经把国民经济彻底军事化”。消费品还在涨，投资率甚至没有回到 1928 年。它是加速器和转向器，不是总动员完成态。普里梅尔 2024 年的定位：备忘录是更宽的、加快的战争准备过程中的一个公开节点，与 1937 年霍斯巴赫备忘录、1938 年国防军高层改组同一组动作。</li>
+      </ul>
+      <p>对学习者：这四条并不互相取消。你可以同时承认——资源约束是真的，开战决定是政治的，计划改变了工业结构，自给没有完成。</p>
+    </div>
+  </section>
+
+  <section id="s5">
+    <h2>客观结论：作为一个转入战备的方案，怎么打分</h2>
+    <div class="card">
+      <p>如果问题是“它有没有把德国经济推上可以开战的轨道”，答案是肯定的，而且贡献不小。1936–1939 年德国做的事情，与同时期英国扩军、稍后美国《租借》之前的动员，同属一类历史现象：工业国把投资、外汇和劳动力从民用扭向军用。德国的特点是开始得早、和平时期占比高、用合成化学去赌封锁，以及用一个横切各部的特使办公室来绕开原有经济官僚。</p>
+      <p>如果问题是“四年期满时，备忘录上的车是不是都到了”，答案是否定的。合成燃料到了约三分之一消费的位置，不是 18 个月进口归零；橡胶误点；铁矿失败；粮食从来不是四年计划能单独解决的；外贸依赖改了结构，没有消失。用铁路术语：这不是准点终到，是部分车次进站、部分在中途改线、部分靠后来并入的占领区轨道才走得下去。</p>
+      <p>如果问题是“对一般国家的战备经济有没有方法上的贡献”，可以更冷一点说：它演示了三件在 20 世纪战争史里反复出现的事。其一，替代材料能买来战略缓冲，但成本高、周期长，赶不上外交冒险的时刻表。其二，特使政治能加快立项，也会制造多中心扯皮，戈林办公室与经济部、军种采购的重叠就是标本。其三，缺口若用征服来补，计划就从“国内增产”滑成“欧洲榨取”——四年计划办公室后来的占领经济职能，是这条滑轨的档案证据，不是外加的罪名清单。</p>
+      <p>因此不宜写成“高效备战样板”，也不宜写成“纯粹的经济胡闹”。更准确的史学句子是：<b>它是一次有重点、有资金、有化学工业支撑的进口替代与军备底座工程，在 1939 年提供了打一场短中期战争的必要条件，没有提供打赢一场长期消耗战的充分条件；它的未完成部分，被同一套机构在战争中用占领去追赶。</b></p>
+    </div>
+  </section>
+
+  <section id="s6">
+    <h2>对历史学习者的启示</h2>
+    <div class="card insight">
+      <ul>
+        <li><b>先读备忘录的最后两句，再读宣传里的“自给”。</b>文件自己把完全自给推到征服之后。用“有没有实现自给”来打分，等于在用一份它并未许诺的合同验收。</li>
+        <li><b>完成度必须分部门。</b>铝和炸药链是一种故事，橡胶和贫矿是另一种。平均成一个百分数，会把误点和准点互相抵消。</li>
+        <li><b>把四年计划与 1942 年军备部拆开读。</b>前者是原料与制度底座，后者是成品曲线。第 4 期的施佩尔问题，不能倒过来给 1936 年的戈林办公室打分。</li>
+        <li><b>比较要找同类。</b>比较对象是 1930 年代其他工业国的扩军与外汇管制，不是 21 世纪的产业政策广告。问的是：同等技术条件下，进口替代能把封锁风险降多少、降多久。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="s7">
+    <h2>来源</h2>
+    <div class="card refs">
+      <ol>
+        <li><a href="https://www.1000dokumente.de/Dokumente/Denkschrift_%C3%BCber_die_Aufgaben_eines_Vierjahresplans?setlang=de" target="_blank" rel="noopener">希特勒《四年计划任务备忘录》（1936 年 8 月）全文与普里梅尔 2024 导读，1000 Schlüsseldokumente</a></li>
+        <li><a href="https://www.degruyterbrill.com/document/doi/10.1524/9783486703672/html" target="_blank" rel="noopener">Dieter Petzina, Autarkiepolitik im Dritten Reich. Der nationalsozialistische Vierjahresplan</a></li>
+        <li><a href="https://doi.org/10.1524/9783486703672.179" target="_blank" rel="noopener">Petzina 书中第四部：计划的效果与意义（投资结构、Buna、铁矿、相对国防经济成功）</a></li>
+        <li><a href="https://www.seattletimes.com/entertainment/books/the-wages-of-destruction-an-unusual-portrait-of-nazis-real-downfall/" target="_blank" rel="noopener">Tooze《毁灭的代价》要义转述：和平时期军事占比约 1%→30%</a></li>
+        <li><a href="https://doi.org/10.1093/ereh/heu017" target="_blank" rel="noopener">Fremdling / Stäglin：1936 年德国投入产出与军费约占 GDP 11%</a></li>
+        <li><a href="https://doi.org/10.33232/jmhds.4.1.83" target="_blank" rel="noopener">合成燃料产量：1933 年 10.8 万吨 → 1939 年 143 万吨；消费约 436 万吨（Leuna 研究引 USSBS 等）</a></li>
+        <li><a href="https://doi.org/10.1111/j.1468-0289.1982.tb01197.x" target="_blank" rel="noopener">Richard Overy, “Hitler’s War and the German Economy: A Reinterpretation”</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Four_Year_Plan" target="_blank" rel="noopener">Four Year Plan 制度轮廓与备忘录研究史（Overy / Tooze / Kershaw）</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Economy_of_Nazi_Germany" target="_blank" rel="noopener">Economy of Nazi Germany：梅森—奥弗里争论与瑞典矿、罗马尼亚油</a></li>
+        <li><a href="二战调研_四年计划施佩尔_20260830_1732.html">本系列第 4 期：四年计划与施佩尔军备（读完本期可对照）</a></li>
+      </ol>
+    </div>
+  </section>
+  <p class="foot">WWII GERMAN HISTORY RESEARCH · ISSUE 26 · TIMETABLE OF TARGETS · NOT FOR GLORIFICATION</p>
+</div>
+</body>
+</html>
