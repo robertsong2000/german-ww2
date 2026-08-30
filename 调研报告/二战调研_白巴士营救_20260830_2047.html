@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>白巴士不是童话 —— 腾出的铺位，是把别人送进分营</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,500;0,700;1,500&family=Commissioner:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* White enamel coach, roof cross, Swedish blue trim. Humanitarian marking, no regime insignia. */
+:root{
+  --enamel:#f6f4ef;
+  --cross:#c41e3a;
+  --navy:#1a3a5c;
+  --ink:#1c1a18;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Commissioner","PingFang SC",sans-serif;
+  color:var(--ink);line-height:1.76;
+  background:#2a455c;
+}
+.bus{
+  max-width:880px;margin:28px auto 56px;
+  background:var(--enamel);
+  border:10px solid #ece8e0;
+  box-shadow:0 0 0 3px var(--cross), 14px 22px 0 rgba(26,58,92,.35);
+}
+.roof{
+  background:var(--navy);color:#f0ebe3;
+  font-family:"IBM Plex Mono",monospace;font-size:12px;
+  padding:8px 22px;letter-spacing:.1em;
+  display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
+}
+.crossmark{color:var(--cross);font-weight:600}
+.inner{padding:22px 28px 40px}
+.kicker{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--cross)}
+h1{font-family:"Zilla Slab",serif;font-size:clamp(26px,4.5vw,38px);line-height:1.16;margin:8px 0;color:var(--navy)}
+.sub{font-size:17.5px;max-width:42em}
+.meta{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 16px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:#4a4e52}
+.meta b{color:var(--navy)}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
+nav.toc a{font-family:"IBM Plex Mono",monospace;font-size:12px;text-decoration:none;color:var(--enamel);background:var(--navy);padding:5px 10px}
+section{margin-top:22px}
+h2{font-family:"Zilla Slab",serif;font-size:22px;color:var(--navy);border-bottom:4px solid var(--cross);padding-bottom:4px;margin-bottom:12px}
+.card{background:#fffdf8;border:1px solid #d8d2c6;padding:14px 16px;margin-bottom:12px}
+.card h3{font-size:16.5px;margin-bottom:6px;color:var(--navy)}
+.card p+p,.card ul{margin-top:10px}
+.card li{margin:7px 0 7px 1.15em}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.cell{border:1px solid var(--navy);padding:10px;text-align:center;font-size:13.5px;background:#efeae0}
+.cell strong{display:block;font-family:"Zilla Slab",serif;font-size:19px;color:var(--cross)}
+.insight{background:#efe8dc}
+.refs a{color:var(--cross)}
+.foot{margin-top:24px;padding-top:12px;border-top:8px solid var(--navy);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;text-align:center;color:#4a4e52}
+@media(max-width:640px){.grid{grid-template-columns:1fr}.inner{padding:16px}}
+</style>
+</head>
+<body>
+<div class="bus">
+  <div class="roof"><span>VITA BUSSARNA · <span class="crossmark">＋</span> 白漆车顶</span><span>NEUENGAMME · RAVENSBRÜCK · 1945</span></div>
+  <div class="inner">
+    <p class="kicker">二战德国史调研 · 系列第 64 期 · 第 18 / 24 / 63 期子角度 · 学术、审慎</p>
+    <h1>白巴士不是童话</h1>
+    <p class="sub">瑞典红十字会今天说约 1.5 万人被救出；贝尔纳多特当时估约 1.97 万。汉堡纪念馆户外展：到 4 月 20 日，逾 4000 名北欧囚工与 1.1 万名其他背景者已撤离。同一天，诺因加默把 20 名被做实验的犹太儿童送到汉堡布伦胡瑟堤杀害。</p>
+    <div class="meta"><span><b>时间</b> 2026-08-30 20:47 CST</span><span><b>视觉风格</b> 白漆车顶十字风</span></div>
+    <nav class="toc">
+      <a href="#s0">本期主题</a>
+      <a href="#s1">谈判与腾铺</a>
+      <a href="#s2">数字</a>
+      <a href="#s3">记忆变复杂</a>
+      <a href="#s4">启示</a>
+      <a href="#s5">来源</a>
+    </nav>
+
+    <section id="s0">
+      <h2>本期主题</h2>
+      <div class="card">
+        <p>第 63 期写过死亡行军：跟不上的人被沿路枪杀。本期专盯同一崩溃月份里的另一条路：<strong>白巴士</strong>（瑞典语 Vita bussarna）。瑞典大屠杀博物馆（2025-10-20 发布，2026-07-14 更新）：1944 年 11 月挪威流亡政府外交官 N.C. Ditleff 向瑞典外交部提议，由瑞典红十字会在战争尚未结束时把北欧囚工接出。福尔克·贝尔纳多特（Folke Bernadotte）与希姆莱谈成：先把北欧人集中到汉堡近郊的<strong>诺因加默</strong>。</p>
+        <p>2025 年 1 月与 5 月 3–4 日，诺因加默纪念馆在砖厂附近办户外展原型《白巴士——二战最大规模救援行动之一》（德/英/丹麦文）。2025 年 5 月 13 日北欧使馆联合拉文斯布吕克纪念馆馆长 Andrea Genest 与瑞典大屠杀博物馆研究协调人，把「英雄国族叙事」改成更复杂的讨论。救援是真的；优先顺序也是真的。</p>
+      </div>
+    </section>
+
+    <section id="s1">
+      <h2>核心发现：先救北欧人，铺位是腾出来的</h2>
+      <div class="card">
+        <h3>01 · 诺因加默变成北欧集结营</h3>
+        <p>诺因加默纪念馆年表：1945-03-15 开始把德国各地的北欧囚工运来；03-27 建立「斯堪的纳维亚营」。为腾地方，3 月末至 4 月初把 <strong>4000 多名极度虚弱</strong>的囚工送往汉诺威与萨尔茨吉特分营。瑞典博物馆写得更具体：德军要求瑞典人用自己的车把约 2000 名非法、俄、波兰囚工转到其他营；3 月 27–29 日成行，每车两名党卫队押送，途中有人死亡，一辆车上两名囚工被看守打死。司机 Helge Andersson 回忆：瑞典司机起初拒绝「营间转运」，德方坚持不腾铺就不能继续接北欧人。上级下令配合。</p>
+      </div>
+      <div class="card">
+        <h3>02 · 4 月 20 日：有人上车，有人被杀死在学校</h3>
+        <p>年表同一天两条：白巴士救出 4000 名北欧囚工；20 名在诺因加默被做医学实验的犹太儿童被送到汉堡罗滕堡索特的布伦胡瑟堤（Bullenhuser Damm）旧学校杀害。汉堡基金会展文：到 4 月 20 日，逾 4000 名北欧人与 1.1 万名其他背景者已撤离。帕德博格（Padborg）检疫站条目：4 月 20 日逾 4000 名丹麦与挪威人先到丹麦边境，随后瑞典红十字会又救出至少 1 万人，其中拉文斯布吕克妇女逾 7000、诺因加默分营妇女约 2000。该页「囚犯人数」栏写作 15000。</p>
+        <p>瑞典博物馆：4 月 19 日希姆莱同意所有在押北欧人可运往瑞典。4 月 21 日夜至晨，世界犹太大会派驻瑞典的诺贝特·马苏尔（Norbert Masur）与贝尔纳多特分别见希姆莱——先承诺释放 1000 名犹太妇女，数小时后贝尔纳多特获准「不论出身、尽量带走」。拉文斯布吕克来不及全用公路，改火车：第一列到吕贝克 3960 人，随后一列 2873 人。</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <h2>救了多少人：两套整数</h2>
+      <div class="grid">
+        <div class="cell"><strong>贝尔纳多特</strong>当时估约 19,700</div>
+        <div class="cell"><strong>瑞典红十字会</strong>今日约 15,000</div>
+        <div class="cell"><strong>帕德博格条目</strong>栏位 15,000</div>
+      </div>
+      <div class="card">
+        <p>瑞典博物馆明写：精确人数有争论，其中有多少犹太人同样有争论。汉堡展把 4 月 20 日前的「其他背景 1.1 万」与北欧 4000 并置，口径大于「只救北欧」。北欧使馆 2025 年活动承认：对外，白巴士曾是瑞典「好社会」的国族符号；研究加深后，叙事变复杂。批评从 1945 年就有：红十字本应不论国籍宗教先救最脆弱者，这次优先的是往往比犹太人、东欧人处境略好的丹麦人与挪威人。另一边的反驳：若不先答应希姆莱的北欧条件、后来又答应营间转运，可能一个人也救不出。</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <h2>记忆：原型展还在征求反馈</h2>
+      <div class="card">
+        <p>汉堡基金会把户外展做成可迭代原型（Hope &amp; Despair 项目），2025 年 1 月点名广场测试，5 月解放 80 周年再展。弗勒斯勒夫营博物馆（Frøslevlejrens Museum）常设展有一辆原车。诺因加默纪念馆预告 2026 年 5 月仍办解放周年活动。白漆是给盟军飞行员看的——瑞典博物馆写：通报未必送到每个机组，车上人常要跳进沟里躲轰炸。</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <h2>对历史学习者的启示</h2>
+      <div class="card insight">
+        <p>救援可以与腾铺、儿童被杀发生在同一座营、同一天。读白巴士，不要把它写成中立国的道德奖章，也不要因为它「有代价」就把它从史实里删掉。希姆莱肯放人，是因为战争已经输了；马苏尔那 1000 个名额与贝尔纳多特后来的「尽量带走」，中间隔的是几个小时的权力计算。第 63 期的公路是枪杀，本期的公路是检疫——两条路都在 1945 年 4 月，走哪一条不由囚工自己选。</p>
+      </div>
+    </section>
+
+    <section id="s5">
+      <h2>来源</h2>
+      <div class="card refs">
+        <ul>
+          <li>瑞典大屠杀博物馆「More About the White Buses」（2025-10-20 / 2026-07-14）：<a href="https://museumforintelsen.se/en/the-white-buses/more-about-the-white-buses/">museumforintelsen.se/en/the-white-buses/more-about-the-white-buses/</a></li>
+          <li>汉堡纪念地基金会户外展原型（2025-04-29 报道；1 月与 5 月 3–4 日）：<a href="https://www.gedenkstaetten-hamburg.de/en/news/news/prototypen-fuer-ausstellungen-die-weissen-busse-eine-der-groessten-rettungsaktionen-im-zweiten-weltkrieg">gedenkstaetten-hamburg.de/.../prototypen-fuer-ausstellungen-die-weissen-busse-...</a></li>
+          <li>诺因加默纪念馆年表（斯堪的纳维亚营、4 月 20 日白巴士与布伦胡瑟堤）：<a href="https://www.kz-gedenkstaette-neuengamme.de/en/history/timeline/">kz-gedenkstaette-neuengamme.de/en/history/timeline/</a></li>
+          <li>同馆帕德博格检疫站（逾 4000；随后至少 1 万；栏位 15000）：<a href="https://www.kz-gedenkstaette-neuengamme.de/en/history/satellite-camps/satellite-camps/padborg/">kz-gedenkstaette-neuengamme.de/.../padborg/</a></li>
+          <li>北欧使馆 / Orte der Erinnerung，2025-05-13 拉文斯布吕克白巴士 80 周年讨论：<a href="https://www.orte-der-erinnerung.de/veranstaltung/the-white-buses-die-weissen-busse-de-vita-bussarna-welcome-to-an-event-on-80-years-remembrance-of-the-nordic-rescue-operation-with-the-white-buses-from-ravensbrueck/">orte-der-erinnerung.de/veranstaltung/the-white-buses-...</a></li>
+        </ul>
+      </div>
+    </section>
+    <p class="foot">系列第 64 期 · 不美化 · 不发明链接 · 白漆盖不住腾铺</p>
+  </div>
+</div>
+</body>
+</html>
