@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>教育、学校与少年被编入国家 —— 课桌是课堂，点名册是国家</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@6..72,500;6..72,700;6..72,500italic&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=Inconsolata:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Exercise-book ruled paper: cream sheet, red horizontal lines, blue margin. No regime insignia as ornament. */
+:root{
+  --rule:#d45a48;
+  --margin:#3b5f8a;
+  --paper:#f6f0e4;
+  --ink:#1c1916;
+  --pencil:#5a5348;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Public Sans","PingFang SC",sans-serif;
+  color:var(--ink);line-height:1.78;
+  background:#3a3530;
+}
+.book{
+  max-width:920px;margin:28px auto 52px;
+  background:
+    linear-gradient(90deg, transparent 72px, var(--margin) 72px 74px, transparent 74px),
+    repeating-linear-gradient(180deg, var(--paper) 0 31px, var(--rule) 31px 32px);
+  background-color:var(--paper);
+  box-shadow:8px 0 0 #c9bfa8, 16px 18px 40px rgba(0,0,0,.35);
+  border-left:18px solid #8b2e28;
+}
+.inner{padding:22px 28px 40px 86px}
+.mast{font-family:"Inconsolata",monospace;font-size:12.5px;color:var(--pencil);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.kicker{font-family:"Inconsolata",monospace;color:var(--rule);margin-top:10px;font-size:13.5px}
+h1{font-family:"Newsreader",serif;font-size:clamp(26px,4.5vw,39px);line-height:1.22;margin:6px 0 10px}
+.sub{font-size:17.5px;max-width:40em}
+.meta{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 16px;font-family:"Inconsolata",monospace;font-size:13px;color:var(--pencil)}
+.meta b{color:var(--margin)}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
+nav.toc a{
+  font-family:"Inconsolata",monospace;font-size:12.5px;text-decoration:none;
+  color:var(--paper);background:var(--margin);padding:5px 11px;
+}
+section{margin-top:24px}
+h2{font-family:"Newsreader",serif;font-size:22px;color:var(--margin);border-bottom:2px solid var(--rule);padding-bottom:4px;margin-bottom:12px}
+.card{
+  background:rgba(255,252,246,.82);
+  border:1px solid #e0d8c4;
+  padding:14px 16px;margin-bottom:12px;
+}
+.card h3{font-size:16.5px;margin-bottom:6px}
+.card h3 span{font-family:"Inconsolata",monospace;color:var(--rule);margin-right:8px}
+.card li{margin:7px 0 7px 1.15em}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.cell{border:1px dashed var(--margin);padding:10px;text-align:center;font-size:13.5px;background:rgba(255,255,255,.5)}
+.cell strong{display:block;font-family:"Newsreader",serif;font-size:20px;color:var(--rule)}
+.insight{border-left:5px solid var(--rule)}
+.refs a{color:var(--margin)}
+.foot{margin-top:26px;padding-top:12px;border-top:3px solid var(--rule);font-family:"Inconsolata",monospace;font-size:11.5px;letter-spacing:.08em;text-align:center;color:var(--pencil)}
+@media(max-width:700px){
+  .inner{padding:16px 16px 32px 28px}
+  .book{background:
+    linear-gradient(90deg, transparent 18px, var(--margin) 18px 20px, transparent 20px),
+    repeating-linear-gradient(180deg, var(--paper) 0 31px, var(--rule) 31px 32px);}
+  .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="book">
+  <div class="inner">
+    <div class="mast"><span>HEFT · SCHULE / HJ / NPEA</span><span>ISSUE 49 · 2026-08-30 19:32 CST</span></div>
+    <p class="kicker">二战德国史调研 · 系列第 49 期 · 第二轮 · 民生与社会</p>
+    <h1>教育、学校与少年被编入国家</h1>
+    <p class="sub">家庭、教堂、课桌之外，多了一本点名册。1936 年法律宣称“全部德意志青年”属于希特勒青年团；1939 年才把服役写成义务。学校同时在教书、选种、把犹太孩子赶出教室。</p>
+    <div class="meta"><span><b>时间</b> 2026-08-30 19:32 CST</span><span><b>视觉风格</b> 练习簿红格线风</span></div>
+    <nav class="toc">
+      <a href="#s0">本期主题</a>
+      <a href="#s1">点名册</a>
+      <a href="#s2">课桌</a>
+      <a href="#s3">选种与例外</a>
+      <a href="#s4">启示</a>
+      <a href="#s5">来源</a>
+    </nav>
+
+    <section id="s0">
+      <h2>本期主题</h2>
+      <div class="card">
+        <p>第 9 期写过女青年团与义务年，第 42 期写过人民冲锋队把少年写进防线。本期专盯编入本身：普通学校怎样被一体化，希特勒青年团（HJ）怎样从竞争者变成国家青年组织，民族政治教育学院（Napola / NPEA）怎样把“精英”做成寄宿实验室。科隆纳粹文献中心数字展《齐步走的青年！？》的问号要留下来：宣传照片里的方阵，不是全部童年。</p>
+        <p style="margin-top:10px">2025–2026 年的入口是校址与展厅。勃兰登堡政治教育中心 2025 年出版图录《Napola Potsdam. Erziehung im Nationalsozialismus》（124 页），展览 2025 年 5 月 7 日在中心开幕，2026 年 2 月 9–28 日移到波茨坦火车站商场——Heinrich-Mann-Allee 107 今天是州政府所在地。英国史家 Helen Roche（牛津大学出版社 2022 年《第三帝国的精英学校》）为展览提供访谈。艾费尔 Vogelsang IP 论坛 2026 年 4 月 21 日至 6 月 30 日特展《你也属于元首！？》把学校日常、HJ 与排除写成地方史问题。本期不把少年写成无辜道具，也不把团员写成天生凶手：编入是制度，参与有光谱，排除是门禁。</p>
+      </div>
+    </section>
+
+    <section id="s1">
+      <h2>核心发现一：登记率往上爬，自愿从未真正存在，百分之百也从未到达</h2>
+      <div class="card">
+        <h3><span>01</span>1936 年法律宣称全部，1939 年才写成服役义务</h3>
+        <ul>
+          <li>美国大屠杀纪念馆（USHMM，2024 年 11 月 5 日修订）：1933 年 1 月 HJ 约 10 万人；同年年底逾 200 万，约占 10–18 岁的 30%。1937 年 540 万（65%）；1940 年 720 万（82%）。犹太人不得加入，犹太青年另组自己的团体。</li>
+          <li>1936 年 12 月 1 日《希特勒青年团法》：帝国境内全部德意志青年应由 HJ 组织；在家庭与学校教育之外，须在团内接受体、智、德教育，贯彻为民族与共同体服务；帝国青年领袖对希特勒直接负责。USHMM 写明：这项法律并未被普遍遵守。</li>
+          <li>1939 年 3 月 25 日《青年服役义务》：10–18 岁须在 HJ / 德意志女青年团服役，违者可处 150 马克罚金或监禁。从此它成为唯一合法的青年运动。Jakob Benecke 的分期（转引于 2022 年教育史综述）：1933 年底约 30%（230 万）；1937 年底约 65%（560 万）；1939 年 3 月执行条例后约 85%（870 万）；个别年龄组可超过 90%。同文的结论值得标出：对目标群体而言，1933–1945 年从未有过真正的自愿；强制入团直到政权末日也未能做成无漏洞的全覆盖。极权登记意志与种族筛选互相打架，留下灰区——例如 HJ 内部按“遗传生物学”分出盲、聋、肢残的 Sonderbanne。</li>
+        </ul>
+      </div>
+      <div class="grid">
+        <div class="cell"><strong>~10 万</strong>1933 年 1 月 HJ</div>
+        <div class="cell"><strong>97%</strong>教师 1936 年已入 NSLB</div>
+        <div class="cell"><strong>1939.3</strong>青年服役义务法令</div>
+      </div>
+      <div class="card">
+        <h3><span>02</span>课余把父母、牧师、老师挤到边上</h3>
+        <ul>
+          <li>组织按年龄与性别切开：10–14 岁男童 Jungvolk、女童 Jungmädel；14–18 岁男 HJ、女 BDM；另有 17–21 岁自愿的“信仰与美”。1931 年起由 Baldur von Schirach 总管，1940 年改由 Artur Axmann。会议、露营、农忙、拳击与团体操占满周末。USHMM：这会打断礼拜与上课，并鼓励向团干部汇报学校、教会、家里发生的事。</li>
+          <li>1933 年政治性青年组织被吞并或取缔；非政治与教会团体拖到 1930 年代中后期。科隆文献中心强调：HJ 与父母、学校、教会争夺教育主导权，不是一张宣传海报能概括的。大城市里出现拒绝齐步走的非法青年圈：莱比锡 Meuten、与 HJ 动手的Edelweißpiraten、汉堡摇摆青年。拒绝的理由从政治、宗教到青春期任性都有。盖世太保可以逮捕，集中营是真实风险。</li>
+          <li>希特勒 1938 年那段被反复引用的话（USHMM《Indoctrinating Youth》）：十岁进组织，四年少年团，再四年 HJ，再劳役，剩下的阶级意识交给国防军。这是制度设计图，不是每个孩子的传记。Lisa Pine 等研究者提醒：学校与青年团被设想成“总体教育”的两只手，纳粹教育学家里有人主张学校应让位于团。现实是争夺、重叠、战时人手不够。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s2">
+      <h2>核心发现二：教室先清人，再换课本</h2>
+      <div class="card">
+        <h3><span>03</span>教师联盟几乎收编了整个职业</h3>
+        <ul>
+          <li>USHMM：1933 年后，被定为犹太人或“政治不可靠”的教师被清洗。多数人留任并加入国家社会主义教师联盟（NSLB）。到 1936 年，约 97% 的公立学校教师、约 30 万人入盟；教师入党比例高于其他职业。Charles Lansing 等研究把 NSLB 写成职业一体化，而不是每个教员都变成理论家。</li>
+          <li>帝国科学、教育与国民教育部部长 Bernhard Rust 管课表与人事。新教科书教对希特勒的爱、服从、军国、种族主义与反犹。教室挂元首像，生日（4 月 20 日）是入团日。儿童读物如 Streicher 出版社的《毒蘑菇》把种族诽谤写成识字课。玩具与桌游同样是军国教材。</li>
+          <li>奥地利记忆机构 hdgoe 写合并后的教师：除了改课，还被期待间接监视学生与家长——少年是否去 HJ 必修集会，父母对政权态度如何。这把课桌变成街区的延长。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span>04</span>犹太孩子：配额、驱逐、禁学</h3>
+        <ul>
+          <li>柏林犹太博物馆（Dominic Strieder）：1933 年 4 月 25 日《防止德意志学校与高校过密法》把“非雅利安”学生比例上限定为 5%，新生 1.5%；小学起初豁免，一战线士兵子女可例外。犹太教师同时被《重建职业公务员法》赶出学校。社区与私人办的犹太学校暴满，既要当反犹暴力的庇护所，也要教犹太史与外语、为移民做准备。</li>
+          <li>1938 年 11 月 15 日 Rust 训令（教育部公报第 4 卷，第 520 页）：“巴黎的凶残谋杀之后”，不能再要求德意志教师教犹太学童；德意志孩子与犹太人同坐一室“不可忍受”。剩余犹太学生须立即开除，只准上犹太学校。“谁是犹太人”按 1935 年 11 月 14 日《帝国公民法第一执行令》第 5 条。曼海姆 13 岁的 Rudolf Appel 因此离开文科中学；11 月 23 日他给关在达豪的父亲写信：“我现在去学校了，我的其他朋友都在那儿。”明信片看起来无害，收件人栏写的是“保护拘留犹太人”。</li>
+          <li>1942 年 6 月，犹太儿童被禁止上任何学校，犹太学校关闭，有偿或无偿授课一律禁止。儿童事实上被免除就学义务——不是解放，是把他们从国家教育编制里注销，为驱逐清场。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s3">
+      <h2>核心发现三：精英寄宿与“辅助学校”是同一套生物算术的两端</h2>
+      <div class="card">
+        <h3><span>05</span>Napola 不是“普通寄宿中学”</h3>
+        <ul>
+          <li>Helen Roche：国家政治教育学院 1933 年开办，把普鲁士幼年军校与英式公学的寄宿纪律灌进种族意识形态，号称“总体教育”，选拔“种族合格”的未来干部。各校并非复印件：有的在占领东欧执行日耳曼化，有的由天主教旧址改成，女校另有一套。战后校友长期把 Napola 说成“正常学校”，Roche 指出这套记忆文化曾扭曲早期研究。</li>
+          <li>Roche 2023 年《Historical Journal》把 Hilfsschulen（辅助学校）与 NPEA 对读：两端都是实验室。一端按优生与社会达尔文标准筛选“无价值”，一端超选“精华”。教师 NSLB 化之后，留下来的人获得前所未有的权威——前提是他们愿意按“生物社会算术”给生命定价。波茨坦展把这套逻辑放回今天的州政府大楼：地点连续，解释必须断裂。</li>
+          <li>党系统还有阿道夫·希特勒学校（AHS）：1937 年 2 月 1 日第一所开学，直属党—HJ，计划每区一所，战争结束时约 10 所、容量约 3600、年招约 600。入校需要 HJ 身份，与“雅利安血统”同等重要。它不是大众教育的升级版，是党内干部苗圃，经费还常常不如国家系统充裕。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span>06</span>战争把练习簿收走</h3>
+        <ul>
+          <li>USHMM：1939 年时，1930 年代初入团的人已成年，去当兵、警察、秘书、护士。仍未成年的人组织前线包裹、到并吞区教德语。防空时少年操作高射炮；1943 年武装党卫队组建 1926 年出生者的 HJ 师，在法国犯下阿登修道院屠杀加拿大战俘、Ascq 报复屠杀等罪行。末期 16–60 岁编入人民冲锋队。第 42 期已写过本土战；本期只需记住：编入国家的终点可以是炮位，不是毕业礼。</li>
+          <li>对学习者：不要用“洗脑成功/失败”的二元表。Benecke 的登记曲线说明强制在加强；科隆展的问号说明齐步走从未填满所有街道。Edelweißpiraten 与 Napola 校友可以同时存在。责任仍在制度设计者、教师与团干部，也在那些告发同学的人——光谱不是开脱。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s4">
+      <h2>对历史学习者的启示</h2>
+      <div class="card insight">
+        <ul>
+          <li>先看谁被赶出教室，再听“为祖国培养下一代”。配额法、1938 年 11 月训令、1942 年禁学，是同一条线的三道闸。犹太学校曾是“安全岛”，随后被关掉。</li>
+          <li>法律文本与登记率不是一回事。1936 年已经宣示总体，1939 年才有罚则，1945 年仍有空档。读“强制青年组织”时，把宣称、法令、执行、拒绝四列并排，才不会被新闻片带着走。</li>
+          <li>2025–2026 年把 Napola 搬进火车站商场，是故意的：日常路过的地方曾经是寄宿选拔场。看展时问两个问题即可——这所学校把谁选进来，把谁定义成不值得教育。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s5">
+      <h2>来源</h2>
+      <div class="card refs">
+        <ul>
+          <li>United States Holocaust Memorial Museum, 「Hitler Youth」, last edited 2024-11-05. <a href="https://encyclopedia.ushmm.org/content/en/article/hitler-youth-2">https://encyclopedia.ushmm.org/content/en/article/hitler-youth-2</a></li>
+          <li>USHMM, 「Indoctrinating Youth」. <a href="https://encyclopedia.ushmm.org/content/en/article/indoctrinating-youth">https://encyclopedia.ushmm.org/content/en/article/indoctrinating-youth</a></li>
+          <li>USHMM 中文，「希特勒青年团」. <a href="https://encyclopedia.ushmm.org/content/zh/article/hitler-youth-2">https://encyclopedia.ushmm.org/content/zh/article/hitler-youth-2</a></li>
+          <li>Dominic Strieder, 「The exclusion of Jewish children from public schools」, Jüdisches Museum Berlin. <a href="https://www.jmberlin.de/en/exclusion-of-jewish-children-from-public-schools-1938">https://www.jmberlin.de/en/exclusion-of-jewish-children-from-public-schools-1938</a></li>
+          <li>Rust 训令全文转载，digital past，1938-11-15. <a href="https://digitalpast.de/2013/11/15/weisung-des-reichserziehungsministers-rust-vom-15-november-1938/">https://digitalpast.de/2013/11/15/weisung-des-reichserziehungsministers-rust-vom-15-november-1938/</a></li>
+          <li>Helen Roche, <i>The Third Reich’s Elite Schools: A History of the Napolas</i>, Oxford University Press, 2022；同作者, 「The Biopolitics of Education…」, <i>The Historical Journal</i> (2023). <a href="https://doi.org/10.1017/s0018246x22000358">https://doi.org/10.1017/s0018246x22000358</a></li>
+          <li>Brandenburgische Landeszentrale, 「Napola Potsdam」展览（2025 图录；2026-02-09–28 火车站商场）. <a href="https://www.politische-bildung-brandenburg.de/pressemitteilung/napola-potsdam-erziehung-im-nationalsozialismus-0">https://www.politische-bildung-brandenburg.de/pressemitteilung/napola-potsdam-erziehung-im-nationalsozialismus-0</a></li>
+          <li>NS-Dokumentationszentrum Köln, 数字展「Jugend im Gleichschritt!?」. <a href="https://ausstellungen.museenkoeln.de/nsd_1609_hitlerjugend/index.html">https://ausstellungen.museenkoeln.de/nsd_1609_hitlerjugend/index.html</a></li>
+          <li>Forum Vogelsang IP, 「Auch Du gehörst dem Führer!?」, 2026-04-21–06-30. <a href="https://www.schleiden-eifel.com/en/e-sonderausstellung-auch-du-gehoerst-dem-fuehrer">https://www.schleiden-eifel.com/en/e-sonderausstellung-auch-du-gehoerst-dem-fuehrer</a></li>
+          <li>Jakob Benecke 登记率分期，转引于 「Education under National Socialism」, <i>Revista de História</i> 28 (2022). <a href="https://doi.org/10.34019/2594-8296.2022.v28.38589">https://doi.org/10.34019/2594-8296.2022.v28.38589</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <p class="foot">GERMAN WW2 RESEARCH · ISSUE 49 · NOT A SCHOOL NOSTALGIA PAGE</p>
+  </div>
+</div>
+</body>
+</html>
