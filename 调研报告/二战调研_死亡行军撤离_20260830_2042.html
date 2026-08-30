@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>死亡行军不是撤退 —— 跟不上的人被写成沿路完成</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,500;0,7..72,700;1,7..72,500&family=Karla:ital,wght@0,400;0,600;1,400&family=Inconsolata:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Snow clog tracks: winter road, wooden sandal prints, no insignia. */
+:root{
+  --snow:#eef2f4;
+  --ice:#c5d0d6;
+  --clog:#5c4030;
+  --shot:#6b2a22;
+  --ink:#1c2226;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Karla","PingFang SC",sans-serif;
+  color:var(--ink);line-height:1.76;
+  background:
+    linear-gradient(180deg,#8a9aa4 0%,#6b7a84 40%,#4a5560 100%);
+}
+.road{
+  max-width:880px;margin:28px auto 56px;
+  background:var(--snow);
+  box-shadow:0 0 0 1px #9aadb8, 0 24px 0 rgba(28,34,38,.25);
+  background-image:
+    repeating-linear-gradient(90deg,transparent 0 48px,rgba(92,64,48,.08) 48px 52px,transparent 52px 96px);
+}
+.bar{
+  background:#3d4a52;color:#d5e0e6;
+  font-family:"Inconsolata",monospace;font-size:12px;
+  padding:8px 22px;letter-spacing:.08em;
+  display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
+}
+.inner{padding:22px 28px 40px}
+.kicker{font-family:"Inconsolata",monospace;font-size:12px;color:var(--shot)}
+h1{font-family:"Literata",serif;font-size:clamp(26px,4.5vw,38px);line-height:1.16;margin:8px 0}
+.sub{font-size:17.5px;max-width:42em}
+.meta{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 16px;font-family:"Inconsolata",monospace;font-size:12.5px;color:#4a5860}
+.meta b{color:var(--clog)}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
+nav.toc a{font-family:"Inconsolata",monospace;font-size:12px;text-decoration:none;color:var(--snow);background:#3d4a52;padding:5px 10px}
+section{margin-top:22px}
+h2{font-family:"Literata",serif;font-size:22px;color:#2c3438;border-bottom:3px solid var(--ice);padding-bottom:4px;margin-bottom:12px}
+.card{background:#f7fafb;border:1px solid var(--ice);padding:14px 16px;margin-bottom:12px}
+.card h3{font-size:16.5px;margin-bottom:6px;color:var(--clog)}
+.card p+p,.card ul{margin-top:10px}
+.card li{margin:7px 0 7px 1.15em}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.cell{border:1px dashed var(--clog);padding:10px;text-align:center;font-size:13.5px;background:#e8eef1}
+.cell strong{display:block;font-family:"Literata",serif;font-size:19px;color:var(--shot)}
+.insight{background:#e4ecef}
+.refs a{color:var(--shot)}
+.foot{margin-top:24px;padding-top:12px;border-top:6px solid #3d4a52;font-family:"Inconsolata",monospace;font-size:11px;letter-spacing:.06em;text-align:center;color:#4a5860}
+@media(max-width:640px){.grid{grid-template-columns:1fr}.inner{padding:16px}}
+</style>
+</head>
+<body>
+<div class="road">
+  <div class="bar"><span>TODESMARSCH · 雪地 · 木屐印</span><span>EVAKUIERUNG 1944–45</span></div>
+  <div class="inner">
+    <p class="kicker">二战德国史调研 · 系列第 63 期 · 第 18 / 19 / 24 期子角度 · 学术、审慎</p>
+    <h1>死亡行军不是撤退</h1>
+    <p class="sub">USHMM：词是囚工自己起的。最大规模从奥斯威辛与施图特霍夫出发。Daniel Blatman（经新奥尔良国家二战博物馆 2025-01-28 综述）：约 75 万人被推上路，其中 25 万死于途中，超过 35%。跟不上的人被开枪打死，不是掉队统计。</p>
+    <div class="meta"><span><b>时间</b> 2026-08-30 20:42 CST</span><span><b>视觉风格</b> 雪地木屐足迹风</span></div>
+    <nav class="toc">
+      <a href="#s0">本期主题</a>
+      <a href="#s1">为何上路</a>
+      <a href="#s2">数字之争</a>
+      <a href="#s3">路上的纪念</a>
+      <a href="#s4">启示</a>
+      <a href="#s5">来源</a>
+    </nav>
+
+    <section id="s0">
+      <h2>本期主题</h2>
+      <div class="card">
+        <p>第 24 期写过 1945 年崩溃与「零时」神话，第 19 期写过强制劳动。本期专盯集中营囚工被赶上公路与敞车的最后阶段：<strong>Todesmärsche</strong>。USHMM 中文精简：1944 年夏苏军解放马伊达内克，媒体播出遗址；希姆莱随后下令把各营囚犯撤向西部——既不让目击者落入盟军之手，也要人继续军备生产。夏秋多靠火车；入冬后徒步比例上升。几乎到投降当天仍在转移。</p>
+        <p>2026 年 5 月 2 日，达豪解放纪念框架节目在 Theodor-Heuss-Straße / Sudetenlandstraße 的死亡行军纪念碑办 18:00–18:45 追悼。同日是沃尔姆河谷第 29 次纪念游行（Gedenkzug），走 1945 年 4 月从兰茨贝格/考费林外营经达豪、止于巴特特尔茨附近、5 月 2 日被美军截停的那条路。USHMM 将于 2027 年 1 月至 2029 年春办《Auschwitz. Not long ago. Not far away.》（2026-04-23 新闻稿；免费入场券预订自 2026-10-05）。行军是奥斯威辛故事的「之后」。</p>
+      </div>
+    </section>
+
+    <section id="s1">
+      <h2>核心发现：先要劳动力，再要灭口</h2>
+      <div class="card">
+        <h3>01 · 马伊达内克没撤成，后面就改成强制转移</h3>
+        <p>USHMM：苏军 1944 年夏因进攻过快，党卫队来不及撤离卢布林/马伊达内克。镜头与幸存者采访传开后，希姆莱下令西撤。Blatman 经二战博物馆转述：前线崩溃后，旧的定点屠杀技术用不上，<strong>在撤离途中杀人</strong>成了仅剩的批量手段。时间表由盟军推进决定，不再由营方排班。</p>
+      </div>
+      <div class="card">
+        <h3>02 · 奥斯威辛、施图特霍夫、格罗斯-罗森</h3>
+        <ul>
+          <li>USHMM 地图：规模最大的死亡行军始发地是奥斯威辛与施图特霍夫。英文专文（检索摘要）：1945-01-17 开始撤离奥斯威辛营区；向西北约 55 公里至格利维采（Gliwice / Gleiwitz）或向西约 63 公里至沃济斯瓦夫（Wodzisław / Loslau），再上无暖气货车。掉队即枪杀。</li>
+          <li>二战博物馆引 Blatman：1 月 17–21 日约 6 万人上路；奥斯威辛行军中约 1.5 万犹太人死亡，其中奥斯威辛–格利维采段约 3000。脚注指向 USHMM 时间线「January 17, 1945: Death March from Auschwitz」。</li>
+          <li>格罗斯-罗森：苏军解放前数日约 4.4 万人（多为犹太人）被赶上火车或徒步。施图特霍夫：约 5 万人以驳船、火车、徒步撤离；约 5000 人被赶到波罗的海岸边、赶进海里枪杀；行军死亡约 2.5 万，约等于撤离人数的一半。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s2">
+      <h2>数字对不上，是结构，不是笔误</h2>
+      <div class="grid">
+        <div class="cell"><strong>Blatman</strong>~75 万被推上路<br>约 25 万死于途中</div>
+        <div class="cell"><strong>奥斯威辛</strong>约 6 万上路<br>行军死亡约 1.5 万</div>
+        <div class="cell"><strong>达豪中转</strong>登记 6,887<br>当地估 15–35% 未活</div>
+      </div>
+      <div class="card">
+        <p>USHMM 精简文不给全区死亡总数，只写「成百上千」被枪杀、「成千上万」死于饥寒。Blatman 的 25 万 / 超过 35% 是史学合成。沃尔姆河谷 2026 年报道：达豪中转站登记 6887 人（犹太人 1524、苏联战俘 4500、德国籍 1213），存活率「估计 15% 到 35% 未能幸存」，并承认没有更精确数字。三套账：全区合成、单营出发、地方中转。沿路坟墓分散在德奥村镇——Blatman 称最后阶段把屠杀点裂成越来越小的队列，直到杀完。</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <h2>记忆：从幸存者走到后代</h2>
+      <div class="card">
+        <p>2026 年沃尔姆河谷纪念游行请以色列来宾 Shlomi Chanoch、Tomer Izik——都是行军幸存者的后代，在纪念碑讲父辈与祖父。组织者口号「把记忆的接力棒传下去」。2025 年 5 月，达豪与奥斯威辛两县伙伴关系办「记忆与和解接力跑」：约 1050 公里、10 天、29 处纪念地，10 月 28 日在 Erdweg 放映纪录片。路上的纪念必须跟着路走，因为杀人本来就发生在路上。</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <h2>对历史学习者的启示</h2>
+      <div class="card insight">
+        <p>「撤离」听起来像军事术语。对囚工来说，它是把营墙拆掉之后，把枪杀权交给每一个押送班。幸存者 Halina Klein（二战博物馆引）说看守需要这趟路当庇护：若当场机枪扫完，他们自己也得上前线。读第 24 期的崩溃，不要只看战俘营和「零时」；木屐印在雪里的那几周，是种族灭绝的最后一刀，也是最分散、最难点名的一刀。</p>
+      </div>
+    </section>
+
+    <section id="s5">
+      <h2>来源</h2>
+      <div class="card refs">
+        <ul>
+          <li>USHMM 中文精简「死亡行军」：<a href="https://encyclopedia.ushmm.org/content/zh/article/death-marches-abridged-article">encyclopedia.ushmm.org/content/zh/article/death-marches-abridged-article</a></li>
+          <li>USHMM 中文地图「1944 年到 1945 年，主要的死亡之旅和撤退行动」：<a href="https://encyclopedia.ushmm.org/content/zh/map/major-death-marches-and-evacuations-1944-1945">encyclopedia.ushmm.org/content/zh/map/major-death-marches-and-evacuations-1944-1945</a></li>
+          <li>USHMM 时间线（经二战博物馆脚注）：<a href="https://encyclopedia.ushmm.org/content/en/timeline-event/holocaust/1942-1945/death-march-from-auschwitz">encyclopedia.ushmm.org/content/en/timeline-event/holocaust/1942-1945/death-march-from-auschwitz</a></li>
+          <li>National WWII Museum，The Nazi Death Marches（2025-01-28，Blatman 数字）：<a href="https://www.nationalww2museum.org/war/articles/nazi-death-marches">nationalww2museum.org/war/articles/nazi-death-marches</a></li>
+          <li>达豪纪念馆 2026-05-02 框架节目（死亡行军碑追悼）：<a href="https://www.kz-gedenkstaette-dachau.de/veranstaltungen/rahmenprogramm-zur-befreiungsfeier-2026-am-samstag-2-mai/">kz-gedenkstaette-dachau.de/.../rahmenprogramm-zur-befreiungsfeier-2026-am-samstag-2-mai/</a></li>
+          <li>Unser Würmtal，第 29 次纪念游行（2026-04-27）：<a href="https://www.unser-wuermtal.de/nachrichten/artikel/gedenkzug-2026-zum-todesmarsch-von-dachau.html">unser-wuermtal.de/.../gedenkzug-2026-zum-todesmarsch-von-dachau.html</a></li>
+          <li>USHMM 新闻稿 2026-04-23，《Auschwitz. Not long ago. Not far away.》2027–2029：<a href="https://www.ushmm.org/information/press/press-releases/acclaimed-special-exhibition-auschwitz-not-long-ago-not-far-away-coming-to">ushmm.org/.../acclaimed-special-exhibition-auschwitz-not-long-ago-not-far-away-coming-to</a></li>
+        </ul>
+      </div>
+    </section>
+    <p class="foot">系列第 63 期 · 不美化 · 不发明链接 · 跟不上不是自然减员</p>
+  </div>
+</div>
+</body>
+</html>
