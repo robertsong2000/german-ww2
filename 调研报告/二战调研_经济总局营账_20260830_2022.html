@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>党卫队经济与管理总局 —— 工时没有上限，人被写成产值</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,500&family=Red+Hat+Text:ital,wght@0,400;0,600;1,400&family=Fragment+Mono&display=swap" rel="stylesheet">
+<style>
+/* WVHA labor-hours ledger: green-black columns, ruled paper, no insignia. */
+:root{
+  --ledger:#1e3a2f;
+  --paper:#e7e2d4;
+  --rule:#8a9a86;
+  --ink:#1a1c18;
+  --sum:#8b3a1a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Red Hat Text","PingFang SC",sans-serif;
+  color:var(--ink);line-height:1.76;
+  background:#2a3328;
+}
+.book{
+  max-width:900px;margin:28px auto 52px;
+  background:var(--paper);
+  border-left:18px solid var(--ledger);
+  box-shadow:8px 16px 0 rgba(30,58,47,.35);
+}
+.inner{padding:22px 28px 40px}
+.kicker{font-family:"Fragment Mono",monospace;font-size:12px;color:var(--ledger)}
+h1{font-family:"Source Serif 4",serif;font-size:clamp(26px,4.5vw,38px);line-height:1.18;margin:8px 0}
+.sub{font-size:17.5px;max-width:42em}
+.meta{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 16px;font-family:"Fragment Mono",monospace;font-size:12.5px;color:#4a4e46}
+.meta b{color:var(--ledger)}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
+nav.toc a{font-family:"Fragment Mono",monospace;font-size:12px;text-decoration:none;color:var(--paper);background:var(--ledger);padding:5px 10px}
+section{margin-top:22px}
+h2{font-family:"Source Serif 4",serif;font-size:22px;color:var(--ledger);border-bottom:2px solid var(--rule);padding-bottom:4px;margin-bottom:12px}
+.card{background:#f4f0e6;border:1px solid #c5c0b0;padding:14px 16px;margin-bottom:12px}
+.card h3{font-size:16.5px;margin-bottom:6px}
+.card h3 span{font-family:"Fragment Mono",monospace;color:var(--sum);margin-right:8px}
+.card p+p,.card ul{margin-top:10px}
+.card li{margin:7px 0 7px 1.15em}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.cell{border:1px solid var(--ledger);padding:10px;text-align:center;font-size:13.5px;background:#efe9db}
+.cell strong{display:block;font-family:"Source Serif 4",serif;font-size:18px;color:var(--ledger)}
+.insight{background:#e6ebe4}
+.refs a{color:var(--ledger)}
+.foot{margin-top:24px;padding-top:12px;border-top:6px solid var(--ledger);font-family:"Fragment Mono",monospace;font-size:11px;letter-spacing:.06em;text-align:center;color:#4a4e46}
+@media(max-width:640px){.grid{grid-template-columns:1fr}.inner{padding:16px}}
+</style>
+</head>
+<body>
+<div class="book">
+  <div class="inner">
+    <p class="kicker">二战德国史调研 · 系列第 59 期 · 第 4 / 18 / 19 期子角度 · 学术、审慎</p>
+    <h1>党卫队经济与管理总局</h1>
+    <p class="sub">1942 年春天，集中营督察局并进波尔的账本。波尔给各营指挥官下令：劳动力的使用必须「穷尽」，工时没有上限。人不是被关着，是被写成产值。</p>
+    <div class="meta"><span><b>时间</b> 2026-08-30 20:22 CST</span><span><b>视觉风格</b> 囚工工时台账风</span></div>
+    <nav class="toc">
+      <a href="#s0">本期主题</a>
+      <a href="#s1">并账</a>
+      <a href="#s2">分包</a>
+      <a href="#s3">审判</a>
+      <a href="#s4">启示</a>
+      <a href="#s5">来源</a>
+    </nav>
+
+    <section id="s0">
+      <h2>本期主题</h2>
+      <div class="card">
+        <p>第 4 期写过四年计划与施佩尔军备，第 19 期写过强制劳动与企业史，第 18 期把集中营放进大屠杀中心。第 35 期提醒：RSHA 并不直接掌管每一座营。本期专盯那本把营并进去的账：<strong>SS-Wirtschafts- und Verwaltungshauptamt</strong>（WVHA，党卫队经济与管理总局），长官奥斯瓦尔德·波尔（Oswald Pohl）。第 58 期的莱因哈德行动是几乎不留活人的屠杀中心；WVHA 管的是可出租的囚工、党卫队自营企业，以及奥斯维辛这种一身二任的复合体。</p>
+        <p>弗里茨·鲍尔研究所的巡回展《I.G. Farben 与布纳—莫诺维茨集中营》2025 年 5 月 9 日至 8 月 24 日在黑森州博尔肯褐煤博物馆展出：布纳工地的囚工平均大约还能活三个月；丧失劳动能力的人被送进比克瑙气室。希姆莱 1942 年 7 月 17–18 日视察的照片，对照的是普里莫·莱维、让·阿梅里、埃利·威塞尔的文字。</p>
+      </div>
+    </section>
+
+    <section id="s1">
+      <h2>核心发现一：1942 年 3 月，惩罚营被改写成兵工厂的人力库</h2>
+      <div class="card">
+        <h3><span>01</span>波尔 4 月 30 日给希姆莱的报告与给指挥官的令</h3>
+        <ul>
+          <li><strong>USHMM：</strong>东线陷入长期战争后，光靠从波兰与苏联掳来的平民强制劳工填不满军备缺口。希姆莱 1942 年 3 月把理查德·格吕克斯（Richard Glücks）主持的集中营督察局并入波尔的 WVHA。此后集中营、党卫队企业、行政处在同一个机关里。营的数量从 1937 年的四座主营，扩到 1944 年约 30 座主营加数百乃至上千座分营。</li>
+          <li><strong>纽伦堡文件 R-129（波尔 1942 年 4 月 30 日令）：</strong>营指挥官独自负责现有劳动力的使用；这种使用必须「穷尽」（exhaustive），以取得最大产出；工时没有上限；吃饭、点名等一切可能缩短工时的环节压到不能再压。德国历史文献集（GHDI）收录同日给希姆莱的报告：关押本身（保安、教育、预防）不再是主要考虑，重心转到经济；先为战时增产，再为「和平时期任务」动员所有能干活的囚犯。4 月 23–24 日他把前督察局领导、各营指挥官和工作主管叫到一起当面布置。</li>
+          <li><strong>这不是改善待遇的改革。</strong>GHDI 编者按写得很清楚：短期或有「改善」的外观，因为人被当成战争人力；长期仍是对人的无情消耗。把「劳动营化」读成人道，是把账本上的措辞当成事实。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s2">
+      <h2>核心发现二：自营企业出租，私人公司来申请囚工</h2>
+      <div class="card">
+        <div class="grid">
+          <div class="cell"><strong>Amt D</strong>集中营（格吕克斯）</div>
+          <div class="cell"><strong>Amt W</strong>党卫队企业（DEST 采石等）</div>
+          <div class="cell"><strong>DWB</strong>控股：德意志经济企业</div>
+        </div>
+        <ul>
+          <li><strong>选址早就按石头走。</strong>USHMM：萨克森豪森、布痕瓦尔德、弗洛森比格、毛特豪森的地点，靠近制砖土、砖厂或采石场。党卫队办德意志土石工程（DEST）、德意志装备厂（DAW）。1938 年刑事警察两轮大抓「厌工者」与「反社会分子」，部分是为了给强制劳动添人。哈佛法学院纽伦堡后续审判介绍：DWB 作为控股公司，资本超过 4,600 万帝国马克；Amt W I 管 DEST 的花岗岩场（弗洛森比格、格罗斯-罗森、毛特豪森、纳茨维勒）和砖厂。</li>
+          <li><strong>1942 年后按合同把囚工租给军、民用机构与私人企业。</strong>USHMM 举例从赫尔曼·戈林工厂、I.G. Farben 到克拉科夫奥斯卡·辛德勒的搪瓷厂。弗里茨·鲍尔展：I.G. Farben 从 1941 年起在奥斯维辛附近建布纳（合成橡胶）厂，1942 年与党卫队合建企业自有集中营布纳—莫诺维茨。劳动能力用尽就送气室。这与第 8 期 V 武器地堡的奴隶劳动是同一条账：营不是例外，是供应链。</li>
+          <li><strong>边界要画清。</strong>莱因哈德三座屠杀中心主要归格洛博奇尼克与维尔特那条线；WVHA 管集中营体系与奥斯维辛复合体。波尔的机关也经手赃物会计——从死者身上搜刮的财物入账。不要把「经济总局」读成只搞生产、不沾灭绝。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s3">
+      <h2>核心发现三：波尔案把账本送上纽伦堡后续法庭</h2>
+      <div class="card">
+        <ul>
+          <li><strong>USHMM「波尔案」：</strong>美国军事法庭 II，后续审判第 4 号。1947 年 1 月 13 日起诉 WVHA 18 名成员，3 月 10 日提讯。罪名包括战争罪、反人类罪、参加已被国际军事法庭宣布为犯罪组织的党卫队。波尔 1951 年 6 月 8 日被处决（USHMM 条目日期）。格吕克斯 1945 年 5 月 10 日在弗伦斯堡自杀，没有上这个庭。</li>
+          <li><strong>第 12、13 期写过「只惩元凶」的错觉。</strong>波尔案针对的是管营账、工时、分包合同的人。企业经理另有 I.G. Farben 等后续案。弗里茨·鲍尔展把战后赔偿的未完成也写进展板：判决不等于账已经结清。第 19 期的工牌仍是未写完的句子。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s4">
+      <h2>对历史学习者的启示</h2>
+      <div class="card insight">
+        <p>读集中营，不要停在铁丝网照片。WVHA 把人从「敌人」改写成「工时」，再按合同租出去。穷尽工时与气室并不互斥：丧失劳动能力就从账上划到比克瑙。莱因哈德行动证明可以几乎不留劳动力；WVHA 证明留下劳动力也可以把人耗尽。2025 年博尔肯的布纳展把视察照片和三个月平均寿命放在同一块板子上——适合和第 4、8、19 期一起读：军备奇迹的分母是工时表，不是效率神话。</p>
+      </div>
+    </section>
+
+    <section id="s5">
+      <h2>来源</h2>
+      <div class="card refs">
+        <ul>
+          <li>USHMM, “SS and the Camp System”（1942 年 3 月并入 WVHA、分营扩张、DEST/DAW、企业合同）：<a href="https://encyclopedia.ushmm.org/content/en/article/ss-and-the-camp-system">encyclopedia.ushmm.org</a></li>
+          <li>USHMM, “Subsequent Nuremberg Proceedings, Case #4, The Pohl Case”：<a href="https://encyclopedia.ushmm.org/content/en/article/subsequent-nuremberg-proceedings-case-4-the-pohl-case">encyclopedia.ushmm.org</a></li>
+          <li>German History in Documents and Images，波尔 1942-04-30 致希姆莱报告：<a href="https://germanhistorydocs.org/en/nazi-germany-1933-1945/oswald-pohl-s-report-to-heinrich-himmler-on-the-expansion-of-the-concentration-camps-april-30-1942">germanhistorydocs.org</a></li>
+          <li>Birkbeck «A Visual Sourcebook of the Holocaust»，同日给各营指挥官的令（R-129）：<a href="https://camps.bbk.ac.uk/documents/043-wartime.html">camps.bbk.ac.uk</a></li>
+          <li>Fritz Bauer Institut，布纳—莫诺维茨巡回展（博尔肯 2025-05-09 至 08-24）：<a href="https://www.fritz-bauer-institut.de/mitteilung/die-ig-farben-und-das-konzentrationslager-buna-monowitz-borken-2025-5">fritz-bauer-institut.de</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <p class="foot">GERMAN WW2 RESEARCH · ISSUE 59 · HOURS WITHOUT CEILING</p>
+  </div>
+</div>
+</body>
+</html>
