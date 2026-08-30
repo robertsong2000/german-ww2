@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>农村、粮食生产与农场上的强制劳力 —— 账本上的奶，桌上没有波兰人</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* Farm ledger ink: cream paper, brown binding, green tally. No regime insignia as ornament. */
+:root{
+  --bind:#5c3a24;
+  --paper:#f3ead6;
+  --ink:#1c1914;
+  --tally:#2f5c3a;
+  --soil:#8a5a32;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Atkinson Hyperlegible","PingFang SC",sans-serif;
+  color:var(--ink);line-height:1.78;
+  background:#3a2e24;
+}
+.ledger{
+  max-width:920px;margin:28px auto 52px;
+  background:var(--paper);
+  border-left:22px solid var(--bind);
+  box-shadow:0 18px 40px rgba(0,0,0,.35);
+}
+.inner{padding:22px 28px 40px}
+.mast{font-family:"Courier Prime",monospace;font-size:12.5px;color:var(--soil);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.kicker{font-family:"Courier Prime",monospace;color:var(--tally);margin-top:8px;font-size:13px}
+h1{font-family:"Libre Baskerville",serif;font-size:clamp(24px,4.3vw,36px);line-height:1.25;margin:8px 0 10px}
+.sub{font-size:17.5px;max-width:42em}
+.meta{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 16px;font-family:"Courier Prime",monospace;font-size:12.5px;color:var(--soil)}
+.meta b{color:var(--tally)}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
+nav.toc a{font-family:"Courier Prime",monospace;font-size:12px;text-decoration:none;color:var(--paper);background:var(--bind);padding:5px 10px}
+section{margin-top:24px}
+h2{font-family:"Libre Baskerville",serif;font-size:21px;color:var(--bind);border-bottom:2px solid var(--tally);padding-bottom:4px;margin-bottom:12px}
+.card{background:#fffaf0;border:1px solid #d4c8a8;padding:14px 16px;margin-bottom:12px}
+.card h3{font-size:16.5px;margin-bottom:6px}
+.card h3 span{font-family:"Courier Prime",monospace;color:var(--tally);margin-right:8px}
+.card li{margin:7px 0 7px 1.15em}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.cell{border:1px dashed var(--soil);padding:10px;text-align:center;font-size:13.5px;background:#faf3e4}
+.cell strong{display:block;font-family:"Libre Baskerville",serif;font-size:18px;color:var(--tally)}
+.insight{border-left:5px solid var(--bind)}
+.refs a{color:var(--tally)}
+.foot{margin-top:26px;padding-top:12px;border-top:3px solid var(--bind);font-family:"Courier Prime",monospace;font-size:11.5px;letter-spacing:.06em;text-align:center;color:var(--soil)}
+@media(max-width:640px){.grid{grid-template-columns:1fr}.inner{padding:16px}}
+</style>
+</head>
+<body>
+<div class="ledger">
+  <div class="inner">
+    <div class="mast"><span>HOFBUCH · MILCH / ERNTE / AUSLÄNDEREINSATZ</span><span>ISSUE 51 · 2026-08-30 19:42 CST</span></div>
+    <p class="kicker">二战德国史调研 · 系列第 51 期 · 第二轮 · 民生与社会</p>
+    <h1>农村、粮食生产与农场上的强制劳力</h1>
+    <p class="sub">血与土把农民写成民族源泉，账本把每升奶写进国家。地里补缺口的是波兰战俘和东方劳工。宣传画写着：只有德意志民族同志能上餐桌。</p>
+    <div class="meta"><span><b>时间</b> 2026-08-30 19:42 CST</span><span><b>视觉风格</b> 农庄账本墨水风</span></div>
+    <nav class="toc">
+      <a href="#s0">本期主题</a>
+      <a href="#s1">公社与增产</a>
+      <a href="#s2">地里的人</a>
+      <a href="#s3">地方账</a>
+      <a href="#s4">启示</a>
+      <a href="#s5">来源</a>
+    </nav>
+
+    <section id="s0">
+      <h2>本期主题</h2>
+      <div class="card">
+        <p>第 19 期写过强制劳动与企业赔偿，第 39 期写过饥饿计划如何把东欧人口写成粮仓赤字。本期把镜头收回帝国境内的田与厩：帝国农产公社（Reichsnährstand）怎样把市场改成交售义务，世袭农庄法怎样把土地锁死，增产战役怎样补不上「脂肪缺口」，以及农场主怎样成为强制劳动体系的共同需求方。Gustavo Corni 与 Horst Gies 的书名已经把结构写死：《面包、黄油、大炮》。</p>
+        <p style="margin-top:10px">2025–2026 年的入口在肯普滕。展览《黄油、牲畜、灭绝——阿尔高的国家社会主义与农业》（Butter, Vieh, Vernichtung）由 EVZ 基金会「NS-Unrecht 教育议程」资助，策展 Veronika Heilmannseder，展至 2026 年 11 月 9 日，免费，站点 <a href="https://www.butterviehvernichtung.de">butterviehvernichtung.de</a>。展厅是 1928 年牲畜拍卖厅：希特勒 1932 年在此竞选演说，后来是占领区波兰强制劳工的过境登记处，1943 年起又是达豪集中营外围营。肯普滕博物馆馆长 Christine Müller Horn 说：国家社会主义渗透了整户人家，「从婚床到孩子的闲暇，直到一头奶牛产多少升奶」。本期不把农村写成无辜田园，也不把每个农户写成党卫队。</p>
+      </div>
+    </section>
+
+    <section id="s1">
+      <h2>核心发现一：荣誉口号下面是交售表</h2>
+      <div class="card">
+        <h3><span>01</span>1933 年：农会、合作社、商会被编进一座金字塔</h3>
+        <ul>
+          <li>帝国农产公社把所有与农业生产和流通有关的人置于法定管辖之下，下设约 26 个邦农民协会，再拆成县、村。Clifford Lovin 1969 年即提醒：史学若只盯「血与土」和达雷的浪漫辞令，会漏掉真正改经济的那一半——价格管制、禁令、区域营销联合会。外国食品进口被挡住，债务暂缓，种子肥料由公社规定。</li>
+          <li>1933 年《帝国世袭农庄法》：7.5–125 公顷、足以养活一家的地块可列为世袭农庄，不得出售、分割、抵押或因债务被强制拍卖；只有这些经营者才配称 Bauer。约 35% 的经营单位落入该法；易北河以东大庄园基本不受影响。继承优先父系，无子则兄弟及其子先于女儿。达雷把它写成「保存农民共同体作为德意志民族的血源」。土地被锁住，人却在流失：1933–1939 年约 44 万农业劳动力离开农业。</li>
+          <li>肯普滕展：1936 年四年计划要求系统登记人、农场、牲畜与产量。到 1938 年逾 200 万座农场被登记，约占经营单位的 85%。自由市场通道关掉。阿尔高乳业连商标都改成「山地胜利」卡门培尔、「法兰西式德意志洛克福」软酪——用命名假装自给已经完成。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span>02</span>增产战役补不上脂肪缺口</h3>
+        <ul>
+          <li>赫伯特·巴克 1934 年提出增产战役（Erzeugungsschlacht），11 月 17 日在戈斯拉尔帝国农民日与达雷一同宣布。措施包括：登记全部经营、改土、扩油料作物、农机贷款、季节工宿舍、国家农技咨询、节约使用产品。1934 年歉收后本想当一次性宣传，1940 年起改称战争增产战役，办到 1944 年。巴克 1939 年文本把四年计划与增产战役绑在一起：若农民没有提前两年列队增产，外汇就不够同时进口军备原料。</li>
+          <li>结果只是部分自给。帝国农产公社把价格压到成本以下时，产量就掉——牛奶是显例，奶价责任甚至被上收到「元首」。脂肪缺口与豆类短缺直到战争结束都没补上，尽管占领区已被无情搜刮。肯普滕展写：油脂、蛋白不足，国内配给加上无脂一锅炖、全麦面包、甜菜糖、果酱和工业代用品，用来喂饱国内战线。第 48 期的一锅炖在这里接到农产账：仪式动员与营养缺口是同一张表的两栏。</li>
+          <li>巴克同时是饥饿计划的农学设计者（第 39 期）。农村史不能把「德国田里增产」和「东方粮仓清册」拆开：境内交售不够，就去乌克兰黑土上写死亡。公社要 700–800 万公顷额外耕地才能自给——这个数字本身就是侵略理由，不是农技报告。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s2">
+      <h2>核心发现二：地里最先用上的外国人</h2>
+      <div class="card">
+        <h3><span>03</span>1939 年挖土豆，1944 年农业仍占外籍劳工近一半</h3>
+        <ul>
+          <li>英语维基《纳粹德国的食品与农业》（转述战时劳动力研究）：1939 年 9 月已有约 10 万波兰战俘被送到德国农场挖土豆。到 1941 年秋，约 110 万波兰人与乌克兰人在德国农场劳动，一半是女性；另有约 120 万战俘，以苏联与法国人为主。进口强制劳力约占战时德国食品产量的 20%。</li>
+          <li>乌尔里希·赫伯特：直到 1941 年夏，外籍平民与战俘最大份额在农业，工业当时还不想长期依赖外国人。闪击战破产后，工业才大规模要人。1944 年夏帝国内约 760 万外籍劳工（570 万平民、近 200 万战俘）；其中苏联 280 万、波兰 170 万、法国 130 万。波兰与苏联平民劳工半数以上是女性，平均不到 20 岁——1943 年的「典型」画像是基辅来的 18 岁女学生。在全部就业中外国人占 26.5%；其中 46% 在农业，近 40% 在工业。没有他们，农业与工业生产至迟 1942 年就会崩溃。</li>
+          <li>强制劳动档案门户：农民和私人家庭也在不断要更多外国人，从而共同为这套体系负责。农场不是「远离眼睛的集中营附录」。波兰人衣服上要佩 P，东方劳工佩 OST；与「民族同志」同桌被禁止。肯普滕展海报原文：「只有德意志民族同志属于我们的餐桌共同体！」Wolfertschwenden 的安娜·玛丽亚·齐克因与波兰人恋爱受严惩。波兰强制劳工 Stanislaw Symczak 想买一件大衣，被农庄主殴打，随后还进了监狱。</li>
+        </ul>
+      </div>
+      <div class="grid">
+        <div class="cell"><strong>~10 万</strong>1939.9 波兰战俘挖土豆</div>
+        <div class="cell"><strong>46%</strong>1944 年外籍劳工在农业</div>
+        <div class="cell"><strong>~20%</strong>战时食品产量来自强制劳力</div>
+      </div>
+      <div class="card">
+        <h3><span>04</span>农场待遇「较好」不是仁慈</h3>
+        <ul>
+          <li>赫伯特指出：农业里的苏联劳工处境通常好于工业，但 1942 年底以后农场之间的饮食与待遇差距可以非常大——说明农户有裁量空间。较好意味着少饿死几分，不是平等。种族等级仍在：西、北欧「客工」最上，波兰人与东方劳工在下。反斯拉夫日常侮辱、告发、殴打被许多德国人当成战时风景，像配给票和防空洞一样「就在那儿」。</li>
+          <li>阿尔高的 Stöckle 家：寡妇 Kreszenzia 的六个儿子与女儿、母亲之间有约 1600 封战地家书。1943 年 7 月 25 日卡尔从前线感谢「黄油居然还没坏」的包裹。两个儿子阵亡，因为「不可缺席」（UK）名额不够每人一份。农户同时是交售者、收包裹的家人、强制劳工的雇主。展方切换视角：强制劳工、农民、士兵、被害犹太人——Rosenbaum 家在梅明根的奶酪批发被「雅利安化」，威廉·罗森鲍姆 1933 年进「保护拘留」、送到达豪。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s3">
+      <h2>核心发现三：地方记忆长期看不见田里的人</h2>
+      <div class="card">
+        <h3><span>05</span>EVZ 说的盲点：知道「纳粹」，对不上自己村</h3>
+        <ul>
+          <li>EVZ「NS-Unrecht 教育议程」学术主管 Jens Schley：德国记忆文化年度调查有一个常量——人们对纳粹知道得越来越多，却越来越无法把知识接到本地发生过的事。肯普滕用市政记忆委员会和慕尼黑–柏林当代史研究所合作，把私人阁楼里的家书变成展品。市长 Thomas Kiechle 说常听见「该画句号了」；展览故意摆在今天仍被当成乳业传统地标的大厅里。</li>
+          <li>巴伐利亚《农业周报》（2025 年 10 月 27 日，2026 年 4 月 23 日更新）：血与土只给「有族谱的雅利安农民」留座位。犹太农户、牲畜商、店主被剥夺、驱逐、谋杀。强制劳工先被「招募」，后被掳走。展品从母亲十字章到奶酪盒，材料丰富到可以听原声。策展人说阿尔高人愿意交出家里的故事——这本身说明沉默不是自然状态，是选择。</li>
+          <li>柏林纳粹强制劳动文献中心 2026 年 5 月 21 日至 10 月 25 日展《Forced to Work》把意大利、奥地利、波兰的跨国经验并置；农场这条线仍应回到村口：谁要人、谁不准同桌、谁把 P 字章缝在外套上。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s4">
+      <h2>对历史学习者的启示</h2>
+      <div class="card insight">
+        <ul>
+          <li>读「血与土」先读交售定额。荣誉演说不能喂饱脂肪缺口；缺口用占领区掠夺和农场强制劳力填。农村不是战争的配角，是军备的另一条供应线。</li>
+          <li>强制劳动不只在克虏伯厂房。1941 年夏以前，外国人最大份额在农业。赫伯特的 46%（1944）提醒：村口农庄主也是需求方。同桌禁令把种族等级做到一日三餐。</li>
+          <li>看肯普滕展时问一句就够：这升牛奶的账，有几栏写的是战俘和东方劳工的名字。知道「纳粹」而对不上自己村，正是 EVZ 说的盲点。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s5">
+      <h2>来源</h2>
+      <div class="card refs">
+        <ul>
+          <li>展览 「Butter, Vieh, Vernichtung」，Kempten Allgäuhalle，至 2026-11-09. <a href="https://www.butterviehvernichtung.de">https://www.butterviehvernichtung.de</a></li>
+          <li>Florian Fuchs, 「Wie der Nationalsozialismus die Bauern im Allgäu gleichschaltete」, <i>Süddeutsche Zeitung</i>. <a href="https://www.sueddeutsche.de/bayern/kempten-nationalsozialismus-landwirtschaft-allgaeu-li.3314257">https://www.sueddeutsche.de/bayern/kempten-nationalsozialismus-landwirtschaft-allgaeu-li.3314257</a></li>
+          <li>Barbara Kettl-Römer, 「NS-Zeit im Allgäu」, Bayerisches Landwirtschaftliches Wochenblatt, 2025-10-27 / 更新 2026-04-23. <a href="https://www.wochenblatt-dlv.de/regionen/schwaben/ns-zeit-allgaeu-ausstellung-ueber-bauern-zwang-ideologie-582657">https://www.wochenblatt-dlv.de/regionen/schwaben/ns-zeit-allgaeu-ausstellung-ueber-bauern-zwang-ideologie-582657</a></li>
+          <li>Ulrich Herbert, 「Forced Laborers in the Third Reich: An Overview」, <i>International Labor and Working-Class History</i> 58 (2000). <a href="https://psi329.cankaya.edu.tr/uploads/files/Herbert%2C%20Forced%20Labourers%20in%20the%20Third%20Reich%20%282000%29.pdf">https://psi329.cankaya.edu.tr/uploads/files/Herbert%2C%20Forced%20Labourers%20in%20the%20Third%20Reich%20%282000%29.pdf</a></li>
+          <li>Forced Labor 1939–1945, 「Forced Labor – Background」. <a href="https://www.zwangsarbeit-archiv.de/en/zwangsarbeit/zwangsarbeit/zwangsarbeit-hintergrund/index.html">https://www.zwangsarbeit-archiv.de/en/zwangsarbeit/zwangsarbeit/zwangsarbeit-hintergrund/index.html</a></li>
+          <li>「Food and agriculture in Nazi Germany」；「Reichsnährstand」；「Reichserbhofgesetz」. <a href="https://en.wikipedia.org/wiki/Food_and_agriculture_in_Nazi_Germany">https://en.wikipedia.org/wiki/Food_and_agriculture_in_Nazi_Germany</a></li>
+          <li>「Erzeugungsschlacht」, 德语维基（Corni/Gies, Degler/Streb）. <a href="https://de.wikipedia.org/wiki/Erzeugungsschlacht">https://de.wikipedia.org/wiki/Erzeugungsschlacht</a></li>
+          <li>Herbert Backe, 「Farmers in the Fight for Germany’s Food Self-Sufficiency」(1939), German History Intersections. <a href="https://germanhistory-intersections.org/en/knowledge-and-education/ghis:document-152">https://germanhistory-intersections.org/en/knowledge-and-education/ghis:document-152</a></li>
+          <li>Clifford R. Lovin, 「Agricultural Reorganization in the Third Reich」, <i>Agricultural History</i> (1969). <a href="https://psi428.cankaya.edu.tr/uploads/files/Lovin-AgriculturalReorganizationThird-1969.pdf">https://psi428.cankaya.edu.tr/uploads/files/Lovin-AgriculturalReorganizationThird-1969.pdf</a></li>
+          <li>Dokumentationszentrum NS-Zwangsarbeit, 「Forced to Work」, 2026-05-21–10-25. <a href="https://www.ns-zwangsarbeit.de/fileadmin/dateien/Ausstellungen/2026/Flyer_klein.pdf">https://www.ns-zwangsarbeit.de/fileadmin/dateien/Ausstellungen/2026/Flyer_klein.pdf</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <p class="foot">GERMAN WW2 RESEARCH · ISSUE 51 · NOT A FOLKLORE FARM PAGE</p>
+  </div>
+</div>
+</body>
+</html>
