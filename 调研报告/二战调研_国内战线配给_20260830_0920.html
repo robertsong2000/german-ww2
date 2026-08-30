@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国内战线：配给、空袭与日常妥协 —— 种族化的“正常生活”与2025–2026年记忆政治</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Red+Hat+Mono:wght@400;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Ration-coupon perforation collage: pink watermark paper, torn coupons, punch holes, nutrition-office blotter */
+:root {
+  --desk: #2a3328;
+  --blotter: #3c4a36;
+  --paper: #f3e6ce;
+  --paper2: #ead7b4;
+  --pink: #e8b7ad;
+  --blue: #b7c9cf;
+  --ochre: #dcc07a;
+  --ink: #2a2218;
+  --fade: #5a4c3a;
+  --stamp: #9a2c22;
+  --hole: #1e241c;
+  --rule: #c4ab86;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background:
+    radial-gradient(ellipse at 80% 0%, rgba(220,192,122,.18), transparent 42%),
+    repeating-linear-gradient(90deg, rgba(0,0,0,.04) 0 1px, transparent 1px 11px),
+    var(--desk);
+  color: var(--ink);
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  line-height: 1.82;
+  min-height: 100vh;
+}
+body::before {
+  content: "";
+  pointer-events: none;
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E");
+  opacity: .32; mix-blend-mode: multiply; z-index: 8;
+}
+.booklet {
+  max-width: 900px;
+  margin: 26px auto 72px;
+  background:
+    linear-gradient(90deg, var(--pink) 0 18px, transparent 18px),
+    linear-gradient(90deg, transparent calc(100% - 18px), var(--blue) calc(100% - 18px)),
+    repeating-linear-gradient(180deg, transparent 0 46px, rgba(154,44,34,.06) 46px 47px),
+    linear-gradient(180deg, #f7ecdc, var(--paper) 12%, var(--paper2));
+  border: 1px solid #b89a6e;
+  box-shadow: 0 28px 70px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,240,.35);
+  position: relative;
+  padding: 0 46px 52px;
+}
+/* Perforation holes along both coupon strips */
+.booklet::before, .booklet::after {
+  content: "";
+  position: absolute; top: 10px; bottom: 10px; width: 12px;
+  background-image: radial-gradient(circle at 50% 8px, var(--hole) 3.2px, transparent 3.4px);
+  background-size: 12px 18px;
+  opacity: .88;
+}
+.booklet::before { left: 3px; }
+.booklet::after { right: 3px; }
+.mast {
+  text-align: center;
+  padding: 38px 8px 16px;
+  border-bottom: 2px dashed var(--rule);
+  position: relative;
+}
+.mast .serial {
+  font-family: "Red Hat Mono", monospace;
+  letter-spacing: .28em;
+  font-size: 12px;
+  color: var(--stamp);
+  text-transform: uppercase;
+}
+h1 {
+  font-family: "Cormorant Garamond", "Noto Serif SC", serif;
+  font-weight: 700;
+  font-size: clamp(1.55rem, 3.4vw, 2.15rem);
+  line-height: 1.35;
+  margin: 14px 0 10px;
+  color: #1f1812;
+}
+.sub {
+  color: var(--fade);
+  font-size: 15px;
+}
+.when {
+  margin-top: 12px;
+  font-family: "Red Hat Mono", monospace;
+  font-size: 12px;
+  color: #6a5844;
+}
+.stamp-mark {
+  position: absolute;
+  right: 8px; top: 18px;
+  width: 92px; height: 92px;
+  border: 3px solid var(--stamp);
+  border-radius: 50%;
+  color: var(--stamp);
+  font-family: "Red Hat Mono", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  transform: rotate(12deg);
+  opacity: .72;
+  letter-spacing: .04em;
+  line-height: 1.3;
+}
+nav.toc {
+  margin: 22px 0 8px;
+  padding: 16px 18px 8px;
+  background: linear-gradient(180deg, #f6e3c6, #eed4b0);
+  border: 1px solid #c9a97a;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.45);
+}
+nav.toc h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+  letter-spacing: .12em;
+}
+nav.toc ol {
+  margin: 0 0 10px 1.2em;
+  font-size: 15px;
+}
+nav.toc a { color: #6e241c; text-decoration: none; border-bottom: 1px dotted rgba(154,44,34,.45); }
+nav.toc a:hover { border-bottom-style: solid; }
+.card {
+  margin: 22px 0;
+  padding: 22px 22px 18px;
+  background: #f8ecda;
+  border: 1px solid #cbb089;
+  border-top: 8px solid var(--ochre);
+  position: relative;
+}
+.card.pink { border-top-color: #c97a6e; background: #f6e4d8; }
+.card.blue { border-top-color: #6e8fa0; background: #e9eef0; }
+.card.green { border-top-color: #5d6e4e; background: #e8eadc; }
+.card h2 {
+  font-family: "Cormorant Garamond", "Noto Serif SC", serif;
+  font-size: 1.42rem;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+.tag {
+  font-family: "Red Hat Mono", monospace;
+  font-size: 11px;
+  letter-spacing: .16em;
+  color: var(--stamp);
+  margin-bottom: 6px;
+}
+p { margin: 0 0 12px; }
+ul, ol.body { margin: 0 0 12px 1.25em; }
+li { margin-bottom: 6px; }
+blockquote {
+  margin: 12px 0 16px;
+  padding: 10px 14px;
+  border-left: 4px solid var(--stamp);
+  background: rgba(154,44,34,.06);
+  font-style: italic;
+  color: #3a2e24;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 10px 0 16px;
+  background: #fff8ec;
+}
+th, td {
+  border: 1px solid #c9b087;
+  padding: 7px 8px;
+  text-align: left;
+}
+th { background: #e8d3a8; font-weight: 600; }
+.note {
+  font-size: 13.5px;
+  color: var(--fade);
+  margin-bottom: 12px;
+}
+.sources a { color: #6e241c; word-break: break-all; }
+footer {
+  margin-top: 28px;
+  padding-top: 14px;
+  border-top: 2px dashed var(--rule);
+  font-size: 13px;
+  color: var(--fade);
+  text-align: center;
+  font-family: "Red Hat Mono", monospace;
+}
+@media (max-width: 640px) {
+  .booklet { padding: 0 28px 36px; margin: 10px 8px 40px; }
+  .stamp-mark { display: none; }
+}
+</style>
+</head>
+<body>
+<!-- Ration-coupon collage layout: nutrition-office booklet, not a generic dashboard -->
+<article class="booklet">
+  <header class="mast">
+    <div class="serial">REICHSERNÄHRUNGSAMT · PERIODE 42 · FORSCHUNGSBLATT</div>
+    <h1>国内战线：配给、空袭与日常妥协 —— 种族化的“正常生活”与2025–2026年记忆政治</h1>
+    <p class="sub">纳粹德国 1933–1945 的票证、灯火管制与“人民共同体”日常，对照德累斯顿八十周年与联邦民防公约</p>
+    <p class="when">调研时间：2026-08-30 09:20 UTC · 系列第3期 · 主题轮换池第3项</p>
+    <div class="stamp-mark">KRITISCH<br>GEPRÜFT<br>08.30</div>
+  </header>
+
+  <nav class="toc" id="toc">
+    <h2>目录 · Stammabschnitt</h2>
+    <ol>
+      <li><a href="#theme">本期主题</a></li>
+      <li><a href="#findings">核心发现</a></li>
+      <li><a href="#ration">配给：等级制而非平均主义</a></li>
+      <li><a href="#raid">空袭：士气下降，秩序未崩</a></li>
+      <li><a href="#compromise">日常妥协：同意、恐惧与自利</a></li>
+      <li><a href="#now">2025–2026：德累斯顿纪念与民防公约</a></li>
+      <li><a href="#sources">来源</a></li>
+      <li><a href="#lesson">对历史学习者的启示</a></li>
+    </ol>
+  </nav>
+
+  <section class="card" id="theme">
+    <p class="tag">ABSCLN. 01 · THEMA</p>
+    <h2>本期主题</h2>
+    <p>纳粹宣传把后方称为“国内战线”（Heimatfront），仿佛面包店、防空洞与前线同属一场种族战争。本报告不把这段日常写成“全民共苦”的悲情故事，而把它写成一套<strong>按种族、国籍、劳动能力分级的生存分配</strong>：多数“雅利安”消费者直到战争中期仍能维持相对可忍的热量，代价是占领区的掠夺、犹太人被从肉蛋奶配额中剔除、苏联战俘与集中营囚徒被置于饥饿边缘。</p>
+    <p>2025年2月，德累斯顿空袭八十周年再次成为极右翼与市政当局争夺叙事的战场；2026年5月，联邦政府通过《民防公约》（Pakt für den Bevölkerungsschutz），承诺至2029年投入一百亿欧元，并以预警应用取代冷战式全民掩体幻想。两件事都把“后方如何挨过空袭与短缺”重新推入公共讨论。史学任务是：先看清 1939–1945 的票证与警报究竟保护了谁、排除了谁，再谈今日纪念与民防。</p>
+  </section>
+
+  <section class="card pink" id="findings">
+    <p class="tag">ABSCLN. 02 · BEFUNDE</p>
+    <h2>核心发现</h2>
+    <ul>
+      <li><strong>配给先于开战。</strong>1939年8月27日《暂时保障德意志民族生活必需品条例》已把大批消费品纳入凭证购买；粉色水印纸上印有存根加72个可撕小格。这是对1916–1919年饥馑的制度性反应，也是对即将发动的侵略战争的后勤预支。</li>
+      <li><strong>配额是种族文件。</strong>1942年9月18日粮食部长巴克（Herbert Backe）训令（纽伦堡文件 PS-1347）规定：自第42配给期（10月19日）起，犹太人不再获得肉、蛋、小麦制品与全脂奶；卡片对角加印“Jew”；海外食品包裹从配额中全额扣除。票证上的穿孔，同时是排除的穿孔。</li>
+      <li><strong>空袭压低士气，并未自动催生抵抗。</strong>美国战略轰炸调查（USSBS，1947年刊）估计约30.5万人死于空袭、78万人受伤、约188.5万所住宅被毁。受访者中“高士气”自开战时的32%降至终战6%，“低士气”自17%升至78%；但秘密警察与告密网络把情绪（Stimmung）与公开举止（Haltung）分开，使不满极少转化为有组织颠覆。</li>
+      <li><strong>“日常妥协”是史学关键，不是道德开脱。</strong>多数人既非狂热分子也非抵抗者：他们排队、遮光、告密或沉默、在黑市与配给之间游走。这种妥协使战争机器转至1945年春，也使种族灭绝得以在“正常生活”的缝隙中推进。</li>
+      <li><strong>当代记忆仍在争夺死亡数字。</strong>2010年史学家委员会将德累斯顿死亡人数定为约2.5万；戈培尔1945年3月已抛出25万。2025年市政文告明确写道：该城“既非无辜，也非单纯受害者”。把空袭痛苦相对化屠杀，是修正主义的固定套路。</li>
+    </ul>
+  </section>
+
+  <section class="card" id="ration">
+    <p class="tag">ABSCLN. 03 · LEBENSMITTELKARTE</p>
+    <h2>配给：等级制而非平均主义</h2>
+    <p>德意志历史博物馆（DHM / LeMO）指出：1937年起，帝国国防委员会已对粮、油、煤等物资做精细预案；1938–1939年丰收使谷物、马铃薯、糖与肉类的自给率达到约100%。1939年9月1日起，脂肪、肉、黄油、奶、奶酪、糖与果酱须凭卡购买；9月25日起面包与蛋类跟进；10月中旬对非制服人口发放有效一年、共100点的“帝国服装卡”（袜子4点、毛衣25点、女套装45点）。票证只给购买权，不保证货架上有货——兑不出的格子作废，实际消费低于纸面配额。</p>
+    <p class="note">下表据德语维基“Lebensmittelkarte”条目汇总的“正常消费者”每周配额（克）。数字是官方尺度，不是人人吃到的热量。</p>
+    <table>
+      <thead>
+        <tr><th>时点</th><th>面包</th><th>肉</th><th>脂肪</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1939年9月</td><td>2400</td><td>500</td><td>270</td></tr>
+        <tr><td>1942年4月</td><td>2000</td><td>300</td><td>206</td></tr>
+        <tr><td>1943年6月</td><td>2325</td><td>250</td><td>218</td></tr>
+        <tr><td>1944年10月</td><td>2225</td><td>250</td><td>218</td></tr>
+        <tr><td>1945年3月</td><td>1778</td><td>222</td><td>109</td></tr>
+      </tbody>
+    </table>
+    <p>1942年4月的大幅削减——面包月配额自9.6公斤降至6.4公斤、肉自1600克降至1200克、脂肪自1053克降至825克——在党卫队保安处（SD）《帝国报告》里被记为对民心“几乎不亚于任何战事”的打击。原因很清楚：领导层最怕重演第一次世界大战的“芜菁之冬”。维持“雅利安”最低生存线，是政治，不是慈善。</p>
+    <p>法兰克福地方研究给出更细的切割。战争头一个秋天，“正常消费者”每周约2400克面包（或1900克面包加375克面粉）、500克肉、分层的黄油/人造黄油/猪油，以及150克粮食制品。1943年下半年该市遭受猛烈空袭后，肉脂配额约减半；1944年秋，原约16万套住宅仅余约7万套可住，空袭致死四千余人。与此同时：犹太人早在战争第二年即被排除出牛奶与鸡蛋；1942年起不再有肉类与任何小麦制品。1942年春，西方战俘每周约400克肉、247克脂肪；苏联战俘约250克肉、130克脂肪，另加大宗饲料萝卜。集中营外役囚徒的证词更为残酷：六人分一块1500克面包，再加只含土豆皮的稀汤。法兰克福因违反管制条例被判死刑者有42例；向犹太人或外籍劳工提供食物本身即可入罪。</p>
+    <p>DHM 写得直白：德国本部在战争期间“没有出现严重的营养危机”，因为占领区被无情榨取，东欧则被有计划地推向“饿死”。格茨·阿利（Götz Aly）在《希特勒的民族国家》中把这套机制称为用掠夺来的福利收买多数德意志人；《光明日报》2011年书评转述其命题——谁不愿谈普通民众在战争中获得的物质利益，谁就没有资格谈纳粹主义与大屠杀。批评者认为阿利夸大了“舒适独裁”，但配给档案本身已足够说明：短缺是分级的，饥饿是被分配的。</p>
+  </section>
+
+  <section class="card blue" id="raid">
+    <p class="tag">ABSCLN. 04 · LUFTSCHUTZ</p>
+    <h2>空袭：士气下降，秩序未崩</h2>
+    <p>灯火管制与防空，同样早于全面战争。1933年4月底成立、隶属戈林航空部的帝国防空同盟（Reichsluftschutzbund）到1939年发展到超过1350万成员。1935年3月柏林首次模拟警报与灯火管制；同年5月立法规定掩体、卫生、灭火与清瓦。DHM 藏1940年海报《敌人看得见你的灯光！遮光！》把私人窗户变成战场纪律。面对后来的燃烧弹与氧气耗尽的火风暴，沙袋与手压水泵几乎无效。</p>
+    <p>联邦档案馆专题页概括盟军战略：皇家空军夜间面积轰炸，美国第八航空队昼间打击军工；1944年攻势扩至原先相对“安全”的萨克森、巴伐利亚与上西里西亚。汉堡、柏林、鲁尔首当其冲。帝国防空长期偏重高炮（Luftwaffe 约180万人中大部分在高炮部队），击落一架轰炸机往往需要数千发炮弹；1944年春德国失去本土制空权。高炮塔楼（汉堡、柏林、维也纳）是钢筋混凝土的权力景观，也是把少年、战俘编入防空的场所。</p>
+    <p>USSBS 在西占区访谈与文件基础上给出一组常被引用、亦须标明出处的估计（人口基数约6980万）：死亡约30.5万，受伤约78万，住宅被毁约186.5万，疏散约488.5万，公用设施中断波及约2000万人。约三分之一人口直接遭受轰炸。受访者中36%把士气下降归因于空袭，仅次于两线作战等军事因素；战争末期约63%认为防空与公共掩体不足。1944年全工业约4%工时因空袭损失。调查还区分：心理上的失败主义上升，并不等于行为上的怠工或起义——纳粹情报本就使用 Stimmung / Haltung 这组对立。</p>
+    <p>史学上，迪特马尔·聚斯（Dietmar Süß）《Death from the Skies》把德英两国民众的空袭经验对照研究，指出德国掩体同时是救济与规训空间。尼古拉斯·施塔加特（Nicholas Stargardt）则强调：德国城市并未出现1943年意大利北部那样的罢工潮，关键不在“全民同意”或“全民恐怖”的二选一，而在危机后迅速恢复运转的能力，以及把希望寄托于“奇迹武器”的心理。空袭可以粉碎窗户，却不能自动粉碎统治。</p>
+    <blockquote>把德国平民的伤亡写成与奥斯维辛对等的“炸弹大屠杀”（Bombenholocaust），是极右翼的标准话术。痛苦是事实；等价是谎言。</blockquote>
+  </section>
+
+  <section class="card green" id="compromise">
+    <p class="tag">ABSCLN. 05 · ALLTAG</p>
+    <h2>日常妥协：同意、恐惧与自利</h2>
+    <p>联邦政治教育中心（bpb）提醒：不能只用恐怖来描绘纳粹战时社会。盖世太保人力不足，必须依赖告密与线民；SD 的《帝国报告》不是现代民调，而是给宣传部门的风向仪。1944年7月22日各区报告写着：东线崩溃使情绪“降到零点”，慕尼黑空袭持续压抑士气，民众从国防军公报只提“高炮击落”、不提空战，自行推断战斗机已近枯竭。这些句子证明人们会读官方语言的缝隙，也证明缝隙里仍没有组织起来的拒绝。</p>
+    <p>DHM 的日常史条目提供一组去浪漫化的数字：1939年夏到1944年9月，就业女性仅从约1460万增至1490万，增量约30万——与英、美动员形成对照。缺口主要由强制劳工与战俘填补。青年被编入拾甲虫、拾燃烧片、废品收集；帝国教育部长鲁斯特1940年2月16日训令把学校变成废纸、碎布、金属与瓶盖的交接点，并写明“收集旧物即战争勤务”。电影院在1939/40年度首次突破十亿人次；戈培尔在1942年9月20日德国队负于瑞典后抱怨：十万观众“心里想的是球赛，而不是占领东方某座城市”。娱乐不是逃离政治，而是政权允许的减压阀。</p>
+    <p>所谓妥协，具体表现为：遵守遮光却抱怨党棍特权；接受配给却走黑市；把孩子送进儿童疏送（KLV）却厌恶其中的反宗教灌输；在防空洞里讲笑话，第二天继续上工。1943年仅柏林就有超过70万人离开。积极抵抗始终是少数人的道路。对学习者而言，危险在于两种简化：一种把全体德国民众写成希特勒的人质，一种把空袭下的苦难写成足以抵消侵略与灭绝的道德清算。</p>
+  </section>
+
+  <section class="card pink" id="now">
+    <p class="tag">ABSCLN. 06 · 2025–2026</p>
+    <h2>2025–2026：德累斯顿纪念与民防公约</h2>
+    <p>2010年史学家委员会在六年研究后，将1945年2月13–15日德累斯顿空袭死亡人数定为约2.5万，对应英美投下的约65万枚燃烧弹。戈培尔当时宣称25万，以便在国际舆论中对冲德国自身对城市的摧毁。2025年2月13日，法新社/法国24台报道：市政文告写明纪念的是“国家社会主义暴政加诸人类的无量苦难”，并指出德累斯顿“既非孤立事件，该城既非‘无辜’也非‘受害者’”，同时点出考文垂与列宁格勒曾遭国防军严重摧毁。晚间9时45分全城钟声标记第一波炸弹落下的时刻。人手相连的人链自2010年起既悼念死者，也对抗把周年变成极右动员场的企图。选择联邦选举前十天做这一姿态，说明空袭记忆仍是民主与修正主义的角力场。</p>
+    <p>汉堡圣尼古拉纪念堂一带的研究（2023年“蛾摩拉行动”八十周年会议）与汉堡大学历史学者亨德里克·阿尔特霍夫的综述则强调另一条线索：1990年代以后，主流叙事才稳定地把汉堡火风暴放回纳粹侵略与毁灭战争的因果链中，并补入强制劳工、集中营囚徒清尸与拆除哑弹等长期被抹去的声音。空袭史若只剩“我城的废墟”，就仍是半成品。</p>
+    <p>2026年5月22日，联邦人口保护与灾害救助局（BBK）通报：内阁通过民防公约要点，至2029年计划投入一百亿欧元，强化预警与通信、饮用水与应急电源、技术救援署（THW）韧性站点，并将NINA预警应用扩展为指引公共避难点；警报器资助延续，目标是2027年实现中央触发。5月20日，内政部长多布林特与国防部长皮斯托里乌斯在柏林火车总站华盛顿广场展示既有民防能力。这与纳粹时期“防空势在必行”的全民强制入会、种族化掩体准入不是同一政体、同一法律，不可类比成“历史循环”。它提醒的是另一件事：当当代国家重新谈论警报、地下室与三日储备时，历史课必须先讲清——上一次德国的“后方保护”如何把犹太人印在票证对角线之外，又如何把少年送上高炮阵地。</p>
+  </section>
+
+  <section class="card sources" id="sources">
+    <p class="tag">ABSCLN. 07 · QUELLEN</p>
+    <h2>来源</h2>
+    <p class="note">下列网址均经本周期检索核验，不编造链接。维基条目仅作配额年表的对照，史实以档案与馆方文本为准。</p>
+    <ol class="body">
+      <li>哈佛法学院纽伦堡文件库：巴克1942年9月18日关于削减犹太人食品配额的训令（PS-1347）。<br><a href="https://nuremberg.law.harvard.edu/documents/658-instructions-to-state-governments?mode=text" target="_blank" rel="noopener">https://nuremberg.law.harvard.edu/documents/658-instructions-to-state-governments?mode=text</a></li>
+      <li>法兰克福1933–1945项目：尤塔·海贝尔，《二战期间法兰克福的营养状况》（地方配额、犹太人排除、战俘对照、42例死刑）。<br><a href="https://www.frankfurt1933-1945.de/beitraege/die-stadt-als-heimatfront/beitrag/die-ernaehrungssituation-in-frankfurt-waehrend-des-zweiten-weltkrieges" target="_blank" rel="noopener">https://www.frankfurt1933-1945.de/beitraege/die-stadt-als-heimatfront/beitrag/die-ernaehrungssituation-in-frankfurt-waehrend-des-zweiten-weltkrieges</a></li>
+      <li>德意志历史博物馆 LeMO：战时日常生活（配给日程、服装卡点数、女性就业、KLV、娱乐与士气）。<br><a href="https://www.dhm.de/lemo/kapitel/zweiter-weltkrieg/alltagsleben" target="_blank" rel="noopener">https://www.dhm.de/lemo/kapitel/zweiter-weltkrieg/alltagsleben</a></li>
+      <li>德意志历史博物馆 LeMO：防空（RLB、1935年立法、灯火管制、防毒面具之无效）。<br><a href="https://www.dhm.de/lemo/kapitel/zweiter-weltkrieg/kriegsverlauf/luftschutz" target="_blank" rel="noopener">https://www.dhm.de/lemo/kapitel/zweiter-weltkrieg/kriegsverlauf/luftschutz</a></li>
+      <li>DHM 藏品：《敌人看得见你的灯光！遮光！》海报，柏林，1940。<br><a href="https://www.dhm.de/lemo/bestand/objekt/verdunkeln-1940" target="_blank" rel="noopener">https://www.dhm.de/lemo/bestand/objekt/verdunkeln-1940</a></li>
+      <li>联邦档案馆：1939–1945年德国上空的空战（战略阶段、高炮与夜战、档案检索路径 RL 7–RL 19 等）。<br><a href="https://www.bundesarchiv.de/im-archiv-recherchieren/archivgut-recherchieren/nach-themen/der-luftkrieg-ueber-deutschland-1939-1945/" target="_blank" rel="noopener">https://www.bundesarchiv.de/im-archiv-recherchieren/archivgut-recherchieren/nach-themen/der-luftkrieg-ueber-deutschland-1939-1945/</a></li>
+      <li>Action on Armed Violence 对 USSBS《战略轰炸对德国士气的影响》（1947）的摘要与数据表。<br><a href="https://aoav.org.uk/2020/the-effects-of-strategic-bombing-in-wwii-on-german-morale/" target="_blank" rel="noopener">https://aoav.org.uk/2020/the-effects-of-strategic-bombing-in-wwii-on-german-morale/</a></li>
+      <li>联邦政治教育中心：迪特马尔·聚斯等语境下的《德意志战争社会》（含1944年7月22日 SD 报告摘录）。<br><a href="https://www.bpb.de/themen/nationalsozialismus-zweiter-weltkrieg/der-zweite-weltkrieg/199403/die-deutsche-kriegsgesellschaft/" target="_blank" rel="noopener">https://www.bpb.de/themen/nationalsozialismus-zweiter-weltkrieg/der-zweite-weltkrieg/199403/die-deutsche-kriegsgesellschaft/</a></li>
+      <li>France 24：德累斯顿空袭八十周年（2025-02-13）——2.5万死亡数字、极右“炸弹大屠杀”话术、人链与市政文告。<br><a href="https://www.france24.com/en/europe/20250213-on-the-80th-anniversary-of-the-bombing-of-dresden-tributes-to-victims-are-hijacked-by-far-right" target="_blank" rel="noopener">https://www.france24.com/en/europe/20250213-on-the-80th-anniversary-of-the-bombing-of-dresden-tributes-to-victims-are-hijacked-by-far-right</a></li>
+      <li>联邦人口保护与灾害救助局：2026年5月22日《民防公约》要点通报（至2029年一百亿欧元、NINA、警报器）。<br><a href="https://www.bbk.bund.de/SharedDocs/Kurzmeldungen/DE/2026/05/om-22-pakt-bevoelkerungsschutz.html" target="_blank" rel="noopener">https://www.bbk.bund.de/SharedDocs/Kurzmeldungen/DE/2026/05/om-22-pakt-bevoelkerungsschutz.html</a></li>
+      <li>《光明日报》书评：格茨·阿利《希特勒的民族帝国》（中译），2011-02-15。<br><a href="https://epaper.gmw.cn/gmrb/html/2011-02/15/nw.D110000gmrb_20110215_7-13.htm?div=-1" target="_blank" rel="noopener">https://epaper.gmw.cn/gmrb/html/2011-02/15/nw.D110000gmrb_20110215_7-13.htm?div=-1</a></li>
+      <li>德语维基百科词条 Lebensmittelkarte（1939年8月27日条例、72格粉色水印卡、配额年表；仅作对照）。<br><a href="https://de.wikipedia.org/wiki/Lebensmittelkarte" target="_blank" rel="noopener">https://de.wikipedia.org/wiki/Lebensmittelkarte</a></li>
+    </ol>
+  </section>
+
+  <section class="card" id="lesson">
+    <p class="tag">ABSCLN. 08 · LEHRE</p>
+    <h2>对历史学习者的启示</h2>
+    <p>第一，看见票证上的格子。配给史不是“大家都饿了”的平均数，而是一份可以按颜色、加印字母与购物时段拆开的种族文件。问“德国后方吃得怎样”，必须同时问：苏联战俘的萝卜、犹太儿童的脱脂奶、占领区被抽走的谷物，分别在哪一张表上。</p>
+    <p>第二，空袭痛苦与战争罪责可以、也必须放在同一句话里。平民死于燃烧弹是事实；把这一事实写成与灭绝营等价，是在偷换加害结构。德累斯顿2010年的2.5万与戈培尔的25万之间，差的不是同情心，而是方法与政治。</p>
+    <p>第三，日常妥协比英雄传奇更接近多数人的位置。排队、遮光、听《点播音乐会》、把废铁交到学校，这些动作让毁灭性战争在社会层面可以延续。研究它们，不是为了把祖父一辈集体定罪，而是为了拒绝“除了抵抗者与受害者再无他人”的舒适叙事。</p>
+    <p>第四，2025–2026年的纪念与民防讨论，要求学习者保持两种能力：承认当代民主国家有权建设预警与避难指引；同时拒绝任何把纳粹防空同盟美化为“民间自救传统”的怀旧。历史不是应急手册的插图，而是一张印着谁被排除在外的旧票证。</p>
+  </section>
+
+  <footer>
+    二战德国史调研 · 系列第3期 · 配给票穿孔拼贴风 · 20260830_0920
+  </footer>
+</article>
+</body>
+</html>
