@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>打卡之后没有工会 —— 德意志劳工阵线如何把工厂改成纪律装置</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Share+Tech+Mono&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Factory punch-clock: beige plaster, black iron, brass bezel, red time-stamp ink */
+:root {
+  --wall: #b9a888;
+  --plaster: #d2c3a4;
+  --card: #efe4c8;
+  --card-edge: #d8c9a4;
+  --ink: #161410;
+  --iron: #1e1c18;
+  --brass: #9a7b3c;
+  --brass-dark: #6e5628;
+  --stamp: #b42318;
+  --face: #f4ebd4;
+  --fade: #6a5e4c;
+  --slot: #8a7a5e;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background:
+    radial-gradient(ellipse at 50% 0, rgba(255,230,170,.18), transparent 42%),
+    repeating-linear-gradient(90deg, rgba(22,20,16,.05) 0 1px, transparent 1px 11px),
+    repeating-linear-gradient(0deg, rgba(22,20,16,.04) 0 1px, transparent 1px 13px),
+    linear-gradient(180deg, #8f7d5c 0, var(--wall) 18%, #c4b392 100%);
+  color: var(--ink);
+  font-family: "Source Serif 4", "Noto Serif SC", "Songti SC", serif;
+  line-height: 1.76;
+}
+body::before {
+  content: "";
+  position: fixed; inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 18% 8%, rgba(0,0,0,.18), transparent 32%);
+  z-index: 0;
+}
+.shop {
+  max-width: 920px;
+  margin: 0 auto 48px;
+  padding: 18px 16px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Punch clock housing */
+.clock-house {
+  background: linear-gradient(180deg, #2a2620, var(--iron) 40%, #12110f);
+  border: 3px solid #0a0908;
+  box-shadow:
+    inset 0 8px 0 rgba(255,255,255,.06),
+    0 18px 0 rgba(0,0,0,.28),
+    0 28px 40px rgba(0,0,0,.35);
+  padding: 16px 18px 14px;
+  position: relative;
+}
+.clock-house::after {
+  content: "STEMPEL-UHR  ·  BETRIEB  ·  DAF";
+  display: block;
+  text-align: center;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 10px;
+  letter-spacing: .28em;
+  color: var(--brass);
+  margin-top: 10px;
+}
+.clock-row {
+  display: grid;
+  grid-template-columns: 168px 1fr;
+  gap: 16px;
+  align-items: center;
+}
+.dial {
+  width: 168px; height: 168px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, var(--face) 0 62%, transparent 63%),
+    conic-gradient(from 0deg, var(--brass-dark), var(--brass), #c4a056, var(--brass-dark));
+  border: 8px solid #3a2e18;
+  box-shadow: inset 0 0 0 6px #ead9b0, 0 0 0 2px #0a0908;
+  position: relative;
+  margin: 0 auto;
+}
+.dial .mark {
+  position: absolute; left: 50%; top: 10px;
+  width: 2px; height: 10px;
+  background: var(--ink);
+  transform-origin: 50% 66px;
+}
+.hand {
+  position: absolute; left: 50%; bottom: 50%;
+  transform-origin: 50% 100%;
+  background: var(--ink);
+  border-radius: 2px;
+}
+.hour { width: 5px; height: 42px; transform: translateX(-50%) rotate(118deg); }
+.min { width: 3px; height: 58px; transform: translateX(-50%) rotate(18deg); }
+.sec {
+  width: 2px; height: 64px; background: var(--stamp);
+  transform: translateX(-50%) rotate(0deg);
+  animation: tick 60s linear infinite;
+}
+.hub {
+  position: absolute; left: 50%; top: 50%;
+  width: 12px; height: 12px;
+  background: var(--stamp);
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+@keyframes tick { to { transform: translateX(-50%) rotate(360deg); } }
+.brand {
+  position: absolute; left: 50%; top: 58%;
+  transform: translateX(-50%);
+  font-family: "Teko", sans-serif;
+  font-size: 11px;
+  letter-spacing: .2em;
+  color: var(--fade);
+}
+.kicker {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 11px;
+  letter-spacing: .2em;
+  color: var(--brass);
+  margin-bottom: 4px;
+}
+h1 {
+  font-family: "Teko", sans-serif;
+  font-size: clamp(40px, 8vw, 68px);
+  line-height: .88;
+  letter-spacing: .02em;
+  color: var(--face);
+  text-transform: none;
+  font-weight: 600;
+}
+.sub {
+  color: #d8cbb0;
+  font-size: 16.5px;
+  max-width: 38em;
+  margin-top: 8px;
+}
+.meta {
+  margin-top: 12px;
+  display: flex; flex-wrap: wrap; gap: 8px 14px;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 12px;
+  color: #b8aa90;
+}
+.meta b { color: #f0e2c4; }
+.toc { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.toc a {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 11px;
+  text-decoration: none;
+  color: var(--iron);
+  background: var(--brass);
+  padding: 5px 9px;
+}
+.toc a:hover { background: var(--face); }
+
+/* Time-card rack */
+.rack {
+  margin-top: 14px;
+  background: #3a342c;
+  border: 4px solid #12100c;
+  padding: 10px;
+  box-shadow: inset 0 10px 18px rgba(0,0,0,.35);
+}
+.card {
+  background:
+    repeating-linear-gradient(90deg, transparent 0 11px, rgba(22,20,16,.05) 11px 12px),
+    linear-gradient(180deg, #f3ead2, var(--card));
+  border: 1px solid var(--card-edge);
+  margin: 0 0 10px;
+  padding: 16px 18px 12px 36px;
+  position: relative;
+  box-shadow: 0 3px 0 rgba(0,0,0,.12);
+}
+.card::before {
+  content: "";
+  position: absolute; left: 10px; top: 14px; bottom: 14px;
+  width: 10px;
+  background:
+    radial-gradient(circle at 50% 8px, #3a342c 0 4px, transparent 4.5px) 0 0 / 10px 22px repeat-y;
+}
+.card .chip {
+  position: absolute; right: 12px; top: 10px;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 10px;
+  letter-spacing: .14em;
+  color: var(--fade);
+  border: 1px solid var(--fade);
+  padding: 2px 6px;
+}
+.stamp-ink {
+  position: absolute; right: 18px; top: 36px;
+  font-family: "Teko", sans-serif;
+  font-size: 28px;
+  letter-spacing: .12em;
+  color: var(--stamp);
+  border: 3px solid var(--stamp);
+  padding: 0 8px 2px;
+  transform: rotate(-12deg);
+  opacity: .22;
+  pointer-events: none;
+}
+h2 {
+  font-family: "Teko", sans-serif;
+  font-size: 30px;
+  letter-spacing: .04em;
+  color: var(--stamp);
+  font-weight: 600;
+  line-height: 1;
+  margin: 0 0 8px;
+}
+p { margin: 0 0 10px; }
+ul { padding-left: 1.15em; }
+li { margin: 7px 0; }
+.insight {
+  background: var(--iron);
+  color: var(--face);
+  border-color: #0a0908;
+}
+.insight h2 { color: var(--brass); }
+.insight .chip { color: #9a8c74; border-color: #9a8c74; }
+.insight::before {
+  background: radial-gradient(circle at 50% 8px, var(--brass) 0 4px, transparent 4.5px) 0 0 / 10px 22px repeat-y;
+}
+.refs a { color: var(--stamp); word-break: break-all; }
+.foot {
+  text-align: center;
+  font-family: "Share Tech Mono", monospace;
+  letter-spacing: .2em;
+  font-size: 11px;
+  color: var(--brass);
+  padding: 8px 0 2px;
+}
+.note {
+  font-size: 14.5px;
+  color: #3a3228;
+  border-left: 4px solid var(--brass);
+  padding: 6px 10px;
+  background: rgba(154,123,60,.12);
+  margin: 8px 0 10px;
+}
+@media (max-width: 720px) {
+  .clock-row { grid-template-columns: 1fr; }
+  .dial { margin-bottom: 8px; }
+  h1 { font-size: 42px; }
+  .card { padding-right: 12px; }
+}
+</style>
+</head>
+<body>
+<article class="shop">
+  <header class="clock-house">
+    <div class="clock-row">
+      <div class="dial" aria-hidden="true">
+        <span class="mark" style="transform:translateX(-50%) rotate(0deg)"></span>
+        <span class="mark" style="transform:translateX(-50%) rotate(30deg)"></span>
+        <span class="mark" style="transform:translateX(-50%) rotate(60deg)"></span>
+        <span class="mark" style="transform:translateX(-50%) rotate(90deg)"></span>
+        <span class="mark" style="transform:translateX(-50%) rotate(120deg)"></span>
+        <span class="mark" style="transform:translateX(-50%) rotate(150deg)"></span>
+        <span class="mark" style="transform:translateX(-50%) rotate(180deg)"></span>
+        <span class="mark" style="transform:translateX(-50%) rotate(210deg)"></span>
+        <span class="mark" style="transform:translateX(-50%) rotate(240deg)"></span>
+        <span class="mark" style="transform:translateX(-50%) rotate(270deg)"></span>
+        <span class="mark" style="transform:translateX(-50%) rotate(300deg)"></span>
+        <span class="mark" style="transform:translateX(-50%) rotate(330deg)"></span>
+        <span class="hand hour"></span>
+        <span class="hand min"></span>
+        <span class="hand sec"></span>
+        <span class="hub"></span>
+        <span class="brand">10:00</span>
+      </div>
+      <div>
+        <p class="kicker">WWII GERMAN HISTORY LAB · REEL 44 · DAF / FACTORY DISCIPLINE</p>
+        <h1>打卡之后没有工会</h1>
+        <p class="sub">德意志劳工阵线、罗伯特·莱伊与解散工会之后的工厂纪律——从 1933 年 5 月 2 日上午十点砸馆，到厂规、工作簿、信任评议会和被接到同一台钟上的闲暇</p>
+        <div class="meta">
+          <span><b>本期主题</b> 第二轮池第 44 项 · 民生与社会</span>
+          <span><b>生成时间</b> 2026-08-30 18:40 CST</span>
+          <span><b>视觉风格</b> 工厂考勤钟风</span>
+        </div>
+        <nav class="toc">
+          <a href="#s0">本期主题</a>
+          <a href="#s1">五点与二日</a>
+          <a href="#s2">不是工会</a>
+          <a href="#s3">厂主即领袖</a>
+          <a href="#s4">考勤式监视</a>
+          <a href="#s5">假投票</a>
+          <a href="#s6">接到闲暇</a>
+          <a href="#s7">数字与档案</a>
+          <a href="#s8">启示</a>
+          <a href="#s9">来源</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="rack">
+    <section class="card" id="s0">
+      <span class="chip">KARTEN-NR. 44-A</span>
+      <span class="stamp-ink">EIN</span>
+      <h2>本期主题</h2>
+      <p>系列第 30 期写过一体化：政党、联邦州与工会如何在 1933 年春夏被同时抽掉。工会会馆被占，不是故事的结尾，而是工厂纪律的开端。砸掉的是集体谈判的对手；装上去的是一台更大的考勤钟：德意志劳工阵线（Deutsche Arbeitsfront, DAF）把雇主与雇工编进同一张“劳动共同体”，由国家任命的劳动信托人规定工资，由厂主用厂规罚款，用工作簿卡住跳槽，再用“欢乐力量”（Kraft durch Freude, KdF）把下班后的时间接回生产。</p>
+      <p>这一期只追问一件事：<strong>解散工会之后，工厂里的人还怎么被管</strong>。KdF 的旅游、邮轮与普罗拉度假城留给第 45 期。2025–2026 年的入口在沃尔夫斯堡：这座城市本身就是 DAF 的产物——“KdF 汽车之城”，劳工阵线的营房解释牌仍挂在市当代史研究所（IZS）网站上；2026 年 7 月 IZS 与市立美术馆启动青少年项目，准备 2027 年夏在城堡办展，问这座城市今天如何回看自己的纳粹起源。</p>
+    </section>
+
+    <section class="card" id="s1">
+      <span class="chip">KARTEN-NR. 44-B · 10:00</span>
+      <span class="stamp-ink">2. MAI</span>
+      <h2>核心发现一：五一是诱饵，二日十点才是收网</h2>
+      <p>罗伯特·莱伊（Robert Ley, 1890–1945）在 1933 年 4 月 21 日签发通告第 6/33 号。德美历史文献库（GHDI）所收英译写明：对自由工会的“一体化行动”于<strong>5 月 2 日星期二上午 10:00</strong>开始。行动委员会由莱伊任主席，鲁道夫·施梅尔任副手，组织工作交给赖因霍尔德·穆霍，宣传交给比亚拉斯；目标首先是全德工会联盟（ADGB）与全德自由职员联盟（AFA）。大区领袖负责执行，纳粹工厂支部（NSBO）派人接管，冲锋队与党卫队占领会馆并把相关人员送进“保护拘留”。莱伊特别交代：不要让工人觉得打击针对他们，而要说打击的是“不符合德意志民族利益的过时制度”；账目先冻结到星期四下午 18:00，日常救济仍须发放，以免会员不安。</p>
+      <ul>
+        <li>美国驻柏林临时代办乔治·戈登 5 月 5 日致国务卿的第 2362 号电报（FRUS 1933，卷二）是当场外交记录：行动准时在上午十点铺开，占领社民党系统工会会馆与工人银行；约五十名干部被捕，包括 ADGB 主席特奥多尔·莱帕尔特、格拉斯曼与前劳工部长维塞尔。戈登写明，这些工会约有<strong>三百余万</strong>会员；基督教工会与较小工会随即书面屈服，于是约<strong>八百万</strong>有组织的工人与职员落入纳粹直接控制。莱伊下令：今后集体工资谈判只许由该委员会进行。</li>
+        <li>工会领导层并不是毫无察觉地走进陷阱，而是误判了合作的价格。莱帕尔特此前宣布政治中立，动员会员参加 5 月 1 日“民族劳动节”。戈登指出：他们还在谈判、还在过节，占领计划却已保密到最后一刻。莱伊对报界说，自己被选中是因为“得到希特勒信任”；对工人的宣言则称，夺取工会是“民族社会主义革命的第二阶段”，工会制度将被当作“神圣不可侵犯”保存下来——同时把干部关进拘留所。</li>
+        <li>5 月 4 日，其余工会向 NSBO 专员交出指挥权。5 月 10 日 DAF 在柏林正式成立，莱伊任领袖。GHDI 所收 5 月 2 日招贴《一如既往，我们仍是同志》已经用“劳工阵线”的口吻说话：阶级冲突被宣布结束，劳动、工资与合同问题实际改由帝国劳工部任命的“劳动信托人”处理。工人失去的不只是会馆钥匙，还有罢工权与独立组织权。</li>
+      </ul>
+      <p class="note">纽伦堡检方文件 392-PS（即莱伊通告）把时间、指挥链与占领清单钉死。哈佛法学院纽伦堡藏品与国会图书馆《纳粹阴谋与侵略》第三卷均可核对。读这一天，不要停在“工会被禁”四个字：它是一次全国同步的财产没收与人事清洗。</p>
+    </section>
+
+    <section class="card" id="s2">
+      <span class="chip">KARTEN-NR. 44-C · LEY</span>
+      <span class="stamp-ink">DAF</span>
+      <h2>核心发现二：劳工阵线不是工会，莱伊也不是工会领袖</h2>
+      <p>美国大屠杀纪念馆人物条把莱伊写成 DAF 的建立者，会员约 2500 万，战时却被施佩尔、绍克尔盖过风头；1945 年他在纽伦堡开庭前于狱中自杀。莱伊没有劳工运动履历。他是纳粹党帝国组织领袖，把工厂写成前线，把工人写成“劳动士兵”。吕迪格·哈赫特曼（Rüdiger Hachtmann）在《纳粹主义中的劳动》一章里指出：名称本身已经说明意图——“阵线”要把劳动者变成可机动的人力，服务于“德意志人的民族与绩效共同体”（1934 年 10 月以后的官方表述）。希特勒给 DAF 的任务，是把第一次世界大战的“共同体体验”搬进日常劳动。</p>
+      <ul>
+        <li>德国历史博物馆 LeMO 条目（克劳斯·韦伯，2015-09-16）把法律身份写清楚：DAF 是纳粹党的附属团体，按领袖原则分成大区、县、地方、企业共同体、小组与街区。它自称代表“所有从事创造的德意志人”，条件是“发誓放弃阶级斗争思想”。会员资格宣传为“自愿但被期望”；拒绝入会，在就业、住房、保险与休假安排上会吃亏。</li>
+        <li>DAF 同时收编雇主与雇工。莱伊公开承诺：把“绝对领导权交还给工厂的天然领袖——也就是雇主……只有雇主能做决定。”（英维基综述所引梅森、夏伊勒传统叙述；与 1934 年《国民劳动秩序法》第 1–2 条的措辞一致。）工资、工时与合同不由 DAF 谈判。LeMO 强调：DAF 在劳资合同上只有咨询地位；真正的强制规定来自劳动信托人。</li>
+        <li>钱从哪里来？先是 5 月没收的工会财产（纽伦堡文件称 5 月 12 日由总检察长查封，莱伊被指定为有权处分的管理人），再是从工资里扣的会费。沃尔夫斯堡市史所转述：1942 年约 2500 万会员，月费通常 1.50–2.00 马克。LeMO 给出 1939 年会费收入约 <strong>5.39 亿</strong>帝国马克。哈赫特曼研究的“经济帝国”还包括银行、住房、造船、出版与大众汽车厂。会员名义上自愿，会费却可由企业代扣；约 1939 年已有七成企业直接从工资划走。</li>
+      </ul>
+    </section>
+
+    <section class="card" id="s3">
+      <span class="chip">KARTEN-NR. 44-D · AOG</span>
+      <span class="stamp-ink">§1</span>
+      <h2>核心发现三：厂主写成领袖，工人写成随从</h2>
+      <p>砸馆十七天后，1933 年 5 月 19 日颁布《劳动信托人法》（帝国法律公报 1933 I，285 页）。全文现存于 verfassungen.de。帝国总理按邦政府建议为较大经济区任命信托人；他们“代替雇员工会、个别雇主或雇主联合会”，有约束力地规定劳动合同条件，并“维护劳动和平”。他们受帝国政府指令约束。约 22 名信托人直属帝国劳工部。LeMO 把该法写成 4 月 19 日，与法律公报日期不符，应以 5 月 19 日为准。</p>
+      <ul>
+        <li>1934 年 1 月 20 日《国民劳动秩序法》（AOG，帝国法律公报 1934 I，45 页起）把工厂改写成微型领袖国家。第 1 条：企业家里“企业领袖”（Führer des Betriebes），职员与工人是“随从”（Gefolgschaft），共同促进企业目的并有利于民族与国家。第 2 条：领袖在本法范围内对企业事务作决定；他须照料随从的福祉，随从须报以“企业共同体所要求的忠诚”。</li>
+        <li>第 5 条：通常不少于二十名受雇者的企业，由随从中的“信任人”组成信任评议会（Vertrauensrat），在领袖主持下仅有咨询权。第 6 条任务包括改善劳动绩效、讨论厂规、劳动保护、化解争执；依据厂规罚款前须听取评议会——注意是听取，不是批准。第 8 条资格审查把政治忠诚写进门槛：信任人须年满二十五、属 DAF、具备公民荣誉权，并保证“随时毫无保留地拥护民族国家”。</li>
+        <li>第 9 条把候选人名单交给企业领袖与 NSBO 企业代表共同拟定，随从只能对名单作秘密表态；谈不拢或名单被否，由劳动信托人直接任命。第 16 条允许评议会多数就一般劳动条件向信托人书面申诉，但<strong>不停止</strong>领袖决定的效力。集体合同被“关税条例”（Tarifordnung）取代，由信托人颁布，效力高于厂规。</li>
+      </ul>
+      <p>这不是“劳资共治”。它把魏玛时期的工厂委员会与工会谈判权拆成：厂主发令、国家定价、DAF 在场监视。罢工在制度上无处落脚——反对信托人的决定，等于反对国家。</p>
+    </section>
+
+    <section class="card" id="s4">
+      <span class="chip">KARTEN-NR. 44-E · BUCH</span>
+      <span class="stamp-ink">AUS</span>
+      <h2>核心发现四：考勤式监视——厂规、罚款、工作簿、工厂突击队</h2>
+      <p>AOG 要求通常不少于二十人的企业由领袖书面颁布厂规（Betriebsordnung）。沃尔夫冈·施皮克在弗里德里希·艾伯特基金会《工会月刊》1984 年一文里，根据工厂档案与信托人实践指出：企业主把法定解雇事由扩大，把准时到岗与离岗、工位清洁、爱护工具、服从上级、绩效不佳时的处罚写进厂规。DAF 有时抗议这种“企业司法”过度扩张，劳动信托人却在关税条例里给厂主更多罚款权；战争期间更一再敦促用企业罚金维持劳动纪律。</p>
+      <ul>
+        <li><strong>工作簿（Arbeitsbuch）。</strong>1935 年 2 月 26 日立法推行。技能与就业史写在本子上，就业必须出示，本子由雇主保管。工人想走，雇主可以不放本——等于卡住合法再就业。这是把人身流动变成行政许可，比罚款更冷：钟还在走，门已经锁上。</li>
+        <li><strong>工厂突击队（Werkscharen）。</strong>约 1935 年设立，制服化的厂内突击力量，负责宣传、培训，并尽量把企业领袖本人编成普通队员。约 1938 年存在于约 <strong>9000</strong> 家企业；约三万名企业领袖参加过 DAF 培训。莱伊 1937 年在纽伦堡说，若没有突击队，“一切都会变成漂亮空话，只剩啤酒晚会和发香烟”。纪律需要看得见的人盯着，不能只靠标语。</li>
+        <li><strong>企业代表（Obmann）与点名。</strong>信任评议会萎缩之后，大厂里的 DAF 企业代表权重上升。沃尔夫斯堡大众汽车厂的例子：DAF 在厂内影响力有限，但定期举行工厂点名；企业主席瓦尔特·克罗内负责意识形态定向、监督与控制。监视不必等于盖世太保驻厂——考勤、点名、会费代扣、工作簿与厂规罚款已经构成日常网格。</li>
+        <li><strong>“劳动之美”（Schönheit der Arbeit）。</strong>1933 年 11 月 27 日成立，次日并入 KdF，阿尔贝特·施佩尔一度主持。运动按年换口号：清理厂房、降噪音、好光好工作、干净的人、健康空气、厂内热餐。改善往往由厂主出钱、工人无偿施工。它把卫生与照明做成忠诚表演，也把身体舒适回收成产量。</li>
+      </ul>
+    </section>
+
+    <section class="card" id="s5">
+      <span class="chip">KARTEN-NR. 44-F · RAT</span>
+      <span class="stamp-ink">NEIN</span>
+      <h2>核心发现五：信任评议会的假投票，与社会荣誉法庭</h2>
+      <p>AOG 给工人留下的唯一机构，很快被证明无法当代表。施拉姆对 1934–1936 年 DAF 的研究表明：第一次信任评议会选举已是对“民族社会主义”的明显拒绝。1935 年春第二次选举被更好“准备”。DAF 宣布约 90% 投票率、83% 赞成企业领袖与企业代表的共同名单。博尔曼不信数字是真的；一名内部报告人担心这组数字会“在全体工人看来简直可笑”。希特勒采纳这一判断，此后禁止再选。成员改由企业领袖、企业代表与劳动信托人任命。评议会随之萎缩。</p>
+      <ul>
+        <li>艾伯特基金会 1992 年论文指出：地下工人组织起初完全否定评议会，视之为企业主的机关；政权稳定后，才有人讨论可否利用它揭穿 DAF 的空话、把评议会推到与厂方对立的位置。这是弱者的战术，不是制度赋予的权利。</li>
+        <li>社会荣誉法庭（soziale Ehrengerichte）把“荣誉”做成惩罚语言。工人不服从、厂主“虐待随从”，理论上都可被起诉。对厂主的制裁极少动用；对工人，它把迟到、顶撞、怠工从劳动合同争议改写成对共同体的失德。信托人可在荣誉法庭提起控诉。工厂纪律因此有两套时钟：厂规立刻罚款，法庭再给一次道德定性。</li>
+        <li>非法的共产党与社民党工厂小组并未完全消失，但失去公开机构后，抵抗变成传闻、怠工与私下嘲笑。戈登在 1933 年 5 月已观察到：普鲁士司法部专设小组打击对“保护劳动委员会”的所谓破坏；连《柏林日报》一篇讨论工会改组形式的文章都被莱伊视为破坏。敏感的不是产量，是谁还敢建议另一种工厂。</li>
+      </ul>
+    </section>
+
+    <section class="card" id="s6">
+      <span class="chip">KARTEN-NR. 44-G · KdF</span>
+      <span class="stamp-ink">PAUSE</span>
+      <h2>核心发现六：欢乐力量接到同一台钟上（细节留给第 45 期）</h2>
+      <p>希特勒与莱伊都清楚：镇压工会、信托人压住加薪、再武装又要加码产量，会制造工人阶级的不满。补偿不放在工资上，放在时间和感官上。1933 年 11 月 27 日，DAF 成立“欢乐力量”。莱伊的政策被概括为：把大众的注意力“从物质价值转到道德价值”，“喂灵魂比喂胃更重要”。沃尔夫斯堡解释牌写得直白：纳粹主义里的闲暇不是目的，而是要生产健康、有动机的劳动力。</p>
+      <ul>
+        <li>KdF 是 DAF 最大的下属组织，不是平行的工会。会费养活旅游、厂内音乐会、体育与“劳动之美”。哈赫特曼称之为“民族共同体的服务商”。服务有两面：工人确实得到一些魏玛时期难以企及的旅行与娱乐；组织者同时把下班后的时间编进同一套监视与动员。</li>
+        <li>DAF 还办全国职业竞赛（Reichsberufswettkampf）、企业绩效赛，并颁发“民族社会主义模范企业”金旗，通常在 5 月 1 日“民族劳动节”领奖。旗帜与食堂改善是真的；它们不恢复谈判权。第 45 期将专写旅游、消费与被组织的快乐。本期只需记住结构：<strong>砸馆拿走集体力量，KdF 发还被管理的快乐。</strong></li>
+      </ul>
+    </section>
+
+    <section class="card" id="s7">
+      <span class="chip">KARTEN-NR. 44-H · 1942</span>
+      <span class="stamp-ink">ZAHL</span>
+      <h2>核心发现七：会员数字对不上，档案却对得上</h2>
+      <p>DAF 喜欢用最大的数字证明自己就是民族。学习者要并排看几组互不一致的口径，而不是选一个最圆的。</p>
+      <ul>
+        <li><strong>会员。</strong>施拉姆引 DAF 自述：1933 年中约 800 万，1934 年 3 月 1400 万，1935 年 1600 万。纽伦堡文件 2275-PS 是 DAF 劳动科学研究所 1943 年出版物：战前帝国领土上约 <strong>2300 万</strong>个人会员，另有去除重复后约 1000 万“团体会员”（文化院、粮食协会、公务员联盟、教师联盟、国防军等集体挂靠）。LeMO、美国大屠杀纪念馆、哈赫特曼与沃尔夫斯堡市史所采用 1942 年约 <strong>2500 万</strong>。英维基表格写 1938 年 3200 万，更像把个人与团体口径叠在一起。结论应当是：它是第三帝国最大的群众组织；精确到百万的差，来自“谁算会员”。</li>
+        <li><strong>官僚。</strong>LeMO：约 4.4 万专职、130 万义务工作者。哈赫特曼 2019 年《商业史》论文约 5 万专职。沃尔夫斯堡转述哈赫特曼专著：战争高峰期 DAF 雇佣约 20 万人、年营业额约 20 亿马克——那是把经济帝国的企业员工算进去。专职干部、志愿骨干与康采恩雇员，是三套编制。</li>
+        <li><strong>2025–2026 年还在哪读。</strong>沃尔夫斯堡 IZS 的 DAF 营房页仍是把哈赫特曼、施奈德、莫姆森与厂档接在一起的公共史文本；市刊《DAS ARCHIV》第 34 期于 2025 年 12 月出版。2026 年 7 月 10 日，本地电台 Okerwelle 报道 IZS 与市立美术馆合作，面向青少年，并规划 2027 年夏在城堡办展，题目是这座城市如何回看纳粹时期。大众汽车厂、KdF 车与强制劳动是同一条城市传记。DAF 不是抽象缩写，它盖过厂房，也盖过营房。</li>
+      </ul>
+    </section>
+
+    <section class="card insight" id="s8">
+      <span class="chip">SCHLUSS · LERNEN</span>
+      <h2>对历史学习者的启示</h2>
+      <ul>
+        <li><strong>先问谁被拿走谈判权，再问谁在发福利。</strong>食堂、厂内音乐会和补贴旅行可以是真的。它们不能证明工人仍有集体力量。DAF 的自我定义就是：最大绩效，而不是保护工人。</li>
+        <li><strong>把 5 月 1 日与 5 月 2 日印在同一张工卡上。</strong>过节、中立声明、联名信，都没有挡住上午十点的占领。合作如果被对方当成掩护，次日的暴力会写进同一份行动命令。</li>
+        <li><strong>厂规比口号更值得读。</strong>AOG 的“共同体”语言很软；厂规里的迟到罚款、工作簿扣押、突击队点名很硬。读纳粹劳工史，优先找 Betriebsordnung、Tarifordnung 与 Arbeitsbuch，而不是莱伊的演讲集。</li>
+        <li><strong>数字要标口径。</strong>2500 万与 3200 万可以同时出现在可靠网页上。先写“个人会员 / 团体会员 / 康采恩雇员”，再引用。</li>
+        <li><strong>闲暇是下一根指针。</strong>KdF 把下班时间接回考勤钟。若只写镇压、不写被组织的快乐，会把体制写成纯暴力，而漏掉它最有效的部分。细节见第 45 期。</li>
+      </ul>
+    </section>
+
+    <section class="card refs" id="s9">
+      <span class="chip">QUELLEN</span>
+      <h2>来源链接</h2>
+      <ul>
+        <li>GHDI：莱伊通告第 6/33 号（1933-04-21），规定 5 月 2 日 10:00 行动 —— <a href="https://germanhistorydocs.org/en/nazi-germany-1933-1945/circular-from-dr-robert-ley-staff-chief-of-nsdap-political-organizations-on-the-action-to-coordinate-gleichschaltungaktion-the-free-trade-unions-april-21-1933">germanhistorydocs.org … document-1501</a></li>
+        <li>GHDI：冲锋队占领柏林恩格尔河岸工会会馆（1933-05-02） —— <a href="https://germanhistorydocs.org/en/nazi-germany-1933-1945/prohibition-of-free-trade-unions-sa-members-seize-the-union-office-on-engelsufer-in-berlin-may-2-1933">germanhistorydocs.org … image-1890</a></li>
+        <li>GHDI：DAF 招贴《一如既往，我们仍是同志》（1933-05-02） —— <a href="https://germanhistorydocs.org/en/nazi-germany-1933-1945/appeal-of-the-german-workers-front-after-the-dissolution-of-the-free-trade-unions-then-as-now-we-remain-comrades-may-2-1933">germanhistorydocs.org … image-2030</a></li>
+        <li>美国国务院历史学家办公室：戈登 1933-05-05 第 2362 号电报（FRUS 1933 卷二） —— <a href="https://history.state.gov/historicaldocuments/frus1933v02/d187">history.state.gov/…/d187</a></li>
+        <li>《劳动信托人法》1933-05-19（RGBl. I S. 285）全文 —— <a href="https://www.verfassungen.de/de33-45/treuhaender33.htm">verfassungen.de/…/treuhaender33.htm</a></li>
+        <li>《国民劳动秩序法》1934-01-20 全文 —— <a href="https://www.verfassungen.de/de33-45/arbeit34.htm">verfassungen.de/…/arbeit34.htm</a></li>
+        <li>耶鲁 Avalon：纽伦堡文件 2275-PS（DAF 1943 年自述会员口径） —— <a href="https://avalon.law.yale.edu/imt/2275-ps.asp">avalon.law.yale.edu/imt/2275-ps.asp</a></li>
+        <li>德国历史博物馆 LeMO：Deutsche Arbeitsfront（韦伯，2015-09-16） —— <a href="https://www.dhm.de/lemo/kapitel/ns-regime/ns-organisationen/daf">dhm.de/lemo/…/daf</a></li>
+        <li>美国大屠杀纪念馆：Robert Ley —— <a href="https://encyclopedia.ushmm.org/content/en/article/robert-ley">encyclopedia.ushmm.org/…/robert-ley</a></li>
+        <li>沃尔夫斯堡 IZS：DAF 营房解释（转述哈赫特曼、1934-10-24 元首法令） —— <a href="https://www.wolfsburg.de/en-us/kultur/geschichte/izs/das-portal/portal-gemeinschaftslager/gemeinschaftslager-baracke-der-deutschen-arbeitsfront">wolfsburg.de/…/gemeinschaftslager-baracke-der-deutschen-arbeitsfront</a></li>
+        <li>哈赫特曼：DAF 经济帝国，《商业史》2019 —— <a href="https://doi.org/10.1080/00076791.2019.1691799">doi.org/10.1080/00076791.2019.1691799</a></li>
+        <li>哈赫特曼：Arbeit und Arbeitsfront（开放获取章节） —— <a href="https://www.degruyter.com/document/doi/10.1515/9783486858846.87/pdf?licenseType=free">degruyter.com/…/9783486858846.87</a></li>
+        <li>施拉姆：DAF 与 KdF，1934–1936（labournet 转载） —— <a href="https://www.labournet.de/wp-content/uploads/2014/06/schramm_arbeitsfront.pdf">labournet.de/…/schramm_arbeitsfront.pdf</a></li>
+        <li>施皮克：纳粹德国的企业宪制，《工会月刊》1984 —— <a href="https://library.fes.de/gmh/main/pdf-files/gmh/1984/1984-09-a-545.pdf">library.fes.de/gmh/…/1984-09-a-545.pdf</a></li>
+        <li>Okerwelle：2026-07-10 沃尔夫斯堡 IZS 与市立美术馆青少年项目 —— <a href="https://okerwelle.de/2026/07/10/ns-geschichte-in-wolfsburg-staedtische-galerie-und-izs-starten-projekt-mit-jugendlichen/">okerwelle.de/2026/07/10/…</a></li>
+      </ul>
+    </section>
+    <p class="foot">STEMPELN · NICHT VERHANDELN · SCHOLARLY USE ONLY</p>
+  </div>
+</article>
+</body>
+</html>
