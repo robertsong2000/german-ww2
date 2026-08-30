@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>纽伦堡种族法与公民权剥夺 —— 1935年如何用谱系表格把国民分成两等</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Noto+Serif+SC:wght@400;600;700&family=Overpass+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Genealogical civil-registry form: beige census boxes, no purple, no Inter/Space Grotesk */
+:root{
+  --ink:#2a2418;
+  --mute:#6a5d48;
+  --paper:#eadfc8;
+  --sheet:#f4ead4;
+  --line:#8a7355;
+  --rule:#5c4a32;
+  --stamp:#b33a28;
+  --census:#3d5a4c;
+  --box:#fbf6ea;
+  --grid:#d4c4a6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Noto Serif SC","Newsreader",serif;
+  color:var(--ink);
+  line-height:1.78;
+  background-color:#cbb896;
+  background-image:
+    radial-gradient(ellipse at 12% 8%, rgba(255,255,255,.22), transparent 42%),
+    repeating-linear-gradient(90deg, transparent 0 11px, rgba(90,70,40,.05) 11px 12px);
+}
+.page{
+  max-width:980px;
+  margin:28px auto 64px;
+  position:relative;
+  background:var(--sheet);
+  border:1.5px solid var(--rule);
+  box-shadow:0 18px 40px rgba(42,36,24,.22);
+  padding:0 0 42px;
+}
+.page::before{
+  content:"";
+  position:absolute;
+  left:-14px;top:18px;bottom:18px;width:14px;
+  background:
+    radial-gradient(circle at 7px 10px, transparent 5px, #a89068 5.5px) 0 0/14px 22px;
+  filter:drop-shadow(1px 0 0 rgba(0,0,0,.12));
+}
+.grain{
+  pointer-events:none;
+  position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.07'/%3E%3C/svg%3E");
+  mix-blend-mode:multiply;
+}
+.mast{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  gap:10px;
+  align-items:end;
+  padding:16px 28px 12px 36px;
+  border-bottom:3px double var(--rule);
+  font-family:"Overpass Mono",monospace;
+  font-size:11px;
+  letter-spacing:.08em;
+  color:var(--mute);
+  background:repeating-linear-gradient(0deg, transparent, transparent 21px, rgba(92,74,50,.07) 22px), var(--paper);
+}
+.mast b{color:var(--stamp);font-weight:700}
+.kicker{
+  font-family:"Overpass Mono",monospace;
+  font-size:12px;
+  letter-spacing:.18em;
+  color:var(--census);
+  padding:16px 36px 0;
+}
+h1{
+  font-size:clamp(26px,4.4vw,40px);
+  line-height:1.25;
+  padding:6px 36px 0;
+  font-weight:700;
+}
+.sub{
+  padding:8px 36px 0;
+  max-width:46em;
+  color:var(--mute);
+  font-size:16.5px;
+}
+.meta{
+  margin:16px 36px 0;
+  display:flex;flex-wrap:wrap;gap:8px;
+  font-family:"Overpass Mono",monospace;
+  font-size:12px;
+}
+.chip{
+  border:1px solid var(--line);
+  background:var(--box);
+  padding:4px 9px;
+}
+.chip em{font-style:normal;color:var(--stamp);font-weight:700}
+nav.toc{
+  margin:18px 36px 0;
+  display:flex;flex-wrap:wrap;gap:6px;
+}
+nav.toc a{
+  font-family:"Overpass Mono",monospace;
+  font-size:12px;
+  text-decoration:none;
+  color:var(--box);
+  background:var(--rule);
+  padding:6px 10px;
+  border:1px solid var(--ink);
+}
+nav.toc a:hover{background:var(--stamp)}
+section{padding:22px 36px 0}
+h2{
+  font-size:21px;
+  border-bottom:2px solid var(--rule);
+  padding-bottom:6px;
+  margin-bottom:12px;
+  display:flex;align-items:baseline;gap:10px;
+}
+h2 .fn{
+  font-family:"Overpass Mono",monospace;
+  font-size:12px;
+  color:var(--stamp);
+  letter-spacing:.12em;
+}
+.card{
+  background:var(--box);
+  border:1px solid var(--grid);
+  padding:16px 18px;
+  margin-bottom:12px;
+  box-shadow:inset 0 0 0 4px rgba(234,223,200,.55);
+}
+.card h3{font-size:17.5px;margin-bottom:8px}
+.card h3 .no{
+  font-family:"Overpass Mono",monospace;
+  color:var(--census);
+  margin-right:8px;
+  font-size:13px;
+}
+.card p,.card li{margin:8px 0}
+.card ul{padding-left:1.2em}
+.fieldrow{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:8px;
+  margin:10px 0 4px;
+  font-family:"Overpass Mono",monospace;
+  font-size:12px;
+}
+.field{
+  border:1px solid var(--line);
+  background:#fffdf6;
+  padding:7px 9px;
+  min-height:48px;
+}
+.field label{display:block;color:var(--mute);letter-spacing:.06em;font-size:10px}
+.field span{border-bottom:1px dotted var(--line);display:block;margin-top:4px;min-height:1.2em}
+.tree{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  margin:12px 0;
+}
+.boxcell{
+  border:1.5px solid var(--rule);
+  background:#fffdf6;
+  min-height:92px;
+  padding:8px;
+  font-family:"Overpass Mono",monospace;
+  font-size:11.5px;
+  position:relative;
+}
+.boxcell .ck{
+  width:14px;height:14px;border:1.5px solid var(--ink);
+  display:inline-block;vertical-align:middle;margin-right:4px;
+  background:#fff;
+}
+.boxcell.marked{background:#f3e6c8}
+.boxcell.marked .ck{background:var(--stamp);box-shadow:inset 0 0 0 2px #fffdf6}
+.legend{
+  font-family:"Overpass Mono",monospace;
+  font-size:12px;
+  color:var(--mute);
+  margin-top:6px;
+}
+.quote{
+  font-family:"Overpass Mono",monospace;
+  font-size:13px;
+  line-height:1.65;
+  background:var(--paper);
+  border-left:5px solid var(--census);
+  padding:12px 14px;
+  margin:12px 0;
+}
+.stamp{
+  position:absolute;
+  right:42px;top:86px;
+  width:118px;height:118px;
+  border:4px double var(--stamp);
+  color:var(--stamp);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  font-family:"Overpass Mono",monospace;
+  font-size:10px;
+  letter-spacing:.08em;
+  transform:rotate(-14deg);
+  opacity:.72;
+  pointer-events:none;
+}
+.tablewrap{overflow-x:auto;margin:10px 0}
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:14.5px;
+  background:#fffdf6;
+}
+th,td{
+  border:1px solid var(--grid);
+  padding:8px 10px;
+  text-align:left;
+  vertical-align:top;
+}
+th{
+  font-family:"Overpass Mono",monospace;
+  font-size:12px;
+  letter-spacing:.04em;
+  background:var(--paper);
+}
+.insight{border:2px solid var(--stamp);box-shadow:inset 0 0 0 5px rgba(179,58,40,.06)}
+.refs a{color:var(--census);word-break:break-all}
+.refs ol{padding-left:1.3em}
+.refs li{margin:8px 0}
+.foot{
+  margin:28px 36px 0;
+  padding-top:12px;
+  border-top:3px double var(--rule);
+  font-family:"Overpass Mono",monospace;
+  font-size:11px;
+  letter-spacing:.1em;
+  text-align:center;
+  color:var(--mute);
+}
+@media(max-width:720px){
+  .mast{grid-template-columns:1fr;padding-left:22px}
+  .kicker,h1,.sub,section,.meta,nav.toc,.foot{padding-left:18px;padding-right:18px}
+  .tree{grid-template-columns:1fr 1fr}
+  .stamp{display:none}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="grain"></div>
+  <header class="mast">
+    <div>REICHSSIPPENAMT · FORMULAR S-1935<br>AHNENTAFEL / STANDESAMT-ABSCHRIFT</div>
+    <div style="text-align:center"><b>RGBl. I 1935 S. 1146 / 1333</b><br>AKTE NR. 33</div>
+    <div style="text-align:right">AUSGESTELLT 2026-08-30 18:39 CST<br>NUR FÜR FORSCHUNG · KEINE EHRENRETTUNG</div>
+  </header>
+  <p class="kicker">二战德国史调研 · 系列第 33 期 · 法律史 / 公民权</p>
+  <h1>纽伦堡种族法与公民权剥夺</h1>
+  <p class="sub">1935 年 9 月 15 日，《帝国公民法》与《保护德意志血统与德意志荣誉法》把“谁算德国人”写成可勾选的祖父母格子。种族科学并不存在；存在的是户籍、教堂记录和一张把迫害做成日常行政的表格。</p>
+  <div class="meta">
+    <span class="chip">时间 <em>2026-08-30 18:39 CST</em></span>
+    <span class="chip">视觉风格 <em>族谱登记表格风</em></span>
+    <span class="chip">议题 <em>33</em></span>
+    <span class="chip">立场 <em>批判制度史 · 不美化 · 不猎奇暴行细节</em></span>
+  </div>
+  <nav class="toc">
+    <a href="#s0">本期主题</a>
+    <a href="#s1">两部主法</a>
+    <a href="#s2">帝国公民</a>
+    <a href="#s3">血统保护法</a>
+    <a href="#s4">混血分类</a>
+    <a href="#s5">后续迫害</a>
+    <a href="#s6">2025–2026</a>
+    <a href="#s7">启示</a>
+    <a href="#s8">来源</a>
+  </nav>
+  <div class="stamp">KRITISCH<br>GEPRÜFT<br>——<br>KEINE<br>RASSENLEHRE</div>
+
+  <section id="s0">
+    <h2><span class="fn">01 / THEMA</span>本期主题</h2>
+    <div class="card">
+      <div class="fieldrow">
+        <div class="field"><label>GEGENSTAND</label><span>Nürnberger Gesetze, 15.09.1935</span></div>
+        <div class="field"><label>ORT</label><span>Nürnberg · 7. Reichsparteitag</span></div>
+        <div class="field"><label>RECHTSQUELLE</label><span>RGBl. I 1935, S. 1146 ff.</span></div>
+        <div class="field"><label>VERWALTUNGSWEG</label><span>Ahnenpass / Ariernachweis</span></div>
+      </div>
+      <p>美国大屠杀纪念馆（USHMM）把 1935 年 9 月两部法律合称为纽伦堡法案：《帝国公民法》（Reichsbürgergesetz）与《保护德意志血统与德意志荣誉法》（Gesetz zum Schutze des deutschen Blutes und der deutschen Ehre）。慕尼黑纳粹文献中心（nsdoku）补充：同日还有《帝国旗帜法》。真正改变命运的，是前两部——它们把政治权利从普通国籍里抽走，再把婚姻与亲密关系交给刑法。</p>
+      <p>本篇不复述暴行场面。要读的是官僚学：没有可验证的“种族特征”，立法者只能去翻祖父母是否曾属犹太宗教共同体。联邦档案馆写得很直白：所谓雅利安证明（Ariernachweis）靠户籍与教堂簿；不存在全国集中归档。迫害被做成可复印的表格，表格再去开启职业禁令、财产没收与递解。</p>
+    </div>
+  </section>
+
+  <section id="s1">
+    <h2><span class="fn">02 / GESETZE</span>核心发现一：两部主法，一套谱系行政</h2>
+    <div class="card">
+      <h3><span class="no">A</span>不是科学分类，是一夜写成的法律武器</h3>
+      <p>1935 年 9 月 15 日，已一体化的国会在纽伦堡第 7 次党代会特别会议上一致通过法案。德国联邦政治教育中心（bpb）指出：草稿有一部分是连夜赶出来的，两天后即生效。USHMM（条目最近修订 2025-01-10）强调：当时国会已全由纳粹代表组成；反犹本就是党纲核心，选择在纽伦堡党代会立法，是把种族意识形态写成国家法。</p>
+      <p>1920 年纳粹党纲第 4 条已写明：只有“德意志血统”的人才是 Volksgenosse，犹太人不能是。1933 年 4 月 7 日《恢复职业公务员法》的“雅利安条款”已开始清洗公职。纽伦堡法把局部禁令升级为全民身份制度：此后几乎所有反犹措施，都要先问“按 11 月 14 日第一实施条例，此人算不算犹太人”。</p>
+      <div class="quote">USHMM 英译《帝国公民法》第 2 条要点：帝国公民只能是“德意志或亲缘血统”的国家属民，并须以其行为证明愿意且适于效忠德意志人民与帝国；唯有帝国公民享有完整政治权利。</div>
+    </div>
+  </section>
+
+  <section id="s2">
+    <h2><span class="fn">03 / REICHSBÜRGER</span>核心发现二：国籍还在，公民权被抽走</h2>
+    <div class="card">
+      <h3><span class="no">B</span>Staatsangehörige 与 Reichsbürger 的两层结构</h3>
+      <ul>
+        <li>法律先承认人人都可以是“国家属民”（Staatsangehörige）：受帝国保护，同时对帝国负有义务。政治权利却只给“帝国公民”（Reichsbürger）。犹太人被降为属民，失去选举与公职。卡尔斯鲁厄理工学院历史学家 Rolf-Ulrich Kunze 对德国之声（DW）说，这是“把不义合法化”（Legalization of injustice）：名义上仍是德国人，却不再是帝国的公民。</li>
+        <li>1935 年 11 月 14 日《帝国公民法第一实施条例》（RGBl. I S. 1333）把定义钉死。德史文献与图像库（GHDI）收录英译：犹太人不能成为帝国公民，无政治选举权，不得任公职；犹太公务员原则上须于 1935 年 12 月 31 日前退休。所谓“种族”无法化验，条例只好规定：祖父母若曾属犹太宗教共同体，即视为“纯犹太”祖父母。</li>
+        <li>USHMM 写明：这一定义覆盖数万并不自认犹太人、与犹太社区无宗教文化联系的人，包括改宗者及其子女孙子女。表白信仰、改教、声明效忠，都不能把被定义的人变回“德意志人”。解放时代（1871 年起法律平等）在这里被正式逆转。</li>
+      </ul>
+      <p>条例第 2 条暂时把“犹太混血”（jüdische Mischlinge）纳入临时帝国公民权，但权利随后被一道道补充法令削薄。第 7 条把豁免权留给元首本人——分类越精确，例外越专断。</p>
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2><span class="fn">04 / BLUTSCHUTZ</span>核心发现三：血统保护法把亲密关系交给检察官</h2>
+    <div class="card">
+      <h3><span class="no">C</span>婚姻无效、性关系入罪、女佣条款</h3>
+      <ul>
+        <li>禁止犹太人与“德意志或亲缘血统”公民结婚；即便为规避而在国外缔结，亦无效。撤销之诉只能由检察官提起。婚外性关系同样禁止，被称作“种族玷污”（Rassenschande）。</li>
+        <li>禁止犹太人雇用 45 岁以下的德意志女性家政人员。禁止犹太人悬挂帝国旗帜；允许展示“犹太色彩”，由国家“保护”这一展示权——这是隔离仪式，不是权利赋予。</li>
+        <li>bpb 统计：至 1940 年，仅“种族玷污”一项即有 1,911 人被生效判决。法条焦点在男性；战争开始后刑罚加重。女性则常被以保护拘留、剥夺国籍、递解等方式惩罚。USHMM 指出：数千人因此被定罪，或直接消失于集中营。</li>
+      </ul>
+      <p>既有的犹太—非犹太婚姻起初并不被这部法律自动解除，但社会与行政压力巨大。nsdoku（Angela Hermann，2025-10-06 发布）提醒：法律管的是未来的结合，日常生活里的拆散则靠羞辱、职业威胁与警察。</p>
+    </div>
+  </section>
+
+  <section id="s4">
+    <h2><span class="fn">05 / MISCHLINGE</span>核心发现四：祖父母格子决定法律身份</h2>
+    <div class="card">
+      <h3><span class="no">D</span>把纳粹分类还原成登记表，而不是生物学</h3>
+      <p>下表是对 1935 年 11 月 14 日第一实施条例与 11 月 26 日内政部通告的批判性还原。格子里的“犹太”指祖父母曾属犹太宗教共同体——这是行政拟制，不是基因事实。</p>
+      <div class="tree" aria-label="纳粹法律中的四祖父母分类示意图">
+        <div class="boxcell marked"><span class="ck"></span>GROSSELTERN 1<br>宗教共同体：犹太<br>□ 受洗改宗不影响</div>
+        <div class="boxcell marked"><span class="ck"></span>GROSSELTERN 2<br>宗教共同体：犹太</div>
+        <div class="boxcell marked"><span class="ck"></span>GROSSELTERN 3<br>宗教共同体：犹太</div>
+        <div class="boxcell"><span class="ck"></span>GROSSELTERN 4<br>其他登记身份</div>
+      </div>
+      <p class="legend">示意：三名“纯犹太”祖父母 → 法律上的“犹太人”（Jude）。勾选本身就是权力。</p>
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th>行政标签</th>
+              <th>祖父母计数（条例用语）</th>
+              <th>1935 年底起的法律后果（摘要）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>犹太人（Jude）</td>
+              <td>至少三名“纯犹太”祖父母</td>
+              <td>不得为帝国公民；禁婚禁性；后续职业、教育、财产法令均以此定义为前提</td>
+            </tr>
+            <tr>
+              <td>视同犹太人（Geltungsjude）</td>
+              <td>两名犹太祖父母，且符合下列之一：当时属犹太社区或事后加入；与犹太人结婚；血统保护法生效后与犹太人婚生；1936-07-31 后与犹太人非婚所生</td>
+              <td>按犹太人对待。自我认同与改宗无效</td>
+            </tr>
+            <tr>
+              <td>一级混血（Mischling 1. Grades）</td>
+              <td>两名犹太祖父母，且不落入上列“视同”条款</td>
+              <td>暂予帝国公民权；婚姻须许可；权利持续被削减。万湖会议仍把此类人列为“待解决”</td>
+            </tr>
+            <tr>
+              <td>二级混血（Mischling 2. Grades）</td>
+              <td>一名犹太祖父母</td>
+              <td>更接近“德意志血统”待遇；原则上可与“德意志血统”结婚，但同类互婚被劝阻</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Richard J. Evans 指出：党内激进派与内政部官僚曾争论“混血”要不要一并算作异族；希特勒迟至 11 月初才拍板。没有合理答案，因为问题本身不合理。结果是一张可以决定职业、婚姻、兵役与生死的谱系表。</p>
+    </div>
+  </section>
+
+  <section id="s5">
+    <h2><span class="fn">06 / FOLGEN</span>核心发现五：定义一旦入法，迫害可以按章办理</h2>
+    <div class="card">
+      <h3><span class="no">E</span>从雅利安护照到第十一实施条例</h3>
+      <ul>
+        <li><b>证明义务转嫁给个人。</b>联邦档案馆说明：纽伦堡法及公务员法等要求“德意志同胞”提交血统证明。小证明追到祖父母，大证明追到 1800 年 1 月 1 日仍在世的祖先。Ahnenpass 由户籍官或教堂记录员直接填写。档案不在科布伦茨集中：BArch R 1509（帝国宗族局）是鉴定机关，不是个人证明仓库。柏林文件中心的党卫队种族与移居总局案卷里，才可能出现党卫队家谱。</li>
+        <li><b>职业与公共生活清场。</b>GHDI 指出：失去帝国公民身份后，凡以该身份为门槛的职业、学业与公职都可以把犹太人推出去。1933 年公立学校中约 75% 的犹太儿童仍就读公立学校，1937 年底降至约 40%（bpb）。到 1938 年，德国犹太人几乎失去全部基本权利——暴力随后成为政策的主旋律，而不是起点。</li>
+        <li><b>1941 年 11 月 25 日第十一实施条例。</b>犹太人若“通常居所”在国外，即丧失德国国籍，财产归帝国。递解目的地（含被占领的波兰等地）在行政法上算国外。Law and History Review 的研究概括：被递解者在法律拟制上，其通常居所可以是集中营所在地。这不是修辞，是没收财产的手续。</li>
+        <li><b>万湖会议（1942-01-20）。</b>亚德瓦谢姆所刊议定书写明：实施“最终解决”时，纽伦堡法应作为基础；混血与混合婚姻仍需“解决”。分类表格从婚姻登记处走进了跨部委协调。</li>
+        <li><b>适用范围扩大。</b>USHMM：法律最初点名犹太人，后亦适用于罗姆人/辛蒂人与黑人及其后裔。bpb：1936 年 1 月 3 日弗里克密令把辛蒂与罗姆在法律上与犹太人同等对待。1938 年 5 月 28 日起法律适用于被合并的奥地利。至 1941 年，意大利、匈牙利、罗马尼亚、斯洛伐克、保加利亚、维希法国、克罗地亚等颁布类似反犹法。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="s6">
+    <h2><span class="fn">07 / 2025–2026</span>核心发现六：九十年后，公民权仍是未完成的句子</h2>
+    <div class="card">
+      <h3><span class="no">F</span>博物馆修订、归还国籍与“护照德国人”争论</h3>
+      <ul>
+        <li>USHMM《纽伦堡法案》条 2025-01-10 修订；《纽伦堡种族法》条 2025-09-25 修订；中文条 2025-06-05 修订。教学问题没有变：没有科学基础的种族世界观，如何塑造立法？法律拿走了哪些保护？针对少数群体的立法如何成为大规模暴行的预警？</li>
+        <li>nsdoku 词条由 Angela Hermann 于 2025-10-06 发布，仍把纽伦堡法称为纳粹国家迫害犹太人的核心法律基础，并指向 Cornelia Essner《纽伦堡法，或种族狂的行政管理》（2002）与 Brechtken 等编《纽伦堡法八十年后》（2017）。</li>
+        <li>DW 在法案九十周年语境下访问 Kunze：他把《帝国公民法》的“帝国公民 / 国家属民”二分，与当代极右翼把“真正的德国人”和“护照德国人”分开的说法相对照，称之为血统种族主义的制度记忆。本报告记录这一史学判断，不等于把 1935 与今日政党画等号；要读的是：<b>一旦法律承认“纸上的公民”可以低于“血统上的人民”，平等就被做成了可撤销的特权。</b></li>
+        <li>联邦德国《基本法》第 116 条第 2 款：1933-01-30 至 1945-05-08 因政治、种族或宗教理由被剥夺国籍者及其后代，有权恢复。联邦行政局（BVA）说明：包括 1941 年第十一条例的自动丧失，以及 1933 年 7 月 14 日《撤销入籍与剥夺国籍法》的个案剥夺。2021-08-20 起《国籍法》第 15 条补上漏洞：逃亡后因取得外国国籍或婚姻而失去德国籍、或因迫害根本未能取得德国籍的人及其后代，亦可申请。</li>
+        <li>Euronews（2026-05-08）：内政部称以色列公民入籍从 2021 年 2,485 人升至 2024 年 4,275 人；2024 年按第 15 条处理 2,185 件。截至 2026-04-01，第 116 条第 2 款申请积压 17,689 件。德国驻纽约总领馆相关申请从 2022 年 734 件升至 2025 年 1,771 件。阿罗尔森档案已说明：证据常在被迫害者登记与寻人通信里，而纳粹曾专门销毁人口册中的犹太条目。</li>
+      </ul>
+      <p>归还护照不是宽恕仪式。Euronews 所访申请协助者说：关键是信任今日法治，而不是原谅昨日加害。积压本身也是一种历史课——官僚曾经高效地剥夺，修复却慢。</p>
+    </div>
+  </section>
+
+  <section id="s7">
+    <h2><span class="fn">08 / LERNZIEL</span>对历史学习者的启示</h2>
+    <div class="card insight">
+      <ul>
+        <li><b>先读格子，再读口号。</b>纽伦堡法的核心技术是把“人民”写成可勾选的祖父母。种族神话站不住时，行政就去翻教堂簿。学习这段，是学习现代国家如何用登记技术制造可消灭的类别。</li>
+        <li><b>公民权可以分层，分层之后一切后续法令都有了挂钩。</b>属民仍有义务，公民才有权利。职业禁令、学校隔离、财产充公、递解后的国籍注销，都挂在这一定义上。万湖会议不是另起炉灶，是接着这张表开会。</li>
+        <li><b>“混血”不是仁慈的中间地带。</b>一级、二级、视同犹太人，是为了让官僚在不确定处仍能盖章。例外权在元首，说明精确分类与任意豁免是同一套权力。</li>
+        <li><b>修复国籍是对 1935–1941 法律链条的回应，不是自动发生的道德。</b>《基本法》第 116 条与 2021 年第 15 条承认：被剥夺者及其后代的德国身份曾被国家亲手折断。2026 年仍以万计的待审申请提醒：法律可以一夜剥夺，归还却要排队。</li>
+        <li><b>下一问：</b>户籍官、牧师、学校、银行如何把这些格子落实为日常？迫害不只发生在党代会讲台上，也发生在每一张需要祖父母证明的表格上。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="s8">
+    <h2><span class="fn">09 / QUELLEN</span>来源</h2>
+    <div class="card refs">
+      <ol>
+        <li><a href="https://encyclopedia.ushmm.org/content/en/article/nuremberg-laws" target="_blank" rel="noopener">USHMM：Nuremberg Laws（法律文本英译；2025-01-10 修订）</a></li>
+        <li><a href="https://encyclopedia.ushmm.org/content/en/article/the-nuremberg-race-laws" target="_blank" rel="noopener">USHMM：The Nuremberg Race Laws（混血定义、罗姆人与黑人适用；2025-09-25 修订）</a></li>
+        <li><a href="https://encyclopedia.ushmm.org/content/zh/article/nuremberg-laws" target="_blank" rel="noopener">USHMM 中文：纽伦堡法案（2025-06-05 修订）</a></li>
+        <li><a href="https://germanhistorydocs.org/en/nazi-germany-1933-1945/the-reich-citizenship-law-september-15-1935-and-the-first-regulation-to-the-reich-citizenship-law-november-14-1935" target="_blank" rel="noopener">GHDI：帝国公民法及 1935-11-14 第一实施条例英译（RGBl. I S. 1146 / 1333）</a></li>
+        <li><a href="https://alex.onb.ac.at/cgi-content/alex?aid=dra&amp;datum=1935&amp;size=45&amp;page=1288" target="_blank" rel="noopener">奥地利国家图书馆 ALEX：《帝国法律公报》1935 年公民法原文页</a></li>
+        <li><a href="https://www.bundesarchiv.de/themen-entdecken/online-entdecken/geschichtsgalerien/7-april-1933-gesetz-zur-wiederherstellung-des-berufsbeamtentums/" target="_blank" rel="noopener">联邦档案馆：职业公务员法、雅利安证明与纽伦堡法的衔接</a></li>
+        <li><a href="https://www.bundesarchiv.de/assets/bundesarchiv/de/Downloads/PDFs_Geschichtsgalerie/Ariernachweise_Merkblatt.pdf" target="_blank" rel="noopener">联邦档案馆：Ariernachweise 说明（无中央归档；Ahnenpass；BArch R 1509）</a></li>
+        <li><a href="https://www.bpb.de/kurz-knapp/hintergrund-aktuell/501380/vor-85-jahren-nuernberger-gesetze-erlassen/" target="_blank" rel="noopener">bpb：纽伦堡法背景（三部法律、1,911 件“种族玷污”判决、学校比例）</a></li>
+        <li><a href="https://www.nsdoku.de/lexikon/artikel/nuernberger-gesetze-621" target="_blank" rel="noopener">nsdoku München：Nürnberger Gesetze（Angela Hermann，2025-10-06）</a></li>
+        <li><a href="https://www.yadvashem.org/docs/wannsee-conference-protocol.html" target="_blank" rel="noopener">Yad Vashem：万湖会议议定书（纽伦堡法为实施基础；混血条款）</a></li>
+        <li><a href="https://www.cambridge.org/core/journals/law-and-history-review/article/jews-or-germans-nationality-legislation-and-the-restoration-of-liberal-democracy-in-western-europe-after-the-holocaust/507CC92AAC9AB71CB81FBEDBC8B531B5" target="_blank" rel="noopener">Law and History Review：集体剥夺国籍与 1941 年第十一条例的法律后果</a></li>
+        <li><a href="https://www.dw.com/en/germany-nazis-anti-jewish-nuremberg-laws-90-years-later-v2/a-73964767" target="_blank" rel="noopener">DW：纽伦堡法九十年后的遗产（Kunze 论“合法化的不义”）</a></li>
+        <li><a href="https://www.bva.bund.de/EN/Services/Citizens/ID-Documents-Law/Citizenship/116GG_15StA.html" target="_blank" rel="noopener">BVA：基本法第 116 条第 2 款与《国籍法》第 15 条的区分</a></li>
+        <li><a href="https://www.euronews.com/my-europe/2026/05/08/why-more-and-more-israeli-and-american-jews-are-seeking-german-citizenship" target="_blank" rel="noopener">Euronews（2026-05-08）：入籍数字、积压 17,689 件与纽约领馆 2025 年申请量</a></li>
+        <li><a href="https://arolsen-archives.org/en/news/citizenship-for-victims-of-nazi-persecution/" target="_blank" rel="noopener">Arolsen Archives：被迫害者后裔入籍证据与人口册被毁问题</a></li>
+      </ol>
+    </div>
+  </section>
+  <p class="foot">WWII GERMAN HISTORY RESEARCH · ISSUE 33 · AHNENTAFEL FORMULAR · NOT FOR GLORIFICATION</p>
+</div>
+</body>
+</html>

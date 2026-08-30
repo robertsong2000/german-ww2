@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>闪击西欧 1940：军事胜利与占领的接头 —— 黄色方案如何把六周战役写成榨取的入口</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Share+Tech+Mono&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Air-raid siren stripes: hazard tape yellow/black, Luftschutz horn, warning log */
+:root {
+  --siren: #f5d000;
+  --pitch: #0b0b09;
+  --tar: #12110e;
+  --panel: #1a1914;
+  --cream: #f3ead0;
+  --muted: #b8ae8c;
+  --alert: #ffe566;
+  --soot: #2a2820;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--pitch);
+  background-image:
+    repeating-linear-gradient(
+      -45deg,
+      var(--siren) 0 18px,
+      var(--pitch) 18px 36px
+    );
+  color: var(--cream);
+  font-family: "Source Serif 4", "Songti SC", "Noto Serif SC", serif;
+  line-height: 1.78;
+}
+.tape {
+  height: 28px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--siren) 0 22px,
+    var(--pitch) 22px 44px
+  );
+  box-shadow: 0 8px 0 rgba(0,0,0,.45);
+}
+.tape.bottom { box-shadow: 0 -8px 0 rgba(0,0,0,.45); }
+.stage {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 22px 16px 48px;
+}
+.siren-box {
+  background: var(--panel);
+  border: 4px solid var(--siren);
+  box-shadow:
+    0 0 0 8px var(--pitch),
+    12px 16px 0 rgba(0,0,0,.55);
+  position: relative;
+  overflow: hidden;
+  padding: 28px 32px 40px;
+}
+.siren-box::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px dashed rgba(245,208,0,.35);
+  pointer-events: none;
+}
+.horn {
+  position: absolute;
+  right: -40px;
+  top: -30px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 10px solid rgba(245,208,0,.12);
+  box-shadow:
+    0 0 0 22px rgba(245,208,0,.07),
+    0 0 0 44px rgba(245,208,0,.04);
+  animation: pulse 3.6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: .9; }
+  50% { transform: scale(1.06); opacity: 1; }
+}
+.kicker {
+  font-family: "Share Tech Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: .28em;
+  color: var(--siren);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+h1 {
+  font-family: "Oswald", "Heiti SC", sans-serif;
+  font-weight: 700;
+  font-size: clamp(32px, 6.4vw, 58px);
+  line-height: .95;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  margin: 14px 0 12px;
+  position: relative;
+  z-index: 1;
+  color: var(--siren);
+  text-shadow: 3px 3px 0 #000;
+}
+.sub {
+  max-width: 46em;
+  font-size: 17.5px;
+  color: var(--cream);
+  position: relative;
+  z-index: 1;
+}
+.meta {
+  margin: 18px 0 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  font-family: "Share Tech Mono", ui-monospace, monospace;
+  font-size: 12.5px;
+  color: var(--muted);
+  border-top: 3px solid var(--siren);
+  border-bottom: 3px solid var(--siren);
+  padding: 10px 0;
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0 10px,
+      rgba(245,208,0,.07) 10px 12px
+    );
+}
+.meta b { color: var(--siren); font-weight: 400; }
+nav.toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 8px;
+}
+nav.toc a {
+  font-family: "Oswald", sans-serif;
+  letter-spacing: .06em;
+  text-decoration: none;
+  color: var(--pitch);
+  background: var(--siren);
+  padding: 6px 11px 4px;
+  font-size: 13px;
+}
+nav.toc a:hover { background: var(--alert); }
+section { margin-top: 26px; position: relative; z-index: 1; }
+h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 26px;
+  letter-spacing: .04em;
+  color: var(--pitch);
+  background: var(--siren);
+  display: inline-block;
+  padding: 4px 14px 2px;
+  margin-bottom: 12px;
+  transform: skewX(-8deg);
+}
+h2 span { display: inline-block; transform: skewX(8deg); }
+.card {
+  background: var(--tar);
+  border: 1px solid rgba(245,208,0,.35);
+  border-left: 14px solid var(--siren);
+  padding: 18px 20px 14px;
+  margin-bottom: 14px;
+  position: relative;
+}
+.card::after {
+  content: "LUFTALARM";
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 10px;
+  letter-spacing: .2em;
+  color: rgba(245,208,0,.35);
+}
+.card h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  letter-spacing: .03em;
+  margin-bottom: 8px;
+  color: var(--alert);
+}
+p { margin: 0 0 10px; }
+ul { padding-left: 1.2em; }
+li { margin: 7px 0; }
+.log {
+  font-family: "Share Tech Mono", ui-monospace, monospace;
+  font-size: 13.5px;
+  line-height: 1.7;
+  background: #0e0d0b;
+  border: 1px solid rgba(245,208,0,.4);
+  padding: 14px 16px;
+  color: var(--siren);
+  overflow-x: auto;
+}
+.log em { color: var(--cream); font-style: normal; }
+.note {
+  font-size: 14.5px;
+  color: var(--muted);
+  border-left: 3px solid var(--siren);
+  padding-left: 12px;
+  margin: 10px 0 0;
+}
+.insight {
+  background: var(--siren);
+  color: var(--pitch);
+  border-left-color: var(--pitch);
+}
+.insight h3, .insight h2 { color: var(--pitch); }
+.insight::after { color: rgba(11,11,9,.35); }
+.insight li { color: var(--pitch); }
+.refs a { color: var(--siren); word-break: break-all; }
+.refs .url {
+  display: block;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 11.5px;
+  color: var(--muted);
+  margin: 2px 0 10px;
+}
+.foot {
+  margin-top: 22px;
+  text-align: center;
+  font-family: "Share Tech Mono", monospace;
+  letter-spacing: .2em;
+  font-size: 11px;
+  color: var(--muted);
+}
+@media (max-width: 640px) {
+  .siren-box { padding: 18px 14px 28px; }
+  .horn { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="tape" aria-hidden="true"></div>
+<div class="stage">
+<article class="siren-box">
+  <div class="horn" aria-hidden="true"></div>
+  <p class="kicker"><span>LUFTSCHUTZ · SIREN STRIPE DESK</span><span>二战德国史调研 · 系列第37期</span></p>
+  <h1>闪击西欧 1940：军事胜利与占领的接头</h1>
+  <p class="sub">黄色方案（Fall Gelb）在六周内打通低地国家与法国，停战条款随即把战场改写成榨取入口。本篇写 1940 年 5–6 月：战役如何结束、军政府如何接上、占领费与战俘条款如何在同一份文件里出生。长期财政掠夺见系列第 6 期，此处不重复账单，只追接头。</p>
+  <div class="meta">
+    <span><b>时间</b> 2026-08-30 18:39 CST</span>
+    <span><b>视觉风格</b> 防空警报条纹风</span>
+    <span><b>范围</b> 1940-05-10 至 1940-06-25</span>
+    <span><b>立场</b> 学术批判 · 不美化政权 · 不写成武器图鉴</span>
+  </div>
+  <nav class="toc">
+    <a href="#theme">本期主题</a>
+    <a href="#gelb">黄色方案</a>
+    <a href="#may">五月时间表</a>
+    <a href="#rot">红色方案与康边</a>
+    <a href="#plug">占领接头</a>
+    <a href="#memory">2025 记忆</a>
+    <a href="#insight">启示</a>
+    <a href="#sources">来源</a>
+  </nav>
+
+  <section id="theme">
+    <h2><span>本期主题</span></h2>
+    <article class="card">
+      <p>通俗叙事爱把 1940 年西欧战役写成“闪电战神话”：坦克加飞机，六周征服法国。军事史在近三十年已经拆掉这层漆。卡尔-海因茨·弗里泽尔（Karl-Heinz Frieser）在《闪电战传说》（<em>Blitzkrieg-Legende</em>）里把西线写成一场高风险的作战赌博，而不是事先写好的革命学说。理查德·卡斯韦尔（Richard Carswell）则把法国崩溃的解释分成四类主题——腐朽、失败、约束、偶然——并指出学术共识已把<strong>军事溃败</strong>与<strong>第三共和国政治死亡</strong>分开处理。</p>
+      <p>本篇的问题更窄：<strong>胜利在哪一天变成占领？</strong>荷兰 5 月 15 日投降、比利时 5 月 28 日投降、巴黎 6 月 14 日失守、康边停战 6 月 22 日签字、停火 6 月 25 日零时生效——这些日期不是同一件事。美军大屠杀纪念馆（USHMM）把低地国家与法国的战役写成“不到六周”；真正把战役接到榨取上的，是停战第三、十七、十八、二十条，以及荷兰、比利时、法国三种不同的占领机关。系列第 6 期用《Paying for Hitler’s War》写占领费、清算账户与强制劳动的长期结构。本期只写接头：军政府如何在警报还没停的几周里把战场改成收费站。</p>
+    </article>
+  </section>
+
+  <section id="gelb">
+    <h2><span>核心发现一：黄色方案不是学说演示</span></h2>
+    <article class="card">
+      <h3>01 · 从施里芬翻版到阿登赌注</h3>
+      <ul>
+        <li>1939 年 10 月，陆军总参谋长哈尔德提出的第一版黄色方案，主攻仍走比利时中部，目标有限：把盟军推到索姆河。许多陆军将领认为对法全面进攻是自杀。冬季天气与 1940 年 1 月 10 日梅赫伦事件（德军参谋座机迫降比利时、计划落入盟军）迫使方案改写。</li>
+        <li>2 月 24 日定稿把主突方向改到阿登：A 集团军穿越卢森堡与比利时东南，在色当附近渡过马斯河，再向海峡切断北翼盟军；B 集团军在荷兰、比利时北部制造“会从中央比利时来”的假象；C 集团军钉住马奇诺防线。英语世界后来叫它“曼施坦因计划”；德军正式名称仍是黄色方案。丘吉尔事后用的“镰刀收割”并不是当时的作战代号。</li>
+        <li>这套方案成功，依赖盟军把精锐送进比利时（戴尔—布雷达变体），以及德军装甲部队在马斯河对岸继续前进——包括多次违背上级的暂停命令。把它写成“闪击战教范的完美实验”，会漏掉：德国高层自己也不确定它能成。</li>
+      </ul>
+      <p class="note">史学提醒：1940 年的胜利被事后包装成必然，方便战后德军将领把自己写成专业军人。读战役，先问计划改了几次、谁反对、哪一天差点停下来。</p>
+    </article>
+  </section>
+
+  <section id="may">
+    <h2><span>核心发现二：五月不是“法国一天就倒”</span></h2>
+    <article class="card">
+      <h3>02 · 警报日志：十天里四国同时被切开</h3>
+      <pre class="log">10 MAY  <em>Fall Gelb 开始。卢森堡当日不支。荷兰、比利时、法国同时进入战争。</em>
+13–14 MAY  <em>色当附近突破。荷兰鹿特丹遭轰炸：约 600–900 人死亡，约 8 万人无家可归。</em>
+15 MAY  <em>温克尔曼将军在 Rijsoord 签字。荷兰投降。女王威廉明娜已赴英。</em>
+20 MAY  <em>德军抵阿布维尔，盟军北翼与法国腹地被切断。</em>
+24–26 MAY  <em>装甲部队奉命暂停。敦刻尔克口袋尚未合上。</em>
+26 MAY–04 JUN  <em>发电机行动。盟军约 33.8 万人撤过海峡。</em>
+28 MAY  <em>利奥波德三世下令比利时军队投降。</em>
+29 MAY  <em>赛斯-英夸特就任荷兰帝国专员：军事占领转民政。</em></pre>
+      <ul>
+        <li>安妮·弗兰克之家把荷兰写成五天战争：海牙空降夺政府失败，南部桥梁与格雷伯防线（Grebbeberg）仍有硬仗。鹿特丹轰炸发生在最后通牒尚未期满之时，戈林要用恐怖轰炸逼降。投降后，犹太人中已有人自杀——占领还没写成条例，迫害已经开始。</li>
+        <li>USHMM 记：比利时与荷兰在五月投降；敦刻尔克海滩撤出超过 30 万英法士兵（英军约 20 万、法军约 10 万以上）。2025 年 5 月皇家海军护送 64 艘敦刻尔克“小船”重走航线时强调：这是首次没有在世老兵的纪念。记忆容易停在海滩；占领史必须从海滩后面的军政府接着写。</li>
+        <li>马丁·亚历山大（Martin S. Alexander）指出：史学长期把六月的红色方案（Fall Rot）写成尾声，仿佛法国在敦刻尔克之后就不再打仗。索姆河、埃纳河上的抵抗被写没了。法国阵亡常见估计在 5.5 万至 8.5 万，德军阵亡约 2.7 万至 4.5 万；六周合计死伤超过 30 万。把 1940 年写成“法军举手投降”，是宣传，不是战报。</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="rot">
+    <h2><span>核心发现三：康边车厢是政治剧，条款才是接头</span></h2>
+    <article class="card">
+      <h3>03 · 从巴黎陷落到停战生效</h3>
+      <ul>
+        <li>6 月 5 日红色方案对残存法军展开第二阶段进攻。6 月 10 日意大利参战。6 月 14 日德军进入巴黎。USHMM 指出凡尔赛与埃菲尔铁塔升旗的象征：1871 年德意志帝国在凡尔赛宣告，1919 年凡尔赛条约又在此羞辱德国——1940 年的胜利被做成复仇剧。</li>
+        <li>6 月 22 日，凯特尔与亨齐格（Huntziger）在康边森林雷通德空地、1918 年停战同一节车厢里签字。耶鲁 Avalon 依据《德国对外政策文件》D 辑第九卷，记录签字时间为德国夏令时 18:50。停战须待法意协议完成后，于 6 月 25 日零时前后生效。希特勒让人把车厢从博物馆拖到原位，自己听完前言即离席——姿态是报复，内容是占领权。</li>
+        <li>贝当政府迁到维希，被允许在未占领区行使“法国主权”的外观。阿尔萨斯—洛林随即被事实上并入德国行政；大西洋沿岸全部划入占领区。双方当时都以为占领是临时的，英国很快会谈和。这个误判让法方几乎没有反对第二十条：法军战俘要关到“缔结和约”为止。</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="plug">
+    <h2><span>核心发现四：三种占领机关，同一套榨取插头</span></h2>
+    <article class="card">
+      <h3>04 · 军政府、帝国专员与停战委员会</h3>
+      <ul>
+        <li><strong>荷兰：</strong>黄色方案原拟军事管理。A 集团军群司令博克 5 月 10 日即宣布荷兰、比利时置于德国军事管理之下；福尔肯豪森短暂兼任。5 月 18 日与 20 日元首法令把最高民政权交给赛斯-英夸特，军方只保留“军事主权”，且民事领域的要求须由帝国专员执行。NIOD 档案导言写明：这是故意把国防军挡在政治门外，同时让党卫队—警察系统有独立通道。荷兰被当成“日耳曼”地区，用民政而非长期军管。</li>
+        <li><strong>比利时与法国北部：</strong>比利时加上诺尔、加来海峡两省，组成“比利时与北法军事管理区”，司令部在布鲁塞尔，福尔肯豪森任军事司令官，埃格特·里德（Eggert Reeder）管行政。海峡港口与工业区被从巴黎军政府划走，方便对英作战与煤钢征用。</li>
+        <li><strong>法国：</strong>停战第三条写：德国在占领区行使占领国的一切权利，法国当局必须协助执行。第十三条要求港口、工厂、铁路、运河保持可用并按德军要求修复。第十七条禁止把经济物资从占领区转到未占领区或国外。第十八条一句：“法国政府承担德国占领军在法国领土上的给养费用。”第十八条就是后来日缴两千万马克占领费的法律钩子——具体定额与清算账户的运转，见第 6 期，此处只指出：<strong>战役一停，收费权已经写进条约。</strong></li>
+        <li><strong>战俘即劳力：</strong>第二十条把约 150 万至 180 万法军战俘扣到“和约”。鲍勃·摩尔估算德军掳获约 180 万，其中约 150 万被送进德国农业与工业。殖民部队因种族政策多留在法国营区，待遇更差。停战把人从战报改写成劳动力储备，不必等到 1942–43 年的义务劳动法令。</li>
+      </ul>
+      <p class="note">接头的定义：不是“德军进城”，而是停战委员会、军政府和帝国专员开始能对银行、铁路、战俘营下命令。黄色方案赢的是空间；康边赢的是提取权。</p>
+    </article>
+    <article class="card">
+      <h3>05 · 为什么西欧占领看起来“比较文明”</h3>
+      <ul>
+        <li>USHMM 的战时扩张条目把丹麦、挪威、荷兰、比利时、法国的管理形式并列：有的留本国政府外壳，有的设帝国专员，有的纯军管。差别来自种族等级、是否需要本地官僚收税、以及德军还要腾出手打英国。</li>
+        <li>奥基诺、奥斯特林克与怀特在《美国经济评论》（2007）里证明：法国是在用本国财政为自己被剥削融资。占领费远超驻军成本，差额变成德国在法国市场上的购买力。第 6 期已展开这笔欧洲账单。本期只需钉住时间：<strong>6 月 25 日停火生效，就是这笔机器的点火日。</strong>Avalon 所收纽伦堡 1741-PS 后来把第十八条执行过程写成往来公文——证明接头不是口号，是财政部与停战代表团的作业。</li>
+        <li>因此“闪击战胜利”若只写到巴黎阅兵，就会把下一步写成自然而然的驻军。事实相反：驻军成本要由被占领国支付，战俘要留下干活，铁路要按战前运量保留给占领当局。军事胜利的完成式，是一份能收款的条约。</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="memory">
+    <h2><span>核心发现五：2025 年纪念停在海滩，接头仍在车厢里</span></h2>
+    <article class="card">
+      <h3>06 · 八十五周年记住了发电机，较少记住第十八条</h3>
+      <ul>
+        <li>2025 年 5 月 21 日，英国皇家海军沿岸部队七艘巡逻艇护送敦刻尔克小船协会船队从拉姆斯盖特再航敦刻尔克，64 艘原船参加，是 1940 年以来最大规模集结。协会名誉副会长伊恩·吉尔伯特说：活着的联系已经断了，船本身成了老兵。这是正当的纪念，也暴露一种失衡：英语世界的 1940 年记忆高度集中在“把人救回去”，较少追问留下的人如何被编进占领经济。</li>
+        <li>康边停战博物馆仍保存复制车厢与福煦雕像（希特勒下令拆掉空地几乎所有法国纪念物，唯独留下福煦像，作为羞辱）。雷通德空地同时是 1918 年停战与 1940 年停战的地点。对学习者来说，这个地点的正确读法不是两场“签字仪式”，而是：1918 年的条款结束了一场战争；1940 年的条款开启了四年榨取。</li>
+        <li>把第 37 期接到第 6 期的读法：先用本篇搞清楚 5 月 10 日到 6 月 25 日谁投降、谁管哪一块、哪几条条约把人与物资冻结；再用第 6 期看占领费如何超过驻军成本、清算如何变成强制贷款。两篇合读，才不会把“闪击西欧”停在坦克照片上。</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="insight">
+    <h2><span>对历史学习者的启示</span></h2>
+    <article class="card insight">
+      <ul>
+        <li><strong>先画战役日历，再画占领机关图。</strong>荷兰五天、比利时十八天、法国六周，结束方式不同：有的是军方签字，有的是国王投降，有的是政府请求停战。结束方式决定后来是帝国专员还是军事司令官。</li>
+        <li><strong>不要把“闪击”当成解释。</strong>弗里泽尔拆的是神话：胜利来自阿登赌注、盟军部署错误与作战节奏，不是一份事先印好的闪电战手册。神话服务的是战后开脱。</li>
+        <li><strong>停战文本比阅兵重要。</strong>第三、十三、十七、十八、二十条已经包含占领权、交通控制、物资冻结、占领费与战俘扣留。读 1940 年，至少把 Avalon 的条约全文过一遍。</li>
+        <li><strong>西欧“温和占领”是相对波兰而言，不是仁慈。</strong>民政外壳是为了让荷兰、比利时、法国的官僚继续收税、跑铁路。种族等级决定管理形式，也决定谁先被送进集中营。</li>
+        <li><strong>纪念海滩时记得车厢。</strong>2025 年小船重航是活的记忆工作；康边条款才是占领史的点火文件。两者都要读。</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="sources">
+    <h2><span>来源</span></h2>
+    <article class="card refs">
+      <ol>
+        <li>USHMM 大屠杀百科：German Invasion of Western Europe, May 1940
+          <a class="url" href="https://encyclopedia.ushmm.org/content/en/article/german-invasion-of-western-europe-may-1940" target="_blank" rel="noopener">https://encyclopedia.ushmm.org/content/en/article/german-invasion-of-western-europe-may-1940</a></li>
+        <li>USHMM：German Wartime Expansion（荷兰帝国专员、比利时军管、维希分治）
+          <a class="url" href="https://encyclopedia.ushmm.org/content/en/article/german-wartime-expansion" target="_blank" rel="noopener">https://encyclopedia.ushmm.org/content/en/article/german-wartime-expansion</a></li>
+        <li>耶鲁 Avalon：Franco-German Armistice, 22 June 1940（全文，含第 3、17、18、20 条）
+          <a class="url" href="https://avalon.law.yale.edu/wwii/frgearm.asp" target="_blank" rel="noopener">https://avalon.law.yale.edu/wwii/frgearm.asp</a></li>
+        <li>耶鲁 Avalon：NCA Vol. IV, 1741-PS（占领费执行公文）
+          <a class="url" href="https://avalon.law.yale.edu/imt/1741-ps.asp" target="_blank" rel="noopener">https://avalon.law.yale.edu/imt/1741-ps.asp</a></li>
+        <li>安妮·弗兰克之家：The German invasion of the Netherlands
+          <a class="url" href="https://www.annefrank.org/en/anne-frank/go-in-depth/german-invasion-netherlands/" target="_blank" rel="noopener">https://www.annefrank.org/en/anne-frank/go-in-depth/german-invasion-netherlands/</a></li>
+        <li>NIOD 档案导言：Wehrmachtbefehlshaber in den Niederlanden（5 月军事管理到 29 日帝国专员）
+          <a class="url" href="https://proxy.archieven.nl/298/5597A611ADBFBC24E0538A77ABC28183" target="_blank" rel="noopener">https://proxy.archieven.nl/298/5597A611ADBFBC24E0538A77ABC28183</a></li>
+        <li>华盛顿德国历史研究所：Scherner &amp; White 编《Paying for Hitler’s War》（第 6 期主题书；本期仅作接头索引）
+          <a class="url" href="https://www.ghi-dc.org/publication/paying-for-hitlers-war-the-consequences-of-nazi-hegemony-for-europe" target="_blank" rel="noopener">https://www.ghi-dc.org/publication/paying-for-hitlers-war-the-consequences-of-nazi-hegemony-for-europe</a></li>
+        <li>Occhino, Oosterlinck, White, “How Occupied France Financed Its Own Exploitation in World War II,” <em>AER</em> 97 (2), 2007
+          <a class="url" href="https://doi.org/10.1257/aer.97.2.295" target="_blank" rel="noopener">https://doi.org/10.1257/aer.97.2.295</a></li>
+        <li>Alexander, “After Dunkirk: The French Army’s Performance against ‘Case Red’,” <em>War in History</em>, 2007
+          <a class="url" href="https://journals.sagepub.com/doi/10.1177/0968344507075873" target="_blank" rel="noopener">https://journals.sagepub.com/doi/10.1177/0968344507075873</a></li>
+        <li>Carswell, <em>The Fall of France in the Second World War: History and Memory</em>, Palgrave Macmillan
+          <a class="url" href="https://link.springer.com/book/10.1007/978-3-030-03955-4" target="_blank" rel="noopener">https://link.springer.com/book/10.1007/978-3-030-03955-4</a></li>
+        <li>Forces News：2025-05-21 敦刻尔克小船 85 周年重航
+          <a class="url" href="https://www.forcesnews.com/heritage/wwii/royal-navy-escorts-historic-flotilla-over-dunkirk-85th-anniversary-commemorations" target="_blank" rel="noopener">https://www.forcesnews.com/heritage/wwii/royal-navy-escorts-historic-flotilla-over-dunkirk-85th-anniversary-commemorations</a></li>
+        <li>康边停战博物馆（雷通德空地）
+          <a class="url" href="https://armistice-museum.com/nearby-sites/15-mins-away/" target="_blank" rel="noopener">https://armistice-museum.com/nearby-sites/15-mins-away/</a></li>
+        <li>德国数字图书馆：Frieser, <em>Blitzkrieg-Legende: der Westfeldzug 1940</em>
+          <a class="url" href="https://www.deutsche-digitale-bibliothek.de/item/GNVXGGBYLFWDXZI74XOPJD2Q523WGLRB" target="_blank" rel="noopener">https://www.deutsche-digitale-bibliothek.de/item/GNVXGGBYLFWDXZI74XOPJD2Q523WGLRB</a></li>
+      </ol>
+    </article>
+  </section>
+
+  <p class="foot">SIREN STRIPE · FALL GELB TO ARMISTICE · ISSUE 37 · CRITICAL HISTORY</p>
+</article>
+</div>
+<div class="tape bottom" aria-hidden="true"></div>
+</body>
+</html>

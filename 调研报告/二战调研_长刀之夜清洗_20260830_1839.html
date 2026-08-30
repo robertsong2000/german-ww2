@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>长刀之夜：清洗冲锋队与保守盟友 —— 1934年6月30日至7月2日的国家谋杀及其“紧急自卫”包装</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Share+Tech+Mono&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Newsreel film-sprocket aesthetic: nitrate black, projector amber, perforated rails.
+   Critical documentary register — not a tribute reel. No purple, no Inter, no Space Grotesk. */
+:root {
+  --void: #080705;
+  --nitrate: #12100d;
+  --rail: #1e1a15;
+  --sprocket: #070605;
+  --amber: #c9a36a;
+  --lamp: #e8d5b0;
+  --frame: #1a1612;
+  --card: #241f19;
+  --ink: #efe2cc;
+  --mute: #9a8b74;
+  --leader: #c4452a;
+  --scratch: rgba(232, 213, 176, .07);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background:
+    radial-gradient(ellipse at 50% 0%, #2a2118 0%, var(--void) 55%),
+    var(--void);
+  color: var(--ink);
+  font-family: "Source Serif 4", "Noto Serif SC", serif;
+  line-height: 1.76;
+  min-height: 100vh;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 8;
+  opacity: .11;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 2px, rgba(0,0,0,.35) 2px 3px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  animation: flicker 7.2s steps(2, end) infinite;
+}
+@keyframes flicker {
+  0%, 92%, 100% { opacity: .11; }
+  93% { opacity: .18; }
+  95% { opacity: .07; }
+  97% { opacity: .14; }
+}
+.projector {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 28px 0 64px;
+  position: relative;
+}
+.film {
+  position: relative;
+  margin: 0 18px;
+  background: linear-gradient(90deg, #151210 0, var(--nitrate) 4%, var(--nitrate) 96%, #151210 100%);
+  border-top: 1px solid #3a3228;
+  border-bottom: 1px solid #3a3228;
+  box-shadow:
+    0 0 0 1px #0a0908,
+    0 28px 80px rgba(0,0,0,.65),
+    inset 0 0 80px rgba(0,0,0,.28);
+  overflow: hidden;
+}
+.film::before,
+.film::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 42px;
+  z-index: 4;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      var(--rail) 0 11px,
+      var(--sprocket) 11px 29px,
+      var(--rail) 29px 40px
+    );
+  box-shadow: inset 0 0 0 1px #2c261f;
+}
+.film::before { left: 0; }
+.film::after { right: 0; }
+.sprocket-mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 42px;
+  z-index: 5;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 12px,
+      var(--void) 12px 28px,
+      transparent 28px 40px
+    );
+  mask-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0 12px,
+    #000 12px 28px,
+    transparent 28px 40px
+  );
+}
+.sprocket-mask.left { left: 0; }
+.sprocket-mask.right { right: 0; }
+.edge-code {
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  width: 14px;
+  z-index: 6;
+  writing-mode: vertical-rl;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 9px;
+  letter-spacing: .42em;
+  color: var(--amber);
+  opacity: .55;
+}
+.edge-code.left { left: 48px; transform: rotate(180deg); }
+.edge-code.right { right: 48px; }
+.frames {
+  padding: 28px 72px 40px;
+  position: relative;
+  z-index: 2;
+}
+.leader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  font-family: "Share Tech Mono", monospace;
+  color: var(--leader);
+  letter-spacing: .16em;
+  font-size: 12px;
+}
+.countdown {
+  width: 46px;
+  height: 46px;
+  border: 3px solid var(--leader);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: "Oswald", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--leader);
+  animation: pulse 2.8s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(196,69,42,.35); }
+  50% { box-shadow: 0 0 0 8px rgba(196,69,42,0); }
+}
+.kicker {
+  font-family: "Oswald", sans-serif;
+  font-size: 13px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+h1 {
+  font-family: "Oswald", "Noto Serif SC", sans-serif;
+  font-weight: 700;
+  font-size: clamp(32px, 6.2vw, 58px);
+  line-height: .95;
+  letter-spacing: .02em;
+  color: var(--lamp);
+  text-transform: uppercase;
+  margin: 6px 0 12px;
+  text-shadow: 0 1px 0 #000, 0 0 28px rgba(201,163,106,.18);
+}
+.sub {
+  max-width: 42em;
+  color: var(--mute);
+  font-size: 17px;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 11px;
+  color: var(--amber);
+  border-top: 1px solid #3a3228;
+  border-bottom: 1px solid #3a3228;
+  padding: 10px 0;
+  margin-bottom: 16px;
+}
+.meta b { color: var(--lamp); font-weight: 400; }
+.toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 22px;
+}
+.toc a {
+  font-family: "Oswald", sans-serif;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-decoration: none;
+  color: var(--nitrate);
+  background: var(--amber);
+  padding: 6px 11px 5px;
+}
+.toc a:hover { background: var(--leader); color: var(--lamp); }
+.frame-card {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(232,213,176,.04), transparent 28%),
+    var(--card);
+  border: 10px solid #0d0b09;
+  outline: 1px solid #4a4034;
+  padding: 20px 22px 16px;
+  margin: 0 0 18px;
+  box-shadow: inset 0 0 40px rgba(0,0,0,.35);
+}
+.frame-card::before {
+  content: attr(data-frame);
+  position: absolute;
+  top: -1px;
+  right: 12px;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 10px;
+  letter-spacing: .14em;
+  color: var(--amber);
+  background: #0d0b09;
+  padding: 2px 8px;
+}
+.frame-card h2 {
+  font-family: "Oswald", "Noto Serif SC", sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: var(--amber);
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+.frame-card p { margin: 0 0 10px; }
+.frame-card ul { padding-left: 1.15em; }
+.frame-card li { margin: 8px 0; }
+.frame-card a { color: var(--amber); word-break: break-all; }
+.insight {
+  background: #120e0b;
+  outline-color: var(--leader);
+}
+.insight h2 { color: var(--leader); }
+.cue {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 11px;
+  letter-spacing: .12em;
+  color: var(--leader);
+  margin-bottom: 8px;
+}
+.foot {
+  text-align: center;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 11px;
+  letter-spacing: .22em;
+  color: var(--mute);
+  margin-top: 8px;
+}
+.scratch {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  background:
+    linear-gradient(98deg, transparent 48%, var(--scratch) 48.4%, transparent 49%),
+    linear-gradient(102deg, transparent 71%, rgba(255,255,255,.04) 71.3%, transparent 72%);
+  mix-blend-mode: screen;
+}
+@media (max-width: 720px) {
+  .film { margin: 0 6px; }
+  .frames { padding: 20px 50px 28px; }
+  .edge-code { display: none; }
+  .film::before, .film::after, .sprocket-mask { width: 28px; }
+}
+</style>
+</head>
+<body>
+<div class="projector">
+<article class="film">
+  <div class="sprocket-mask left"></div>
+  <div class="sprocket-mask right"></div>
+  <div class="edge-code left">NDLM 34-06-30 · KODAK SAFETY FILM · REEL 31 · DO NOT GLORIFY</div>
+  <div class="edge-code right">FRAME 1847–1934 · STAATSNOTWEHR IS NOT LAW · ARCHIVE COPY</div>
+  <div class="scratch"></div>
+  <div class="frames">
+    <div class="leader">
+      <div class="countdown">8</div>
+      <div>
+        <p class="kicker">Wochenschau · Lab Reel 31 · Political Purge</p>
+        <p>NEWSREEL LEADER · 1934-06-30 / 07-02 · CRITICAL CUT</p>
+      </div>
+    </div>
+    <h1>长刀之夜：清洗冲锋队与保守盟友</h1>
+    <p class="sub">1934年6月30日至7月2日，政权用党卫队枪杀冲锋队领导层，同时清算帕彭圈子与旧账；7月3日再用一条“国家紧急自卫”法律把谋杀写成正当防卫。这一期把新闻纪录片的齿孔留给档案，而不是留给宣传片。</p>
+    <div class="meta">
+      <span><b>本期主题</b> 第二轮池第31项 · 政治与政权 · 长刀之夜</span>
+      <span><b>生成时间</b> 2026-08-30 18:39 CST</span>
+      <span><b>视觉风格</b> 新闻纪录片胶片齿孔风</span>
+    </div>
+    <nav class="toc">
+      <a href="#s0">本期主题</a>
+      <a href="#s1">时间线</a>
+      <a href="#s2">罗姆与军/党卫队</a>
+      <a href="#s3">帕彭圈子</a>
+      <a href="#s4">法律包装</a>
+      <a href="#s5">死亡人数</a>
+      <a href="#s6">2026回看</a>
+      <a href="#s7">启示</a>
+      <a href="#s8">来源</a>
+    </nav>
+
+    <section class="frame-card" id="s0" data-frame="FR.00 · THEME">
+      <p class="cue">TITLE CARD</p>
+      <h2>本期主题</h2>
+      <p>系列第30期写到一体化如何抽掉联邦州、工会与政党。1934年夏，政权还要处理另一组未完成的交易：<strong>冲锋队（SA）太大、太吵、太想当“人民军”；国防军要垄断武装；党卫队要独立；保守派盟友则在马尔堡公开抱怨“无法治国”</strong>。美国大屠杀纪念馆（USHMM）把6月30日至7月2日的清洗称为 Röhm Purge / Night of the Long Knives / Operation Hummingbird。德国历史博物馆（DHM）坚持给“罗姆政变”加引号：那不是被挫败的政变，而是事后命名的政治谋杀。</p>
+      <p>纳粹宣传把这三天拍成新闻纪录片式的“元首亲赴巴德维塞、粉碎叛乱”。史学要做的相反：把齿孔里的画格拆开，看谁下令、谁开枪、谁事后签字、死亡名单为何对不上。</p>
+    </section>
+
+    <section class="frame-card" id="s1" data-frame="FR.01 · CUE SHEET">
+      <p class="cue">SYNC MARK · 17 JUN – 03 JUL 1934</p>
+      <h2>核心发现一：三天清洗，一张预先写好的分镜</h2>
+      <ul>
+        <li><strong>6月17日</strong>：副总理弗朗茨·冯·帕彭在马尔堡大学演说，稿子出自顾问埃德加·荣格。演说批评无法状态、一党垄断与“第二次革命”。希特勒禁播全文，并挡住帕彭单独面见病重的兴登堡。</li>
+        <li><strong>6月21日</strong>：希特勒赴诺伊德克见兴登堡。国防部长维尔纳·冯·布隆堡警告：若不制服冲锋队，总统可能宣布戒严、把政府交给国防军。USHMM 强调：陆军把消灭冲锋队的政治角色，当作允许希特勒继续执政的条件。</li>
+        <li><strong>6月25日</strong>：陆军总司令维尔纳·冯·弗里奇下令全军进入最高戒备。党卫队保安处（SD）与盖世太保已在拟逮捕与处决名单。荣格约于当日被捕。</li>
+        <li><strong>6月28–29日</strong>：希特勒令罗姆把冲锋队高层召到巴伐利亚浴场巴德维塞（Bad Wiessee）。布隆堡在《人民观察家报》发文，声明国防军站在希特勒一边。戈林后来在记者会上吹嘘：行动“几天前就已逐项计划”。</li>
+        <li><strong>6月30日清晨</strong>：希特勒飞抵慕尼黑，先在巴伐利亚内政部羞辱并下令枪决慕尼黑警察局长、冲锋队上级集团领袖奥古斯特·施奈德胡贝尔；再赴巴德维塞汉斯鲍威尔旅馆逮捕罗姆等人。党卫队把多数人押往施塔德尔海姆监狱枪杀。柏林由戈林指挥：帕彭被软禁，其助手与保守派同时被清。</li>
+        <li><strong>7月1日</strong>：达豪集中营指挥官特奥多尔·艾克与副官米夏埃尔·利珀特在施塔德尔海姆枪杀罗姆。USHMM 写明：希特勒拖到这一天才下决心；所有证据显示罗姆至死仍效忠希特勒。DHM 罗姆小传把日期钉在7月1日。</li>
+        <li><strong>7月2日</strong>：清洗收束。兴登堡发感谢电；布隆堡代表军方祝贺。</li>
+        <li><strong>7月3日</strong>：内阁通过唯一条款的《国家紧急自卫措施法》，把三天的措施写成“正当”。7月13日希特勒在克罗尔歌剧院国会演说中自称“德意志人民的最高司法主宰”。7月20日党卫队脱离冲锋队独立。</li>
+      </ul>
+    </section>
+
+    <section class="frame-card" id="s2" data-frame="FR.02 · SA / HEER / SS">
+      <p class="cue">INTERLOCK · PARAMILITARY VS PROFESSIONAL ARMY</p>
+      <h2>核心发现二：清洗的主轴是冲锋队对国防军，党卫队当刀</h2>
+      <ul>
+        <li>凡尔赛和约把德国陆军限制在 <strong>10万</strong>人。USHMM 记：到1934年6月，冲锋队已膨胀到近 <strong>300万</strong>；DHM 写春季约 <strong>400万</strong>。差距本身就是政治。罗姆要把冲锋队做成“民军”核心，把国防军吞进去；希特勒要把国防军做成可迅速投入扩张战争的职业军队。2月28日他已迫使罗姆书面承认陆军优先，但冲突没有结束。</li>
+        <li>史学共识（彼得·隆格里希 2024 年《清算》、丹尼尔·西门子《冲锋队史》）是：<strong>不存在一场已筹备就绪、由罗姆发动的政变</strong>。冲锋队领导人仍按命令赶到巴德维塞；罗姆度假地几乎没有戒备。纳粹所谓“罗姆政变”是宣传片名，用来把国家谋杀说成自卫。</li>
+        <li>执行者是党卫队、盖世太保与戈林的警察力量，不是国防军上街。希特勒把任务交给希姆莱；达豪指挥官艾克率队突袭。陆军的角色是戒备、配合、事后感谢，并默许前总理、退役将军库尔特·冯·施莱歇尔及其妻子在家中被杀。DHM 特别点出：国防军对杀害施莱歇尔“毫无异议”。</li>
+        <li>回报立刻兑现。清洗换来陆军支持希特勒在兴登堡死后合并总统与总理职务（8月2日），军人改向个人宣誓。党卫队于7月20日独立，并在此后半年接管集中营体系与政治警察。希姆莱 1943年10月4日波森演说，把1934年6月30日“把走偏的同志拉到墙边枪决”说成党卫队日后执行灭绝时必须同样闭嘴的先例。USHMM 把这段引文放在清洗的长期后果里：<strong>国家可以谋杀，而且要求沉默</strong>。</li>
+        <li>冲锋队并未消失。维克托·卢策接任参谋长。规模从1934年春的数百万降到1938年约120万量级，政治权重再也回不到清洗前。1938年十一月pogrom（水晶之夜）里冲锋队仍大规模施暴——被降级不等于被文明化。</li>
+      </ul>
+    </section>
+
+    <section class="frame-card" id="s3" data-frame="FR.03 · PAPEN CIRCLE">
+      <p class="cue">CUTAWAY · CONSERVATIVE ALLIES</p>
+      <h2>核心发现三：刀同时砍向“把希特勒扶上台”的保守派</h2>
+      <ul>
+        <li>USHMM 写得直白：纳粹领导层利用清洗，主要打击德国民族派右翼，而不只是党内褐衫。帕彭几乎未能脱身；两名助手<strong>埃德加·荣格</strong>（马尔堡演说执笔）与<strong>赫伯特·冯·博泽</strong>被杀。施莱歇尔、费迪南德·冯·布雷多将军、1923年啤酒馆政变中拆台的巴伐利亚政治家<strong>古斯塔夫·冯·卡尔</strong>、前纳粹组织者<strong>格雷戈尔·施特拉塞尔</strong>同在名单上。</li>
+        <li>马尔堡演说是加速器，不是唯一原因。De Gruyter 论文集中关于该演说的专章指出：希特勒当时已决心削冲锋队、做一次“土地整理”；但帕彭在黑森大学城的出场，显著影响了动手的时间与血腥程度。荣格与博泽把演说当成对兴登堡施加压力、逼政权向君主派与法治修辞让步的赌注。他们输了。</li>
+        <li>帕彭本人被软禁后仍短暂留任，随后去维也纳当大使。批评者被杀、名义盟友被留作遮羞布——这是联合组阁的终点，不是“保守派约束住了独裁”。兴登堡的感谢电把总统府也写进了这卷胶片的片尾字幕。</li>
+        <li>柏林约27人被杀（其中约18名为冲锋队领导人），与慕尼黑的集中处决并行。西里西亚、萨克森等地的过量杀戮，按隆格里希的整理，更多出自党卫队与警察的中下层，而不全是柏林一张总名单。中央计划与地方加戏同时存在。</li>
+      </ul>
+    </section>
+
+    <section class="frame-card" id="s4" data-frame="FR.04 · STAATSNOTWEHR">
+      <p class="cue">LEGAL TITLE OVER BLACK</p>
+      <h2>核心发现四：“国家紧急自卫”是一条事后补拍的字幕</h2>
+      <ul>
+        <li>1934年7月3日《国家紧急自卫措施法》（Reichsgesetzblatt I, S. 529）只有一条：<em>「为镇压1934年6月30日、7月1日及2日的叛国与叛州攻击所采取之措施，作为国家紧急自卫，为合法。」</em>签署人：希特勒、内政部长弗里克、司法部长居特纳。法律依据是1933年3月24日授权法，不必经过国会。</li>
+        <li>伯尔尼大学法律文本库收录的该法说明写得很清楚：这是对谋杀罗姆及其他冲锋队干部的<strong>概括赦免</strong>；所谓政变是纳粹为开脱而主张的。DHM 用同一句定性：政府事后把谋杀案写成 Staatsnotwehr。</li>
+        <li>卡尔·施米特随即在《德意志法学家报》（1934年8月1日）发表《元首保护法律》，称元首在危险时刻凭领袖身份作为最高法官“直接创造法律”。国会在7月13日演说后鼓掌致谢。法院与内阁一起拆掉了法无明文不为罪、禁止事后法的底线。</li>
+        <li>从此，紧急状态不再是临时例外，而是可被写成单行法的自我授权。后面的集中营扩张、战争法例外、灭绝行政，都站在这块已经拍进片头的字幕上：<strong>领袖的决定即法，杀完再立法</strong>。</li>
+      </ul>
+    </section>
+
+    <section class="frame-card" id="s5" data-frame="FR.05 · TALLY">
+      <p class="cue">DISAGREEMENT REEL · DO NOT COLLAPSE THE COUNT</p>
+      <h2>核心发现五：死亡人数对不上，正因为官方要它对不上</h2>
+      <ul>
+        <li><strong>政权自己的数字就打架。</strong>希特勒在国会演说中给出约61人被处决、13人拒捕身亡、3人自杀等说法（合计七十余人）；另有官方口径约<strong>85</strong>人。宣传需要“干净、有限、针对叛乱者”的数字，不需要完整名单。</li>
+        <li><strong>可以点名的下限。</strong>USHMM：学者已点名 <strong>90</strong> 人，实际总数大概在 <strong>100</strong> 上下；警察另将 <strong>1100</strong> 余人投入“保护拘留”。德语公共史学页《神话罗姆政变》据隆格里希：约 <strong>1400</strong> 人被捕，<strong>90</strong> 名死者可确认，其中除冲锋队干部外还有共产党人、犹太人、三名天主教平信徒；另有因姓名混淆被杀者（如慕尼黑音乐评论家维利·施密德）。奥托·格里奇内德在战后追诉研究中列出90个姓名。</li>
+        <li><strong>中间估计。</strong>理查德·埃文斯等综合研究常用约 <strong>150–200</strong> 人。联邦档案馆冲锋队全宗里仍有一份题为《罗姆政变——被处决者名单》的卷宗（BArch NS 23/475，约1934年6月底至7月初），以及 NS 23/1276、NS 23/508 等“国会纵火 / 罗姆政变”汇编。档案在，并不等于纳粹公布过可信总表。戈林事后销毁行动文件；连阿尔弗雷德·罗森贝格7月7日日记都承认：还得调查各集团是否知道自己同属“一次共同行动”。</li>
+        <li><strong>高估与滥用。</strong>战后通俗叙述与纽伦堡相关转述中出现过700、1000乃至1076之类数字。严肃研究普遍视为偏高或无法逐一核实。极右宣传则反向操作：要么坚持“挫败政变、死者有限”，要么把施特拉塞尔等死者改写成“好的民族社会主义”偶像。两种做法都在改片。</li>
+        <li>学习者应同时记住两件事：<strong>下限已经足以定性为国家谋杀</strong>；上限之争不能被用来暗示“也许没那么严重”。名单不全，是掩盖的结果，不是开脱的证据。</li>
+      </ul>
+    </section>
+
+    <section class="frame-card" id="s6" data-frame="FR.06 · 2025–26">
+      <p class="cue">NEW PRINT · ARCHIVE REFRESH</p>
+      <h2>核心发现六：2025–2026年，胶片在档案门户与展览里重映</h2>
+      <ul>
+        <li><strong>档案仍在更新条目，而不是“已经讲完”。</strong>德国档案门户 Archivportal-D 显示：联邦档案馆 BArch NS 23/475《被处决者名单》最近更新于 <strong>2026年4月24日 13:03</strong>（中欧夏令时）；同全宗 NS 23/1276（含柏林文件中心研究文件夹批注，约1962年）更新于同日 12:27。检索入口是联邦档案馆 invenio。卷宗题名仍沿用纳粹用语“Röhm-Putsch”，使用时必须加引号并对照史学。</li>
+        <li><strong>2024年隆格里希《清算》</strong>把6月30日写成希特勒、罗姆与党内清算的专书，被德语去神话写作密集引用：政变是建构，忠诚是单向的，戈林与希姆莱是加速器，但没有希特勒的决定就没有这波枪杀。</li>
+        <li><strong>酷儿受害者的展览把清洗写成迫害升级的闸门。</strong>马格努斯·赫希菲尔德联邦基金会巡展《危险地生活。酷儿人群 1933–1945》自2024年起巡游。乌尔姆上库贝格集中营纪念馆（DZOK）于 <strong>2026年8月30日至11月6日</strong>展出该展，开幕日正是本报告写作当日。史学与纪念馆传统指出：罗姆的性取向在党内本是公开秘密；清洗之后，宣传把它改写成道德堕落证据，对男性同性恋的系统迫害随之收紧。把罗姆个人的被杀自动等同于酷儿解放史，是错的；把他的被杀当成日后§175与集中营粉红三角升级的借口，则是事实。</li>
+        <li>巴伐利亚历史之家将于2026年7月8日开展《巴伐利亚焦点：希特勒与民主之争》（至2027年8月）。巴德维塞与施塔德尔海姆都在巴伐利亚：1923年政变、1934年清洗、地方司法的纵容，是同一条片轨上的不同画格。</li>
+      </ul>
+    </section>
+
+    <section class="frame-card insight" id="s7" data-frame="FR.07 · CODA">
+      <p class="cue">END TITLE · FOR LEARNERS</p>
+      <h2>对历史学习者的启示</h2>
+      <ul>
+        <li><strong>先问片名是谁起的。</strong>“罗姆政变”是凶手的新闻纪录片标题。史料里若无引号，往往已经站到了宣传一边。德英博物馆与百科的可靠条目都把政变写成声称，把事件写成清洗。</li>
+        <li><strong>联合执政不是保险丝。</strong>帕彭把希特勒带进内阁，一年半后自己的撰稿人被杀、自己被软禁。读1933年1月30日组阁，必须把1934年6月17日马尔堡演说和6月30日博泽、荣格之死订在同一卷。</li>
+        <li><strong>职业军队要的是垄断，不是法治。</strong>国防军用清洗换走了冲锋队的竞争，换来个人宣誓与扩军。施莱歇尔被杀而军方道谢：这不是“军人国家被纳粹污染”，而是军官团选择了交易。</li>
+        <li><strong>一条法律可以比一场政变更危险。</strong>《国家紧急自卫措施法》只有一句话，却把法无明文、禁止事后法、司法独立一并拍黑。以后再遇到“紧急情况、先做后补”的修辞，先把1934年7月3日这一格停住。</li>
+        <li><strong>死亡人数要带着分歧一起记。</strong>90（可点名）/约100（USHMM）/150–200（综合估计）/官方85/宣传七十余/不可靠的千人说，应并列，而不是拣一个整数结束讨论。联邦档案馆的处决名单卷宗仍在，说明计数工作没有结束。</li>
+        <li><strong>不要把受害者行列浪漫化。</strong>罗姆与冲锋队本身是街巷恐怖、野集中营与反左翼暴力的主力。他们被自己人杀掉，并不把褐衫写成抵抗运动。施特拉塞尔的反资本主义口号同样嵌在反犹与民族社会主义里。清洗证明的是政权愿意谋杀同伴，不是党内存在一个被扼杀的人道选项。</li>
+      </ul>
+    </section>
+
+    <section class="frame-card" id="s8" data-frame="FR.08 · SOURCES">
+      <p class="cue">CREDIT ROLL · REAL URLS ONLY</p>
+      <h2>来源链接</h2>
+      <ul>
+        <li>美国大屠杀纪念馆百科：<a href="https://encyclopedia.ushmm.org/content/en/article/roehm-purge">Röhm Purge</a>（Washington, DC；页内标明最后编辑 2021-06-28）</li>
+        <li>德国历史博物馆 LeMO：<a href="https://www.dhm.de/lemo/kapitel/ns-regime/etablierung/roehm">Der „Röhm-Putsch“ 1934</a>（Burkhard Asmuss，2021-11-10）</li>
+        <li>德国历史博物馆人物志：<a href="https://www.dhm.de/lemo/biografie/ernst-roehm.html">Ernst Röhm 1887–1934</a>（Gabriel Eikenberg，2014-09-14）</li>
+        <li>德国档案门户 / 联邦档案馆：<a href="https://www.archivportal-d.de/item/BZ536K7TGPK6HQTPOJ7ZHN47DOISIX5I">BArch NS 23/475 Röhm-Putsch.— Liste der Hingerichteten</a>（最近更新 2026-04-24）</li>
+        <li>德国档案门户：<a href="https://www.archivportal-d.de/item/TMQVVDCJNR76WUGRQ3EHZOWO56FI3QH2">BArch NS 23/1276 Reichstagsbrand, Röhm-Putsch: Bd. 1</a></li>
+        <li>联邦档案馆检索系统说明：<a href="https://www.bundesarchiv.de/en/research-our-records/research-archive-material/search-systems/invenio/">invenio</a></li>
+        <li>法律原文（帝国法律公报 I 1934 S. 529）：<a href="https://www.servat.unibe.ch/dns/RGBl_1934_I_529_G_Staatsnotwehr.html">Gesetz über Maßnahmen der Staatsnotwehr. Vom 3. Juli 1934</a></li>
+        <li>同行评议章节（De Gruyter）：<a href="https://doi.org/10.1515/9783839457184-007">Die Marburger Rede vom 17. Juni 1934</a></li>
+        <li>德语公共史学（引用 Longerich 2024、Siemens 2019、IfZ 笔录）：<a href="https://www.geschichte-statt-mythen.de/Blog/klassische-mythen/Mythos-Roehm-Putsch">Mythos Röhm-Putsch 1934: Politische Säuberung statt Putsch</a></li>
+        <li>马格努斯·赫希菲尔德联邦基金会：<a href="https://mh-stiftung.de/projekte/ausstellung-gefaehrdet-leben/">gefährdet leben. Queere Menschen 1933–1945</a></li>
+        <li>乌尔姆上库贝格集中营纪念馆，2026-08-30 至 11-06 巡展页：<a href="https://dzok-ulm.de/ausstellungen/sonderausstellung-gefaehrdet-leben-queere-menschen-1933-1945/">Sonderausstellung „gefährdet leben“</a></li>
+      </ul>
+    </section>
+    <p class="foot">END OF REEL · SCHOLARLY USE ONLY · NO REGIME INSIGNIA</p>
+  </div>
+</article>
+</div>
+</body>
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>沙赫特新计划与梅福票据 —— 四年计划前的表外军备财政，以及银行家与元帅的权力交接</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+SC:wght@400;600;700&family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* Bond / watermark ledger on off-white security paper. No purple, Inter, or Space Grotesk. */
+:root {
+  --paper: #f3ead4;
+  --fiber: #efe3c4;
+  --ink: #2a2318;
+  --muted: #6a5c48;
+  --rule: #c4b089;
+  --green: #2f5a45;
+  --green-deep: #1d3d30;
+  --serial: #9c2f24;
+  --gold: #a07a3a;
+  --card: rgba(255, 250, 238, 0.78);
+  --line: rgba(47, 90, 69, 0.18);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  color: var(--ink);
+  line-height: 1.82;
+  background-color: var(--paper);
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 27px, rgba(160, 122, 58, 0.07) 27px 28px),
+    radial-gradient(circle at 18% 12%, rgba(47, 90, 69, 0.07), transparent 42%),
+    radial-gradient(circle at 86% 78%, rgba(156, 47, 36, 0.05), transparent 38%),
+    linear-gradient(180deg, var(--fiber), var(--paper) 28%, #eadfc0);
+}
+/* Guilloche + MEFO watermark layer */
+body::before {
+  content: "MEFO  ·  WECHSEL  ·  RM  ·  GEHEIM  ·  DISKONT";
+  position: fixed;
+  inset: -20% -10%;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(64px, 11vw, 140px);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: rgba(47, 90, 69, 0.055);
+  transform: rotate(-18deg);
+  pointer-events: none;
+  z-index: 0;
+  white-space: nowrap;
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    repeating-radial-gradient(circle at 8% 8%, transparent 0 18px, rgba(47, 90, 69, 0.035) 19px 20px),
+    repeating-radial-gradient(circle at 92% 92%, transparent 0 22px, rgba(160, 122, 58, 0.04) 23px 24px);
+  mix-blend-mode: multiply;
+}
+.sheet {
+  position: relative;
+  z-index: 1;
+  max-width: 980px;
+  margin: 28px auto 64px;
+  padding: 28px 32px 44px;
+  background:
+    linear-gradient(180deg, rgba(255,252,244,0.55), rgba(243,234,212,0.35)),
+    var(--card);
+  border: 1px solid var(--green-deep);
+  box-shadow:
+    0 0 0 10px var(--paper),
+    0 0 0 11px var(--green),
+    0 22px 40px rgba(42, 35, 24, 0.18);
+}
+.sheet::before,
+.sheet::after {
+  content: "";
+  position: absolute;
+  width: 86px;
+  height: 86px;
+  pointer-events: none;
+  background:
+    radial-gradient(circle, transparent 42%, var(--green) 43%, var(--green) 45%, transparent 46%),
+    repeating-conic-gradient(from 0deg, rgba(47,90,69,0.35) 0 6deg, transparent 6deg 12deg);
+  border-radius: 50%;
+  opacity: 0.55;
+}
+.sheet::before { top: 10px; left: 10px; }
+.sheet::after { bottom: 10px; right: 10px; }
+.mast {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-family: "Anonymous Pro", monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green-deep);
+  border-top: 3px double var(--green);
+  border-bottom: 1px solid var(--rule);
+  padding: 10px 2px 8px;
+}
+.serial {
+  color: var(--serial);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+.kicker {
+  font-family: "Anonymous Pro", monospace;
+  font-size: 12.5px;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  margin: 18px 0 6px;
+  text-transform: uppercase;
+}
+h1 {
+  font-family: "Cormorant Garamond", "Noto Serif SC", serif;
+  font-size: clamp(28px, 4.8vw, 44px);
+  line-height: 1.22;
+  font-weight: 700;
+  color: var(--green-deep);
+  max-width: 18em;
+}
+.sub {
+  margin-top: 8px;
+  font-size: 17.5px;
+  color: var(--muted);
+  max-width: 44em;
+  font-style: italic;
+  font-family: "Cormorant Garamond", "Noto Serif SC", serif;
+}
+.meta {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  font-family: "Anonymous Pro", monospace;
+  font-size: 13px;
+  color: var(--muted);
+  border-bottom: 1px dashed var(--rule);
+  padding-bottom: 14px;
+}
+.meta b { color: var(--green); font-weight: 700; }
+nav.toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 6px;
+}
+nav.toc a {
+  font-family: "Anonymous Pro", monospace;
+  font-size: 12.5px;
+  color: #f7f1e0;
+  background: var(--green);
+  text-decoration: none;
+  padding: 6px 11px;
+  border: 1px solid var(--green-deep);
+}
+nav.toc a:hover { background: var(--green-deep); }
+section { margin-top: 30px; }
+h2 {
+  font-family: "Cormorant Garamond", "Noto Serif SC", serif;
+  font-size: 26px;
+  color: var(--green-deep);
+  border-bottom: 2px solid var(--green);
+  padding-bottom: 6px;
+  margin-bottom: 14px;
+  letter-spacing: 0.04em;
+}
+h2 span {
+  font-family: "Anonymous Pro", monospace;
+  font-size: 13px;
+  color: var(--serial);
+  letter-spacing: 0.16em;
+  margin-right: 8px;
+}
+.lede {
+  font-size: 17px;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+.card {
+  background: rgba(255, 252, 244, 0.72);
+  border: 1px solid var(--rule);
+  border-left: 5px solid var(--green);
+  padding: 16px 18px 14px;
+  margin-bottom: 12px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.4);
+}
+.card.debit { border-left-color: var(--serial); }
+.card.gold { border-left-color: var(--gold); }
+.card h3 {
+  font-family: "Cormorant Garamond", "Noto Serif SC", serif;
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: var(--green-deep);
+}
+.card h3 em {
+  font-style: normal;
+  font-family: "Anonymous Pro", monospace;
+  font-size: 12px;
+  color: var(--serial);
+  letter-spacing: 0.12em;
+  margin-right: 8px;
+}
+.card p { margin: 0 0 8px; }
+.card li { margin: 5px 0 5px 1.15em; }
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+table.ledger {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+  margin: 8px 0 4px;
+  background: rgba(255,252,244,0.65);
+}
+table.ledger th, table.ledger td {
+  border: 1px solid var(--rule);
+  padding: 7px 9px;
+  text-align: left;
+  vertical-align: top;
+}
+table.ledger th {
+  font-family: "Anonymous Pro", monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  background: rgba(47, 90, 69, 0.12);
+  color: var(--green-deep);
+}
+table.ledger td:last-child, table.ledger th:last-child {
+  font-family: "Anonymous Pro", monospace;
+  white-space: nowrap;
+}
+.note {
+  font-size: 14.5px;
+  color: var(--muted);
+  border-left: 3px solid var(--gold);
+  padding-left: 12px;
+  margin: 10px 0 4px;
+}
+.insight {
+  border: 1px solid var(--serial);
+  background: rgba(156, 47, 36, 0.06);
+}
+.refs a { color: var(--green-deep); word-break: break-all; }
+.refs li { margin: 8px 0 8px 1.1em; }
+.stamp {
+  float: right;
+  margin: 4px 0 12px 16px;
+  width: 108px;
+  height: 108px;
+  border: 3px double var(--serial);
+  border-radius: 50%;
+  color: var(--serial);
+  font-family: "Anonymous Pro", monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: rotate(-12deg);
+  opacity: 0.72;
+  line-height: 1.3;
+}
+.foot {
+  clear: both;
+  margin-top: 28px;
+  padding-top: 12px;
+  border-top: 3px double var(--green);
+  font-family: "Anonymous Pro", monospace;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+blockquote {
+  margin: 10px 0 8px;
+  padding: 8px 14px;
+  border-left: 4px solid var(--gold);
+  color: var(--muted);
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+<article class="sheet">
+  <header>
+    <div class="mast">
+      <span>Metallurgische Forschungsgesellschaft m.b.H.</span>
+      <span class="serial">Nr. 32 · WECHSEL · RM 1.000.000</span>
+      <span>Reichsbank rediscount · 1934–1938</span>
+    </div>
+    <p class="kicker">二战德国史调研 · 系列第32期 · 梅福票据水印风</p>
+    <h1>沙赫特新计划与梅福票据 —— 四年计划前的表外军备财政，以及银行家与元帅的权力交接</h1>
+    <p class="sub">1934 年的外汇管制、空壳承兑公司与帝国银行贴现窗口，如何在官方预算之外把重整军备做成可流通的债权；以及这笔账为何在 1936 年被戈林的四年计划接管，又在 1937 年把设计者本人挤出经济部。</p>
+    <div class="meta">
+      <span><b>成稿</b> 2026年08月30日 18:40 CST</span>
+      <span><b>主题</b> 新计划 / 梅福票据 / 四年计划前财政</span>
+      <span><b>立场</b> 批判史学 · 不美化“金融魔术”</span>
+    </div>
+    <nav class="toc" aria-label="目录">
+      <a href="#theme">本期主题</a>
+      <a href="#findings">核心发现</a>
+      <a href="#newplan">新计划</a>
+      <a href="#mefo">梅福票据</a>
+      <a href="#clash">沙赫特与戈林</a>
+      <a href="#resign">1937 辞职</a>
+      <a href="#sources">来源</a>
+      <a href="#lesson">启示</a>
+    </nav>
+  </header>
+
+  <section id="theme">
+    <h2><span>01</span>本期主题</h2>
+    <div class="stamp">GEHEIM<br>nicht im<br>Schuldenausweis</div>
+    <p class="lede">本报告聚焦<b>1936 年四年计划出台之前</b>那一段常被宣传成“经济奇迹”的财政史：亚尔马·沙赫特（Hjalmar Schacht）在 1934 年推出的<b>新计划</b>（Neuer Plan），以及几乎同时运转的<b>梅福票据</b>（Mefo-Wechsel）。二者不是两套互不相关的“复苏工具”，而是同一套备战经济的两面：一面把稀缺外汇锁进军工原料进口，另一面用空壳公司承兑、帝国银行再贴现，把直接对政府放贷的法定上限绕开。</p>
+    <div class="card">
+      <h3><em>COVER</em>必须先拆掉的三个误读</h3>
+      <ul>
+        <li><b>不是“银行家拯救德国”。</b>沙赫特在 1932 年已向希特勒写信称可“随时做可靠助手”，并参与为 1933 年 3 月选举向工业家募款。纽伦堡检方卷宗把此人定性为重整军备的“首席财政建筑师”，而不是后来自传里那种被迫合作的技术官僚。</li>
+        <li><b>不是“无通胀的魔术”。</b>梅福票据把军备支出移出帝国债务公开表；联邦银行 2020 年代的帝国银行史研究强调：内部指令本不许其当货币替代物流通，但它们仍被逐步回购、货币化，进入货币基数。延迟显现的不是消失，而是被管制物价与强制储蓄压住。</li>
+        <li><b>不是 1937 年才与纳粹决裂。</b>沙赫特与戈林的冲突，核心是军备速度、合成原料成本和外汇耗尽，不是对侵略战争或反犹立法的原则否定。他在 1935 年 5 月致希特勒备忘录里写明：完成军备“在速度与规模上是德国政治的任务”，“其他一切须服从此目标”。</li>
+      </ul>
+    </div>
+    <p>时间范围以 1933 年 3 月沙赫特重任帝国银行总裁为起点，以 1937 年 11 月辞去经济部长与战争经济总全权代表为叙事终点；1938 年停发梅福票、1939 年 1 月被解除总裁职务，只作为这条财政逻辑的收束，而不把四年计划本身写成另一篇报告。</p>
+  </section>
+
+  <section id="findings">
+    <h2><span>02</span>核心发现</h2>
+    <div class="grid">
+      <div class="card">
+        <h3><em>LEDGER</em>一条必须记住的账</h3>
+        <p>据帝国银行董事埃米尔·普尔（Emil Puhl）1945 年 11 月 2 日宣誓陈述（EC-436）：梅福票据<b>专用于军备融资</b>；至 1938 年 3–4 月停发时，未清偿余额约 <b>120 亿帝国马克</b>。同期有基金额帝国债务从 1932 年底的 104 亿马克升至 1938 年 6 月的 <b>190 亿马克</b>（EC-419）。梅福余额几乎相当于公开债券存量的六成以上，却不进入帝国债务公开表。</p>
+      </div>
+      <div class="card debit">
+        <h3><em>LIMIT</em>被绕开的法定上限</h3>
+        <p>1924 年银行法把帝国银行对政府的直接贷款限在 <b>1 亿马克</b>（<i>Reichsgesetzblatt</i> 1924, II, p. 241）。沙赫特后来承认，梅福装置“使帝国银行得以用<b>诡计</b>把法律上不能贷给政府的钱贷出去”（检方文件 3728-PS）。空壳公司资本仅 <b>100 万马克</b>，承兑规模却达百亿——这不是“私营贸易票据”，是伪装成商业承兑的国库券。</p>
+      </div>
+    </div>
+    <table class="ledger">
+      <thead>
+        <tr>
+          <th>节点</th>
+          <th>制度动作</th>
+          <th>财政含义</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1933-03-17</td>
+          <td>沙赫特重任帝国银行总裁</td>
+          <td>给工业界与国际债权人一颗“稳健”定心丸，同时接管信贷扩张阀门</td>
+        </tr>
+        <tr>
+          <td>1933-07 起</td>
+          <td>SSRN 2024 所称“隐蔽货币融资阶段”开始</td>
+          <td>表外财政机构（梅福）启动，早于公开四年计划</td>
+        </tr>
+        <tr>
+          <td>1934-08 / 09</td>
+          <td>沙赫特任经济部长；新计划见诸帝国法律公报</td>
+          <td>外汇与进口许可按军备优先排队；双边清算替代自由外汇</td>
+        </tr>
+        <tr>
+          <td>1935-05</td>
+          <td>秘密法令任命战争经济总全权代表</td>
+          <td>财政、贸易与动员计划集中到同一人；军备被写成“政治任务”</td>
+        </tr>
+        <tr>
+          <td>1936-08 / 10-18</td>
+          <td>希特勒自给备忘录；戈林任四年计划全权代表</td>
+          <td>政策从“可管理的重整”转向“四年内军队可作战、经济可战争”</td>
+        </tr>
+        <tr>
+          <td>1937-09-05 / 11</td>
+          <td>经济部请假；辞部长与战争经济全权</td>
+          <td>银行家路线让位于元帅路线；沙赫特改任无任所部长以安抚外界</td>
+        </tr>
+        <tr>
+          <td>1938-04-01</td>
+          <td>停发梅福票据</td>
+          <td>秘密已无必要；余额 120 亿马克转入税收与公债、以及帝国银行资产负债表</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">辞职日期：纽伦堡判决书写 1937 年 11 月 16 日；中文通行年表多作 11 月 26 日。本报告两者并列，不把日历差写成史学分歧。真正的断裂是职权被四年计划办公室掏空，而不是哪一天的公文落款。</p>
+  </section>
+
+  <section id="newplan">
+    <h2><span>03</span>核心发现 · 新计划：把进口变成军备许可证</h2>
+    <div class="card">
+      <h3><em>RGBL</em>法律外形与三项操作</h3>
+      <p>新计划的法令基础见 <i>Reichsgesetzblatt</i> 1934, I, pp. 816, 829, 864 及 1935, I, p. 105。纽伦堡检方归纳其三项特征：</p>
+      <ol>
+        <li>压缩与重整军备无关的外汇需求（消费品、非优先进口被卡死）；</li>
+        <li>增加可用于购买“不可或缺进口”的外汇供给；</li>
+        <li>用清算协定（clearing）及其他安排，使交易尽量<b>不经过自由外汇市场</b>。</li>
+      </ol>
+      <p>价格机制不再自动分配进出口。监督处（Überwachungsstellen）在沙赫特作为经济部长的权限下，逐笔决定数量、价格、信贷条件与对手国——标准不是比较利益，而是“是否推进军备计划”（EC-437）。</p>
+    </div>
+    <div class="card gold">
+      <h3><em>CLEARING</em>东南欧与南美：马克支付的原料走廊</h3>
+      <p>魏玛末期已累积巨额外汇缺口。新计划并不“创造”外汇，而是把德国变成一组双边账户：对东南欧与南美出口制成品，进口粮食与矿产，差额记在清算账上，用帝国马克结算。这降低了对英镑区与美元的即时依赖，也把贸易伙伴绑进德国的需求周期。检方强调：沙赫特并非单纯追求自给，他清楚大量原料仍须进口，因而把外汇管制设计成<b>军备优先的配额制</b>。</p>
+      <p>维纳大屠杀图书馆教育资源指出：纳粹上台时并无完整经济教义，要的是稳定、消灭失业与自给；沙赫特的任命是安抚企业界的姿态。工会被砸、工资被冻结，公共工程与军备订单同时扩张。把失业下降写成“银行家奇迹”，等于把强制劳动纪律与军备乘数从统计里删掉。</p>
+    </div>
+    <p>亚当·图兹（Adam Tooze）《毁灭的代价》（<i>The Wages of Destruction</i>, 2006/2007）把 1933–36 年写成：在既有就业计划上叠加隐蔽赤字，而不是凭空发明复苏。联邦银行委托的布赖希特肯 / 里奇尔研究同样提醒：1933–36 年新增债务平均大约只占 GDP 的 3%；真正陡峭的财政扩张发生在四年计划之后。新计划的历史位置因此是<b>把资源转向枪炮的分配机器</b>，不是把蛋糕做大的增长战略。</p>
+  </section>
+
+  <section id="mefo">
+    <h2><span>04</span>核心发现 · 梅福票据：一张不进债务表的军备汇票</h2>
+    <div class="card debit">
+      <h3><em>MEFO</em>空壳如何变成贴现窗口</h3>
+      <p>冶金学研究有限公司（Metallurgische Forschungsgesellschaft m.b.H.）没有产品、没有车间。军备承包商开出汇票，由该公司承兑；持票人可向任意德国银行贴现，银行又可在汇票最初到期日前最后三个月向帝国银行再贴现。票期名义六个月，可连续展期三个月，实际寿命有时超过四年。帝国担保使出票人与背书人不必承担通常的票据责任。</p>
+      <p>联邦银行史论著补充了检方叙述里较少强调的技术细节：为保密，不以承兑银行为外壳，而以大企业出资的空壳公司出面；签字权交给派驻的帝国银行官员。内部指令要求：这些汇票<b>不得像普通商业票据那样进入流通、成为货币替代物</b>；持有人若有“无法回避的流动性需求”，才由帝国银行买入。高息（联邦银行文本作 <b>5%</b>；英文通说与维基作 <b>4%</b>——利率记载不一致，见下）用来诱使持有至到期。尽管如此，汇票仍被逐步回购并货币化。</p>
+    </div>
+    <div class="card">
+      <h3><em>SSRN 2024</em>三阶段，而不是一段“魔术”</h3>
+      <p>Steffen Murau 等人 2024 年工作论文 <i>The Mefo Operation</i> 把操作拆成：</p>
+      <ul>
+        <li><b>隐蔽货币融资</b>（约 1933 年 7 月–1936 年 2 月）：在凡尔赛约束与银行法上限下为重整军备输血；</li>
+        <li><b>影子货币</b>（1936 年 2 月–1938 年 3 月）：票据作为高流动性债权在银行体系内膨胀；</li>
+        <li><b>整理与战争财政</b>（1938 年 4 月–1945 年 5 月）：停发之后，余额沉淀在帝国银行资产负债表上，直到政权崩溃。</li>
+      </ul>
+      <p>作者的关键结论与沙赫特事后自我开脱相反：<b>梅福票最终并未按原计划从央行资产中退出</b>，而是被永久融资。把 1933–38 年写成“成功的反周期政策”，是把表外主权借贷误认成私营商业信用。</p>
+    </div>
+    <div class="card gold">
+      <h3><em>DISPUTE</em>史学上仍未对齐的两处数字</h3>
+      <ul>
+        <li><b>利率：</b>联邦银行《从帝国银行到联邦银行》叙述内部以 5% 吸引持有；英语综述与维基条目多作年息 4%。本报告不调和：可能反映不同批次、不同内部指令，或以“高于普通商业汇票”的相对表述被绝对化。对学习者更重要的是功能——利息是为了<b>推迟向帝国银行挤兑</b>。</li>
+        <li><b>资本金：</b>普尔陈述与检方综述均为名义资本 100 万马克；个别学生论文写作 25 万马克，证据链较弱，不采用。SSRN 亦采 100 万马克、五家大企业出资的信箱公司。</li>
+      </ul>
+    </div>
+    <p>普尔说明停发原因之一：到 1938 年春，已不必再隐瞒重整规模，税收与公债也能募到 1935 年那种加速起步时所募不到的款项。秘密工具完成了它的政治任务——在凡尔赛条款仍具名义约束、预算公开仍可能惊动外交的年份，把军备做成银行间票据。</p>
+    <blockquote>「它使帝国银行得以用诡计把法律上不能贷给政府的钱贷出去。」——沙赫特本人对梅福装置的概括（3728-PS）</blockquote>
+  </section>
+
+  <section id="clash">
+    <h2><span>05</span>核心发现 · 沙赫特对戈林：不是道德分裂，是速度之争</h2>
+    <div class="card">
+      <h3><em>MEMO</em>1936 年 8 月机密备忘录</h3>
+      <p>德国历史文献与图像库（GHDI / germanhistorydocs.org）收录希特勒《关于自给的机密备忘录》。文本把经济降为生存斗争的仆役：“人民不为经济、经济领导或财政理论而活；相反，财政与经济必须完全服务于民族的自我主张。”最终解决被写成扩展生存空间与原料来源；过渡期则要求进口服从军备，并拒绝“减产弹药以囤积铜铅”的意见。备忘录提出两年硬指标：<b>德国军队四年内必须可部署；德国经济四年内必须可战争。</b></p>
+      <p>这份文件同时把反犹勒索写成经济法令草案：要求帝国议会通过经济破坏死刑，并让“全体犹太人”为个别成员对德国经济的损害负责。四年计划从一开始就不是中性的工业政策，而是备战与排犹没收的合流。戈林办公室后来系统化地剥夺犹太人经济生存，与沙赫特时期相对“有序、服务于外汇”的排斥，是程度与节奏之差，不是人道路线之差。</p>
+    </div>
+    <div class="card debit">
+      <h3><em>R 26 I</em>四年计划办公室如何架空经济部</h3>
+      <p>1936 年 4 月戈林先被任命为原料与外汇协调人；10 月 18 日成为四年计划全权代表，权限横切经济部、国防与农业。联邦档案馆全宗 <b>BArch R 26 I</b>（四年计划全权代表—中央机构，1936–1945）保存了这一平行政府的组织卷宗。档案门户上的 R 26-I/6 等件（含国务秘书诺伊曼 1941 年关于四年计划组织的报告）表明：这不是临时委员会，而是持续到战争中期的内阁级权力基地。计划名义 1940 年到期，办公室却无限期延存。</p>
+      <p>争执的政策内核，纽伦堡判决书写得很清楚：沙赫特主张收缩军备开支、反对他认为不经济的合成原料产能扩张、收紧政府信用、谨慎使用外汇储备；戈林推动不计成本的自给与合成燃料、橡胶、低品位矿。希特勒指责沙赫特的财政方法打乱其计划。个人意气存在，但更深层的是：<b>银行法训练出的限度意识，撞上了政权的战争时间表。</b></p>
+    </div>
+    <p>Tooze 将四年计划备忘录置于 1936 年经济危机与西班牙内战刺激的“末日情绪”中：所谓“自由市场派”（沙赫特、价格委员格德勒）要求减军备、离开自给；戈林派要求相反。希特勒几乎从不亲笔写长文，Overy 据此判断备忘录的分量。选择戈林，希特勒事后也可承认其不懂经济——正因为不懂，才不会用资产负债表否决备战。</p>
+  </section>
+
+  <section id="resign">
+    <h2><span>06</span>核心发现 · 1937 年辞职：卸职权，不卸责任</h2>
+    <div class="card">
+      <h3><em>1937-11</em>从经济部长到无任所部长</h3>
+      <p>沙赫特 1937 年 9 月 5 日离开经济部休假，11 月辞去经济部长与战争经济总全权代表，同时被任命为无任所部长，并继续担任帝国银行总裁。希特勒需要这张国际熟面孔：突然撤掉“稳健银行家”会在伦敦与纽约被读成财政破产信号。戈林短暂兼管经济部，瓦尔特·冯克 1938 年 2 月接任。1937 年 7 月 7 日双方曾书面“和解”，随即再裂——说明冲突已无法用公文修补。</p>
+      <p>1938 年 3 月 31 日，沙赫特停止由帝国银行担保的短期军备票据。1939 年 1 月 7 日，帝国银行理事会联名上书，要求兑现梅福票、巩固预算、警告战争通胀。联邦银行研究指出：这封“紧急信”的答复是<b>全体解雇</b>；沙赫特 1 月 20 日去职，沃克、布莱辛等董事随之辞职。希特勒私人信件仍感谢其“为民族重整军备效力”。检方据此论证：去职不是与侵略决裂，而是信用机器被开到银行家自己害怕的转速。</p>
+    </div>
+    <div class="card gold">
+      <h3><em>IMT</em>无罪判决不能当成免罪神话</h3>
+      <p>国际军事法庭认定：重整军备本身依宪章不构成破坏和平罪，除非证明其作为侵略战争计划的一部分且被告知情。法庭认为后一项推论未达排除合理怀疑，故沙赫特无罪释放。判决同时写明：他是早期军备的中心人物；若其紧缩主张得行，德国将无法准备一场全面欧洲战争；他以金融内情本应能看出狂热重整只与战争目标相容。他在德奥合并后把奥地利国民银行并入帝国银行，并发表“只要我在，帝国银行就永远是国家社会主义的”及三呼胜利的演说。</p>
+      <p>联邦银行委托研究的判断更冷：帝国银行从一开始就参与稳定该政权；梅福票在理事会内部因合法性受争议，沃克等人仍在纽伦堡为沙赫特作不完全陈述。后来的黄金、外汇与集中营劫掠，是同一机构在战争阶段的延伸，不是与 1934–37 年财政“无关的另一章”。把沙赫特写成抵抗者，是把他 1939 年后的失势与 1944 年被捕，覆盖掉 1933–37 年他亲自设计的表外军备。</p>
+    </div>
+  </section>
+
+  <section id="sources">
+    <h2><span>07</span>来源</h2>
+    <p class="lede">下列均为本报告实际查阅的公开文本。维基条目只作对照，史实以档案、判决与中央银行研究为准。2024–2026 年的更新主要来自货币结构论文与联邦档案馆目录维护，而非突然出现的新原始账本。</p>
+    <ol class="refs">
+      <li>Yale Avalon Project, “Nazi Conspiracy and Aggression, Vol. 2, Ch. XVI, Part 12 (Schacht)”，梅福机制、新计划三项特征、职位年表与 3728-PS 自述。<br><a href="https://avalon.law.yale.edu/imt/chap16_part12.asp" target="_blank" rel="noopener">https://avalon.law.yale.edu/imt/chap16_part12.asp</a></li>
+      <li>Yale Avalon Project, “Judgment: Schacht”，1937 年 9 月 5 日请假、11 月 16 日辞职、与戈林政策分歧、1939 年 1 月免职及无罪推理。<br><a href="https://avalon.law.yale.edu/imt/judschac.asp" target="_blank" rel="noopener">https://avalon.law.yale.edu/imt/judschac.asp</a></li>
+      <li>Harvard Law School Nuremberg archive, Emil Puhl 宣誓陈述（EC-436），1945-11-02：梅福专用于军备、余额 120 亿马克、1938 年春停发。<br><a href="https://nuremberg.law.harvard.edu/documents/2138-deposition-on-schachts-funding?mode=text" target="_blank" rel="noopener">https://nuremberg.law.harvard.edu/documents/2138-deposition-on-schachts-funding?mode=text</a></li>
+      <li>German History in Documents and Images, “Hitler’s Confidential Memo on Autarky (August 1936)”，四年计划的意识形态与经济命令原文。<br><a href="https://germanhistorydocs.org/en/nazi-germany-1933-1945/hitler-s-confidential-memo-on-autarky-august-1936" target="_blank" rel="noopener">https://germanhistorydocs.org/en/nazi-germany-1933-1945/hitler-s-confidential-memo-on-autarky-august-1936</a></li>
+      <li>Deutsche Bundesbank, Magnus Brechtken / Albrecht Ritschl 等，《Von der Reichsbank zur Bundesbank》（PDF）：梅福作为伪装国库券、不进债务表、约 70% 份额、5% 持有激励、1939 年联名信与整董事会免职。<br><a href="https://www.bundesbank.de/resource/blob/926388/6bc491621416cfb85d41911ffa8ecf15/mL/von-der-reichsbank-zur-bundesbank-data.pdf" target="_blank" rel="noopener">https://www.bundesbank.de/resource/blob/926388/6bc491621416cfb85d41911ffa8ecf15/mL/von-der-reichsbank-zur-bundesbank-data.pdf</a></li>
+      <li>Deutsche Bundesbank 新闻稿，“Studie zur deutschen Zentralbankgeschichte 1924 bis 1970 vorgestellt”（2017 年委托、后续发布）：帝国银行参与军备融资、占领剥削与犹太财产处置。<br><a href="https://www.bundesbank.de/de/presse/pressenotizen/studie-zur-deutschen-zentralbankgeschichte-1924-bis-1970-vorgestellt-914158" target="_blank" rel="noopener">https://www.bundesbank.de/de/presse/pressenotizen/studie-zur-deutschen-zentralbankgeschichte-1924-bis-1970-vorgestellt-914158</a></li>
+      <li>Archivportal-D / 联邦档案馆，BArch R 26-I/6，四年计划全权代表中央机构组织类卷宗（更新标记 2026-04-24）。<br><a href="https://www.archivportal-d.de/item/QKNRKJXSEIRQXWF3NSC7JKPGUJ3SBXQY" target="_blank" rel="noopener">https://www.archivportal-d.de/item/QKNRKJXSEIRQXWF3NSC7JKPGUJ3SBXQY</a></li>
+      <li>Steffen Murau et al., “The Mefo Operation…, 1933–1945”, SSRN, abstract_id=4929301（2024）：三阶段划分与“违背原计划的永久央行融资”。<br><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4929301" target="_blank" rel="noopener">https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4929301</a></li>
+      <li>The Wiener Holocaust Library, “Economic recovery: the role of Hjalmar Schacht”：新计划、戈林 1936-10-18 任命与沙赫特被边缘化的教学综述。<br><a href="https://www.theholocaustexplained.org/life-in-nazi-occupied-europe/economic-policy/economic-recovery/" target="_blank" rel="noopener">https://www.theholocaustexplained.org/life-in-nazi-occupied-europe/economic-policy/economic-recovery/</a></li>
+      <li>Adam Tooze, <i>The Wages of Destruction</i>（Allen Lane / Viking, 2006/2007），尤其 pp. 50–64（梅福与早期财政）、四年计划备忘录语境；条目对照见英文维基 “Mefo bill”“Four Year Plan”。<br><a href="https://en.wikipedia.org/wiki/Mefo_bill" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Mefo_bill</a> · <a href="https://en.wikipedia.org/wiki/Four_Year_Plan" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Four_Year_Plan</a></li>
+      <li>中文对照：维基百科「亚尔马·沙赫特」（经济部长任期 1934-08-03 至 1937-11-26、新计划与东南欧/南美清算）。<br><a href="https://zh.wikipedia.org/wiki/%E4%BA%9A%E5%B0%94%E9%A9%AC%C2%B7%E6%B2%99%E8%B5%AB%E7%89%B9" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/%E4%BA%9A%E5%B0%94%E9%A9%AC%C2%B7%E6%B2%99%E8%B5%AB%E7%89%B9</a></li>
+    </ol>
+  </section>
+
+  <section id="lesson">
+    <h2><span>08</span>对历史学习者的启示</h2>
+    <div class="card insight">
+      <h3><em>LESSON</em>看见水印后面的国家</h3>
+      <p>梅福票据的视觉隐喻很精确：它被设计成看起来像商业汇票的东西，好让央行可以“合法”贴现。学习者若只记住“沙赫特很聪明、没有通胀”，就重复了当年要对外界看的那一层水印。正确的读法是问三句：<b>谁是真正的债务人</b>（帝国，不是冶金研究所）；<b>为什么必须保密</b>（凡尔赛约束与国内债务表）；<b>账单最后由谁付</b>（先是德国储蓄与后来的占领剥削，再是 1948 年式的货币切除）。</p>
+    </div>
+    <ul>
+      <li><b>把“复苏”与“备战”拆开读。</b>就业下降可以同时来自公共工程、军备订单、统计操纵（把妇女、犹太人、政治犯移出失业定义）与工资冻结。新计划证明：进口许可证是一种战争工具。</li>
+      <li><b>不要把沙赫特—戈林之争写成善恶对手戏。</b>一人要可融资的重整，一人要不计成本的四年战争准备。冲突证明该政权内部确有财政理性残渣，也证明残渣无法约束侵略时间表。1937 年辞职保住了沙赫特的事后叙事，没有取消 120 亿马克已经变成的坦克、飞机与兵营。</li>
+      <li><b>表外财政是政治史，不只是货币史。</b>2024 年的货币结构分析与联邦银行官方史学，都在拆“金融巫师”神话。读德国 1933–36 年，应同时打开帝国法律公报、帝国银行资产负债表与四年计划全宗 R 26 I，而不是只打开回忆录。</li>
+      <li><b>纽伦堡的法律标准不等于史学评价。</b>法庭问的是“破坏和平罪是否成立”；史学说的是：没有这套表外军备，1935–36 年的公开毁约与 1938 年的外交讹诈会困难得多。无罪释放可以是程序结论，不能自动变成道德清洗。</li>
+    </ul>
+    <p>下一篇若继续财政线，值得单独处理的不是再讲一遍四年计划口号，而是：1938 年后梅福余额如何在帝国银行账上被“整理”、战争期间货币过剩如何被压住、以及占领区清算账户如何把 1934 年发明的那套双边记账扩成全欧洲的掠夺管道。</p>
+  </section>
+
+  <footer class="foot">
+    调研报告/二战调研_沙赫特梅福票_20260830_1840.html · 视觉风格：梅福票据水印风 · 独立 HTML，无外部构建 · 不美化纳粹财政，不把表外借贷写成复苏奇迹
+  </footer>
+</article>
+</body>
+</html>
