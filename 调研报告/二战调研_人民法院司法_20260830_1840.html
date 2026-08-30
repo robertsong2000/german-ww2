@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人民法院与司法纳粹化：1934年审判席、弗莱斯勒与7月20日公审</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+SC:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+/* Red-poster bench: Volksgerichtshof theatrical terror, NOT IMT honey oak */
+:root {
+  --blood: #8e1218;
+  --poster: #b91c24;
+  --poster-ink: #140808;
+  --oak: #120e0c;
+  --oak-mid: #1e1612;
+  --oak-edge: #2a2018;
+  --paper: #f3e6cc;
+  --paper-dark: #e8d4b0;
+  --ink: #160e0c;
+  --fade: #6a4a42;
+  --spot: #fff4dc;
+  --brass: #7a5a32;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--oak);
+  background-image:
+    radial-gradient(ellipse 70% 40% at 50% -8%, rgba(255,244,220,.14), transparent 55%),
+    repeating-linear-gradient(90deg, rgba(0,0,0,.18) 0 2px, transparent 2px 7px),
+    linear-gradient(180deg, #0a0807 0%, #16110e 28%, #1a1410 100%);
+  color: var(--paper);
+  font-family: "Noto Serif SC", "Cormorant Garamond", serif;
+  line-height: 1.78;
+}
+body::before {
+  content: "";
+  position: fixed; inset: 0; pointer-events: none; z-index: 8;
+  opacity: .07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
+}
+.stage {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 118px 1fr;
+  min-height: 100vh;
+}
+.red-poster {
+  background: linear-gradient(180deg, #c5222a 0%, #9a151c 55%, #7a1016 100%);
+  color: #1a0808;
+  padding: 22px 10px 40px;
+  border-right: 6px solid #3a0808;
+  box-shadow: inset -18px 0 28px rgba(0,0,0,.28);
+  position: relative;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: "Anton", sans-serif;
+  letter-spacing: .18em;
+  font-size: 15px;
+  line-height: 1.35;
+}
+.red-poster .poster-en {
+  writing-mode: horizontal-tb;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 10px;
+  letter-spacing: .08em;
+  margin-bottom: 18px;
+  opacity: .85;
+  text-align: center;
+}
+.red-poster strong { display: block; font-size: 22px; letter-spacing: .22em; }
+.bench {
+  background:
+    repeating-linear-gradient(90deg, #1a1410 0 14px, #221a14 14px 15px),
+    var(--oak-mid);
+  padding: 0 0 64px;
+  position: relative;
+}
+.rail {
+  height: 14px;
+  background: linear-gradient(180deg, #6a1218, #b91c24 40%, #4a0c10);
+  box-shadow: 0 10px 24px rgba(140,18,24,.35);
+}
+.docket {
+  max-width: 860px;
+  margin: 22px auto 0;
+  background:
+    linear-gradient(180deg, rgba(255,244,220,.06), transparent 12%),
+    var(--paper);
+  color: var(--ink);
+  border: 3px solid #2a1812;
+  box-shadow:
+    0 0 0 8px #1a1210,
+    0 28px 0 #0a0806,
+    0 0 80px rgba(185,28,36,.12);
+  padding: 32px 36px 44px;
+  position: relative;
+}
+.docket::after {
+  content: "VGH";
+  position: absolute; right: 18px; top: 92px;
+  font-family: "Anton", sans-serif;
+  font-size: 72px;
+  color: var(--poster);
+  opacity: .08;
+  transform: rotate(-12deg);
+  pointer-events: none;
+}
+.kicker {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 11px;
+  letter-spacing: .22em;
+  color: var(--blood);
+  display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  border-bottom: 2px solid var(--blood);
+  padding-bottom: 8px;
+}
+h1 {
+  font-family: "Anton", "Noto Serif SC", sans-serif;
+  font-weight: 400;
+  font-size: clamp(30px, 5.4vw, 52px);
+  line-height: 1.08;
+  letter-spacing: .01em;
+  color: var(--poster-ink);
+  margin: 14px 0 10px;
+  max-width: 16em;
+}
+.sub {
+  font-family: "Cormorant Garamond", "Noto Serif SC", serif;
+  font-size: 19px;
+  font-style: italic;
+  color: #3a241c;
+  max-width: 42em;
+}
+.meta {
+  margin-top: 16px;
+  display: flex; flex-wrap: wrap; gap: 8px 18px;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 12px;
+  color: var(--fade);
+}
+.meta b { color: var(--blood); font-weight: 400; }
+nav.toc {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin: 22px 0 6px;
+}
+nav.toc a {
+  font-family: "Anton", sans-serif;
+  letter-spacing: .08em;
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--paper);
+  background: var(--blood);
+  padding: 7px 12px 5px;
+  box-shadow: 3px 3px 0 #1a0808;
+}
+nav.toc a:hover { background: #6a0e14; }
+section { margin-top: 28px; }
+h2 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  letter-spacing: .06em;
+  font-size: 22px;
+  color: var(--blood);
+  border-bottom: 4px solid var(--blood);
+  display: inline-block;
+  padding-bottom: 2px;
+  margin-bottom: 14px;
+}
+.card {
+  background: var(--paper-dark);
+  border-left: 8px solid var(--poster);
+  box-shadow: inset 0 0 0 1px #c8b090, 6px 8px 0 rgba(18,10,8,.18);
+  padding: 16px 18px 14px;
+  margin-bottom: 14px;
+}
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.card h3 span {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 12px;
+  color: var(--blood);
+  margin-right: 8px;
+}
+.card p, .card li { font-size: 16px; }
+.card li { margin: 7px 0 7px 1.15em; }
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.stat {
+  background: var(--poster);
+  color: var(--paper);
+  padding: 14px 16px 12px;
+  box-shadow: 5px 6px 0 #3a0808;
+}
+.stat .n {
+  font-family: "Anton", sans-serif;
+  font-size: 34px;
+  line-height: 1;
+  letter-spacing: .02em;
+}
+.stat .l {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 11px;
+  letter-spacing: .08em;
+  opacity: .9;
+  margin-top: 4px;
+}
+.insight {
+  background: #1a1210;
+  color: var(--paper);
+  border-left-color: var(--brass);
+  box-shadow: 6px 8px 0 #0a0604;
+}
+.insight h3, .insight li { color: var(--paper); }
+.insight li { color: #f0e2c8; }
+.refs ol { margin-left: 1.2em; }
+.refs a { color: var(--blood); word-break: break-all; }
+.refs .url {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 11px;
+  color: var(--fade);
+  display: block;
+  margin: 2px 0 10px;
+}
+.foot {
+  margin-top: 30px;
+  padding-top: 12px;
+  border-top: 2px solid var(--blood);
+  font-family: "Share Tech Mono", monospace;
+  font-size: 11px;
+  letter-spacing: .16em;
+  text-align: center;
+  color: var(--fade);
+}
+@media (max-width: 760px) {
+  .stage { grid-template-columns: 1fr; }
+  .red-poster {
+    writing-mode: horizontal-tb;
+    min-height: auto;
+    padding: 12px 16px;
+    font-size: 13px;
+    display: flex; gap: 12px; align-items: center;
+  }
+  .red-poster strong { font-size: 16px; }
+  .docket { margin: 12px 10px 0; padding: 22px 16px 32px; }
+  .grid-2 { grid-template-columns: 1fr; }
+  h1 { font-size: 30px; }
+}
+</style>
+</head>
+<body>
+<div class="stage">
+  <aside class="red-poster" aria-hidden="true">
+    <div class="poster-en">ROTES PLAKAT · VGH</div>
+    <strong>ZUM TODE VERURTEILT</strong>
+    人民法院 · 无上诉 · 红牌公示
+  </aside>
+  <main class="bench">
+    <div class="rail" aria-hidden="true"></div>
+    <article class="docket">
+      <div class="kicker">
+        <span>VOLKSGERICHTSHOF 1934–1945</span>
+        <span>二战德国史调研 · 系列第36期</span>
+      </div>
+      <h1>人民法院与司法纳粹化：1934年审判席、弗莱斯勒与7月20日公审</h1>
+      <p class="sub">这不是纽伦堡那种事后清算的橡木席，而是战时柏林的剧场化死刑机器：红牌贴墙、红袍喝骂、一审终审。司法纳粹化的关键不在“无法”，而在把法律写成可以公开杀人的布景。</p>
+      <div class="meta">
+        <span><b>时间</b> 2026-08-30 18:40 CST</span>
+        <span><b>视觉风格</b> 红牌审判席风</span>
+        <span><b>立场</b> 学术批判 · 不美化政权 · 司法谋杀视为既成史实</span>
+      </div>
+      <nav class="toc">
+        <a href="#theme">本期主题</a>
+        <a href="#founding">1934建院</a>
+        <a href="#freisler">弗莱斯勒</a>
+        <a href="#july20">7月20日公审</a>
+        <a href="#stats">判决统计</a>
+        <a href="#after">战后连续性</a>
+        <a href="#sources">来源</a>
+        <a href="#insight">启示</a>
+      </nav>
+
+      <section id="theme">
+        <h2>本期主题</h2>
+        <article class="card">
+          <p>1934年4月24日的《惩治叛国与外患法》把叛国案从莱比锡帝国法院第四刑事庭抽走，交给新建的人民法院（Volksgerichtshof）。德国历史博物馆（DHM/LeMO）写明：直接导火索是国会纵火案审判——五名被告中四人无罪、一人死刑，希特勒视为“过宽的错判”。联邦档案馆导引则纠正一种简化传说：设立政治法庭的构想在纳粹运动中更早就有，只是刻意避开“革命法庭”这个词。</p>
+          <p style="margin-top:10px">本篇把人民法院放回<strong>司法纳粹化</strong>的结构里：它不是弗莱斯勒一个人的歇斯底里，而是特别法庭（Sondergerichte）、战时刑法、盖世太保与职业法官共同搭起的合法外观。1942年后死刑比例跳到近一半；1944年8月对7月20日密谋者的公审被拍成“帝国机密”影片。1945年后，至少29名人民法院法官、69名检察官进入西德法院系统；联邦德国从未有人民法院法官被最终定罪。1985年联邦议院才称其为恐怖工具，1998年《纳粹不法判决废除法》才立法撤销其判决。</p>
+        </article>
+      </section>
+
+      <section id="founding">
+        <h2>1934：从特别法庭到“普通法院”</h2>
+        <article class="card">
+          <h3><span>01</span>建院时间表（档案口径）</h3>
+          <ul>
+            <li>1934年3月23日内阁会议后，决定设立专门惩治叛国与外患的人民法院。4月24日立法；7月14日司法部长居特纳（Franz Gürtner）主持开庭仪式；8月1日在柏林开始工作。最初驻普鲁士邦议会旧址（亲王阿尔布雷希特大街），1935年5月迁至美景街15号（Bellevuestraße 15）。</li>
+            <li>1936年4月18日法律把它改称为《法院组织法》意义上的“普通法院”，并设置院长。第一任院长奥托·格奥尔格·蒂拉克（Otto Georg Thierack）1936年6月1日就任；同时设立本院自己的检察机关，1937年12月起为“人民法院帝国总检察长”（Oberreichsanwalt）。这是一次命名术：把特别法庭洗成常设机构，不改变一审终审、不得上诉的本质。</li>
+            <li>合议庭最多六个刑事庭，每庭五名审判员，其中只需两名职业法官；其余三名多为纳粹党、国防军、警察中的“忠诚外行”。法官由司法部长提名、希特勒亲自任命。辩护人须经审判长批准；1939年6月24日司法部通令规定，叛国案被告不得拿到判决书副本。少年法保护被排除：未满21岁者也按成人处理。</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3><span>02</span>司法纳粹化：人民法院不是孤岛</h3>
+          <ul>
+            <li>1933年已有特别法庭，作为国会纵火紧急令和1934年《阴险法》（Heimtückegesetz）的执行器。DHM 基本权利展图录指出：战争开始后，特别法庭越来越多地惩罚“一般犯罪”与战时犯罪；检察官有权决定把谁送进特别法庭。人民法院接手的是叛国、外患、后来的“瓦解国防力量”（Wehrkraftzersetzung）、经济破坏、夜间与迷雾程序、对波兰人的特别刑法等。</li>
+            <li>口号“有利于人民的就是法”（Recht ist, was dem Volke nützt）把法安定性取消。弗莱斯勒在司法部国务秘书任内（约1934–1942）推动法官权限扩张、刑法纳粹化，并参加1942年1月20日万湖会议。人民法院只是这套机器最醒目的红牌：墙上的死刑告示、庭上的喝骂、当天或数小时后的处决。</li>
+            <li>早期判决并未立刻满足政权胃口。DHM 记：1934年死刑4人、1935年9人；司法部在1935年4月至1936年8月批评18份判决“过宽”。希特勒事后抱怨人民法院起初“未达到他所要的严厉标准”。纳粹化不是开关，而是职业法官被逐步训练成政治士兵的过程。</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="freisler">
+        <h2>罗兰德·弗莱斯勒：红袍不是个性，是职务</h2>
+        <article class="card">
+          <h3><span>03</span>从国务秘书到院长</h3>
+          <ul>
+            <li>DHM 传记：弗莱斯勒1893年生于策勒；一战俄俘、曾接触布尔什维克后再转向极端民族主义；1925年入党，在卡塞尔为冲锋队员辩护。1933年掌管普鲁士司法部人事，在“法律基础”尚未完成时清洗司法与律师界。1934年成为帝国司法部国务秘书，与居特纳合写《新刑法作为国家社会主义告白》（1936），并出版《新德意志刑事司法中的人民法官》（1937）。</li>
+            <li>1942年8月20日希特勒任命他为人民法院院长，同时任第一庭庭长。蒂拉克升任司法部长。弗莱斯勒对希特勒的效忠辞把自己写成“您的政治士兵”，并保证法院将“按您本人会如何判断此案”来判决。死刑数量随即陡升。他把人民法院比作“司法的装甲部队”（Panzertruppen der Rechtspflege）。</li>
+            <li>1945年2月3日美空军空袭摧毁美景街院址。弗莱斯勒在逃往防空洞途中身亡；当天本应审理日后成为联邦宪法法院法官的施拉布伦多夫（Fabian von Schlabrendorff）。继任者哈里·哈夫纳（Harry Haffner）3月上任，4月24日逃离柏林。盟军管制委员会第3号公告于1945年10月20日将其法定解散。</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="july20">
+        <h2>1944年8月：7月20日作为公开处刑剧</h2>
+        <article class="card">
+          <h3><span>04</span>管辖权被抢走，镜头被藏起来</h3>
+          <ul>
+            <li>刺杀失败后，密谋军官先被国防军“荣誉法庭”开除军籍，以便不由帝国军事法庭、而由人民法院审判。犹太虚拟图书馆（据普洛岑湖纪念馆）记：1944年8月4日至9月14日，55名军官被强制除籍，另29人应荣誉法庭要求退伍。</li>
+            <li>DHM 军械库电影院说明：1944年8月7、8、10、15日，弗莱斯勒主持对参与施陶芬贝格政变军官的审判。戈培尔下令用藏在旗帜与胸像后的摄影机拍摄。被告被勒令不系皮带、吊带、领带出庭，以便在镜头前显得“猥琐”；弗莱斯勒将他们喝骂至声嘶。胶片在第三帝国内未公映；1979年约亨·鲍尔（Jochen Bauer）剪成《帝国机密》（Geheime Reichssache）。这是剧场：法官是主演，法律是道具，摄影机是第三位审判员。</li>
+            <li>第一场（8月7–8日）被告包括维茨勒本元帅、约尔克·冯·瓦滕堡、赫普纳、哈泽等，当日即在柏林—普洛岑湖监狱被杀害。随后五十余场审判、一百余件死刑；8月8日至1945年4月9日，普洛岑湖处决与7月20日圈有关者约90人。后期审判被禁止公开报道，以免拆穿“一小撮无良心叛徒”的宣传。克莱骚集团1945年1月受审；赫尔穆特·詹姆斯·冯·莫尔特克写信给妻子：“我们被处决，是因为我们一起思想过。”</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3><span>05</span>红牌不只贴给密谋者</h3>
+          <ul>
+            <li>联邦档案馆与普洛岑湖个案显示：同一套“瓦解国防力量”条文也杀死普通言论。伊丽莎白·韦默尔（Elisabeth Wehmer）因对房客表示遗憾7月20日未遂，1944年10月17日被第一庭判处死刑，11月17日在普洛岑湖被杀害。卷宗号 BArch R 3017/36020。人民法院的恐怖广度，不能只用施陶芬贝格传记来度量。</li>
+            <li>第一庭还对红乐队、白玫瑰、克莱骚圈下达死刑，常在宣判后数小时执行。赦免只能向希特勒提出，且通常不被理睬。财产没收扩大到7月20日抵抗者家属。</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="stats">
+        <h2>数字为何对不上：档案分裂与史学争议</h2>
+        <div class="grid-2" style="margin-bottom:14px">
+          <div class="stat"><div class="n">~5,200</div><div class="l">DHM：约18,000件判决中约5,200件死刑</div></div>
+          <div class="stat"><div class="n">5,234+</div><div class="l">Marxen：至少5,234件死刑（无其他德国法院可比）</div></div>
+          <div class="stat"><div class="n">46%</div><div class="l">1942年死刑占比（弗莱斯勒就任之年）</div></div>
+          <div class="stat"><div class="n">54,000</div><div class="l">BArch 合并前相关案卷约54,000件</div></div>
+        </div>
+        <article class="card">
+          <h3><span>06</span>统计必须并陈，不能取一个整数当口号</h3>
+          <ul>
+            <li>DHM：全程约18,000件判决、约5,200件死刑；1934年死刑4、1935年9；1942年起死刑常占近50%，多因失败主义与“瓦解国防力量”。</li>
+            <li>英德维基转引的分年表（Müller口径）：1937–1944年被告14,319+，死刑5,191+，无罪1,073+。1942年被告2,572 / 死刑1,192；1944年4,379+ / 2,097+。Wachsmann 与 Hoffmann 另给出约10,000与5,179等数字。克劳斯·马克森（Klaus Marxen）《国家社会主义人民法院的判决实践》开篇写“至少5,234件死刑”，并强调战后无人民法院法官被终审定罪。</li>
+            <li>联邦档案馆安德烈亚斯·格伦瓦尔德（Andreas Grunwald）导引解释对不上的原因：卷宗战后被苏占当局没收，再拆入东德中央国家档案馆、斯塔西“纳粹档案”、统一社会党“纳粹司法”收藏与西德科布伦茨、柏林文件中心。1994年才在联邦档案馆汇合为 R 3016（人民法院，约904条著录）、R 3017（本院帝国总检察长，主体系诉讼，2017–2018年完成约61,016条可检索著录）、R 3018（“纳粹司法”收藏，18,000+件）。同一案件常被拆馆、复印，精确场次难以清点。研究者应经 invenio 检索，而不是背一个“五千”当结案。</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="after">
+        <h2>1945年后：人还在，法袍换了颜色</h2>
+        <article class="card">
+          <h3><span>07</span>纽伦堡审了检察长，西德放走了审判员</h3>
+          <ul>
+            <li>盟国在纽伦堡后续“法官案”（United States v. Josef Altstötter et al.）追究司法部与特别法庭高官；人民法院帝国总检察长恩斯特·劳茨（Ernst Lautz）被定罪。弗莱斯勒已死，无法出庭。这证明“司法犯罪”在国际法上可审——但联邦德国后来用另一套国内法把它关掉。</li>
+            <li>人员连续性有据：至少29名人民法院法官、69名检察官进入西德法院。德国之声/德国广播（Deutschlandfunk）综述：约577名该院法官与检察官中，只有汉斯-约阿希姆·雷泽（Hans-Joachim Rehse）曾站上联邦德国被告席。雷泽参与至少231件死刑；1967年一审因帮助杀人判五年，联邦法院撤销；再审无罪。理由是1946年发明的“法官特权”（Richterprivileg）：只有故意枉法才能追责，而雷泽称自己当时相信判决合法。保罗·赖默斯（Paul Reimers）参与至少97件死刑，1955–1963年再任刑事法官，在受审前自杀。1986年西柏林宣布因证据年久不再起诉其余成员。</li>
+            <li>2025年弗洛里安·耶斯贝格尔与米兰·库利（Jeßberger / Kuhli）专章把这条线写进过渡司法比较：盟国拒绝普通法式司法豁免，西德却用法官特权制造近乎全免。连续性不是“人手不够”的技术问题，而是职业团体用程序法自我赦免。</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3><span>08</span>1985年政治宣示，1998年才立法撤销</h3>
+          <ul>
+            <li>1985年1月25日联邦议院一致决议：所谓人民法院“不是法治意义上的法院，而是推行纳粹专横统治的恐怖工具”，其决定“不具法律效力”。德国广播强调：这并不自然。联邦法院多年仍视其为《法院组织法》上的独立法院。时任司法部长曾反对“另行宣告无效”，以免显得过去尚未清理。</li>
+            <li>1998年8月25日《刑事司法中纳粹不法判决废除法》（NS-AufhG，9月1日生效）第2条第1款点名撤销人民法院判决；同条涵盖1945年2月15日命令下的战地简易庭，以及附件所列59类纳粹法令为依据的判决。2002、2009年修正才较完整纳入军事司法与其他缺口。法律不自动产生金钱赔偿。对多数被处决者的家属，这来得太晚。</li>
+            <li>东德路径不同：斯塔西与党档案馆把卷宗当政治收藏（“纳粹司法”），统一后才归入联邦档案馆。两边都曾工具化这份遗产——西边用连续性换重建，东边用控诉换自身合法性。学习者要同时看见两套遗忘。</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="sources">
+        <h2>来源</h2>
+        <article class="card refs">
+          <ol>
+            <li>
+              <a href="https://www.dhm.de/lemo/kapitel/ns-regime/innenpolitik/volksgerichtshof" target="_blank" rel="noopener">德国历史博物馆 LeMO：人民法院（Claudia Prinz，2015）</a>
+              <span class="url">https://www.dhm.de/lemo/kapitel/ns-regime/innenpolitik/volksgerichtshof</span>
+            </li>
+            <li>
+              <a href="https://www.dhm.de/lemo/biografie/roland-freisler" target="_blank" rel="noopener">DHM LeMO：罗兰德·弗莱斯勒传记（Gabriel Eikenberg，2014）</a>
+              <span class="url">https://www.dhm.de/lemo/biografie/roland-freisler</span>
+            </li>
+            <li>
+              <a href="https://www.dhm.de/zeughauskino/vorfuehrung/geheime-reichssache-5051/" target="_blank" rel="noopener">DHM 军械库电影院：《帝国机密》与1944年8月公审拍摄说明</a>
+              <span class="url">https://www.dhm.de/zeughauskino/vorfuehrung/geheime-reichssache-5051/</span>
+            </li>
+            <li>
+              <a href="https://www.dhm.de/archiv/ausstellungen/grundrechte/katalog/74-75.pdf" target="_blank" rel="noopener">DHM 基本权利展图录：特别法庭、军事法庭与恐怖</a>
+              <span class="url">https://www.dhm.de/archiv/ausstellungen/grundrechte/katalog/74-75.pdf</span>
+            </li>
+            <li>
+              <a href="https://www.bundesarchiv.de/assets/bundesarchiv/de/Downloads/PDFs_Geschichtsgalerie/VGH-Einfuehrung.pdf" target="_blank" rel="noopener">联邦档案馆：Grunwald，《人民法院及其帝国总检察长》导引（R 3016 / R 3017 / R 3018）</a>
+              <span class="url">https://www.bundesarchiv.de/assets/bundesarchiv/de/Downloads/PDFs_Geschichtsgalerie/VGH-Einfuehrung.pdf</span>
+            </li>
+            <li>
+              <a href="https://www.bundesarchiv.de/das-bundesarchiv/aus-unserer-archivarbeit/nicht-jeder-stirbt-fuer-sich-allein/" target="_blank" rel="noopener">联邦档案馆：R 3017（61,016条）与司法大宗整理说明（2017–2018）</a>
+              <span class="url">https://www.bundesarchiv.de/das-bundesarchiv/aus-unserer-archivarbeit/nicht-jeder-stirbt-fuer-sich-allein/</span>
+            </li>
+            <li>
+              <a href="https://www.bundesarchiv.de/im-archiv-recherchieren/archivgut-recherchieren/recherchesysteme/invenio/" target="_blank" rel="noopener">联邦档案馆 invenio 检索入口</a>
+              <span class="url">https://www.bundesarchiv.de/im-archiv-recherchieren/archivgut-recherchieren/recherchesysteme/invenio/</span>
+            </li>
+            <li>
+              <a href="https://jewishvirtuallibrary.org/jsource/Holocaust/peoplesct.html" target="_blank" rel="noopener">Jewish Virtual Library：人民法院与7月20日系列审判（据普洛岑湖纪念馆）</a>
+              <span class="url">https://jewishvirtuallibrary.org/jsource/Holocaust/peoplesct.html</span>
+            </li>
+            <li>
+              <a href="https://www.gedenkstaette-ploetzensee.de/en/" target="_blank" rel="noopener">柏林普洛岑湖纪念馆</a>
+              <span class="url">https://www.gedenkstaette-ploetzensee.de/en/</span>
+            </li>
+            <li>
+              <a href="https://www.duncker-humblot.de/_files_media/leseproben/9783428482832.pdf" target="_blank" rel="noopener">Klaus Marxen，《国家社会主义人民法院的判决实践》试读（至少5,234件死刑）</a>
+              <span class="url">https://www.duncker-humblot.de/_files_media/leseproben/9783428482832.pdf</span>
+            </li>
+            <li>
+              <a href="https://www.deutschlandfunk.de/der-volksgerichtshof-ein-terrorinstrument-100.html" target="_blank" rel="noopener">Deutschlandfunk：1985年决议、雷泽案与“577人中仅一人受审”</a>
+              <span class="url">https://www.deutschlandfunk.de/der-volksgerichtshof-ein-terrorinstrument-100.html</span>
+            </li>
+            <li>
+              <a href="https://www.csmonitor.com/1985/0128/ohist.html" target="_blank" rel="noopener">Christian Science Monitor（1985-01-28）：联邦议院宣告人民法院判决无效</a>
+              <span class="url">https://www.csmonitor.com/1985/0128/ohist.html</span>
+            </li>
+            <li>
+              <a href="https://www.latimes.com/archives/la-xpm-1986-10-21-mn-6655-story.html" target="_blank" rel="noopener">Los Angeles Times（1986-10-21）：西柏林决定不再起诉人民法院成员</a>
+              <span class="url">https://www.latimes.com/archives/la-xpm-1986-10-21-mn-6655-story.html</span>
+            </li>
+            <li>
+              <a href="https://www.gesetze-im-internet.de/ns-aufhg/BJNR250110998.html" target="_blank" rel="noopener">NS-AufhG（1998-08-25）：第2条点名撤销人民法院判决</a>
+              <span class="url">https://www.gesetze-im-internet.de/ns-aufhg/BJNR250110998.html</span>
+            </li>
+            <li>
+              <a href="https://doi.org/10.4324/9781003470069-2" target="_blank" rel="noopener">Jeßberger / Kuhli（2025）：盟国与西德法院中的纳粹司法不法追责</a>
+              <span class="url">https://doi.org/10.4324/9781003470069-2</span>
+            </li>
+            <li>
+              <a href="https://www.twreporter.org/a/transitionaljustice-series-nazi-germany" target="_blank" rel="noopener">《报导者》：德国法律制度与法院判决中的纳粹转型正义</a>
+              <span class="url">https://www.twreporter.org/a/transitionaljustice-series-nazi-germany</span>
+            </li>
+          </ol>
+        </article>
+      </section>
+
+      <section id="insight">
+        <h2>对历史学习者的启示</h2>
+        <article class="card insight">
+          <h3>把红牌读成制度，而不是读成狂人秀</h3>
+          <ul>
+            <li>先读1934年立法与1936年“升格为普通法院”，再看1944年的喝骂影片。剧场是结果，职业法学家把上诉权、预审、少年保护拆掉才是原因。</li>
+            <li>弗莱斯勒是加速器，不是发明者。没有他，人民法院仍存在；有他，死刑比例在1942年跳到近一半。传记不能替代机构史。</li>
+            <li>7月20日公审是宣传与处决的叠影：前几场给报纸，后几十场禁止见报。抵抗被做成“一小撮”，同时普洛岑湖的绳子也套在只说错一句话的人身上。</li>
+            <li>战后连续性有档案与判例：29名法官、69名检察官、雷泽无罪、1985年政治决议、1998年立法。说“零时”之前，先数有多少人换了一件不红的袍继续开庭。</li>
+            <li>数字从5,179到5,234到“约5,200 / 18,000”并不互相取消，它们提醒卷宗被冷战拆馆。用 invenio 查 R 3017，比背一个整数更接近这套机器的真实体积。</li>
+          </ul>
+        </article>
+      </section>
+
+      <p class="foot">GERMAN WW2 RESEARCH DESK · ISSUE 36 · RED POSTER BENCH · CRITICAL HISTORY</p>
+    </article>
+  </main>
+</div>
+</body>
+</html>
