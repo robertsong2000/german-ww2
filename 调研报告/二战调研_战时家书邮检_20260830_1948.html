@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>信件、包裹与家庭战时通信 —— 剪刀拆开的不只是信封</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,400&family=Work+Sans:ital,wght@0,400;0,600;1,400&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Censor-tape opened letter: cream envelope, paper band, scissors nick. No regime insignia as ornament. */
+:root{
+  --band:#c45c3a;
+  --paper:#f4ead8;
+  --ink:#1a1814;
+  --stamp:#2c4a6e;
+  --nick:#8a4030;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Work Sans","PingFang SC",sans-serif;
+  color:var(--ink);line-height:1.78;
+  background:#2a2620;
+}
+.env{
+  max-width:900px;margin:28px auto 52px;
+  background:var(--paper);
+  box-shadow:0 18px 40px rgba(0,0,0,.4);
+  position:relative;
+}
+.env:before{
+  content:"";display:block;height:18px;
+  background:repeating-linear-gradient(90deg,var(--band) 0 28px,#e8d4b0 28px 40px);
+}
+.tape{
+  font-family:"Fira Code",monospace;font-size:11.5px;letter-spacing:.1em;
+  background:#e8d4b0;color:var(--nick);text-align:center;padding:6px 10px;
+  border-top:1px dashed var(--band);border-bottom:1px dashed var(--band);
+}
+.inner{padding:20px 28px 38px}
+.kicker{font-family:"Fira Code",monospace;color:var(--stamp);font-size:13px;margin-top:8px}
+h1{font-family:"Lora",serif;font-size:clamp(24px,4.4vw,36px);line-height:1.25;margin:8px 0 10px}
+.sub{font-size:17.5px;max-width:40em}
+.meta{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 16px;font-family:"Fira Code",monospace;font-size:12.5px;color:#5a5048}
+.meta b{color:var(--band)}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
+nav.toc a{font-family:"Fira Code",monospace;font-size:12px;text-decoration:none;color:var(--paper);background:var(--stamp);padding:5px 10px}
+section{margin-top:22px}
+h2{font-family:"Lora",serif;font-size:21px;color:var(--stamp);border-bottom:2px solid var(--band);padding-bottom:4px;margin-bottom:12px}
+.card{background:#fffaf2;border:1px solid #d8cbb4;padding:14px 16px;margin-bottom:12px}
+.card h3{font-size:16.5px;margin-bottom:6px}
+.card h3 span{font-family:"Fira Code",monospace;color:var(--band);margin-right:8px}
+.card li{margin:7px 0 7px 1.15em}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.cell{border:1px solid #d0c4ac;padding:10px;text-align:center;font-size:13.5px}
+.cell strong{display:block;font-family:"Lora",serif;font-size:18px;color:var(--band)}
+.insight{border:2px solid var(--stamp)}
+.refs a{color:var(--stamp)}
+.foot{margin-top:24px;padding-top:12px;border-top:3px solid var(--stamp);font-family:"Fira Code",monospace;font-size:11px;letter-spacing:.08em;text-align:center;color:#5a5048}
+@media(max-width:640px){.grid{grid-template-columns:1fr}.inner{padding:16px}}
+</style>
+</head>
+<body>
+<div class="env">
+  <div class="tape">GEÖFFNET · PRÜFSTELLE · KEIN LIEBESBRIEF-MUSEUM</div>
+  <div class="inner">
+    <p class="kicker">二战德国史调研 · 系列第 52 期 · 第二轮 · 民生与社会</p>
+    <h1>信件、包裹与家庭战时通信</h1>
+    <p class="sub">野战邮局把家拆成两个信箱。250 克以内免费，剪刀偶尔拆开，脑子里的剪刀天天在。包裹里有巧克力，也有从占领区搜来的罐头。没寄到的信，同样是史料。</p>
+    <div class="meta"><span><b>时间</b> 2026-08-30 19:48 CST</span><span><b>视觉风格</b> 邮检封条风</span></div>
+    <nav class="toc">
+      <a href="#s0">本期主题</a>
+      <a href="#s1">邮局与剪刀</a>
+      <a href="#s2">包裹双向</a>
+      <a href="#s3">没寄到的信</a>
+      <a href="#s4">启示</a>
+      <a href="#s5">来源</a>
+    </nav>
+
+    <section id="s0">
+      <h2>本期主题</h2>
+      <div class="card">
+        <p>第 24 期写过战俘明信片，第 51 期顺手提过阿尔高 Stöckle 家约 1600 封家书。本期专盯通信本身：野战邮局（Feldpost）怎样把家庭关系维持成战时装置，邮检怎样从防间谍滑向意识形态，包裹怎样同时是补给和掠夺，集中营里停信怎样变成惩罚。Katrin Kilian 的估计常被引用：1939–1945 年德语邮政范围内约 300–400 亿件；Ortwin Buchbender 写约 330 亿（信、明信片、小包、包裹）。留下来供研究的自我证词大约只有 12–15 万封——家庭当宝贝藏着，公开档案里的只是冰山一角。</p>
+        <p style="margin-top:10px">2026 年的入口必须把「德军家书」和「没寄到的信」并排。柏林卡尔斯霍斯特博物馆为纪念 1941 年 6 月 22 日进攻苏联 85 周年，于 2026 年 6 月 19 日至 2027 年 1 月 10 日重办《1941. 六月信件：来自卡缅涅茨-波多利斯基的未读野战邮》。展的是该市邮局最后一次开箱、因开战从未送达的信件：红军士兵与市民写于毁灭战最初几天，被德占当局当战利品送到维也纳邮政博物馆，归还后现藏基辅乌克兰二战史国家博物馆。同期 2026 年 6 月 22 日至 8 月 25 日在卡缅涅茨本地历史博物馆展出。通信史若只读「我们还健康」的德语套话，会把被切断的邮箱忘掉。</p>
+      </div>
+    </section>
+
+    <section id="s1">
+      <h2>核心发现一：免费邮路是军需，不是隐私权</h2>
+      <div class="card">
+        <h3><span>01</span>1939 年 9 月 2 日开张：250 克以内不收费</h3>
+        <ul>
+          <li>Feldpost 既是机构也是介质。1939 年 9 月 2 日按任务说明启动：「野战邮政是战争国防军的补给领域，服务于国防军与家乡之间以及内部的邮政供应。」邮政技术上隶属帝国邮政，军事上属补给部队。1940 年仅供公务使用的办理须知写：延误的家书「可能给士兵带来忧虑，妨碍其履行义务」——所以家书被当成战斗力维护，不是私密权。</li>
+          <li>250 克以内免费。只有部署在帝国境外的军人有野战邮政编号（Feldpostnummer），地址被编码。没有这个号码，你就不在这套「民族共同体通信装置」里。电话几乎不可用，广播只能偶尔传一句问候。1939 年 10 月 1 日起《为国防军点播》把点歌、出生通报和募捐串在一起——声音版的家书，同样要人捐钱。</li>
+          <li>Klaus Latzel 等研究者的提醒：面对数百亿件，抽检的实际覆盖率很低；对当事人，一次抽中的后果可以是监狱、苦役或死刑。约 3–4 万人因「瓦解战斗力」（Wehrkraftzersetzung）获刑——罪名故意定得很宽，私信内容可以被塞进去。不要把「很少拆开」读成「可以随便写」。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span>02</span>外面的剪刀，和脑子里的剪刀</h3>
+        <ul>
+          <li>邮检处于 1940 年 3 月 12 日按《通信条例》开工，隶属陆军总司令部而非帝国邮政。一个检验处编制：主任、4 名军官、14 名士官；军官检军官的信，士官检士兵的信。用剪刀拆开，再用印着「已开拆——检验处」的纸带封回去；明信片盖「已检验」戳。将军、军机关、政府部门与党组织的电报原则上不检。</li>
+          <li>起初盯军事机密：部队编成、位置、武器、长官姓名、损失、照片、传单。禁止用莫尔斯、镜写或其他密码；速记可以，只准欧洲语言。禁止从家乡要货到占领区转卖。Kilian：随着战争进行，检查从防御滑向政治意识形态审查。媒体不断讨论「该怎么写」，并刊登范文：家里不许抱怨，前线只许报喜加打气口号。信被明确称为「武器」。</li>
+          <li>Ralf Schoffit 等所说的 Schere im Kopf（脑子里的剪刀）往往比实际开拆更有效。士兵多半不写创伤，更不写自己看见或参与的暴行。segu 教学模块把这写成课堂纪律：家书能看见什么，首先取决于它被训练成看不见什么。研究也发现：许多人其实写得相当直白，因为他们算得出抽检概率。两种情况同时存在，不要用其中一种取消另一种。</li>
+        </ul>
+      </div>
+      <div class="grid">
+        <div class="cell"><strong>300–400 亿</strong>件估计总运量（Kilian）</div>
+        <div class="cell"><strong>~12–15 万</strong>封留存自我证词量级</div>
+        <div class="cell"><strong>1940.3.12</strong>邮检处按条例开工</div>
+      </div>
+    </section>
+
+    <section id="s2">
+      <h2>核心发现二：包裹是补给线，也是掠夺的回邮</h2>
+      <div class="card">
+        <h3><span>03</span>家乡寄出刀片和香肠，前线寄回占领区的货</h3>
+        <ul>
+          <li>翻译与史料服务机构转述 Buchbender：信与包裹的商品流同样巨大。士兵从家乡收到国防军供应不到或来得慢的东西——衣服、剃须刀片、香烟、香肠、巧克力。反向，尤其战争头几年，前线把占领区买来或抢来的衣物、首饰、罐头、土特产寄回家。第 6 期写过占领财政掠夺；家书包裹把它做成私人包裹单。</li>
+          <li>家书因此不是「纯感情」。它维持家庭话语，也维持物资再分配。检查规定禁止「为了卖给占领区居民而向家乡要货」，恰恰说明这种买卖在发生。读「亲爱的，黄油还没坏」（第 51 期 Stöckle）时，要问黄油从哪条配给或哪只占领区篮子里来。</li>
+          <li>战俘按日内瓦公约有权免费收发信。寄往敌方控制区的邮件由营检查处（含党卫队）和陆军最高统帅部双重检查。纪律营、灭绝营、集中营使用格式化明信片、信纸和信封；停发、停收是惩罚。限制通信就是剥夺基本人权。第 24 期的战俘明信片在这里接到同一套剪刀：格式越标准，人越不被允许说话。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s3">
+      <h2>核心发现三：收藏在家庭抽屉里，展览要问谁的信没到</h2>
+      <div class="card">
+        <h3><span>04</span>柏林通信博物馆：约十万件，上网的是抽样</h3>
+        <ul>
+          <li>邮政与电信博物馆基金会（MSPT）今天强调收「完整的信」而不只是空信封。馆藏书信约 12 万，网上数据库约 3000 件数字化。Feldpost-Archiv 与柏林通信博物馆合作（2000 年由 Buchbender 倡议）：约 10 万件文献，约 1200–1400 封可在线阅读。Kilian 的博士论文核心之一就是：档案状况如何改善，家庭成员还来得及被问。</li>
+          <li>这造成方法问题。留下来的是「被认为值得保存」的。匿名士兵的大多数信件或毁于战争，或战后被烧掉。研究若只根据抽屉里的情书重建「普通人」，会偏成幸存者与收藏者的样本。信件能证明关系被维持，不能证明关系是无辜的。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span>05</span>卡缅涅茨的邮箱：毁灭战把投递切断</h3>
+        <ul>
+          <li>卡尔斯霍斯特 2026 年重展把最后一次开箱写成事件：信没到收件人，却到了占领者的战利品清册，再绕去维也纳，再回到基辅。展览与卡缅涅茨国立历史博物馆合作，补充该城在毁灭战中的新研究。2026 年 7 月 2 日 Christoph Dieckmann 与馆长 Jörg Morré 对谈「对苏毁灭战」。家书研究若不同时读未送达的苏方信件，会把通信史写成德军家庭伦理课。</li>
+          <li>Hamburg 日常史教学材料提醒：打开的信用印刷纸带再封，明信片盖戳，违禁处涂黑，必要时移交刑侦。秘密全面监控做不到，但恐吓可以标准化。范文、点播节目、检验处报告里的「态度与士气」「纪律状况」「瓦解」「间谍」栏目，把私人句子变成部队心情气象图。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s4">
+      <h2>对历史学习者的启示</h2>
+      <div class="card insight">
+        <ul>
+          <li>先当通信史，再当感情史。免费、优先投递、范文和点播，说明政权要家庭继续说话——用它喜欢的语法。没写出来的暴行，是史料的沉默，不是证明「他们什么都不知道」。</li>
+          <li>看包裹单。家乡寄刀片，前线寄占领区罐头：同一条邮路连着配给短缺和掠夺。家书研究与第 6、19、51 期是同一张欧洲账单的不同栏。</li>
+          <li>2026 年在卡尔斯霍斯特看未读的六月信件：问这封信为什么没到。德军 Feldpost 编号把境外士兵编进共同体；卡缅涅茨的邮箱把一城人编出投递网。两种编入都是战争。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s5">
+      <h2>来源</h2>
+      <div class="card refs">
+        <ul>
+          <li>Museum Berlin-Karlshorst, 「1941. Juni-Briefe」, 2026-06-19–2027-01-10. <a href="https://www.museum-karlshorst.de/ausstellungen/1941-juni-briefe-ungelesene-feldpost-aus-kamjanez-podilskyj/">https://www.museum-karlshorst.de/ausstellungen/1941-juni-briefe-ungelesene-feldpost-aus-kamjanez-podilskyj/</a></li>
+          <li>Katrin Kilian, 「Postal Censorship from 1939 to 1945」, Feldpost-Archiv. <a href="http://www.feldpost-archiv.de/english/e11-zensur.html">http://www.feldpost-archiv.de/english/e11-zensur.html</a></li>
+          <li>Kilian, 「Das Medium Feldpost…」, TU Berlin deposit. <a href="https://doi.org/10.14279/depositonce-322">https://doi.org/10.14279/depositonce-322</a></li>
+          <li>Museumsstiftung Post und Telekommunikation, 书信数据库. <a href="https://briefsammlung.de/">https://briefsammlung.de/</a></li>
+          <li>Feldpost-Archiv / Museum für Kommunikation Berlin 项目说明. <a href="http://www.feldpostsammlung.de/feldpost-d.html">http://www.feldpostsammlung.de/feldpost-d.html</a></li>
+          <li>Feldpost-Archiv, 「Arbeit der Feldpost」. <a href="http://www.feldpost-archiv.de/09-arbeit-der-feldpost.shtml">http://www.feldpost-archiv.de/09-arbeit-der-feldpost.shtml</a></li>
+          <li>Hamburg NS-Alltagsgeschichten, 「Briefe als Zugang…」（Latzel, Ziemann）. <a href="https://ns-alltagsgeschichten.blogs.uni-hamburg.de/wp-content/uploads/themen/Briefe-als-Quelle/page.pdf">https://ns-alltagsgeschichten.blogs.uni-hamburg.de/wp-content/uploads/themen/Briefe-als-Quelle/page.pdf</a></li>
+          <li>segu Geschichte, 「Feldpostbriefe | … dass ich noch gesund bin」. <a href="https://segu-geschichte.de/feldpostbriefe/">https://segu-geschichte.de/feldpostbriefe/</a></li>
+          <li>「Feldpost und Zensur… Geheimbotschaften」, Historische Dienstleistungen（Buchbender 运量）. <a href="https://www.historische-dienstleistungen.de/feldpost/feldpost-und-zensur-im-zweiten-weltkrieg-geheimbotschaften-in-die-heimat/">https://www.historische-dienstleistungen.de/feldpost/feldpost-und-zensur-im-zweiten-weltkrieg-geheimbotschaften-in-die-heimat/</a></li>
+          <li>Christina Holtz-Bacha / 相关媒介研究, 「Excluding Agency」, <i>M/C Journal</i>. <a href="https://doi.org/10.5204/mcj.2725">https://doi.org/10.5204/mcj.2725</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <p class="foot">GERMAN WW2 RESEARCH · ISSUE 52 · OPENED BY THE INSPECTION OFFICE</p>
+  </div>
+</div>
+</body>
+</html>
