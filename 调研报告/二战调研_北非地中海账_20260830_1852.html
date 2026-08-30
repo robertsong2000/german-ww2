@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>北非与地中海战场的资源账 —— 沙漠上的坦克跑不赢油桶和港口</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Newsreader:ital,opsz,wght@6..72,400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--sand:#d4b896;--oil:#161310;--rust:#c45c2c;--khaki:#8a7048;--paper:#efe4d0;--sky:#7a9bb0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Newsreader","Songti SC",serif;color:var(--oil);line-height:1.78;
+  background:
+    radial-gradient(ellipse at 80% -10%,rgba(196,92,44,.18),transparent 40%),
+    repeating-linear-gradient(90deg,transparent 0 38px,rgba(22,19,16,.04) 38px 39px),
+    #c9a878;
+}
+.wrap{max-width:940px;margin:28px auto 60px;position:relative}
+.drum{
+  position:absolute;right:-8px;top:48px;width:72px;height:110px;
+  background:linear-gradient(90deg,#2a2218,#3a3228 40%,#1a1a14);
+  border:3px solid #0c0a08;border-radius:6px;opacity:.88;pointer-events:none;
+  box-shadow:inset 0 0 0 6px rgba(196,92,44,.35);
+}
+.drum span{display:block;text-align:center;font-family:"Allerta Stencil",sans-serif;color:var(--rust);font-size:11px;margin-top:42px;letter-spacing:.08em}
+.sheet{
+  background:var(--paper);padding:28px 32px 40px;border:3px solid var(--oil);
+  box-shadow:10px 12px 0 var(--oil);
+}
+.mast{font-family:"Fira Code",monospace;font-size:11.5px;letter-spacing:.12em;color:var(--khaki);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;border-bottom:3px solid var(--oil);padding-bottom:8px}
+.kicker{font-family:"Allerta Stencil",sans-serif;color:var(--rust);margin-top:14px;letter-spacing:.08em;font-size:15px}
+h1{font-family:"Allerta Stencil",sans-serif;font-size:clamp(26px,4.8vw,40px);line-height:1.15;margin:10px 0 8px;color:var(--oil)}
+.sub{font-size:17px;color:#3a3228}
+.meta{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 16px;font-family:"Fira Code",monospace;font-size:12.5px;color:var(--khaki)}
+.meta b{color:var(--rust)}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0}
+nav.toc a{font-family:"Fira Code",monospace;font-size:12px;text-decoration:none;background:var(--oil);color:var(--paper);padding:5px 10px}
+section{margin-top:24px}
+h2{font-family:"Allerta Stencil",sans-serif;font-size:20px;color:var(--oil);border-left:8px solid var(--rust);padding-left:10px;margin-bottom:12px}
+.card{border:2px solid var(--oil);padding:16px 18px;margin-bottom:12px;background:rgba(255,255,255,.28)}
+.card h3 span{font-family:"Fira Code",monospace;color:var(--rust);margin-right:8px}
+.card li{margin:7px 0 7px 1.15em}
+.ledger{width:100%;border-collapse:collapse;font-family:"Fira Code",monospace;font-size:12.5px;margin-top:10px}
+.ledger th,.ledger td{border:1px solid var(--oil);padding:7px 8px;text-align:left}
+.ledger th{background:var(--oil);color:var(--paper)}
+.insight{background:rgba(196,92,44,.08)}
+.refs a{color:var(--rust)}
+.foot{margin-top:26px;padding-top:12px;border-top:3px solid var(--oil);font-family:"Fira Code",monospace;font-size:11px;letter-spacing:.1em;text-align:center;color:var(--khaki)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="drum" aria-hidden="true"><span>200L</span></div>
+<div class="sheet">
+  <div class="mast"><span>BILL OF LADING · MED CONVOY</span><span>ISSUE 40 · 2026-08-30 18:52 CST</span></div>
+  <p class="kicker">二战德国史调研 · 系列第 40 期 · 第二轮 · 战争</p>
+  <h1>北非与地中海战场的资源账</h1>
+  <p class="sub">隆美尔的坦克能开多远，先看的不是战术天才，而是意大利到的黎波里的舱单、的黎波里到前线的卡车，以及马耳他能不能把油轮打沉。这是一场用港口吞吐量和油料吨位写成的战争。</p>
+  <div class="meta"><span><b>时间</b> 2026-08-30 18:52 CST</span><span><b>视觉风格</b> 沙漠油桶计量风</span></div>
+  <nav class="toc">
+    <a href="#s0">本期主题</a>
+    <a href="#s1">航线</a>
+    <a href="#s2">港口</a>
+    <a href="#s3">投降</a>
+    <a href="#s4">启示</a>
+    <a href="#s5">来源</a>
+  </nav>
+
+  <section id="s0">
+    <h2>本期主题</h2>
+    <div class="card">
+      <p>第 16 期写过大西洋的吨位战争，第 38 期写过空中。北非这条线常被写成“沙漠之狐”的个人传奇。联邦档案馆 2026 年 3 月更新的《非洲战役》检索指南把话说得很冷：德国干预始于意大利在 Compass 行动里崩盘；1941 年 2 月 11 日非洲军团在的黎波里登陆；1943 年 5 月 13 日投降时希特勒拒绝撤退，约四分之一百万官兵被俘。同一指南写明：海运与补给的核心档案在海军战争指挥部 RM 7，陆军补给总表在非洲集团军群 RH 19-VIII——隆美尔手卷里就有 1941 年 2 月至 1943 年 5 月的补给与损失对照表。本期按这张账读，不按传记读。</p>
+    </div>
+  </section>
+
+  <section id="s1">
+    <h2>核心发现一：地中海是单向漏斗，马耳他是阀门</h2>
+    <div class="card">
+      <h3><span>01</span>轴心只能走短航线，盟军可以绕好望角</h3>
+      <ul>
+        <li>罗威娜·里德（Rowena Reed）在《海军战争学院评论》里点出结构差：盟军中东部队可以绕好望角维持；轴心在北非的每一发炮弹、每一升油，都必须横渡地中海。意大利 1940 年 6 月参战时，约三分之一商船（约 120 万吨）被截在地中海外，开局就缺船。</li>
+        <li>马耳他卡在意大利—利比亚航线上。岛上力量强时，赴非运输可损失近四成；被压住时，抵达率可到九成以上。这不是修辞，是阀门开合。</li>
+        <li>1941 年 12 月 2 日第 38 号指令交给凯塞林：夺取意南与北非之间的海空控制，特别强调压制马耳他。里德给出一组对照：利比亚航线损失从 12 月约 18% 掉到 1942 年 1 月接近零。1942 年 4 月创纪录运到约 150,380 吨，其中燃油约 48,031 吨。隆美尔那年春天能打，是因为舱单先打赢了。</li>
+        <li>1942 年春轴心曾规划登陆马耳他（“大力神”/Herkules）。联邦档案馆海军战争指挥部手卷里仍有“马耳他研究”。登陆没打，资源被吸进隆美尔冲向埃及。同年 8 月盟军“基座”护航把油轮 <i>Ohio</i> 送进瓦莱塔：岛上航空汽油回补后，对轴心船队的打击立刻加重，阿拉姆哈勒法进攻因补给不足推迟。马耳他不是背景板，是油账的开关。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="s2">
+    <h2>核心发现二：上岸之后还有第二本账——港口与卡车</h2>
+    <div class="card">
+      <h3><span>02</span>的黎波里、班加西、图卜鲁格</h3>
+      <ul>
+        <li>船到了不等于油到了前线。十字军行动研究项目整理的 1941 年 9 月会议纪要：班加西泊位大约只能停两艘大船（最大约 3,500 总吨）、一艘小船和一艘油轮；当时符合吃水的德意商船没几艘。最大可实现吞吐约 45,000 吨/月。卡车占舱容（先“立方装不下”再“吨位装不满”）、码头缺驳船、缺仓库、皇家空军把港口炸堵，都会让理论吞吐作废。</li>
+        <li>推进越远，第二本账越差。有后勤史估算：前线每月约需 10 万吨；图卜鲁格勉强约 2 万吨，且暴露在空袭下。卸在班加西或的黎波里，距前线约 800 英里与 1,300 英里，卡车自己先烧掉油。缺的不是“意志”，是把吨位从码头搬到炮位的公路。</li>
+        <li>1941 年夏第十航空军大部调去希腊后，马耳他复苏，轴心海运损失跳升：7 月约 19%，9 月约 25%，10 月约 23%（重量口径）。班加西被炸，船改去的黎波里，等于把第二本账再拉长一截。</li>
+      </ul>
+      <table class="ledger">
+        <thead><tr><th>账本</th><th>卡住的东西</th><th>常见误读</th></tr></thead>
+        <tbody>
+          <tr><td>第一本：海运</td><td>马耳他、护航、油轮是否沉</td><td>沙漠会战只看坦克对决</td></tr>
+          <tr><td>第二本：港口</td><td>泊位、驳船、被炸堵塞</td><td>船到的黎波里=补给完成</td></tr>
+          <tr><td>第三本：公路</td><td>卡车、油耗、距离</td><td>隆美尔“用兵如神”不受物理限制</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>核心发现三：1942 年秋油料沉了，1943 年春人留下了</h2>
+    <div class="card">
+      <h3><span>03</span>从阿拉曼到突尼斯的投降</h3>
+      <ul>
+        <li>马耳他恢复后，1942 年 10 月轴心航运损失率可到约 44%。运给德军的物资和油料大量沉在海上。第二场阿拉曼（10 月 23 日起）不是蒙哥马利突然变天才，而是一侧舱单充裕、一侧油桶沉底。</li>
+        <li>1942 年 11 月 8 日火炬登陆后变成两线。联邦档案馆：希特勒拒绝把部队撤出突尼斯。美国大屠杀纪念馆：1943 年 5 月 13 日轴心在北非投降，突尼斯战役本身约 4 万伤亡，约 26.7 万德意官兵成为战俘。即时新闻曾报“5 月 5 日以来约 15 万”——那是最后一周的抓捕数，不是全战役合计。读数字先对口径。</li>
+        <li>整场北非，USHMM 给出轴心伤亡约 62 万、英联邦约 22 万；美国仅突尼斯即超过 1.85 万。胜利的战略后果是：中东油田与经红海、好望角的交通不再受轴心威胁，并打开西西里。资源账的另一头是石油产地——北非打的是通往巴库与波斯湾想象的侧门，不是为了沙丘本身。</li>
+        <li>不要把非洲军团写成“干净战争”的例外。突尼斯有犹太社区被迫劳动与勒索；占领政策与欧洲其他战场同一套种族统治，只是规模不同。本期主线仍是后勤，种族暴力不因此消失。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="s4">
+    <h2>对历史学习者的启示</h2>
+    <div class="card insight">
+      <ul>
+        <li><b>先读舱单再读战报。</b>沙漠机动战看起来潇洒，账本上是油、水、轮胎和泊位。</li>
+        <li><b>马耳他是阀门，不是英雄岛神话或“错失的克里特”。</b>大力神没打，是资源被埃及攻势吸走；基座把油送回去，阀门重新拧紧。</li>
+        <li><b>俘虏数字要对口径。</b>15 万是最后一周新闻数；约四分之一百万是投降总量的档案馆/百科口径。</li>
+        <li><b>联邦档案馆 2026 年的数字化是入口，不是故事。</b>RH 19-VIII/322 的补给损失表比任何隆美尔传记都更接近这期该读的东西。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="s5">
+    <h2>来源</h2>
+    <div class="card refs">
+      <ol>
+        <li><a href="https://www.bundesarchiv.de/im-archiv-recherchieren/archivgut-recherchieren/nach-themen/der-afrikafeldzug/" target="_blank" rel="noopener">联邦档案馆：非洲战役检索指南（2026 年 3 月；登陆、投降、拒绝撤退、RM 7 / 数字化范围）</a></li>
+        <li><a href="https://www.archivportal-d.de/item/M2HAJY4H4ANWRI5VVRM7GJYY4VFFRSUV" target="_blank" rel="noopener">Archivportal-D：BArch RH 19-VIII/322 隆美尔手卷（1941-02 至 1943-05 补给与损失表）</a></li>
+        <li><a href="https://digital-commons.usnwc.edu/cgi/viewcontent.cgi?article=4628&context=nwc-review" target="_blank" rel="noopener">Reed, “Central Mediterranean Sea Control…”（马耳他阀门、1942 年 4 月 15 万吨、第 38 号指令）</a></li>
+        <li><a href="https://rommelsriposte.com/2011/06/01/capacity-of-tripoli-and-benghazi-harbours-1941/" target="_blank" rel="noopener">The Crusader Project：1941 年的黎波里/班加西港口吞吐</a></li>
+        <li><a href="https://www.um.edu.mt/library/oar/bitstream/123456789/23022/1/20120801%20%20Operation%20Pedestal%20Aug%2042.pdf" target="_blank" rel="noopener">Llewellyn-Jones：基座行动与油轮 Ohio（马耳他大学 OAR）</a></li>
+        <li><a href="https://encyclopedia.ushmm.org/content/en/article/tunisia-campaign" target="_blank" rel="noopener">USHMM：突尼斯战役（1943-05-13 投降、约 26.7 万战俘）</a></li>
+        <li><a href="https://warfarehistorynetwork.com/article/north-african-campaign-wwiis-ultimate-war-of-logistics/" target="_blank" rel="noopener">后勤综述：海运损失月度与前线距港口里程（需与上列档案交叉）</a></li>
+      </ol>
+    </div>
+  </section>
+  <p class="foot">WWII GERMAN HISTORY RESEARCH · ISSUE 40 · OIL DRUM STENCIL · NOT FOR GLORIFICATION</p>
+</div>
+</div>
+</body>
+</html>
