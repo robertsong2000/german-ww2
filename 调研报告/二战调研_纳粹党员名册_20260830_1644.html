@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>纳粹党员名册上线 —— 从柏林文件中心到全民检索的2026档案革命</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+/* Microfilm lightbox: dark reading room, amber viewer, 35mm sprockets */
+:root {
+  --room: #0b0806;
+  --film: #16110c;
+  --amber: #e39a3a;
+  --amber-dim: #b56f1c;
+  --paper: #f3e4c0;
+  --paper-dim: #cbb892;
+  --stamp: #c43a28;
+  --hole: #070504;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background:
+    radial-gradient(ellipse at 50% 8%, rgba(227,154,58,.16), transparent 42%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.015) 0 1px, transparent 1px 3px),
+    var(--room);
+  color: var(--paper);
+  font-family: "Source Serif 4", "Songti SC", serif;
+  line-height: 1.78;
+  min-height: 100vh;
+}
+body::after {
+  content: "";
+  pointer-events: none;
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+  opacity: .35; mix-blend-mode: overlay; z-index: 9;
+}
+.film {
+  max-width: 920px;
+  margin: 28px auto 60px;
+  background:
+    linear-gradient(90deg, #0e0b08 0 42px, transparent 42px calc(100% - 42px), #0e0b08 calc(100% - 42px)),
+    linear-gradient(180deg, rgba(227,154,58,.07), transparent 18%),
+    var(--film);
+  border: 1px solid #2a2118;
+  box-shadow: 0 0 80px rgba(227,154,58,.12), 0 30px 80px rgba(0,0,0,.65);
+  position: relative;
+  padding: 0 58px 48px;
+}
+.film::before, .film::after {
+  content: "";
+  position: absolute; top: 12px; bottom: 12px; width: 28px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--hole) 0 14px,
+    transparent 14px 36px
+  );
+  border-radius: 3px;
+  opacity: .92;
+}
+.film::before { left: 8px; }
+.film::after { right: 8px; }
+.leader {
+  text-align: center;
+  padding: 42px 12px 18px;
+  border-bottom: 1px dashed rgba(227,154,58,.28);
+}
+.leader .count {
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: .42em;
+  color: var(--amber);
+  font-size: 13px;
+}
+.stamp {
+  display: inline-block;
+  margin-top: 14px;
+  border: 2px solid var(--stamp);
+  color: var(--stamp);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: .28em;
+  padding: 6px 14px;
+  transform: rotate(-2deg);
+  text-transform: uppercase;
+}
+h1 {
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  font-size: clamp(28px, 4.6vw, 46px);
+  line-height: 1.22;
+  margin: 18px 0 10px;
+  color: var(--paper);
+  text-shadow: 0 0 24px rgba(227,154,58,.25);
+}
+.sub {
+  color: var(--paper-dim);
+  font-size: 17px;
+  max-width: 38em;
+  margin: 0 auto;
+}
+.meta {
+  display: flex; flex-wrap: wrap; gap: 10px 22px;
+  justify-content: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  color: var(--amber);
+  padding: 18px 0 8px;
+}
+.meta b { color: var(--paper); font-weight: 600; }
+.toc {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  justify-content: center;
+  padding: 10px 0 28px;
+}
+.toc a {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  color: var(--room);
+  background: var(--amber);
+  text-decoration: none;
+  padding: 6px 11px;
+  border-radius: 1px;
+  letter-spacing: .04em;
+}
+.toc a:hover { background: var(--paper); }
+.frame {
+  background: rgba(243,228,192,.045);
+  border: 1px solid rgba(227,154,58,.22);
+  padding: 26px 28px 22px;
+  margin: 0 0 22px;
+  position: relative;
+  box-shadow: inset 0 0 40px rgba(227,154,58,.04);
+}
+.frame-no {
+  position: absolute; top: 10px; right: 14px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--amber-dim);
+  letter-spacing: .16em;
+}
+h2 {
+  font-family: "Fraunces", serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--amber);
+  margin-bottom: 12px;
+  padding-right: 70px;
+}
+h3 {
+  font-family: "Fraunces", serif;
+  font-size: 18px;
+  margin: 16px 0 8px;
+}
+p { margin: 0 0 12px; }
+ul { padding-left: 1.15em; }
+li { margin: 8px 0; }
+.kicker {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: .22em;
+  color: var(--stamp);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.insight {
+  background: linear-gradient(180deg, rgba(227,154,58,.14), rgba(227,154,58,.04));
+  border-color: rgba(227,154,58,.45);
+}
+.insight h2 { color: var(--paper); }
+.refs a { color: var(--amber); word-break: break-all; }
+.foot {
+  text-align: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: .18em;
+  color: var(--paper-dim);
+  padding-top: 18px;
+  border-top: 1px dashed rgba(227,154,58,.28);
+}
+.num {
+  font-family: "IBM Plex Mono", monospace;
+  color: var(--amber);
+  font-weight: 600;
+}
+@media (max-width: 640px) {
+  .film { padding: 0 44px 32px; margin: 12px 8px 40px; }
+  .frame { padding: 22px 16px 18px; }
+}
+</style>
+</head>
+<body>
+<div class="film">
+  <header class="leader">
+    <div class="count">● 5 &nbsp; 4 &nbsp; 3 &nbsp; 2 &nbsp; 1 &nbsp; ● &nbsp; A3340 / RG 242</div>
+    <div class="stamp">College Park · Microfilm Viewer</div>
+    <h1>纳粹党员名册上线</h1>
+    <p class="sub">从柏林文件中心到全民检索——2026年美国国家档案馆公开 NSDAP 卡片、德媒 AI 检索与德国隐私法之争</p>
+  </header>
+
+  <div class="meta">
+    <span><b>本期主题</b> 党员名册数字化与公众史学</span>
+    <span><b>生成时间</b> 2026-08-30 16:44 CST</span>
+    <span><b>视觉风格</b> 微缩胶片灯箱风</span>
+    <span><b>系列</b> 二战德国史调研 · 第1期</span>
+  </div>
+
+  <nav class="toc">
+    <a href="#s0">本期主题</a>
+    <a href="#s1">档案如何活下来</a>
+    <a href="#s2">NARA上线</a>
+    <a href="#s3">德媒检索</a>
+    <a href="#s4">史学新数据</a>
+    <a href="#s5">联邦档案馆</a>
+    <a href="#s6">如何读一张卡</a>
+    <a href="#s7">学习者启示</a>
+    <a href="#s8">来源</a>
+  </nav>
+
+  <section class="frame" id="s0">
+    <div class="frame-no">FR. 00</div>
+    <div class="kicker">Scope</div>
+    <h2>本期主题</h2>
+    <p>2026 年春天，美国国家档案馆（NARA）把原柏林文件中心（Berlin Document Center）微缩胶片中的国家社会主义德国工人党（NSDAP）党员卡片，以数字影像形式放到了浏览器里。没有新闻稿，服务器却一度被检索流量打垮。随后《时代周报》（Die Zeit）、《明镜》周刊、Correctiv 等机构用人工智能把数百万张扫描卡做成可检索库——德国人第一次可以在几秒钟内核对自己的祖父母是否曾经入党。</p>
+    <p>这不是“揭秘花边”，而是二战德国史研究的基础设施事件：它同时改写了<strong>谁能看见档案</strong>、<strong>如何量化群众性入党</strong>，以及<strong>家庭记忆与公共史学如何相遇</strong>。本期把档案史、新闻室技术与 2026 年定量论文放在同一条胶片上，供学习者建立正确的读法：找到名字只是开始，不是判决。</p>
+  </section>
+
+  <section class="frame" id="s1">
+    <div class="frame-no">FR. 01</div>
+    <h2>核心发现一：五十吨纸差点进造纸厂</h2>
+    <ul>
+      <li>战争末期，党部下令销毁慕尼黑“褐屋”的党员卡——估计约 <span class="num">50 吨</span>纸张被送往慕尼黑弗赖曼区造纸厂。厂主 Hanns Huber 在认出这批材料后停止销毁，1945 年秋美军取走，1946 年初送入专门建立的柏林文件中心。</li>
+      <li>政治学家 Jürgen W. Falter（标准著作《希特勒的党员》）估计：中央卡（Zentralkartei）仅存约 <span class="num">44%</span>，大区/地方卡（Gaukartei / Ortsgruppenkartei）约 <span class="num">77%</span>；两套互有重复，合起来仍可覆盖约 <span class="num">90%</span> 的入党记录。</li>
+      <li>《时代周报》点算现存名：中央卡约 <span class="num">450 万</span>，大区卡约 <span class="num">820 万</span>。1925–1945 年约有 <span class="num">1020 万</span>德国人拿到过党员卡。德国历史博物馆常用另一口径：1945 年约 <span class="num">850 万</span>“党员同志”，相当于每五名成年德国人中有一人——至少在纸面上支持过这个非法政权。</li>
+      <li>两套卡不是同一件事：中央卡偏行政总账，地方卡常含职业、入党日期、住址，更适合做社会史。同名多卡很常见，必须用出生日期与出生地交叉确认。</li>
+    </ul>
+  </section>
+
+  <section class="frame" id="s2">
+    <div class="frame-no">FR. 02</div>
+    <h2>核心发现二：NARA 静默上线，却成年度最大档案事件</h2>
+    <ul>
+      <li>2026 年 3 月，NARA 将缩微出版物 <span class="num">A3340</span>（Record Group 242）中 MFKL（中央卡）与 MFOK（地方卡）放到网上，并与 AWS Open Data 合作，公开超过 <span class="num">1400 万–1600 万</span>数字对象（TIF / 按卷 PDF / Textract OCR JSON），胶片卷数超过五千。</li>
+      <li>档案学者 Andrew Potter 指出：这是 2025–2026 财年体量最大、历史后果最重的一批上线，但 NARA 新闻稿序列里没有对应发布；College Park 阅览室 FAQ 仍写着“请来胶片室”。结果是：公众先于档案馆叙事，把这批材料变成了家庭检索工具。</li>
+      <li>德国《世界报》称其为“德国最敏感档案，却在美国上网”。德国联邦档案法仍不允许把完整党员主档整库上网；美国持有的是当年盟军复制的微缩胶片，法律地位不同，所以出现了“原件在柏林、检索在华盛顿”的错位。</li>
+    </ul>
+  </section>
+
+  <section class="frame" id="s3">
+    <div class="frame-no">FR. 03</div>
+    <h2>核心发现三：新闻室用 AI 把胶片变成搜索框</h2>
+    <ul>
+      <li>《时代周报》处理了 <span class="num">5442</span> 个 PDF、每个约三千页。数据科学主编 Andreas Loos 说：模型要同时对付印刷体、手写体，包括旧德文书写体 Kurrent 与 Sütterlin。OCR 以 Google Gemini 等大模型为主，辅以传统引擎。</li>
+      <li>可视化记者 Gregor Aisch 强调：姓名+出生地仍不够；加上出生日期，识别才相对可靠。团队开放读者纠错，已修正数百条模型幻觉——LLM 有时会把缩写“D.”擅自展开成 Düsseldorf。</li>
+      <li>项目的史学贡献不在“纳粹搜索引擎”这个标题，而在把入党潮重新画出来：真正在 1933 年前入党的只是较小一群；夺权后出现第一波高峰，1933 年 5 月 1 日起冻结新党员，1937 年解禁后再现第二波。战时入党越来越年轻，许多人来自青年团与女青团。</li>
+      <li>关键纠正：国防军是义务征兵，入党在制度上仍是自愿——尽管公务员等职业有巨大社会压力。把“当过兵”直接读成“入过党”，是家庭叙事里最常见的范畴错误。</li>
+      <li>2026 年 5 月 12 日，Correctiv 与《Katapult》推出免费库，对位两大周刊的付费墙。7 月，《时代周报》把冲锋队（SA）与党卫队（SS）人事档案也做成检索，并排除 1926 年后出生者以尊重人格权；党卫队种族与移居总局（RuSHA）部分美国尚未数字化，故不在库中。</li>
+    </ul>
+  </section>
+
+  <section class="frame" id="s4">
+    <div class="frame-no">FR. 04</div>
+    <h2>核心发现四：从五万张抽样到近乎全样本</h2>
+    <ul>
+      <li>过去数十年，Falter、Kater、Childers 主要靠约 <span class="num">5 万</span>张抽样或选举聚合数据描绘党员社会构成。2026 年 4 月，Bosshart、Deter、Heldring、Mohr、Weigand 的预印本 <em>Hysteresis and Selection in the Rise of Fascism</em> 把记录推进到约 <span class="num">1100 万</span>条个人条目，并与人口、工业普查链接。</li>
+      <li>四点初步结论：（1）随着组织膨胀，普通党员在职业、人口、宗教上越来越接近全体居民；（2）党卫队成员仍显著不同——更年轻、教育更高，入党照上的徽记可作激进程度的代理变量；（3）同一社区、同事圈、家族内部存在“滞后”（hysteresis）：早期入党者会把后来者拉进同一格子；（4）地方入党上升与此后犹太人递解出境的地方计数相关——这是相关，不是把每张党员卡等同于暴行。</li>
+      <li>空间分辨率提高五十倍以上后，约 <span class="num">95%</span> 的市政入党率变异发生在县（Kreis）内部而非县与县之间；约 <span class="num">40%</span> 的市镇完全没有入党记录。旧研究受困于县级数据，其实只看见了较小的那一块方差。</li>
+      <li>1933 年 3 月选举之后，公务员与教师在新党员中特别突出——这提醒学习者：群众性入党往往是协调与投机，而不只是“天生狂热分子”。</li>
+    </ul>
+  </section>
+
+  <section class="frame" id="s5">
+    <div class="frame-no">FR. 05</div>
+    <h2>核心发现五：更好的原件，更慢的上网</h2>
+    <ul>
+      <li>1994 年联邦档案馆接收柏林文件中心。其彩色高分辨率扫描优于美国胶片，但《联邦档案法》对人事档案的保护期（通常以最年轻当事人出生后 100 年计）卡住了整库上网。馆方时间表：完整党员卡公开不早于 <span class="num">2027</span> 年底；到 <span class="num">2033</span> 年，国家社会主义时期的主要非纯人事档案应可在线。</li>
+      <li>国会自 2023 年起每年追加约 300 万欧元，用于数字化识别牌名册、伤亡名单以及军事与民事机关文件（2021–2027 识别牌项目约 4000 万页量级）。《明镜》历史编辑呼吁联邦档案馆尽快提供带脱敏的彩色卡；馆方重申法律约束，并把《时代周报》检索终端放进柏林-利希特费尔德阅览室作为过渡。</li>
+      <li>另一条平行基础设施：2026 年 4 月 23 日，“总理府档案”网络版扩至 1919–1939，新增希特勒政府 1933–1939，超过 <span class="num">6000</span> 件带学术注释的文件。其中 470 次“口头元首汇报”覆盖约 <span class="num">3800</span> 个议题，让“领袖原则”底下的官僚运转变得可检索——包括 1938 年奥地利合并立法，以及十一月大屠杀（水晶之夜）之后把犹太人排除出经济生活的条例。未实现的“非决定”（例如 1939 年削减对教会财政的尝试）也同样被标出。</li>
+    </ul>
+  </section>
+
+  <section class="frame" id="s6">
+    <div class="frame-no">FR. 06</div>
+    <h2>核心发现六：一张卡能证明什么，不能证明什么</h2>
+    <ul>
+      <li><strong>能证明：</strong>此人在某日、某地被登记为党员（若卡真实且识别无误）。入党时间是关键：1933 年前、1933 年潮、1937 年解禁后、战争末期，动机结构完全不同。</li>
+      <li><strong>不能证明：</strong>思想强度、是否参与迫害、战后是否反思。党员身份与暴行是相关但不同的范畴；约两成卡片已毁，冻结期（1933–1937）造成系统性空窗。把检索框写成“查清家人在希特勒时期做了什么”，是媒体过度承诺，研究者已公开批评。</li>
+      <li>CNN（2026-06-28）报道：连 Falter 本人也在库中看见母亲的名字——说明沉默可以跨过专业史学家的家庭。与此同时，德国极右力量要求“向前看、翻过这一页”。可检索档案与政治遗忘正在对拉。</li>
+      <li>OCR 会幻觉，同名会误伤，出生日期是最低伦理门槛。学习者若做家史，应把检索结果当作假说，再去联邦档案馆申请、对照地方志、教会记录与口述，而不是截图即定罪。</li>
+    </ul>
+  </section>
+
+  <section class="frame insight" id="s7">
+    <div class="frame-no">FR. 07</div>
+    <h2>对历史学习者的启示</h2>
+    <ul>
+      <li><strong>先分清范畴。</strong>当兵、入党、加入党卫队、在国家机关任职、知情、加害，是六件不同的事。家庭故事最容易把它们揉成一团。</li>
+      <li><strong>看时间，不看标签。</strong>1932 年入党与 1937 年入党，政治信号相反：前者仍是少数派押注，后者常常是职业保险。</li>
+      <li><strong>档案有国籍。</strong>同一批卡片，美国可以整库上网，德国必须等保护期。数字人文的“开放”从来不是中立技术，而是法律与战利品史的产物。</li>
+      <li><strong>全样本不会自动给出意义。</strong>1100 万条记录让“普通人争论”进入新阶段，但仍回答不了“他为什么入党”。量化是显微镜，不是道德法庭。</li>
+      <li><strong>从检索回到制度。</strong>做完家史检索，下一步应去读总理府网络版、联邦档案馆数字化路线图，以及地方抵抗/顺从研究，把一张卡嵌回 1933–1945 的制度史。</li>
+    </ul>
+  </section>
+
+  <section class="frame refs" id="s8">
+    <div class="frame-no">FR. 08</div>
+    <h2>来源链接</h2>
+    <ul>
+      <li>Hanna Duggal, Nieman Journalism Lab / GIJN, 2026-07-14：<a href="https://www.niemanlab.org/2026/07/one-name-at-a-time-how-die-zeit-built-a-searchable-database-of-nazi-party-members/">Die Zeit 如何把党员卡做成检索库</a></li>
+      <li>Die Zeit 检索说明（英）：<a href="https://www.zeit.de/wissen/2026-04/nazi-party-search-engine-membership-records-ancestors-english">NSDAP Membership Records</a></li>
+      <li>Die Zeit 德文检索页：<a href="https://www.zeit.de/wissen/2026-04/nsdap-mitgliederkartei-karteikarten-familienmitglieder-suche">Mitgliederkartei</a></li>
+      <li>WELT，2026-03：<a href="https://www.welt.de/geschichte/article69bbb2eed225a75f4a23472d/nsdap-mitglieder-brisantestes-archiv-deutschlands-ist-jetzt-online-in-den-usa.html">德国最敏感档案在美国上网</a></li>
+      <li>Süddeutsche Zeitung 方法说明：<a href="https://www.sueddeutsche.de/projekte/artikel/politik/nsdap-mitglieder-kartei-werkstattbericht-e195274/">如何评党员卡</a></li>
+      <li>NARA / AWS 数据集说明：<a href="https://github.com/usnationalarchives/nsdap">usnationalarchives/nsdap</a> · Catalog：<a href="https://catalog.archives.gov/id/12044361">NAID 12044361</a></li>
+      <li>Andrew Potter, 2026：<a href="https://metaarchivist.substack.com/p/provenance-without-context">Provenance Without Context</a> · <a href="https://metaarchivist.substack.com/p/the-bundesarchiv-has-the-better-records">The Bundesarchiv Has the Better Records</a></li>
+      <li>CNN, 2026-06-28：<a href="https://www.cnn.com/2026/06/28/europe/germans-nazi-past-far-right-intl">Germans are researching their Nazi past</a></li>
+      <li>Bosshart et al., arXiv 2604.17697, 2026-04-21：<a href="https://doi.org/10.48550/arXiv.2604.17697">Hysteresis and Selection in the Rise of Fascism</a></li>
+      <li>联邦档案馆数字化规划：<a href="https://www.bundesarchiv.de/das-bundesarchiv/aus-unserer-archivarbeit/digitalisierung-von-schriftgut-des-bundesarchivs/">Schriftgut-Digitalisierung</a></li>
+      <li>IDW / BBAW，2026-04-23：<a href="https://idw-online.de/en/news869706">总理府档案 1933–1939 上网</a> · 门户：<a href="https://aktenreichskanzlei.bundesarchiv.de">aktenreichskanzlei.bundesarchiv.de</a></li>
+      <li>Die Zeit，2026-07，SA/SS 档案：<a href="https://www.zeit.de/wissenschaft/geschichte/2026-07/archivgut-ss-bundesarchiv-zusammenarbeit-auswertung">Archivgut zu SA und SS</a></li>
+    </ul>
+  </section>
+
+  <p class="foot">WWII GERMAN HISTORY LAB · REEL 01 · NOT FOR GLORIFICATION · SCHOLARLY USE</p>
+</div>
+</body>
+</html>
