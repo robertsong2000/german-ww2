@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T4 安乐死与医疗罪行 —— 登记表上的叉，不是仁慈</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,500;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Gray medical-record card: manila folder, form grid, clinical type. No killing-site spectacle as ornament. */
+:root{
+  --folder:#c4b79a;
+  --sheet:#eceae4;
+  --rule:#b7b3a8;
+  --ink:#1f211e;
+  --stamp:#6b2c2c;
+  --field:#3d4a46;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"IBM Plex Sans","PingFang SC",sans-serif;
+  color:var(--ink);line-height:1.78;
+  background:#5a5c56;
+}
+.folder{
+  max-width:900px;margin:28px auto 52px;
+  background:var(--folder);
+  padding:14px 12px 18px;
+  box-shadow:0 16px 36px rgba(0,0,0,.28);
+}
+.tab{
+  display:inline-block;background:#d8cbb0;padding:6px 16px 8px;
+  font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em;
+  margin-left:18px;border:1px solid #a89878;border-bottom:0;
+}
+.sheet{
+  background:
+    linear-gradient(transparent 31px, var(--rule) 32px),
+    var(--sheet);
+  background-size:100% 32px;
+  border:1px solid #9a917c;
+  padding:20px 26px 36px;
+}
+.kicker{font-family:"IBM Plex Mono",monospace;color:var(--stamp);font-size:12.5px;margin-top:4px}
+h1{font-family:"IBM Plex Serif",serif;font-size:clamp(24px,4.3vw,36px);line-height:1.25;margin:8px 0 10px}
+.sub{font-size:17px;max-width:40em}
+.meta{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 16px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:#55564f}
+.meta b{color:var(--field)}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
+nav.toc a{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;text-decoration:none;
+  color:var(--sheet);background:var(--field);padding:5px 10px;
+}
+section{margin-top:22px}
+h2{font-family:"IBM Plex Serif",serif;font-size:20px;color:var(--field);border-bottom:1px solid var(--stamp);padding-bottom:4px;margin-bottom:12px}
+.card{
+  background:rgba(255,255,252,.78);
+  border:1px solid #c9c4b6;
+  padding:14px 16px;margin-bottom:12px;
+}
+.card h3{font-size:16px;margin-bottom:6px}
+.card h3 span{font-family:"IBM Plex Mono",monospace;color:var(--stamp);margin-right:8px}
+.card li{margin:7px 0 7px 1.15em}
+.note{
+  font-size:14.5px;border-left:4px solid var(--stamp);
+  padding:10px 12px;background:#f4efe8;margin:10px 0;
+}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.cell{border:1px solid var(--rule);padding:10px;text-align:center;font-size:13px;background:#fff}
+.cell strong{display:block;font-family:"IBM Plex Serif",serif;font-size:18px;color:var(--stamp)}
+.insight{background:#f7f4ee}
+.refs a{color:var(--field)}
+.foot{margin-top:24px;padding-top:12px;border-top:2px solid var(--field);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;text-align:center;color:#55564f}
+@media(max-width:640px){.sheet{padding:16px 14px 28px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="folder">
+  <div class="tab">MELDEBOGEN · AKTENZEICHEN T4 · KEINE BARMHERZIGKEIT</div>
+  <div class="sheet">
+    <p class="kicker">二战德国史调研 · 系列第 50 期 · 第二轮 · 民生与社会 · 学术、审慎</p>
+    <h1>T4「安乐死」与医疗罪行</h1>
+    <p class="sub">纳粹把谋杀写成医疗手续。登记表、鉴定医生、伪造死亡证明和安慰信，构成一套办公室里的杀人。引号必须留着：「安乐死」是他们的词，不是史学家的诊断。</p>
+    <div class="meta"><span><b>时间</b> 2026-08-30 19:37 CST</span><span><b>视觉风格</b> 灰色病历卡风</span></div>
+    <nav class="toc">
+      <a href="#s0">本期主题</a>
+      <a href="#s1">登记与毒气</a>
+      <a href="#s2">停与不停</a>
+      <a href="#s3">医疗与记忆</a>
+      <a href="#s4">启示</a>
+      <a href="#s5">来源</a>
+    </nav>
+
+    <section id="s0">
+      <h2>本期主题</h2>
+      <div class="card">
+        <p>第 18 期写过大屠杀史学，第 49 期写过学校里的种族筛选。本期专盯医学如何变成谋杀工具：儿童「安乐死」、代号来自柏林蒂尔加藤大街 4 号的 Aktion T4、1941 年 8 月之后的分散杀害，以及人员如何进入莱因哈德行动灭绝营。美国大屠杀纪念馆的定义应作为阅读起点：这是对收容机构中残障患者的系统性谋杀，比系统屠杀欧洲犹太人大约早两年；目标是消灭被优生学称为「不值得活的生命」的人。</p>
+        <p style="margin-top:10px">2025–2026 年的入口是纪念馆工地，不是猎奇。哈达马尔纪念馆正在多年翻修（#NeugestaltungHadamar，2026 年 2 月 13 日馆方说明：施工中仍开放），2026 年 9 月 4 日开放日将介绍新展与建筑史。馆方 2026 年 8 月还用纪念日条目标出：8 月 3 日是加伦主教布道 85 周年，8 月 13 日是 1942 年「分散安乐死」在哈达马尔重启，8 月 24 日是 T4 集中阶段停止。哈特海姆城堡学习与纪念地常设展《生命的价值》（2021 年新开）把残障者从启蒙时代排到今天；2026 年 3 月 9 日至 8 月 30 日在此展出《希特勒的执行者：奥地利警察与国家社会主义》。柏林 T4 纪念信息点 2014 年 9 月 2 日落成，由欧洲被害犹太人纪念碑基金会兼管——残障被害者进入首都纪念地形最晚。本期不复述行刑细节作观赏，只写制度、数字、医学共犯与史学争论。</p>
+      </div>
+    </section>
+
+    <section id="s1">
+      <h2>核心发现一：先有儿童病房，再有六座毒气设施</h2>
+      <div class="card">
+        <h3><span>01</span>1939 年 8 月：助产士被要求上报幼儿</h3>
+        <ul>
+          <li>USHMM：1939 年春夏，菲利普·鲍赫勒（元首总理府）与希特勒的随行医生卡尔·勃兰特开始组织针对残障儿童的秘密杀害。1939 年 8 月 18 日内政部通令：医生、护士、助产士须报告有严重身心障碍迹象的新生儿及三岁以下儿童。10 月起，公共卫生部门劝家长把孩子送到「儿科专科诊所」——实为儿童杀害病房，用药过量或饥饿。范围后来扩到 17 岁。保守估计，战争期间至少约 1 万名残障儿童因此被害。</li>
+          <li>同年秋，希特勒签署秘密授权，保护参与的医生、护理与行政人员免于起诉，日期倒签为 1939 年 9 月 1 日，好让它看起来像战时措施。执行机关选元首总理府，因为它小、且独立于国家与党组织。协调处地址蒂尔加藤大街 4 号，故称 T4。</li>
+          <li>成人阶段用登记表（Meldebögen）伪装成统计。表格强调劳动能力，并圈出：精神分裂症、癫痫、痴呆、脑炎等慢性病；非德意志或「相关」血统；刑事收容；住院超过五年。秘密征召的「鉴定医生」——其中不乏有声望的教授——三人一组在表上打叉，常常不见病人。哈达马尔纪念馆写：不能劳动、长期住院、很久没有亲属音讯的人，存活机会极小。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span>02</span>T4 自己的数字：70,273</h3>
+        <ul>
+          <li>六座成人毒气设施：勃兰登堡、格拉芬埃克、贝恩堡、松恩施泰因、哈特海姆、哈达马尔。USHMM：1940 年 1 月至 1941 年 8 月，按 T4 内部统计，六处共杀害 70,273 名机构收容者。使用纯一氧化碳，气室伪装成淋浴；尸体在附属焚尸炉烧掉；骨灰从混堆中舀进骨灰盒寄给家属，附伪造死因与日期的「安慰信」。</li>
+          <li>哈达马尔是第六座、也是最后启用的：1940 年底改建，1941 年 1 月 13 日开始杀害。患者先送到中间机构等候，再用 T4 下属运输公司的巴士送入专门车库。当年约 100 名雇员，含护士、厨房与行政。到 1941 年 8 月 24 日停止时，哈达马尔已杀害逾 1 万人。烟与气味在镇里看得见、闻得到——秘密很快是公开的秘密。</li>
+          <li>美国陆军 1945 年在哈特海姆保险柜找到的统计册，是计算死亡数字的关键原件之一。内部宣传把 70,273 条生命折算成十年护理费约 8.85 亿马克，并细列可「节省」的蛋、土豆、肉和果酱。这不是医学争论，是把人写成赤字。哈特海姆估计共约 3 万人被害，其中 Aktion 14f13 杀害集中营囚条约 1.2 万，是该行动中杀害囚徒最多的一处。</li>
+        </ul>
+      </div>
+      <div class="grid">
+        <div class="cell"><strong>70,273</strong>T4 内部：六处毒气 1940.1–1941.8</div>
+        <div class="cell"><strong>≥10,000</strong>儿童「安乐死」保守估计</div>
+        <div class="cell"><strong>25–30 万</strong>各阶段残障杀害合计（史学估计）</div>
+      </div>
+    </section>
+
+    <section id="s2">
+      <h2>核心发现二：1941 年 8 月停的是集中毒气，不是谋杀</h2>
+      <div class="card">
+        <h3><span>03</span>加伦布道很重要，但不是唯一原因，也不是他的全部政治</h3>
+        <ul>
+          <li>明斯特主教克莱门斯·奥古斯特·冯·加伦 1941 年 8 月 3 日公开布道，把杀害称为谋杀，并警告：伤兵回家也可能被当成「不能为国家生产」而杀掉。梵蒂冈 1940 年 12 月 2 日已声明直接杀害无辜残障者违背神律，德国教会高层却决定不再采取进一步行动。加伦的名望使政权投鼠忌器。戈培尔一派主张不抓他，以免骚动。</li>
+          <li>史学有分歧。Richard Evans 认为，若无公众反应（加伦是其中大声的一部分），T4 很可能超过希特勒最初约 7 万人的额度。Michael Burleigh 把「布道导致停止」称为一厢情愿，并指出教会在 T4 人员转入莱因哈德行动后并未再抗议。德国历史文献集提醒另一面：1941 年 9 月 14 日加伦写信支持对「犹太布尔什维克」的战争。读抵抗时不要把一个人写成全盘异议者。</li>
+          <li>希特勒于 1941 年 8 月下旬下令停止集中毒气。USHMM：此后医生在全国诊所与医院改用注射与饥饿，计划持续到战争结束。哈达马尔 1942 年 8 月 13 日以新班子重启「分散」杀害。USHMM《Final Solutions》一文估计 1939–1945 年各「安乐死」途径合计约 25 万人；同馆总览页写残障杀害约 25–30 万。数字区间要保留：档案被毁、匿名化，精确点名仍在进行。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span>04</span>技术与人事被搬进灭绝营</h3>
+        <ul>
+          <li>USHMM：为 T4 设计的气室与焚尸炉，后来被「最终解决」借用。在第一场大规模谋杀中证明「可靠」的 T4 人员，显著出现在贝乌热茨、索比布尔、特雷布林卡的德国人员名单里——包括 Christian Wirth、Franz Stangl、Irmfried Eberl。读大屠杀史时，残障者不是附录：他们是气室流程的第一批实验场。</li>
+          <li>Aktion 14f13 从 1941 年起用部分 T4 设施杀害被判定「不适合劳动」的集中营囚犯。哈特海姆在集中阶段停止三天后，就有一卡车约 70 名毛特豪森犹太囚徒被送来杀害。所谓停止，是改信道，不是关闸。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s3">
+      <h2>核心发现三：这是医疗罪行，纪念来得最晚</h2>
+      <div class="card">
+        <h3><span>05</span>打叉的是医生，送安慰信的是秘书</h3>
+        <ul>
+          <li>纽伦堡医生审判把部分人定罪，但机构日常靠护士、司机、厨工、打字员运转。哈达马尔 1941 年约百人编制说明：谋杀被拆成班次。Irmgard Huber 作为护士长，1945 年 4 月 7 日仍被美军摄影师拍在办公室里。把罪行写成「几个疯子医生」会漏掉职业共同体。</li>
+          <li>Helene 的个案（USHMM）：维也纳法律系学生，被诊断精神分裂症，关在 Steinhof；家人以为会出院，1940 年实际被送到勃兰登堡气室，官方登记死于「急性精神分裂兴奋」。16 岁女佣 Emmi G. 先被绝育，1942 年 12 月 7 日在 Meseritz-Obrawalde 用过量镇静剂杀害。儿童、成人、绝育、毒气、药片是一条优生政策的不同档位。1933 年《防止遗传病后代法》下的强制绝育（史学常用约 40 万这一量级）是同一套「种族卫生」的前阶，但绝育不等于 T4，不宜混成一个数字。</li>
+        </ul>
+      </div>
+      <div class="note">书写约定：不把被害者的诊断当猎奇标签，不把气室内部当版面装饰。数字用机构统计与纪念馆口径，并标明「内部数字 / 史学估计」。纳粹用语一律加引号。</div>
+      <div class="card">
+        <h3><span>06</span>记忆：地下室里的展，首都最晚的碑</h3>
+        <ul>
+          <li>Schulze 等 2025 年文（《Zeitschrift für Disability Studies》）：柏林国家 T4 纪念点 2014 年 9 月 2 日才开幕，是首都四座种族与灭绝政策被害者纪念碑中最晚的一座；2016 年才有第一部正面处理该主题的电影。贝恩堡医院前院长 Helmut Späthe 1970 年代末在地下室办展，东德时期几乎是能公开纪念的极限；他后来甚至被指责「把被害同志与精神病患者相提并论」。残障被害者长期被当成福利史的失败，而不是种族灭绝政策的核心。</li>
+          <li>哈达马尔翻修把 1883 年建筑层重新剥开：墙纸下的油漆、地板下的瓷砖。纪念馆明确要做成无障碍、包容的参观——用今天的可达性，去对抗这座房子曾经把人分成「可劳动 / 不可劳动」。哈特海姆常设展从工业社会把人分成「有用 / 无用」讲到当代平等要求，是把 1940 年的登记表接回此刻的伦理课，而不是把历史封在城堡里。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s4">
+      <h2>对历史学习者的启示</h2>
+      <div class="card insight">
+        <ul>
+          <li>先改用语。他们说「安乐死」「消毒」「安慰信」；档案说的是挑选、毒气、伪造。学习者应训练自己：每遇到医疗修辞，就去找登记表上被强调的那一栏——通常是「还能不能干活」。</li>
+          <li>70,273 是集中毒气阶段的内部成绩单，不是全部。加上儿童病房、分散用药与饥饿、14f13，史学估计进入六位数。引用时写清口径，避免用一个整数把后续谋杀洗掉。</li>
+          <li>医学伦理课若只讲纽伦堡法典而不讲 Meldebögen，会把罪行外包给「那时的纳粹」。打叉的人有教授头衔。2026 年还在修的哈达马尔提醒：地点还在，编制可以改，解释必须公开。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s5">
+      <h2>来源</h2>
+      <div class="card refs">
+        <ul>
+          <li>United States Holocaust Memorial Museum, 「Euthanasia Program and Aktion T4」. <a href="https://encyclopedia.ushmm.org/content/en/article/euthanasia-program">https://encyclopedia.ushmm.org/content/en/article/euthanasia-program</a></li>
+          <li>USHMM 中文，「“安乐死”计划和“T4”行动」. <a href="https://encyclopedia.ushmm.org/content/zh/article/euthanasia-program">https://encyclopedia.ushmm.org/content/zh/article/euthanasia-program</a></li>
+          <li>USHMM, 「Nazi Killing Centers: An Overview」；「Final Solutions: Murderous Racial Hygiene, 1939–1945」. <a href="https://encyclopedia.ushmm.org/content/en/article/killing-centers-an-overview">https://encyclopedia.ushmm.org/content/en/article/killing-centers-an-overview</a></li>
+          <li>Gedenkstätte Hadamar, 「The T4 programme and the Hadamar killing centre (1941)」. <a href="https://www.gedenkstaette-hadamar.de/en/history/the-t4-programme-and-the-hadamar-killing-centre-1941/">https://www.gedenkstaette-hadamar.de/en/history/the-t4-programme-and-the-hadamar-killing-centre-1941/</a></li>
+          <li>Gedenkstätte Hadamar, 「#NeugestaltungHadamar」, 2026-02-13；开放日预告 2026-09-04. <a href="https://www.gedenkstaette-hadamar.de/blog/2026/02/13/neugestaltunghadamar-denkmalschutz-und-umbau/">https://www.gedenkstaette-hadamar.de/blog/2026/02/13/neugestaltunghadamar-denkmalschutz-und-umbau/</a></li>
+          <li>USHMM, 「Hartheim Register」. <a href="https://encyclopedia.ushmm.org/content/en/artifact/hartheim-register">https://encyclopedia.ushmm.org/content/en/artifact/hartheim-register</a></li>
+          <li>Lern- und Gedenkort Schloss Hartheim, 常设展「Wert des Lebens」. <a href="https://www.ooemuseen.at/museum/181-lern-und-gedenkort-schloss-hartheim">https://www.ooemuseen.at/museum/181-lern-und-gedenkort-schloss-hartheim</a></li>
+          <li>Ludwig Boltzmann Institut, 哈特海姆巡展「Hitlers Exekutive」（至 2026-08-30）. <a href="https://bik.lbg.ac.at/news/besuchen-sie-die-ausstellung-hitlers-exekutive-die-oesterreichische-polizei-und-der-nationalsozialismus-im-lern-und-gedenkort-schloss-hartheim-in-oberoesterreich/">https://bik.lbg.ac.at/news/besuchen-sie-die-ausstellung-hitlers-exekutive-die-oesterreichische-polizei-und-der-nationalsozialismus-im-lern-und-gedenkort-schloss-hartheim-in-oberoesterreich/</a></li>
+          <li>Wiebke Schulze et al., 「The Nazi ‘Euthanasia’ Killings: The Long Shadow of History」, <i>ZDS</i> 2025. <a href="https://zds-online.org/wp-content/uploads/2025/11/ZDS_2025_2_3_Schulze-et-al.pdf">https://zds-online.org/wp-content/uploads/2025/11/ZDS_2025_2_3_Schulze-et-al.pdf</a></li>
+          <li>German History in Documents and Images, 加伦 1941-08-03 布道节选. <a href="https://germanhistorydocs.org/en/nazi-germany-1933-1945/excerpt-from-bishop-von-galen-s-sermon-august-3-1941-and-government-correspondence-regarding-the-sermon-and-the-charges-raised-against-galen-as-a-result-august-12-13-1941.pdf">https://germanhistorydocs.org/en/nazi-germany-1933-1945/excerpt-from-bishop-von-galen-s-sermon-august-3-1941-and-government-correspondence-regarding-the-sermon-and-the-charges-raised-against-galen-as-a-result-august-12-13-1941.pdf</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <p class="foot">GERMAN WW2 RESEARCH · ISSUE 50 · MEDICAL CRIME, NOT MERCY</p>
+  </div>
+</div>
+</body>
+</html>
