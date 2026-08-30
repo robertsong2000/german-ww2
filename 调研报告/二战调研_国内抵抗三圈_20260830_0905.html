@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国内抵抗三圈：白玫瑰、克莱骚与7月20日 —— 2025–2026年档案定点、山屋重开与史学更新</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Wax-stencil mimeograph underground leaflet: manila paper, navy stencil ink, punch holes */
+:root {
+  --paper: #efe3c4;
+  --paper-dark: #e2d2a8;
+  --fiber: #d7c39a;
+  --ink: #1a3558;
+  --ink-fade: #2c4a72;
+  --mimeo: #243e68;
+  --carbon: #4a5f7a;
+  --redpen: #8c2a24;
+  --stamp: #1f5a3a;
+  --crease: rgba(90, 70, 40, .18);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(255,255,240,.35), transparent 50%),
+    repeating-linear-gradient(90deg, rgba(90,70,40,.035) 0 1px, transparent 1px 7px),
+    linear-gradient(180deg, #c9b48a, #b89f72 40%, #a88d64);
+  color: var(--ink);
+  font-family: "Noto Serif SC", "Libre Baskerville", serif;
+  line-height: 1.82;
+  min-height: 100vh;
+}
+body::before {
+  content: "";
+  pointer-events: none;
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+  opacity: .28; mix-blend-mode: multiply; z-index: 8;
+}
+.sheet {
+  max-width: 880px;
+  margin: 28px auto 64px;
+  background:
+    linear-gradient(90deg, rgba(90,70,40,.12) 0 46px, transparent 46px),
+    linear-gradient(105deg, transparent 48%, var(--crease) 49.2%, transparent 50.4%),
+    linear-gradient(180deg, #f6edd4 0%, var(--paper) 18%, var(--paper-dark) 100%);
+  border: 1px solid #c4ae82;
+  box-shadow:
+    0 1px 0 #fff8e0 inset,
+    8px 18px 0 -8px #c9b48a,
+    18px 36px 50px rgba(70,50,20,.35);
+  position: relative;
+  padding: 28px 42px 48px 72px;
+}
+.sheet::before {
+  content: "";
+  position: absolute;
+  left: 14px; top: 22px; bottom: 22px;
+  width: 18px;
+  background-image: radial-gradient(circle, #6b5838 0 5px, transparent 5.5px);
+  background-size: 18px 28px;
+  background-repeat: repeat-y;
+  opacity: .85;
+}
+.clip {
+  position: absolute;
+  top: -8px; right: 48px;
+  width: 18px; height: 42px;
+  background: linear-gradient(90deg, #8a8d92, #cfd3d8 40%, #7c8088);
+  border-radius: 3px 3px 8px 8px;
+  box-shadow: 1px 4px 6px rgba(0,0,0,.25);
+  z-index: 2;
+}
+.mast {
+  border-bottom: 2px solid var(--mimeo);
+  padding-bottom: 16px;
+  margin-bottom: 8px;
+}
+.mast .run {
+  font-family: "Courier Prime", "Noto Serif SC", monospace;
+  font-size: 12px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--carbon);
+}
+.stamps {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin: 10px 0 8px;
+}
+.stamp {
+  font-family: "Courier Prime", monospace;
+  font-size: 11px;
+  letter-spacing: .14em;
+  border: 2px solid var(--stamp);
+  color: var(--stamp);
+  padding: 4px 10px;
+  transform: rotate(-1.4deg);
+  text-transform: uppercase;
+  opacity: .82;
+}
+.stamp.red {
+  border-color: var(--redpen);
+  color: var(--redpen);
+  transform: rotate(1.6deg);
+}
+h1 {
+  font-family: "Libre Baskerville", "Noto Serif SC", serif;
+  font-weight: 700;
+  font-size: clamp(26px, 4.2vw, 40px);
+  line-height: 1.28;
+  margin: 8px 0 10px;
+  color: var(--ink);
+}
+.sub {
+  font-size: 16.5px;
+  color: var(--ink-fade);
+  max-width: 40em;
+}
+.meta {
+  display: flex; flex-wrap: wrap; gap: 8px 20px;
+  font-family: "Courier Prime", monospace;
+  font-size: 12.5px;
+  color: var(--carbon);
+  padding: 14px 0 6px;
+  border-bottom: 1px dashed var(--fiber);
+}
+.meta b { color: var(--ink); font-weight: 700; }
+.toc {
+  display: flex; flex-wrap: wrap; gap: 7px;
+  padding: 14px 0 22px;
+}
+.toc a {
+  font-family: "Courier Prime", monospace;
+  font-size: 12px;
+  color: var(--paper);
+  background: var(--mimeo);
+  text-decoration: none;
+  padding: 5px 10px;
+  letter-spacing: .03em;
+}
+.toc a:hover { background: var(--redpen); }
+.card {
+  background: rgba(255,250,235,.42);
+  border: 1px solid rgba(36,62,104,.16);
+  padding: 22px 24px 18px;
+  margin: 0 0 18px;
+  position: relative;
+}
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px dotted rgba(36,62,104,.18);
+  pointer-events: none;
+}
+.leaflet-no {
+  position: absolute;
+  top: 8px; right: 14px;
+  font-family: "Courier Prime", monospace;
+  font-size: 12px;
+  color: var(--redpen);
+  letter-spacing: .2em;
+}
+.kicker {
+  font-family: "Courier Prime", monospace;
+  font-size: 11px;
+  letter-spacing: .2em;
+  color: var(--stamp);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+h2 {
+  font-family: "Libre Baskerville", "Noto Serif SC", serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--mimeo);
+  margin: 0 56px 10px 0;
+}
+h3 {
+  font-size: 17px;
+  margin: 14px 0 8px;
+  color: var(--ink);
+}
+p { margin: 0 0 11px; }
+ul { padding-left: 1.2em; }
+li { margin: 7px 0; }
+.quote {
+  font-family: "Courier Prime", "Noto Serif SC", monospace;
+  font-size: 14.5px;
+  line-height: 1.7;
+  border-left: 3px solid var(--mimeo);
+  padding: 8px 0 8px 14px;
+  margin: 12px 0 14px;
+  color: var(--ink-fade);
+  background: rgba(36,62,104,.05);
+}
+.num {
+  font-family: "Courier Prime", monospace;
+  color: var(--redpen);
+  font-weight: 700;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 12px 0;
+}
+.mini {
+  background: #f7ecd0;
+  border: 1px dashed rgba(36,62,104,.22);
+  padding: 12px 14px;
+}
+.mini h3 { margin-top: 0; font-size: 15px; }
+.insight {
+  background: #f3e6c4;
+  border-color: rgba(140,42,36,.35);
+}
+.insight h2 { color: var(--redpen); }
+.refs a { color: var(--mimeo); word-break: break-all; }
+.foot {
+  text-align: center;
+  font-family: "Courier Prime", monospace;
+  font-size: 11px;
+  letter-spacing: .14em;
+  color: var(--carbon);
+  padding-top: 16px;
+  border-top: 2px solid var(--mimeo);
+}
+@media (max-width: 680px) {
+  .sheet { padding: 22px 16px 36px 48px; margin: 10px 8px 40px; }
+  .grid { grid-template-columns: 1fr; }
+  .card { padding: 18px 14px 14px; }
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="clip" aria-hidden="true"></div>
+  <header class="mast">
+    <div class="run">Flugblätter · 地下油印 · Wachsmatrize · 非公开流通</div>
+    <div class="stamps">
+      <span class="stamp">Vervielfältigt</span>
+      <span class="stamp red">Nicht verherrlichen</span>
+      <span class="stamp">München · Kreisau · Bendlerblock</span>
+    </div>
+    <h1>国内抵抗三圈：白玫瑰、克莱骚与7月20日</h1>
+    <p class="sub">2025年慕尼黑大学中庭定点、2026年西里西亚山屋重开，以及史学如何拆掉“一小撮”神话——对国内抵抗的审慎重读</p>
+  </header>
+
+  <div class="meta">
+    <span><b>本期主题</b> 国内抵抗：白玫瑰、7月20日与克莱骚集团</span>
+    <span><b>生成时间</b> 2026-08-30 09:05 UTC</span>
+    <span><b>视觉风格</b> 蜡纸油印地下传单风</span>
+    <span><b>系列</b> 二战德国史调研 · 第2期</span>
+  </div>
+
+  <nav class="toc">
+    <a href="#s0">本期主题</a>
+    <a href="#s1">核心发现</a>
+    <a href="#s2">白玫瑰传单</a>
+    <a href="#s3">中庭定点</a>
+    <a href="#s4">克莱骚山屋</a>
+    <a href="#s5">7月20日网络</a>
+    <a href="#s6">限度与争论</a>
+    <a href="#s7">学习者启示</a>
+    <a href="#s8">来源</a>
+  </nav>
+
+  <section class="card" id="s0">
+    <div class="leaflet-no">I.</div>
+    <div class="kicker">Thema</div>
+    <h2>本期主题</h2>
+    <p>纳粹德国并非铁板一块，但国内抵抗也绝不是多数人的故事。白玫瑰（Weiße Rose）用蜡纸油印机把六份传单送进邮箱与大学中庭；克莱骚集团（Kreisauer Kreis）在西里西亚庄园起草“事后德国”的宪政与欧洲秩序；1944年7月20日，军官与文官试图用“女武神”计划（Walküre）夺取国家机器。三条线索社会出身不同、手段不同、对犹太人遭屠杀的公开程度也不同。把它们并置，是为了看清：抵抗存在，却是少数；纪念存在，却常被简化成英雄像。</p>
+    <p>2025–2026 年出现三处可核验的更新：慕尼黑大学（LMU）在中庭二层廊道钉上新说明牌，标出1943年2月18日传单坠落的精确位置；2025年5月美因茨学生会议把7月20日拆成教会、法国、女性、外交部四个研究面板；2026年6月2–3日，克莱骚/克日若瓦（Kreisau/Krzyżowa）的山屋（Berghaus）在三年整修后重新开放。本期据此重读档案、纪念地与史学争论，而不把“另一个德国”写成免责声明。</p>
+  </section>
+
+  <section class="card" id="s1">
+    <div class="leaflet-no">II.</div>
+    <div class="kicker">Befunde</div>
+    <h2>核心发现（提要）</h2>
+    <div class="grid">
+      <div class="mini">
+        <h3>油印规模极小</h3>
+        <p>巴伐利亚历史词典：前四份传单各约 <span class="num">100</span> 份；第五份约 <span class="num">10,000–12,000</span> 份；第六份约 <span class="num">3,000</span> 份。约三分之一早期邮寄件被收件人交给盖世太保。</p>
+      </div>
+      <div class="mini">
+        <h3>点名犹太人遭屠杀</h3>
+        <p>第二份传单把在波兰对犹太人的屠杀称为“对人类尊严最可怕的罪行”。白玫瑰基金会与巴伐利亚历史词典均指出：这是德国抵抗文献中罕见的公开指控。</p>
+      </div>
+      <div class="mini">
+        <h3>不是“一小撮军人”</h3>
+        <p>Keyserlingk-Rehbein 的网络分析：盖世太保已掌握 <span class="num">132</span> 名积极参与者、约 <span class="num">650</span> 条联系；今日可补约 <span class="num">70</span> 人。主动筹备约 <span class="num">200</span> 人——仍是人口中的极少数。</p>
+      </div>
+      <div class="mini">
+        <h3>纪念地仍在改写</h3>
+        <p>2025年2月24日 LMU 揭牌；2026年6月山屋重开，造价约 <span class="num">90</span> 万欧元。展览把强制劳工指纹、被驱逐者与克莱骚圆桌放在同一座屋子里。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="s2">
+    <div class="leaflet-no">III.</div>
+    <h2>白玫瑰：蜡纸、六个文本、一条很少被听见的控诉</h2>
+    <p>德国抵抗纪念馆（Gedenkstätte Deutscher Widerstand，GDW）把核心圈定为：汉斯·朔尔、亚历山大·施莫雷尔、索菲·朔尔、克里斯托夫·普罗布斯特、维利·格拉夫，以及教授库尔特·胡贝尔。他们要摆脱纳粹对大学的吞并，并在1942年夏用第一批传单呼吁反抗“犯罪的独裁”。联邦档案馆馆藏号 <span class="num">R 3018/NJ 1704, Bd. 32</span>（另见巴伐利亚历史词典所引 R 3018/18431）保存了传单原件。</p>
+    <p>技术史很具体：六份传单都用蜡纸油印机（Wachsmatrizendrucker）制作。前四份于1942年6月27日至7月20日以罗马数字编号、装入信封寄出，主要在慕尼黑一带；约三分之一被收件人主动交给盖世太保。盖世太保当年7月即成立以罗伯特·莫尔为首的专案组，却因学生们被派往东线战地实习而一度中断线索。第五份改标题为《德国抵抗运动传单：告全体德国人》，并被送到维也纳、萨尔茨堡、林茨、奥格斯堡、乌尔姆、斯图加特等地邮局；第六份《男女同学们！》约三千份，只在慕尼黑大学一带铺开。</p>
+    <p class="quote">“……三十万犹太人……以野兽般的方式被谋杀。”——第二份传单对波兰境内屠杀的指控（白玫瑰基金会转述）。作者同时把共谋责任推给“使这个政府得以产生”的德国民众。</p>
+    <p>第三份要求在军备工厂、集会与纳粹党所办组织中实行破坏，称反抗犯罪的暴力国家是“伦理义务”。第五份提出言论自由、信仰自由、保护公民免遭犯罪暴力国家的专横，并主张联邦制与欧洲各民族的“宽宏合作”——白玫瑰基金会把它与1941年《大西洋宪章》的人权语言并读。第六份由胡贝尔执笔，声援1943年1月慕尼黑大学建校470周年集会上女学生对大区领袖吉斯勒侮辱性演说的抗议，并在斯大林格勒惨败后要求夺回“个人自由”。普罗布斯特为第七份写的草稿指控希特勒“把犹太人折磨致死、消灭一半波兰人、想毁灭俄国”；汉斯·朔尔被捕时草稿就在大衣口袋里，这份文本未能付印。</p>
+    <p>1943年2月3日、8日、15日夜间，朔尔、施莫雷尔、格拉夫用柏油与模板在慕尼黑市区刷写“自由”“打倒希特勒”“希特勒是大屠杀犯”，并划掉纳粹标记。这已不是“纯文化抵抗”。2月18日上午，大学杂役雅各布·施密德看见传单从二层栏杆落入中庭，扣留朔尔兄妹。人民法庭庭长罗兰·弗莱斯勒于2月22日在慕尼黑司法宫用不足三小时的表演审判，以叛国、瓦解国防力量、资敌判处三人死刑；当日17时，三人在施塔德尔海姆监狱被斩首。4月19日第二场审判判处施莫雷尔、胡贝尔、格拉夫死刑；施莫雷尔与胡贝尔于7月13日被处决，格拉夫因盖世太保仍想挖出更多线索，拖至10月12日。汉堡支线经特劳特·拉夫伦茨、汉斯·莱佩尔特与慕尼黑相连：1943年秋盖世太保逮捕二十余人，此后慕尼黑与汉堡外围又有十名反对者被杀害或逼死。</p>
+  </section>
+
+  <section class="card" id="s3">
+    <div class="leaflet-no">IV.</div>
+    <h2>2025：中庭被重新测量</h2>
+    <p>白玫瑰基金会网站写明：自2025年起，中庭二层回廊有一块说明牌，标出索菲·朔尔把第六份传单掷入中庭的位置。慕尼黑市政门户补充：2025年2月24日白玫瑰纪念音乐会前，LMU校长贝恩德·胡贝尔与基金会主席希尔德加德·克罗纳维特共同揭牌；汉斯·金特·霍克茨教授主持的历史重建锁定了动作流程。这不是新“圣物”，而是把被反复拍摄的图像还原成可核对的建筑坐标：中庭仍是逮捕现场，不是舞台布景。</p>
+    <p>记忆层叠在同一座楼里：1946年特奥多尔·格奥尔吉的纪念牌列出七名被处决者（含后来的莱佩尔特）；1958年洛塔尔·迪茨铜浮雕；1961年“白玫瑰管风琴”；1988年罗伯特·施密特-马特在正门前的地面纪念，嵌入传单、肖像与格拉夫的诀别信。2017年2月18日新版常设展《白玫瑰：反抗纳粹独裁》把动机、传单文本、乌尔姆/萨尔布吕肯/汉堡的外扩，以及1943年至今的接受史一并展出。2023年4月20日起，慕尼黑司法宫253号厅（白玫瑰厅）常设展《以德意志人民的名义实施专断》，用两次审判示范独裁如何捣毁法治。</p>
+    <p>牛津大学圣埃德蒙学堂的 White Rose Project（2018年10月12日、格拉夫遇害75周年启动）于2024年结束主体工作，网站版权页已标至2026，并声明仍有后续活动。亚历山德拉·劳埃德《反抗希特勒：白玫瑰传单》（Bodleian，2022）把传单放回政治语境；《牛津德国研究》专号导论（2023）批评战后把该圈写成“大体非政治”的理想化，强调文学、音乐与视觉艺术是他们决定抵抗的组成部分，而非点缀。对学习者而言：传单里的席勒、奥古斯丁、老子引文，不是用来把抵抗“文化化”从而去政治化的。</p>
+  </section>
+
+  <section class="card" id="s4">
+    <div class="leaflet-no">V.</div>
+    <h2>克莱骚：山屋重开，“事后德国”被摆上圆桌</h2>
+    <p>GDW 记述：1940年起，赫尔穆特·詹姆斯·冯·毛奇与彼得·约尔克·冯·瓦滕堡把天主教徒、新教徒、社会民主党人、保守派与自由派聚到柏林、西里西亚克莱骚庄园与慕尼黑。他们起草国家结构、限制国家权力、经济、教会、教育，并把德国嵌进战后欧洲秩序。“克莱骚集团”这一名称来自1944年盖世太保的侦查用语。三次关键聚会就在山屋——1928–1945年毛奇夫妇的家。</p>
+    <p>他们起初并不以刺杀为中心。DIALOG（2026-06-23）转述：毛奇认为纳粹会自我毁灭，不愿以政变开启新时代；他于1944年1月被捕时，盖世太保尚不知有“克莱骚集团”。约尔克因参与7月20日，于1944年9月8日被判死刑并当日处决。毛奇的死刑判决在1945年1月11日宣布，理由是为纳粹垮台后的民主德国做准备，而非“克莱骚集团”本身被坐实；1月23日在柏林普勒岑湖被处决。克莱骚的《重组原则》（1943年8月9日）把基督教、人的不可侵犯尊严、法治、劳动与财产权、地方自治与欧洲和平秩序写在一起——新教抵抗文献库有节译本。这不是《基本法》的草稿复印件：冷战初期联邦德国纪念话语曾把它拔高为自由民主的直系祖先；更贴近史料的研究强调其基督教人格主义、对社会民主党人开放、同时对魏玛式政党政治高度保留。</p>
+    <p>2026年6月2–3日，欧洲谅解基金会（Stiftung Kreisau für Europäische Verständigung）与弗莱娅·冯·毛奇基金会完成三年整修后重开山屋。波兰驻柏林临时代办扬·通宾斯基、德波民间合作协调员克努特·亚伯拉罕、下西里西亚元帅帕维尔·甘察日到场；毛奇之子赫尔穆特·卡斯帕尔（当时88岁）获波兰外长“Bene Merito”勋章及希维德尼察乡荣誉市民。基金会称造价约 <span class="num">380</span> 万兹罗提（约90万欧元），弗莱娅基金会承担逾四分之三。新展四个教育区：记忆室“Kreisau”保留四分圆桌，象征圈子的多元；“Kreisau/Krzyżowa”讲迁移与被驱逐者，对照弗莱娅1945年被迫离开与西伯利亚流放归来的伊娃·翁格尔；第三室用1989年6月弗罗茨瓦夫讨论会照片，以及1998年布泽克与科尔坐过的原椅；第四室是灵活工作坊。DIALOG 记下最刺痛的一件物证：乌克兰战俘米科拉·奥尔钦尼克1941年在庄园死于强制劳动，没有照片，展柜只放指纹。</p>
+    <p>山屋因此拒绝把抵抗写成贵族沙龙。圆桌上有社会民主党人米伦多夫、赖希魏因、豪巴赫；也有耶稣会士德尔普。1945年后，克莱骚被并入波兰、改国营农场、衰败；1989年11月12日科尔与马佐维耶茨基在此交换和平礼，是因为圣安娜山的起义记忆太容易重新撕裂两边。纪念地的当代用法（青年交流、对乌克兰援助）不能倒过来证明1940–1944年的讨论已经“完成了欧洲”。它只说明：同一座房子先后承载过密谋、屠杀劳动力、驱逐与和解仪式。</p>
+  </section>
+
+  <section class="card" id="s5">
+    <div class="leaflet-no">VI.</div>
+    <h2>7月20日：网络、女武神、以及不能洗白的同谋者</h2>
+    <p>GDW 把经过写得很冷：密谋者借用陆军最高统帅部为镇压强制劳工暴动与内乱而准备的“女武神”命令，企图在刺杀后控制军区。1944年7月20日约16时，奥尔布里希特与默茨·冯·基尔恩海姆发出命令；施陶芬贝格从狼穴飞回柏林，在本德勒街区争取军官。柏林城防司令保罗·冯·哈泽派出部队，但纳粹军官很快起疑。多数军区同时收到狼穴的反命令；密谋者未能控制广播。巴黎一度解除盖世太保与党卫队武装数小时；维也纳、布拉格、卡塞尔傍晚前还曾部分执行命令。深夜，弗罗姆下令枪杀密谋者。文化国务部长官网（2024年7月21日稿）列出当夜在本德勒区荣誉庭被枪决的四人：施陶芬贝格、奥尔布里希特、默茨、维尔纳·冯·黑夫滕。贝克被允许自杀，未死成后再补一枪。</p>
+    <p>美国大屠杀纪念馆（USHMM）提醒动机不可浪漫化：几乎所有核心人物来自保守—民族主义与贵族背景；戈德勒、贝克等在1930年代因政策或战争计划退出。特雷斯科曾称水晶之夜为野蛮。但同页明确写出：若干密谋者深度卷入战争罪与大屠杀——法国军事总督施蒂尔普纳格尔在指挥第17集团军时与别动队合作屠杀犹太人；陆军军需总监爱德华·瓦格纳协调国防军与别动队、并参与饿死苏联战俘的计划；阿瑟·内贝曾任刑事警察首脑并指挥别动队B，对超过四万五千名犹太人的谋杀负责。把7月20日写成“国防军的良心起义”，是用少数人的晚到行动覆盖东线毁灭战的制度事实。</p>
+    <p>林达·冯·凯瑟林克-雷拜因的博士论文用历史网络分析拆穿宣传：纳粹一再声称只是“一小撮”反动军人；盖世太保自己的材料却显示132名积极参与者、650条跨阶层联系，结构核心里有社会民主党人与工会领袖洛伊施纳、勒贝尔、哈伯曼，也有哈塞尔、波皮茨和克莱骚成员。预备役军官常常是军民两界的接头人。约400人的“7月20日特别侦查委员会”仍漏掉巴黎与中央集团军群的大量接头。作者强调：相对全德人口，这仍是“极其少数”；密谋者自己也担心政变后会爆发内战。USHMM 给出的后续数字是七千余人被捕、4980人被处决——口径更宽，含株连与边缘牵连，须与“约200名主动筹备者”区分，不可混成一个英雄军团。</p>
+    <p>GDW 主题页“政变目标”写明：首要目标是立即结束战争及纳粹的战争与暴力罪行、恢复法治、以正当程序追究罪犯。同时，他们也想避免德意志帝国的军事崩溃，并在盟国1943年起坚持无条件投降之后，外交空间已经极窄。2024年80周年，联邦政府与“1944年7月20日基金会”在本德勒区举行仪式；GDW 特展《女性在反抗纳粹中》源自2019年联邦议院决议，约翰内斯·图赫尔团队用四年列出在国内与流亡中抵抗的数千名女性姓名。2025年5月22–23日，美因茨埃尔巴赫霍夫的学生会议以四个面板推进研究：教会、法国史学盲区、7月20日中的女性、外交部；泽恩克·奈策尔作开幕报告，追问这段抵抗对联邦国防军是否“值得作为传统”。2026年7月20日仍是国家仪式日期——纪念越隆重，越需要把网络、罪行与少数性同时说清楚。</p>
+  </section>
+
+  <section class="card" id="s6">
+    <div class="leaflet-no">VII.</div>
+    <h2>限度：抵抗不是免责，纪念不是完成时</h2>
+    <ul>
+      <li><strong>数量级。</strong>白玫瑰内核六人被处决，汉堡与乌尔姆外围扩大仍是几十人量级；7月20日主动筹备约两百人。USHMM 中文百科（2025-10-10 更新）写：即使在德国，抵抗者也随时可能被告密。多数成年人选择顺从、投机或沉默。</li>
+      <li><strong>对犹太人。</strong>白玫瑰第二份传单是少数公开点名屠杀的国内文本。7月20日圈子对反犹政策的态度参差，部分成员本人就是加害者。克莱骚讨论过战后惩处德国人罪行，但不是以营救欧洲犹太人为组织目标。</li>
+      <li><strong>接受史。</strong>战后西德曾把朔尔兄妹基督教化、把7月20日军官写成“良心起义”，用以对冲集体罪责；东德则突出共产党与劳工抵抗。两种用法都服务当下政治。牛津专号与凯瑟林克-雷拜因都要求回到文本、网络与档案，而不是好莱坞单人秀。</li>
+      <li><strong>妇女。</strong>索菲·朔尔被做成最可消费的肖像，但拉夫伦茨、安内莉泽·格拉夫、弗莱娅·冯·毛奇、马里昂·约尔克、玛格蕾特·冯·奥芬（女武神命令的打字者之一）以及图赫尔项目中的数千无名女性，说明抵抗从来不是“几个男学生加几个上校”。</li>
+      <li><strong>纪念地政治。</strong>本德勒区紧挨国防部，新兵宣誓与7月20日绑在一起；克莱骚山屋同时讲抵抗、强制劳动与德波和解。地点会说话，学习者应听出多重声部，而不是只听官方致辞。</li>
+    </ul>
+  </section>
+
+  <section class="card insight" id="s7">
+    <div class="leaflet-no">VIII.</div>
+    <h2>对历史学习者的启示</h2>
+    <ul>
+      <li><strong>先问“谁在印、印给谁”。</strong>一百份寄给教授与书店，和一万份“告全体德国人”，政治想象不同。油印机、邮票、中庭栏杆，比雕像更接近行动本身。</li>
+      <li><strong>抵抗与罪责可以同在一人身上。</strong>读7月20日必须连着东线毁灭战、别动队与战俘饥饿计划。不能用一次未遂刺杀兑换此前的制度性犯罪。</li>
+      <li><strong>把“另一个德国”当假说，不当护照。</strong>传单、克莱骚备忘录、女武神命令证明有人说“不”；它们不能证明“德国人其实都反对”。少数性本身就是历史事实。</li>
+      <li><strong>跟纪念地的新钉子走。</strong>2025年的说明牌、2026年的山屋展柜（包括没有面孔的强制劳工）是史学在空间里的修订。去现场或看展览说明书，比只看故事片可靠。</li>
+      <li><strong>读原件。</strong>传单全文可向白玫瑰基金会索取多语文本；联邦档案馆 R 3018、NS 6 中的盖世太保专案与政府宣言草稿，才是下一步。引语必须能回到馆藏号。</li>
+    </ul>
+  </section>
+
+  <section class="card refs" id="s8">
+    <div class="leaflet-no">IX.</div>
+    <h2>来源链接</h2>
+    <ul>
+      <li>GDW，白玫瑰专题：<a href="https://www.gdw-berlin.de/vertiefung/themen/15-die-weisse-rose">15 Die Weiße Rose</a>（英：<a href="https://www.gdw-berlin.de/en/recess/topics/15-the-white-rose">The White Rose</a>）</li>
+      <li>GDW，7月20日经过：<a href="https://www.gdw-berlin.de/vertiefung/themen/11-der-umsturzversuch-vom-20-juli-1944">11 Der Umsturzversuch</a> · 目标：<a href="https://www.gdw-berlin.de/vertiefung/themen/10-ziele-des-umsturzversuches">10 Ziele</a></li>
+      <li>GDW，克莱骚集团：<a href="https://www.gdw-berlin.de/en/recess/topics/12-the-kreisau-circle">12 The Kreisau Circle</a> · 本德勒街区：<a href="https://www.gdw-berlin.de/ort-der-erinnerung/der-bendlerblock">Der Bendlerblock</a></li>
+      <li>白玫瑰基金会，传单说明：<a href="https://www.weisse-rose-stiftung.de/widerstandsgruppe-weisse-rose/flugblaetter/">Flugblätter der Weißen Rose</a></li>
+      <li>白玫瑰基金会，LMU 中庭纪念地（含2025说明牌）：<a href="https://www.weisse-rose-stiftung.de/denkstaette-weisse-rose-am-lichthof-der-lmu-muenchen/">DenkStätte Weiße Rose</a></li>
+      <li>慕尼黑市政，2025-02-24 揭牌：<a href="https://www.muenchen.de/sehenswuerdigkeiten/museen/denkstaette-weisse-rose-erinnerung-geschwister-scholl">DenkStätte Weiße Rose in der LMU</a></li>
+      <li>巴伐利亚历史词典：<a href="https://www.historisches-lexikon-bayerns.de/Lexikon/Wei%C3%9Fe_Rose">Weiße Rose</a></li>
+      <li>USHMM 中文，“德国国内的抵抗运动”，2025-10-10：<a href="https://encyclopedia.ushmm.org/content/zh/article/resistance-inside-germany">抵抗运动</a></li>
+      <li>USHMM，“The July 20, 1944, Plot…”：<a href="https://encyclopedia.ushmm.org/content/en/article/the-july-20-1944-plot-to-assassinate-adolf-hitler">July 20 plot</a></li>
+      <li>Oxford White Rose Project：<a href="https://whiteroseproject.seh.ox.ac.uk/">whiteroseproject.seh.ox.ac.uk</a></li>
+      <li>Alexandra Lloyd 等，《牛津德国研究》专号导论，2023：<a href="https://doi.org/10.1080/00787191.2023.2180945">The Arts, Culture, and the Evolution of the White Rose Resistance</a></li>
+      <li>L.I.S.A. / 格尔达·亨克尔基金会，Keyserlingk-Rehbein 访谈：<a href="https://lisa.gerda-henkel-stiftung.de/20._juli">Ein komplexes zivil-militärisches Beziehungsgeflecht</a></li>
+      <li>recensio.net 书评：<a href="https://www.recensio.net/rezensionen/zeitschriften/sehepunkte/19/10/nur-eine-a-ganz-kleine-cliquea">Nur eine »ganz kleine Clique«?</a></li>
+      <li>Stiftung Kreisau，山屋重开，2026-06：<a href="https://www.krzyzowa.pl/de/o-fundacji-2/aktuelles/5341-mit-stolz-oeffnen-wir-die-tueren-des-berghauses">Mit Stolz öffnen wir die Türen des Berghauses</a></li>
+      <li>Freya von Moltke-Stiftung，2026-06-05：<a href="https://www.fvms.de/aktuelles/veranstaltungen/wiedereroeffnung-berghaus/">Wiedereröffnung des Berghauses</a></li>
+      <li>DIALOG，2026-06-23：<a href="https://dialogonline.net/2026/06/23/ein-ort-der-geschichte-das-berghaus-in-kreisau-wiedereroeffnet/">Ein Ort der Geschichte</a></li>
+      <li>新教抵抗文献库，克莱骚《重组原则》：<a href="https://en.evangelischer-widerstand.de/html/view.php?id=184&amp;type=dokument">Declaration of Principles</a></li>
+      <li>BKM，80周年与《女性在抵抗中》展，2024-07-21：<a href="https://kulturstaatsminister.de/80-jahrestag-des-widerstands-gegen-die-ns-gewaltherrschaft">80. Jahrestag</a></li>
+      <li>美因茨主教区学院，2025-05-22/23 学生会议：<a href="https://bistummainz.de/bildung/akademie/veranstaltung/Der-20.-Juli-1944-Junge-Perspektiven-auf-den-Widerstand-gegen-den-Nationalsozialismus-2025.05.23/">Junge Perspektiven</a></li>
+    </ul>
+  </section>
+
+  <p class="foot">WACHSMATRIZE · KEINE VERHERRLICHUNG · 1933–1945 · SCHOLARLY USE ONLY</p>
+</div>
+</body>
+</html>
