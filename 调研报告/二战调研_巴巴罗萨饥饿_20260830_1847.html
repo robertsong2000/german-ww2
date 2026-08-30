@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>巴巴罗萨决策与饥饿计划 —— 战争还没打响，粮仓清册已经把“多余人口”写成赤字</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;700&family=Literata:ital,opsz,wght@7..72,400;600;700&family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --straw:#e8d9b8;
+  --paper:#f3ead4;
+  --ink:#2a2418;
+  --olive:#4a5330;
+  --stamp:#9b2c1a;
+  --carbon:#5a4a78;
+  --rule:#c4b48a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Literata","Songti SC",serif;
+  color:var(--ink);
+  line-height:1.78;
+  background:
+    repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(74,83,48,.07) 27px,rgba(74,83,48,.07) 28px),
+    radial-gradient(ellipse at 18% 8%,rgba(154,44,26,.08),transparent 42%),
+    #cbb892;
+}
+body::before{
+  content:"";
+  position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    repeating-linear-gradient(90deg,transparent 0 3px,rgba(90,74,120,.03) 3px 4px);
+  mix-blend-mode:multiply;
+}
+.sheet{
+  position:relative;z-index:1;
+  max-width:940px;margin:32px auto 64px;padding:28px 32px 42px;
+  background:
+    linear-gradient(180deg,rgba(90,74,120,.06),transparent 18%),
+    var(--paper);
+  border:1px solid #8a7a52;
+  box-shadow:8px 10px 0 rgba(42,36,24,.18), inset 0 0 80px rgba(74,83,48,.06);
+}
+.sheet::after{
+  content:"DEFIZIT";
+  position:absolute;top:92px;right:28px;
+  font-family:"Fraunces",serif;font-size:42px;letter-spacing:.18em;
+  color:rgba(155,44,26,.22);transform:rotate(-12deg);
+  border:4px solid rgba(155,44,26,.28);padding:6px 12px;pointer-events:none;
+}
+.mast{
+  font-family:"Inconsolata",monospace;font-size:12px;letter-spacing:.14em;
+  color:var(--olive);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
+  border-bottom:2px double var(--olive);padding-bottom:8px;
+}
+.kicker{font-family:"Inconsolata",monospace;font-size:12.5px;color:var(--stamp);letter-spacing:.16em;margin-top:14px}
+h1{font-family:"Fraunces",serif;font-size:clamp(26px,4.6vw,40px);line-height:1.22;margin:10px 0 8px;color:var(--olive)}
+.sub{font-size:17px;color:#4a4030}
+.meta{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px 18px;font-family:"Inconsolata",monospace;font-size:13px;color:var(--olive)}
+.meta b{color:var(--stamp)}
+nav.toc{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0 6px}
+nav.toc a{
+  font-family:"Inconsolata",monospace;font-size:12px;text-decoration:none;
+  color:var(--paper);background:var(--olive);padding:5px 10px;
+}
+section{margin-top:26px}
+h2{font-family:"Fraunces",serif;font-size:22px;color:var(--olive);border-bottom:1px solid var(--rule);padding-bottom:6px;margin-bottom:12px}
+.card{
+  border:1px solid var(--rule);padding:16px 18px;margin-bottom:12px;
+  background:rgba(255,255,255,.28);
+}
+.card h3{font-size:17px;margin-bottom:8px}
+.card h3 span{font-family:"Inconsolata",monospace;color:var(--stamp);margin-right:8px}
+.card li{margin:7px 0 7px 1.15em}
+.ledger{
+  width:100%;border-collapse:collapse;font-family:"Inconsolata",monospace;font-size:13.5px;margin:10px 0 4px;
+}
+.ledger th,.ledger td{border-bottom:1px dashed var(--rule);padding:7px 8px;text-align:left}
+.ledger th{color:var(--olive);font-weight:700;letter-spacing:.06em}
+.insight{border-color:var(--stamp);background:rgba(155,44,26,.05)}
+.refs a{color:var(--stamp)}
+.foot{
+  margin-top:28px;padding-top:12px;border-top:2px double var(--olive);
+  font-family:"Inconsolata",monospace;font-size:11.5px;letter-spacing:.12em;text-align:center;color:var(--olive)
+}
+blockquote{
+  margin:10px 0;padding:8px 12px;border-left:4px solid var(--stamp);
+  font-style:italic;color:#3a3224;background:rgba(155,44,26,.05)
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="mast"><span>WIRTSCHAFTSSTAB OST · LEDGER COPY</span><span>ISSUE 39 · 2026-08-30 18:47 CST</span></div>
+  <p class="kicker">二战德国史调研 · 系列第 39 期 · 第二轮 · 战争</p>
+  <h1>巴巴罗萨决策与饥饿计划</h1>
+  <p class="sub">1940 年 12 月的第 21 号指令决定开战；1941 年 5 月的国务秘书会议已经把“若干百万人必将饿死”写进经济清册。进攻苏联不是后勤出了意外，而是先把人写成赤字。</p>
+  <div class="meta"><span><b>时间</b> 2026-08-30 18:47 CST</span><span><b>视觉风格</b> 粮仓清册复写纸风</span></div>
+  <nav class="toc">
+    <a href="#s0">本期主题</a>
+    <a href="#s1">决策时间表</a>
+    <a href="#s2">5月2日</a>
+    <a href="#s3">实施与缺口</a>
+    <a href="#s4">启示</a>
+    <a href="#s5">来源</a>
+  </nav>
+
+  <section id="s0">
+    <h2>本期主题</h2>
+    <div class="card">
+      <p>第 5 期写过东线作为毁灭战的史学争论，第 17 期写过苏德条约。本期只盯一件事：<b>进攻苏联的军事决定，如何与一份预先算好的饥饿政策叠在同一张桌上</b>。联邦档案馆至今把东方经济参谋部（Wirtschaftsstab Ost）做成在线图廊（军事档案 RW 31），把戈林“绿色文件夹”、巴克“十二条诫命”与对乌克兰“粮仓”的掠夺放在同一条链上——这是当前德语公共史学把饥饿计划从“后勤细节”拉回战争罪行的入口，而不是 2026 年的新发现。</p>
+      <p style="margin-top:10px">史学用语 Hungerplan / Backe-Plan 是事后命名（克里斯蒂安·格拉赫等）。档案里更常见的是经济政策方针、国务秘书会议纪要、绿色文件夹。读它们，不要指望看到一份印着“饥饿计划”四个字的封面。</p>
+    </div>
+  </section>
+
+  <section id="s1">
+    <h2>核心发现一：先有开战指令，后有把人写成赤字的会议</h2>
+    <div class="card">
+      <h3><span>01</span>从第 21 号指令到就地取食</h3>
+      <ul>
+        <li>1940 年 12 月 18 日，希特勒签发第 21 号指令（代号巴巴罗萨）：德军须准备在对英战争尚未结束时，以一场速决战击溃苏联。准备工作须在 1941 年 5 月 15 日前完成；对外仍伪装成“预防措施”。真正开战是 1941 年 6 月 22 日。</li>
+        <li>铁路运力、公路与燃料都不够把德国国内粮食运上去。国防军最高统帅部经济与军备局（格奥尔格·托马斯）与粮食部国务秘书赫伯特·巴克的共同结论是：部队必须在占领区就地取食。这不是战场上的临时办法，而是入侵前的前提。</li>
+        <li>美国大屠杀纪念馆写得很直：德国计划者在 1941 年 5 月已经知道，这种榨取“必然”导致数百万人饿死；他们记得第一次世界大战德国后方的饥荒与骚乱，这一次准备用斯拉夫人的死亡去换帝国本土的配给稳定。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="s2">
+    <h2>核心发现二：1941 年 5 月 2 日不是万湖，但功能同类</h2>
+    <div class="card">
+      <h3><span>02</span>国务秘书、经济参谋部、绿色文件夹</h3>
+      <ul>
+        <li>进攻前七周，1941 年 5 月 2 日，一场国务秘书（Staatssekretäre）会议讨论巴巴罗萨的经济政策。亚历克斯·J·凯（Alex J. Kay）指出：这是东方经济指挥参谋部层面的协调会，与会者包括相关部委与国防军代表。会议纪要的句子被反复引用：若把“我们所必需的”从土地上抽走，<b>“若干百万人必将饿死”</b>（x Millionen Menschen werden zweifellos verhungern）。</li>
+        <li>三周后，5 月 23 日，东方经济参谋部农业处的经济政策方针把话说得更硬：该国将有数千万人变得“多余”，他们或将死亡，或必须迁往西伯利亚；若试图用黑土区余粮去救当地城市，就会妨碍德国把战争打完。规划数字常被概括为约三千万——这是政策目标量级，不是事后统计。</li>
+        <li>1941 年 6 月 16 日，戈林签发供占领区经济管理使用的“绿色文件夹”（Grüne Mappe），首印约 1000 份，一个月后再印约 2000 份。措辞比内部方针谨慎，原则一致：去工业化、把粮食从苏联城市改道到国防军与德国本土。</li>
+        <li>6 月 1 日巴克的“十二条诫命”（BArch RW 31/292）把种族主义写成农艺口吻：“贫穷、饥饿与知足，俄国人已经忍受了几个世纪。他的胃有弹性，因此不要错误的同情。”联邦档案馆现仍把这份文件与绿色文件夹并陈。</li>
+      </ul>
+      <table class="ledger">
+        <thead><tr><th>清册项</th><th>档案口径</th><th>不要误读成</th></tr></thead>
+        <tbody>
+          <tr><td>5 月 2 日会议</td><td>部委 + 国防军经济部门背书就地取食</td><td>只有希特勒、戈林、巴克三人的密谈</td></tr>
+          <tr><td>规划死亡量级</td><td>内部文件“若干百万 / 约三千万”</td><td>一份印着“饥饿计划”封面的总命令</td></tr>
+          <tr><td>绿色文件夹</td><td>占领区经济手册，千份级散发</td><td>纯后勤办事细则</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>核心发现三：计划是空想，杀人却不是</h2>
+    <div class="card">
+      <h3><span>03</span>战俘、列宁格勒、哈尔科夫，以及本土没有饥荒</h3>
+      <ul>
+        <li>整座苏联城市被粮封锁、让三千万人按表饿死——到 1941 年底大多放弃，因为战事没有速胜，也没有足够兵力把城市与农村切开。这是格拉赫、凯所说的“乌托邦式饥饿计划”失败的一面。</li>
+        <li>实施最彻底的是战俘。被俘苏军约 570 万，其中约 330 万死亡，多数直接或间接死于饥饿；到 1942 年 2 月初已有约 200 万死在德国看守下（美国大屠杀纪念馆口径：入侵后不到八个月，200 万苏军战俘死亡）。规划人员原先只按法国战役的量级估算前八周约 200 万俘虏——多出来的人被写成不必养活。</li>
+        <li>列宁格勒围城中约 100 万人死亡，是切断粮道最极端的城市案例。占领下的哈尔科夫约有 8 万人饿死。这些不是“围城的附带损害”，而是同一套把城市人口从配给网里划掉的政策。</li>
+        <li>对照写在联邦档案馆对 1944 年博尔曼通告的说明里：直到战争末期，帝国本土没有出现第一次世界大战那种饥荒。稳定配给靠的是对东欧的掠夺。粮食部把人饿死，不是为了让德国人也挨饿，而是为了让德国人尽量不挨饿。</li>
+        <li>争论要标出来：克劳斯·约亨·阿诺德、盖尔特·C·吕贝斯曾试图把预谋缩小成希特勒—戈林—巴克三人，为国防军开脱。凯的回应是：5 月 2 日恰恰证明部委与国防军经济部门共同背书。读东线，不要把“干净国防军”从粮仓清册里抢救出来。第 43 期将另写战争司法与政委命令。</li>
+      </ul>
+      <blockquote>读饥饿计划，先问清册上的赤字写在谁头上：不是“战争使人挨饿”，而是会议纪要把人算成可以被提取的余粮。</blockquote>
+    </div>
+  </section>
+
+  <section id="s4">
+    <h2>对历史学习者的启示</h2>
+    <div class="card insight">
+      <ul>
+        <li><b>把军事时间表和经济时间表叠在一起。</b>第 21 号指令是开战令；5 月 2 日是把死亡写进经济前提。少了后一张桌子，巴巴罗萨会被误写成“闪击失灵的常规战役”。</li>
+        <li><b>计划失败不等于没有罪行。</b>三千万的城市封锁没有按表完成，战俘营和被围城市已经足够构成政策杀人。</li>
+        <li><b>不要用俄国国家宣传替代格拉赫与凯。</b>近年有把“黄色文件夹”全文当武器的官方叙事；仍以联邦档案馆 RW 31、绿色文件夹与同行评议为准。</li>
+        <li><b>德国本土“没有挨饿”不是德政。</b>那是占领区被抽空之后的账面结果。读国内配给（第 3 期）时，要记得余粮从哪来。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="s5">
+    <h2>来源</h2>
+    <div class="card refs">
+      <ol>
+        <li><a href="https://germanhistorydocs.org/en/nazi-germany-1933-1945/directive-no-21-operation-barbarossa-december-18-1940.pdf" target="_blank" rel="noopener">German History in Documents：第 21 号指令（1940-12-18）英译 PDF</a></li>
+        <li><a href="https://encyclopedia.ushmm.org/content/en/article/the-german-army-and-the-racial-nature-of-the-war-against-the-soviet-union" target="_blank" rel="noopener">USHMM：国防军与对苏战争的种族性质（5 月即知“数百万人必将饿死”）</a></li>
+        <li><a href="https://encyclopedia.ushmm.org/content/en/article/the-soviet-union-and-the-eastern-front" target="_blank" rel="noopener">USHMM：苏联与东线（指令 21、就地取食、战俘死亡）</a></li>
+        <li><a href="https://journals.sagepub.com/doi/10.1177/0022009406067750" target="_blank" rel="noopener">Alex J. Kay, “Germany’s Staatssekretäre, Mass Starvation and the Meeting of 2 May 1941”</a></li>
+        <li><a href="https://doi.org/10.1177/0022009407084559" target="_blank" rel="noopener">Kay 对 Arnold / Lübbers 的回应（国防军是否知情）</a></li>
+        <li><a href="https://www.bundesarchiv.de/themen-entdecken/online-entdecken/geschichtsgalerien/wirtschaftsstab-ost-1941-1944/" target="_blank" rel="noopener">联邦档案馆图廊：东方经济参谋部 1941–1944（RW 31）</a></li>
+        <li><a href="https://www.bundesarchiv.de/themen-entdecken/online-entdecken/dokumente-zur-zeitgeschichte/rundschreiben-zur-versorgungslage-im-herbst-winter-1944/" target="_blank" rel="noopener">联邦档案馆：巴克十二条诫命、绿色文件夹与本土配给为何未崩</a></li>
+        <li><a href="https://www.berghahnbooks.com/title/KayExploitation" target="_blank" rel="noopener">Kay, <i>Exploitation, Resettlement, Mass Murder</i>（占领政策规划 1940–1941）</a></li>
+      </ol>
+    </div>
+  </section>
+  <p class="foot">WWII GERMAN HISTORY RESEARCH · ISSUE 39 · CARBON LEDGER · NOT FOR GLORIFICATION</p>
+</div>
+</body>
+</html>
